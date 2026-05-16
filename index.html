@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0F19">
+<meta name="description" content="Total Protection. Flawless Operations. Next-generation security and integrated facilities management tailored for UK enterprises. SIA Approved Contractor — South Shields HQ, five regional centres.">
+<title>TTS FM — Total Protection. Flawless Operations.</title>
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: #0B0F19; }
+body {
+  font-family: "Inter var", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "ss01", "ss02", "cv11", "cv09";
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: var(--slate);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; padding: 0; }
+
+:root {
+  --slate:   #0B0F19;
+  --slate-2: #11172A;
+  --slate-3: #1A2235;
+  --white:   #FFFFFF;
+  --paper:   #F7F8FA;
+  --paper-2: #ECEFF4;
+
+  --ink:       #FFFFFF;
+  --ink-soft:  rgba(255,255,255,0.66);
+  --ink-faint: rgba(255,255,255,0.38);
+  --ink-muted: rgba(255,255,255,0.16);
+
+  --dark-ink:   #0B0F19;
+  --dark-soft:  rgba(11,15,25,0.62);
+  --dark-faint: rgba(11,15,25,0.4);
+
+  --line:              rgba(255,255,255,0.07);
+  --line-strong:       rgba(255,255,255,0.14);
+  --line-paper:        rgba(11,15,25,0.08);
+  --line-paper-strong: rgba(11,15,25,0.18);
+
+  --cyan:      #00F0FF;
+  --cyan-deep: #00C2D6;
+  --cyan-glow: rgba(0,240,255,0.42);
+
+  --green: #34D399;
+
+  --sans: "Inter var", "Inter", -apple-system, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+
+  --container: 1440px;
+  --gutter: clamp(24px, 5vw, 88px);
+}
+
+::selection { background: var(--cyan); color: var(--dark-ink); }
+
+/* TYPOGRAPHY */
+.display { font-family: var(--sans); font-weight: 700; font-size: clamp(56px,8.4vw,144px); letter-spacing: -0.04em; line-height: 0.94; margin: 0; text-wrap: balance; }
+.display .cyan { color: var(--cyan); }
+.h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(40px,5.4vw,88px); letter-spacing: -0.032em; line-height: 1.0; margin: 0; text-wrap: balance; }
+.h1 .cyan { color: var(--cyan); }
+.h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(32px,4vw,64px); letter-spacing: -0.028em; line-height: 1.04; margin: 0; text-wrap: balance; }
+.h2 .cyan { color: var(--cyan); }
+.lead { font-size: clamp(17px,1.2vw,20px); line-height: 1.5; color: var(--ink-soft); font-weight: 400; margin: 0; max-width: 56ch; text-wrap: pretty; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cyan); font-weight: 500; display: inline-flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--cyan); }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+
+/* PAPER MODIFIER */
+.paper { background: var(--white); color: var(--dark-ink); }
+.paper .lead { color: var(--dark-soft); }
+.paper .eyebrow { color: var(--cyan-deep); }
+.paper .eyebrow::before { background: var(--cyan-deep); }
+
+/* LAYOUT */
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+section { position: relative; padding: clamp(80px,10vw,160px) 0; }
+.section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; align-items: end; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(11,15,25,0.72); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border-bottom: 1px solid var(--line); transition: background .35s ease; }
+.nav.scrolled { background: rgba(11,15,25,0.92); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--container); margin: 0 auto; padding: 18px var(--gutter); gap: 32px; }
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo img { height: 32px; filter: brightness(0) invert(1); }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-link { padding: 9px 14px; font-size: 13.5px; font-weight: 500; color: var(--ink-soft); letter-spacing: -0.005em; border-radius: 8px; transition: color .25s ease, background .25s ease; }
+.nav-link:hover { color: var(--ink); background: rgba(255,255,255,0.04); }
+.nav-link.active { color: var(--ink); background: rgba(255,255,255,0.06); }
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+.nav-burger { display: none; }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; font-family: var(--sans); font-weight: 600; font-size: 13.5px; letter-spacing: -0.005em; border-radius: 8px; border: 1px solid transparent; transition: transform .3s cubic-bezier(.2,0,.2,1), background .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease; white-space: nowrap; cursor: pointer; }
+.btn .arrow { width: 14px; height: 14px; transition: transform .3s cubic-bezier(.2,0,.2,1); }
+.btn:hover .arrow { transform: translateX(3px); }
+.btn-cyan  { background: var(--cyan); color: var(--dark-ink); border-color: var(--cyan); box-shadow: 0 10px 28px -8px var(--cyan-glow), inset 0 1px 0 rgba(255,255,255,0.2); }
+.btn-cyan:hover  { background: #4DF8FF; border-color: #4DF8FF; transform: translateY(-1px); box-shadow: 0 16px 36px -8px var(--cyan-glow), inset 0 1px 0 rgba(255,255,255,0.24); }
+.btn-white { background: var(--ink); color: var(--dark-ink); border-color: var(--ink); }
+.btn-white:hover { background: #EFEFEF; transform: translateY(-1px); }
+.btn-line  { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.btn-line:hover  { border-color: var(--ink); background: rgba(255,255,255,0.04); }
+.paper .btn-line  { color: var(--dark-ink); border-color: var(--line-paper-strong); }
+.paper .btn-line:hover { border-color: var(--dark-ink); background: rgba(11,15,25,0.04); }
+.btn-dark  { background: var(--dark-ink); color: var(--ink); border-color: var(--dark-ink); }
+.btn-dark:hover  { background: #1A2235; transform: translateY(-1px); }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+.btn-lg { padding: 17px 28px; font-size: 15px; }
+
+/* HERO */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 120px 0 80px; }
+.hero-bg { position: absolute; inset: 0; z-index: 1; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.6) brightness(0.5); animation: heroPan 24s ease-in-out infinite; }
+@keyframes heroPan { 0%,100% { transform: scale(1.04) translate(0,0); } 50% { transform: scale(1.08) translate(-1.5%,-1%); } }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(0,240,255,0.12), transparent 50%), linear-gradient(180deg, rgba(11,15,25,0.35) 0%, rgba(11,15,25,0.6) 50%, rgba(11,15,25,0.95) 100%); }
+.hero-content { position: relative; z-index: 5; width: 100%; }
+.hero-inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.hero-status { position: absolute; top: 32px; right: var(--gutter); z-index: 6; }
+.hero-status .pill { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--line-strong); border-radius: 999px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+.hero-status .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(52,211,153,0.22); animation: pulse 2s infinite; flex-shrink: 0; }
+.hero-title { color: var(--ink); max-width: 14ch; }
+.hero-sub { font-family: var(--sans); font-size: clamp(18px,1.4vw,22px); line-height: 1.45; color: rgba(255,255,255,0.78); max-width: 54ch; margin: 40px 0 0; }
+
+.toggle { margin-top: 56px; display: inline-flex; align-items: center; gap: 4px; padding: 6px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-strong); border-radius: 999px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.toggle button { padding: 14px 26px; border-radius: 999px; font-family: var(--sans); font-weight: 600; font-size: 14px; color: var(--ink-soft); letter-spacing: -0.005em; display: inline-flex; align-items: center; gap: 10px; transition: color .3s ease, background .35s ease, box-shadow .35s ease; }
+.toggle button:hover { color: var(--ink); }
+.toggle button.active { background: var(--cyan); color: var(--dark-ink); box-shadow: 0 8px 22px -6px var(--cyan-glow); }
+.toggle button .arrow { width: 14px; height: 14px; }
+
+/* METRICS */
+.metrics { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--slate); }
+.metrics-grid { display: grid; grid-template-columns: repeat(4,1fr); max-width: var(--container); margin: 0 auto; }
+.metric { padding: 48px var(--gutter); border-right: 1px solid var(--line); }
+.metric:last-child { border-right: none; }
+.metric-num { font-family: var(--sans); font-weight: 700; font-size: clamp(40px,5vw,72px); letter-spacing: -0.04em; line-height: 1; color: var(--ink); }
+.metric-num .cyan { color: var(--cyan); }
+.metric-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-top: 20px; max-width: 26ch; line-height: 1.5; }
+
+/* ENGINE — dual panel */
+.engine { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+.engine-side { position: relative; padding: clamp(64px,9vw,128px) clamp(40px,5vw,80px); overflow: hidden; display: flex; flex-direction: column; }
+.engine-dark  { background: var(--slate); color: var(--ink); }
+.engine-light { background: var(--white); color: var(--dark-ink); }
+.engine-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 32px; display: inline-flex; align-items: center; gap: 12px; }
+.engine-eyebrow::before { content: ""; width: 24px; height: 1px; }
+.engine-dark  .engine-eyebrow { color: var(--cyan); }
+.engine-dark  .engine-eyebrow::before { background: var(--cyan); }
+.engine-light .engine-eyebrow { color: var(--cyan-deep); }
+.engine-light .engine-eyebrow::before { background: var(--cyan-deep); }
+.engine-title { font-family: var(--sans); font-weight: 700; font-size: clamp(36px,4.4vw,72px); letter-spacing: -0.035em; line-height: 1; margin: 0; text-wrap: balance; }
+.engine-lede  { font-size: 17px; line-height: 1.5; margin: 28px 0 0; max-width: 38ch; }
+.engine-dark  .engine-lede { color: var(--ink-soft); }
+.engine-light .engine-lede { color: var(--dark-soft); }
+.engine-visual { margin: 48px 0 32px; flex: 1; display: flex; align-items: center; justify-content: center; position: relative; min-height: 280px; }
+
+/* Blueprint */
+.blueprint { width: 100%; max-width: 480px; position: relative; }
+.blueprint svg { width: 100%; height: auto; }
+.blueprint-zone { fill: rgba(0,240,255,0.05); stroke: rgba(0,240,255,0.4); stroke-width: 1; cursor: pointer; transition: fill .3s ease, stroke .3s ease; }
+.blueprint-zone:hover { fill: rgba(0,240,255,0.22); stroke: var(--cyan); }
+.blueprint-label { position: absolute; background: var(--slate-2); border: 1px solid var(--cyan); padding: 12px 16px; border-radius: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); box-shadow: 0 12px 32px -8px rgba(0,0,0,0.6); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .25s ease, transform .25s ease; transform: translateY(8px); z-index: 5; }
+.blueprint-label.show { opacity: 1; transform: translateY(0); }
+
+/* FM photo quad */
+.facilities-photo { width: 100%; max-width: 480px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.facilities-photo .ph { position: relative; aspect-ratio: 4/5; background-size: cover; background-position: center; border-radius: 8px; overflow: hidden; transition: transform .4s ease; }
+.facilities-photo .ph:hover { transform: translateY(-4px); }
+.facilities-photo .ph::after { content: attr(data-label); position: absolute; bottom: 12px; left: 12px; right: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); text-shadow: 0 1px 4px rgba(0,0,0,0.7); font-weight: 500; }
+
+/* Service lists */
+.engine-services { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 8px; border-top: 1px solid var(--line); }
+.engine-light .engine-services { border-top-color: var(--line-paper); }
+.engine-service { padding: 18px 4px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; font-weight: 500; border-bottom: 1px solid var(--line); transition: padding .3s ease, color .3s ease; }
+.engine-light .engine-service { border-bottom-color: var(--line-paper); }
+.engine-service:hover { padding-left: 8px; }
+.engine-light .engine-service:hover { color: var(--cyan-deep); }
+.engine-dark  .engine-service:hover { color: var(--cyan); }
+.engine-service .num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: currentColor; opacity: 0.45; margin-right: 8px; }
+.engine-service .arr { font-family: var(--mono); font-size: 14px; opacity: 0.4; transition: opacity .3s ease, transform .3s ease; }
+.engine-service:hover .arr { opacity: 1; transform: translateX(4px); }
+.engine-cta { margin-top: 40px; }
+
+/* MODAL */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(11,15,25,0.78); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 200; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.modal-backdrop.open { opacity: 1; pointer-events: auto; }
+.modal { position: fixed; top: 50%; left: 50%; width: min(92vw,560px); transform: translate(-50%,-48%); background: var(--slate-2); border: 1px solid var(--line-strong); border-radius: 16px; z-index: 210; padding: 40px; opacity: 0; pointer-events: none; transition: opacity .35s ease, transform .35s cubic-bezier(.2,0,.2,1); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7); }
+.modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%,-50%); }
+.modal-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; gap: 16px; }
+.modal-close { width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center; color: var(--ink-soft); border: 1px solid var(--line-strong); flex-shrink: 0; transition: color .25s ease, border-color .25s ease; }
+.modal-close:hover { color: var(--ink); border-color: var(--ink); }
+
+/* COVERAGE / UK MAP */
+.regions { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+.uk-map { position: relative; aspect-ratio: 3/4; max-width: 580px; }
+.uk-map svg { width: 100%; height: 100%; }
+.uk-shape { fill: var(--slate-2); stroke: var(--line-strong); stroke-width: 0.3; }
+.uk-pin { cursor: pointer; }
+.uk-pin-dot { fill: var(--cyan); transition: r .3s ease; }
+.uk-pin-ring { fill: none; stroke: var(--cyan); stroke-width: 0.3; opacity: 0.5; transform-origin: center; transform-box: fill-box; animation: ringPulse 2.6s ease-in-out infinite; }
+.uk-pin.hq .uk-pin-dot { fill: var(--ink); }
+.uk-pin.hq .uk-pin-ring { stroke: var(--ink); }
+.uk-pin.active .uk-pin-dot { r: 2.8; }
+.uk-pin-label { font-family: var(--mono); font-size: 2.4px; fill: var(--ink); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+@keyframes ringPulse { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(2.4); opacity: 0; } }
+
+.region-panel { background: var(--slate-2); border: 1px solid var(--line-strong); border-radius: 16px; padding: 40px; position: relative; overflow: hidden; min-height: 420px; }
+.region-panel::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 56px; background: var(--cyan); }
+.region-panel-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; }
+.region-panel h3 { font-family: var(--sans); font-weight: 700; font-size: clamp(32px,3.4vw,52px); letter-spacing: -0.03em; line-height: 1; margin: 0; }
+.region-panel .sub { font-size: 14.5px; color: var(--ink-soft); margin: 12px 0 28px; }
+.region-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line); margin-top: 28px; }
+.region-stat { padding: 20px 0; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); }
+.region-stat:nth-child(2n) { border-right: none; padding-left: 20px; }
+.region-stat-num { font-family: var(--sans); font-weight: 700; font-size: 28px; letter-spacing: -0.025em; color: var(--ink); }
+.region-stat-num .cyan { color: var(--cyan); }
+.region-stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 8px; }
+.region-clients { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.region-clients .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); flex-basis: 100%; margin-bottom: 8px; }
+.region-clients .chip { font-size: 12.5px; font-weight: 500; color: var(--ink-soft); padding: 8px 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--line-strong); border-radius: 999px; }
+
+/* RECRUIT */
+.recruit { background: radial-gradient(ellipse at 20% 20%, rgba(0,240,255,0.08), transparent 50%), var(--slate); padding: clamp(80px,12vw,160px) 0; }
+.recruit-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+.recruit-card { background: var(--slate-2); border: 1px solid var(--line-strong); border-radius: 20px; padding: 40px; position: relative; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5); }
+.recruit-card::before { content: ""; position: absolute; top: 0; left: 40px; right: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+.recruit-steps { display: flex; gap: 8px; margin-bottom: 32px; }
+.recruit-step-pip { flex: 1; height: 4px; background: var(--line-strong); border-radius: 999px; transition: background .3s ease, box-shadow .3s ease; }
+.recruit-step-pip.active { background: var(--cyan); box-shadow: 0 0 12px var(--cyan-glow); }
+.recruit-step-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+.recruit-question { font-family: var(--sans); font-weight: 700; font-size: clamp(22px,2.2vw,30px); letter-spacing: -0.022em; line-height: 1.15; margin: 0 0 32px; }
+.recruit-choice-row { display: grid; gap: 12px; }
+.recruit-choice { padding: 22px; background: rgba(255,255,255,0.03); border: 1px solid var(--line-strong); border-radius: 12px; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 600; color: var(--ink); transition: all .3s ease; }
+.recruit-choice:hover { border-color: var(--cyan); background: rgba(0,240,255,0.06); }
+.recruit-choice .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--cyan); font-weight: 500; }
+.recruit-input { width: 100%; padding: 22px; background: rgba(255,255,255,0.03); border: 1px solid var(--line-strong); border-radius: 12px; font-family: var(--sans); font-size: 17px; color: var(--ink); transition: border-color .3s ease; }
+.recruit-input:focus { outline: none; border-color: var(--cyan); }
+.recruit-input::placeholder { color: var(--ink-faint); }
+.recruit-final { text-align: center; padding: 24px 0; }
+.recruit-final h4 { font-family: var(--sans); font-weight: 700; font-size: 26px; letter-spacing: -0.02em; margin: 0 0 12px; }
+.recruit-final p { color: var(--ink-soft); margin: 0; }
+.recruit-actions { display: flex; gap: 12px; margin-top: 28px; justify-content: space-between; align-items: center; }
+
+/* TESTIMONIALS */
+.testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.testi-card { background: var(--white); border-radius: 20px; padding: 48px; position: relative; color: var(--dark-ink); overflow: hidden; transition: transform .4s cubic-bezier(.2,0,.2,1), box-shadow .4s ease; }
+.testi-card:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4); }
+.testi-card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 64px; background: var(--cyan-deep); }
+.testi-quote { font-family: var(--sans); font-weight: 500; font-size: clamp(18px,1.5vw,22px); letter-spacing: -0.01em; line-height: 1.45; color: var(--dark-ink); margin: 0 0 32px; text-wrap: pretty; }
+.testi-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--line-paper); flex-wrap: wrap; gap: 16px; }
+.testi-name { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: var(--dark-ink); }
+.testi-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dark-faint); margin-top: 6px; }
+.testi-logo { font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing: -0.005em; padding: 8px 14px; background: var(--paper-2); border-radius: 6px; color: var(--dark-ink); }
+
+/* AUTHORITY */
+.authority { padding: 80px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.authority-grid { display: grid; grid-template-columns: 200px 1fr; gap: 64px; align-items: center; }
+.authority-logos { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; align-items: center; }
+.auth-badge { height: 84px; background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: 12px; display: grid; place-items: center; padding: 16px; transition: background .3s ease, border-color .3s ease; }
+.auth-badge img { max-height: 56px; max-width: 100%; width: auto; filter: grayscale(1) brightness(0) invert(1); opacity: 0.5; transition: filter .4s ease, opacity .4s ease; }
+.auth-badge:hover { border-color: var(--cyan); background: rgba(0,240,255,0.04); }
+.auth-badge:hover img { filter: grayscale(0) brightness(1) invert(0); opacity: 1; }
+
+/* FOOTER */
+.footer { background: var(--slate); padding: 120px 0 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 64px; padding-bottom: 80px; border-bottom: 1px solid var(--line); }
+.footer-logo { height: 48px; filter: brightness(0) invert(1); margin-bottom: 28px; }
+.footer p { color: var(--ink-soft); font-size: 14.5px; line-height: 1.65; max-width: 38ch; margin: 0 0 28px; }
+.footer .col-title { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 24px; }
+.footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.footer ul a { color: var(--ink-soft); font-size: 14px; transition: color .25s ease; }
+.footer ul a:hover { color: var(--cyan); }
+.footer-bottom { padding-top: 36px; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); flex-wrap: wrap; gap: 16px; }
+.footer-bottom-links { display: flex; gap: 32px; }
+
+/* TOAST */
+.toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--cyan); color: var(--dark-ink); padding: 14px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 10px; opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease; z-index: 300; box-shadow: 0 16px 40px -8px var(--cyan-glow); }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* DRAWER */
+.drawer { position: fixed; inset: 0 0 0 auto; width: min(92vw,420px); background: rgba(11,15,25,0.96); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border-left: 1px solid var(--line-strong); z-index: 200; transform: translateX(100%); transition: transform .45s cubic-bezier(.2,0,.2,1); display: flex; flex-direction: column; padding: 24px; overflow-y: auto; }
+.drawer.open { transform: translateX(0); }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+.drawer-head img { height: 30px; filter: brightness(0) invert(1); }
+.drawer-link { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); font-family: var(--sans); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); transition: color .25s ease; }
+.drawer-link:hover { color: var(--cyan); }
+.drawer-overlay { position: fixed; inset: 0; background: rgba(11,15,25,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 150; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.drawer-overlay.open { opacity: 1; pointer-events: auto; }
+
+/* ANIMATIONS */
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(52,211,153,0.22); } 50% { box-shadow: 0 0 0 8px rgba(52,211,153,0); } }
+.reveal { opacity: 0; transform: translateY(8px); transition: opacity .8s cubic-bezier(.2,0,.2,1), transform .8s cubic-bezier(.2,0,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .08s; }
+.reveal-d2 { transition-delay: .16s; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) { .nav-cta .btn-line { display: none; } }
+@media (max-width: 980px) {
+  .nav-links, .nav-cta .btn { display: none; }
+  .nav-burger { display: inline-flex; align-items: center; gap: 10px; padding: 11px 16px; border: 1px solid var(--line-strong); border-radius: 999px; background: rgba(255,255,255,0.04); font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
+  .engine { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: repeat(2,1fr); }
+  .metric:nth-child(2) { border-right: none; }
+  .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .regions { grid-template-columns: 1fr; gap: 48px; }
+  .uk-map { max-width: 360px; margin: 0 auto; }
+  .recruit-grid { grid-template-columns: 1fr; gap: 48px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .authority-grid { grid-template-columns: 1fr; }
+  .authority-logos { grid-template-columns: repeat(3,1fr); }
+  .section-head { grid-template-columns: 1fr; gap: 24px; }
+  .hero-status { display: none; }
+  #contact > .container > div { grid-template-columns: 1fr !important; gap: 48px !important; }
+}
+@media (max-width: 640px) {
+  section { padding: 64px 0; }
+  .metrics-grid { grid-template-columns: 1fr; }
+  .metric { border-right: none !important; border-bottom: 1px solid var(--line); padding: 32px var(--gutter); }
+  .metric:last-child { border-bottom: none; }
+  .authority-logos { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .toggle { width: 100%; }
+  .toggle button { flex: 1; padding: 14px 16px; justify-content: center; }
+  .facilities-photo { grid-template-columns: 1fr; }
+  .section-head { margin-bottom: 48px; }
+  #contact-form > div { grid-template-columns: 1fr !important; }
+  #contact-form input, #contact-form textarea { grid-column: span 1 !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="TTS FM — home">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM">
+    </a>
+    <div class="nav-links" role="list">
+      <a href="services.html"      class="nav-link" role="listitem">Services</a>
+      <a href="about.html"         class="nav-link" role="listitem">About</a>
+      <a href="case-studies.html"  class="nav-link" role="listitem">Case Studies</a>
+      <a href="careers.html"       class="nav-link" role="listitem">Careers</a>
+      <a href="contact.html"       class="nav-link" role="listitem">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="services.html" class="btn btn-line btn-sm">Our services</a>
+      <button class="btn btn-cyan btn-sm" data-modal="quote" aria-haspopup="dialog">
+        Request a quote
+        <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1h12M1 6h12M1 11h12"/></svg>
+      Menu
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="drawer-head">
+    <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM">
+    <button id="drawer-close" aria-label="Close menu" style="padding: 8px; color: var(--ink)">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+    </button>
+  </div>
+  <a href="services.html"     class="drawer-link">Services     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="about.html"        class="drawer-link">About        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="careers.html"      class="drawer-link">Careers      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="contact.html"      class="drawer-link">Contact      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <button class="btn btn-cyan" style="margin-top: 32px" data-modal="quote">Request a quote</button>
+</aside>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="https://ttsfm.co.uk/wp-content/uploads/2026/04/Top-Security-Company-in-Newcastle-What-Businesses-Need-to-Know.png" alt="" loading="eager">
+  </div>
+  <div class="hero-status" aria-hidden="true">
+    <span class="pill"><span class="dot"></span> Operations · Live across the United Kingdom</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <span class="eyebrow" style="margin-bottom: 40px; display: inline-flex">SIA Approved · ISO 9001 · ISO 45001</span>
+      <h1 class="display hero-title">Total <span class="cyan">Protection</span>.<br>Flawless Operations.</h1>
+      <p class="hero-sub">Next-generation security and integrated facilities management tailored for UK enterprises. Local presence, regional management, national visibility — from our South Shields headquarters.</p>
+      <div class="toggle" role="group" aria-label="Navigate to section">
+        <button class="active" data-target="#engine" aria-pressed="true">I need services
+          <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
+        <button data-target="#recruit" aria-pressed="false">I want to join the team
+          <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- METRICS BAR -->
+<div class="metrics" aria-label="Key facts">
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="metric-num"><span class="cyan">24/7</span></div>
+      <div class="metric-label">Support and rapid response across every assignment</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">UK-Wide</div>
+      <div class="metric-label">Local, regional and nationwide coverage from one operating model</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num"><span class="cyan">SIA</span></div>
+      <div class="metric-label">Approved Contractor for integrated risk-based security solutions</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">5</div>
+      <div class="metric-label">Regional Support Centres serving every part of the United Kingdom</div>
+    </div>
+  </div>
+</div>
+
+<!-- DUAL-ENGINE: SECURITY + FM -->
+<section id="engine" class="engine" style="padding: 0" aria-label="Our services">
+
+  <!-- Security side -->
+  <div class="engine-side engine-dark">
+    <span class="engine-eyebrow">01 / Security Solutions</span>
+    <h2 class="engine-title">Risk-based<br>protection,<br><span style="color: var(--cyan)">where it matters</span>.</h2>
+    <p class="engine-lede">Hover the building blueprint to see the security services we deploy at each touchpoint of a commercial estate.</p>
+    <div class="engine-visual">
+      <div class="blueprint" id="blueprint" aria-label="Interactive building security blueprint">
+        <svg viewBox="0 0 480 320" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Commercial building blueprint">
+          <!-- Building outline -->
+          <rect x="10" y="40" width="460" height="240" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+          <polyline points="10,40 240,8 470,40" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+          <!-- Internal grid lines -->
+          <line x1="120" y1="40" x2="120" y2="280" stroke="rgba(255,255,255,0.1)" stroke-width="0.6"/>
+          <line x1="360" y1="40" x2="360" y2="280" stroke="rgba(255,255,255,0.1)" stroke-width="0.6"/>
+          <line x1="10"  y1="160" x2="470" y2="160" stroke="rgba(255,255,255,0.1)" stroke-width="0.6"/>
+          <!-- Gatehouse base -->
+          <rect x="226" y="276" width="28" height="8" fill="rgba(255,255,255,0.08)"/>
+          <!-- Interactive zones -->
+          <rect class="blueprint-zone" data-label="Manned Guarding · Gatehouse"       x="206" y="270" width="68"  height="14" rx="2"/>
+          <polygon class="blueprint-zone" data-label="Keyholding · Alarm Response"     points="120,32 360,32 380,12 100,12"/>
+          <rect class="blueprint-zone" data-label="Concierge · Front of House"         x="124" y="164" width="232" height="60" rx="2"/>
+          <rect class="blueprint-zone" data-label="Mobile Patrols · Perimeter Sweep"   x="14"  y="44"  width="100" height="232" rx="2"/>
+          <rect class="blueprint-zone" data-label="Control Room · 24/7 Monitoring"     x="366" y="44"  width="100" height="112" rx="2"/>
+          <rect class="blueprint-zone" data-label="K9 · Specialist Patrols"            x="366" y="164" width="100" height="112" rx="2"/>
+          <!-- Zone labels -->
+          <text x="64"  y="160"  fill="rgba(255,255,255,0.32)" font-family="Geist Mono" font-size="6" text-anchor="middle">PERIMETER</text>
+          <text x="240" y="195"  fill="rgba(255,255,255,0.32)" font-family="Geist Mono" font-size="6" text-anchor="middle">LOBBY</text>
+          <text x="416" y="100"  fill="rgba(255,255,255,0.32)" font-family="Geist Mono" font-size="6" text-anchor="middle">CONTROL</text>
+          <text x="416" y="220"  fill="rgba(255,255,255,0.32)" font-family="Geist Mono" font-size="6" text-anchor="middle">YARD</text>
+          <text x="240" y="280.5" fill="rgba(0,240,255,0.6)"  font-family="Geist Mono" font-size="5" text-anchor="middle">ACCESS</text>
+        </svg>
+        <div class="blueprint-label" id="blueprint-label" role="tooltip" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="engine-services" role="list">
+      <div class="engine-service" role="listitem"><div><span class="num">— 01</span> Manned Guarding</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 02</span> Mobile Patrols</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 03</span> Keyholding &amp; Response</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 04</span> Control Room</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 05</span> Specialist Services</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 06</span> Training Services</div><span class="arr" aria-hidden="true">→</span></div>
+    </div>
+    <div class="engine-cta">
+      <button class="btn btn-cyan btn-lg" data-modal="quote">Get a security quote in 60 minutes
+        <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- FM side -->
+  <div class="engine-side engine-light">
+    <span class="engine-eyebrow">02 / Facilities Management</span>
+    <h2 class="engine-title">Integrated FM<br>across every<br><span style="color: var(--cyan-deep)">commercial estate</span>.</h2>
+    <p class="engine-lede">End-to-end facilities management aligned to your business objectives. Reduce operational costs, improve asset performance, and ensure full UK regulatory compliance.</p>
+    <div class="engine-visual">
+      <div class="facilities-photo" aria-label="Facilities management photography">
+        <div class="ph" data-label="Cleaning · BICSc-aligned"     style="background-image: url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Commercial-Cleaning-Services-in-London-What-to-Expect.png')"></div>
+        <div class="ph" data-label="Property · M&amp;E · PPM"     style="background-image: url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Property-Maintenance-Services-in-Glasgow-A-Complete-Guide.png')"></div>
+        <div class="ph" data-label="Integrated · End-to-end"      style="background-image: url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Integrated-Facilities-Management-in-Leeds-Benefits-for-Businesses.png')"></div>
+        <div class="ph" data-label="Waste · Duty of Care"         style="background-image: url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Commercial-Waste-Management-Services-in-London-Best-Practices-1.png')"></div>
+      </div>
+    </div>
+    <div class="engine-services" role="list">
+      <div class="engine-service" role="listitem"><div><span class="num">— 01</span> Commercial Cleaning</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 02</span> Property Maintenance</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 03</span> Waste Management</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 04</span> Washroom Services</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 05</span> Grounds Maintenance</div><span class="arr" aria-hidden="true">→</span></div>
+      <div class="engine-service" role="listitem"><div><span class="num">— 06</span> Consumables Supply</div><span class="arr" aria-hidden="true">→</span></div>
+    </div>
+    <div class="engine-cta">
+      <button class="btn btn-dark btn-lg" data-modal="quote">Get an FM quote in 60 minutes
+        <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- UK COVERAGE MAP -->
+<section id="coverage">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">UK Coverage</span>
+        <h2 class="h1" style="margin-top: 32px">Five regions.<br><span class="cyan">One operating model</span>.</h2>
+      </div>
+      <p class="lead">Click or hover any hub to see local operations data. South Shields HQ runs the company; four Regional Support Centres extend it across the United Kingdom.</p>
+    </div>
+    <div class="regions">
+      <div class="uk-map reveal" id="uk-map" aria-label="Interactive UK map">
+        <svg viewBox="0 0 100 130" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the United Kingdom with TTS FM office locations">
+          <path class="uk-shape" d="M 50 5 Q 40 8 38 18 Q 30 22 32 32 Q 28 38 30 48 Q 25 55 28 66 Q 22 72 28 82 Q 24 92 32 100 Q 38 108 42 118 Q 50 124 58 122 Q 65 118 68 108 Q 72 98 70 88 Q 75 80 72 70 Q 75 60 70 50 Q 72 40 65 32 Q 68 22 60 16 Q 55 8 50 5 Z"/>
+          <g class="uk-pin hq" data-id="south-shields" tabindex="0" role="button" aria-label="South Shields — Head Office">
+            <circle class="uk-pin-ring" cx="56" cy="28" r="2.4"/>
+            <circle class="uk-pin-dot"  cx="56" cy="28" r="2.2"/>
+            <text class="uk-pin-label" x="60" y="29.5">South Shields</text>
+          </g>
+          <g class="uk-pin" data-id="edinburgh" tabindex="0" role="button" aria-label="Edinburgh — Scotland Regional Centre">
+            <circle class="uk-pin-ring" cx="48" cy="18" r="2"/>
+            <circle class="uk-pin-dot"  cx="48" cy="18" r="1.8"/>
+            <text class="uk-pin-label" x="52" y="19.5">Edinburgh</text>
+          </g>
+          <g class="uk-pin" data-id="manchester" tabindex="0" role="button" aria-label="Manchester — North West Regional Centre">
+            <circle class="uk-pin-ring" cx="45" cy="42" r="2"/>
+            <circle class="uk-pin-dot"  cx="45" cy="42" r="1.8"/>
+            <text class="uk-pin-label" x="49" y="43.5">Manchester</text>
+          </g>
+          <g class="uk-pin" data-id="birmingham" tabindex="0" role="button" aria-label="Birmingham — Midlands Regional Centre">
+            <circle class="uk-pin-ring" cx="50" cy="56" r="2"/>
+            <circle class="uk-pin-dot"  cx="50" cy="56" r="1.8"/>
+            <text class="uk-pin-label" x="54" y="57.5">Birmingham</text>
+          </g>
+          <g class="uk-pin" data-id="london" tabindex="0" role="button" aria-label="London — South &amp; South East Regional Centre">
+            <circle class="uk-pin-ring" cx="62" cy="72" r="2"/>
+            <circle class="uk-pin-dot"  cx="62" cy="72" r="1.8"/>
+            <text class="uk-pin-label" x="66" y="73.5">London</text>
+          </g>
+        </svg>
+      </div>
+      <div class="region-panel reveal reveal-d1" id="region-panel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS / RECRUIT -->
+<section id="recruit" class="recruit">
+  <div class="container">
+    <div class="recruit-grid">
+      <div class="reveal">
+        <span class="eyebrow">Careers · Front-line operators</span>
+        <h2 class="h1" style="margin-top: 32px">Built on <span class="cyan">trust</span>.<br>Driven by elite professionals.</h2>
+        <p class="lead" style="margin-top: 32px; max-width: 44ch">We hire SIA-licensed officers and FM operators across the United Kingdom. Above-sector pay, named regional managers, and a Security Officer Welfare programme cited publicly by clients.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; max-width: 480px">
+          <div>
+            <div class="mono" style="color: var(--ink-faint); margin-bottom: 12px">— Average response</div>
+            <div style="font-family: var(--sans); font-weight: 700; font-size: 36px; letter-spacing: -0.03em">24<span style="color: var(--cyan)">h</span></div>
+          </div>
+          <div>
+            <div class="mono" style="color: var(--ink-faint); margin-bottom: 12px">— Recruitment</div>
+            <div style="font-family: var(--sans); font-weight: 700; font-size: 36px; letter-spacing: -0.03em">No <span style="color: var(--cyan)">CV</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="recruit-card reveal reveal-d1">
+        <div class="recruit-steps" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-label="Application progress">
+          <div class="recruit-step-pip active" data-step="1"></div>
+          <div class="recruit-step-pip"        data-step="2"></div>
+          <div class="recruit-step-pip"        data-step="3"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="recruit-step" data-step="1">
+          <div class="recruit-step-label">Step 01 of 03</div>
+          <h3 class="recruit-question">Do you hold a valid SIA Licence?</h3>
+          <div class="recruit-choice-row">
+            <button class="recruit-choice" data-next="2"><span>Yes — I have a valid SIA</span><span class="num">— 01</span></button>
+            <button class="recruit-choice" data-next="2"><span>No — but I'm interested</span><span class="num">— 02</span></button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="recruit-step" data-step="2" style="display: none">
+          <div class="recruit-step-label">Step 02 of 03</div>
+          <h3 class="recruit-question">Which region works best for you?</h3>
+          <div class="recruit-choice-row">
+            <button class="recruit-choice" data-next="3"><span>Newcastle · South Shields</span><span class="num">— HQ</span></button>
+            <button class="recruit-choice" data-next="3"><span>Edinburgh · Scotland</span>     <span class="num">— 02</span></button>
+            <button class="recruit-choice" data-next="3"><span>Manchester · North West</span>  <span class="num">— 03</span></button>
+            <button class="recruit-choice" data-next="3"><span>Birmingham · Midlands</span>    <span class="num">— 04</span></button>
+            <button class="recruit-choice" data-next="3"><span>London · South East</span>      <span class="num">— 05</span></button>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="recruit-step" data-step="3" style="display: none">
+          <div class="recruit-step-label">Step 03 of 03</div>
+          <h3 class="recruit-question">Drop your number — we'll text you within 24 hours.</h3>
+          <input class="recruit-input" type="tel" placeholder="0700 000 0000" id="recruit-phone" autocomplete="tel">
+          <div class="recruit-actions">
+            <button class="btn btn-line" data-back="2">← Back</button>
+            <button class="btn btn-cyan" data-next="4">Text me
+              <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Step 4: confirmation -->
+        <div class="recruit-step" data-step="4" style="display: none">
+          <div class="recruit-final">
+            <div style="display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgba(0,240,255,0.16); border: 1px solid var(--cyan); margin-bottom: 24px" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--cyan)"><path d="M5 11.5 9.5 16 17 7"/></svg>
+            </div>
+            <h4>You're in. We'll be in touch within 24 hours.</h4>
+            <p>A local operations manager will follow up by text. No CV required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Client voices</span>
+        <h2 class="h1" style="margin-top: 32px">Trusted by businesses<br><span class="cyan">across the UK</span>.</h2>
+      </div>
+      <p class="lead">Verified testimonials from the clients we serve every day. From major UK ports to NHS estates.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-quote">"TTS FM deliver a first class Security service across our multiple assignments. Their Security Office Welfare programme is excellent and their local Operations Manager Team always delivers every time and on time."</p>
+        <div class="testi-meta">
+          <div>
+            <div class="testi-name">Janice McGinnes</div>
+            <div class="testi-role">Security Manager</div>
+          </div>
+          <div class="testi-logo">Port of Tyne</div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d1">
+        <p class="testi-quote">"TTS FM supply physical manned guarding and fire watch foot patrols across our NHS estate. They are 100% reliable and support our Security officers assigned very well."</p>
+        <div class="testi-meta">
+          <div>
+            <div class="testi-name">Ian Hood</div>
+            <div class="testi-role">Facility Manager</div>
+          </div>
+          <div class="testi-logo">NHS Trust</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<section class="authority" aria-label="Accreditations and partners">
+  <div class="container">
+    <div class="authority-grid">
+      <div>
+        <span class="eyebrow">Accreditations</span>
+        <div style="font-family: var(--sans); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; margin-top: 16px">Verified by industry bodies.</div>
+      </div>
+      <div class="authority-logos">
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="ACS Pacesetters accreditation">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol-300x212.jpg" alt="ACS Pacesetters" loading="lazy">
+        </a>
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="WebEye partner">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize-150x150.jpg" alt="WebEye" loading="lazy">
+        </a>
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="Parim partner">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize-150x150.jpg" alt="Parim" loading="lazy">
+        </a>
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="ReSLink partner">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize-150x150.jpg" alt="ReSLink" loading="lazy">
+        </a>
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="Combat Stress charity partner">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2023/09/Combat-stress.png" alt="Combat Stress" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="paper">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start">
+      <div class="reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2 class="h1" style="margin-top: 32px">Tell us about<br>your <span style="color: var(--cyan-deep)">estate</span>.</h2>
+        <p class="lead" style="margin-top: 32px">A senior operator responds from a regional office — not a contact centre. Briefs are answered within 48 hours.</p>
+        <div style="display: grid; gap: 32px; margin-top: 56px">
+          <div>
+            <div class="mono" style="color: var(--dark-faint); margin-bottom: 8px">— Head Office</div>
+            <div style="font-weight: 600; font-size: 18px">South Shields · Newcastle</div>
+          </div>
+          <div>
+            <div class="mono" style="color: var(--dark-faint); margin-bottom: 8px">— Online</div>
+            <div style="font-weight: 600; font-size: 18px">
+              <a href="https://ttsfm.co.uk/contact-us" target="_blank" rel="noreferrer noopener" style="color: var(--cyan-deep)">ttsfm.co.uk/contact-us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form id="contact-form" class="reveal reveal-d1" novalidate aria-label="Contact form">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+          <input class="recruit-input" type="text"   placeholder="Full name *"    id="cf-name"     required autocomplete="name"         style="background: var(--white); color: var(--dark-ink); border-color: var(--line-paper-strong)">
+          <input class="recruit-input" type="text"   placeholder="Company *"      id="cf-company"  required autocomplete="organization"  style="background: var(--white); color: var(--dark-ink); border-color: var(--line-paper-strong)">
+          <input class="recruit-input" type="email"  placeholder="Work email *"   id="cf-email"    required autocomplete="email"         style="background: var(--white); color: var(--dark-ink); border-color: var(--line-paper-strong); grid-column: span 2">
+          <input class="recruit-input" type="text"   placeholder="Postcode"       id="cf-postcode"          autocomplete="postal-code"   style="background: var(--white); color: var(--dark-ink); border-color: var(--line-paper-strong); grid-column: span 2">
+          <textarea class="recruit-input" placeholder="Tell us about your estate" rows="4" style="background: var(--white); color: var(--dark-ink); border-color: var(--line-paper-strong); grid-column: span 2; resize: vertical; min-height: 120px"></textarea>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; flex-wrap: wrap; gap: 16px">
+          <p class="mono" style="color: var(--dark-faint); margin: 0; max-width: 32ch">Senior operator response · within 48 hours</p>
+          <button type="submit" class="btn btn-dark btn-lg">Send brief
+            <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM" loading="lazy">
+        <p>UK's leading SIA Approved Integrated Risk Based Security Solutions and Facilities Contractor. Local, regional and nationwide coverage from our South Shields headquarters.</p>
+        <button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote
+          <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
+      </div>
+      <div>
+        <div class="col-title">Services</div>
+        <ul>
+          <li><a href="#engine">Security Services</a></li>
+          <li><a href="#engine">Facilities Management</a></li>
+          <li><a href="#engine">Property Services</a></li>
+          <li><a href="#engine">Training Services</a></li>
+          <li><a href="#engine">Cleaning &amp; Washroom</a></li>
+          <li><a href="#engine">Specialist · Waste</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-title">Company</div>
+        <ul>
+          <li><a href="https://ttsfm.co.uk/about-us"       target="_blank" rel="noreferrer noopener">About Us</a></li>
+          <li><a href="https://ttsfm.co.uk/leadership-team" target="_blank" rel="noreferrer noopener">Leadership Team</a></li>
+          <li><a href="https://ttsfm.co.uk/case-studies"   target="_blank" rel="noreferrer noopener">Case Studies</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#recruit">Careers</a></li>
+          <li><a href="https://ttsfm.co.uk/news"           target="_blank" rel="noreferrer noopener">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-title">Offices</div>
+        <ul>
+          <li><span style="color: var(--ink); font-weight: 600">South Shields</span><br><span class="mono" style="color: var(--ink-faint); display: inline-block; margin-top: 4px">— HQ Newcastle</span></li>
+          <li>Edinburgh</li>
+          <li>Manchester</li>
+          <li>Birmingham</li>
+          <li>London</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 TTS FM · All Rights Reserved</div>
+      <nav class="footer-bottom-links" aria-label="Legal links">
+        <a href="https://ttsfm.co.uk/privacy-policy/"      target="_blank" rel="noreferrer noopener">Privacy</a>
+        <a href="https://ttsfm.co.uk/cookie-policy/"       target="_blank" rel="noreferrer noopener">Cookies</a>
+        <a href="https://ttsfm.co.uk/terms-of-use/"        target="_blank" rel="noreferrer noopener">Terms</a>
+        <a href="https://ttsfm.co.uk/accessibility-policy/" target="_blank" rel="noreferrer noopener">Accessibility</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- QUOTE MODAL -->
+<div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-head">
+    <div>
+      <span class="eyebrow" style="margin-bottom: 16px; display: inline-flex">Quick quote · 60 minutes</span>
+      <h3 id="modal-title" style="font-family: var(--sans); font-weight: 700; font-size: 28px; letter-spacing: -0.025em; margin: 16px 0 8px">Three fields. We'll do the rest.</h3>
+      <p style="color: var(--ink-soft); font-size: 14px; margin: 0; max-width: 36ch">A senior operator quotes within 60 minutes during UK business hours.</p>
+    </div>
+    <button class="modal-close" id="modal-close" aria-label="Close quote modal">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+    </button>
+  </div>
+  <form id="quote-form" style="display: grid; gap: 14px" novalidate>
+    <input class="recruit-input" type="text"  placeholder="Your name"                    id="q-name"     required autocomplete="name">
+    <input class="recruit-input" type="email" placeholder="Company email"                id="q-email"    required autocomplete="email">
+    <input class="recruit-input" type="text"  placeholder="Site postcode (e.g. NE33 5SE)" id="q-postcode" required autocomplete="postal-code">
+    <button type="submit" class="btn btn-cyan btn-lg" style="margin-top: 8px; justify-content: center">Get my quote in 60 minutes
+      <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </button>
+  </form>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4"/></svg>
+  <span id="toast-msg">Submitted.</span>
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  // NAV scroll-spy + sticky behaviour
+  const nav = document.getElementById('nav');
+  const navLinks = nav.querySelectorAll('.nav-link');
+  const sections = ['engine','coverage','recruit','testimonials','contact']
+    .map(id => document.getElementById(id)).filter(Boolean);
+  let lastActive = '';
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    const y = window.scrollY + 220;
+    let active = '';
+    for (const s of sections) if (s.offsetTop <= y) active = s.id;
+    if (active !== lastActive) {
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + active));
+      lastActive = active;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Scroll-reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Mobile drawer
+  const drawer = document.getElementById('drawer');
+  const dOverlay = document.getElementById('drawer-overlay');
+  const burger = document.getElementById('burger');
+  const openDrawer = () => {
+    drawer.classList.add('open');
+    dOverlay.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    dOverlay.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeDrawer = () => {
+    drawer.classList.remove('open');
+    dOverlay.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    dOverlay.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+  burger?.addEventListener('click', openDrawer);
+  document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);
+  dOverlay?.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Hero toggle (I need services / I want to join)
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      const target = document.querySelector(btn.dataset.target);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Blueprint hover tooltips
+  const bp = document.getElementById('blueprint');
+  const bpLabel = document.getElementById('blueprint-label');
+  if (bp && bpLabel) {
+    bp.querySelectorAll('.blueprint-zone').forEach(z => {
+      z.addEventListener('mouseenter', () => {
+        bpLabel.textContent = z.dataset.label;
+        const r  = z.getBoundingClientRect();
+        const pr = bp.getBoundingClientRect();
+        bpLabel.style.left      = (r.left - pr.left + r.width / 2) + 'px';
+        bpLabel.style.top       = (r.top  - pr.top - 8) + 'px';
+        bpLabel.style.transform = 'translate(-50%, -100%)';
+        bpLabel.classList.add('show');
+      });
+      z.addEventListener('mouseleave', () => bpLabel.classList.remove('show'));
+    });
+  }
+
+  // UK map — region data
+  const REGIONS = {
+    'south-shields': {
+      name: 'South Shields', sub: 'Head Office · Newcastle · North East', hq: true,
+      stats: [['HQ','Operating centre'],['SIA','Approved'],['ISO 9001','Quality'],['24/7','Support']],
+      clients: ['Port of Tyne','NHS Trust','Combat Stress']
+    },
+    'edinburgh': {
+      name: 'Edinburgh', sub: 'Scotland Regional Support Centre',
+      stats: [['Scotland','Coverage'],['Multi-site','Contracts'],['ISO 45001','Health & Safety'],['24/7','Support']],
+      clients: ['Commercial estates','Industrial sites']
+    },
+    'manchester': {
+      name: 'Manchester', sub: 'North West Regional Support Centre',
+      stats: [['North West','Coverage'],['Multi-site','Contracts'],['BS 7858','Vetting'],['24/7','Support']],
+      clients: ['Manufacturing','Logistics','Retail']
+    },
+    'birmingham': {
+      name: 'Birmingham', sub: 'Midlands Regional Support Centre',
+      stats: [['Midlands','Coverage'],['Multi-site','Contracts'],['SIA','Approved'],['24/7','Support']],
+      clients: ['Corporate HQs','Industrial parks']
+    },
+    'london': {
+      name: 'London', sub: 'South &amp; South East Regional Support Centre',
+      stats: [['South &amp; SE','Coverage'],['Multi-site','Contracts'],['SIA','Approved'],['24/7','Support']],
+      clients: ['City HQs','Public sector','Hospitality']
+    },
+  };
+
+  const panel = document.getElementById('region-panel');
+  const renderRegion = (id) => {
+    const r = REGIONS[id];
+    if (!r || !panel) return;
+    panel.innerHTML = `
+      <div class="region-panel-eyebrow">${r.hq ? '● Head Office · Live' : '● Regional Centre · Live'}</div>
+      <h3>${r.name}</h3>
+      <div class="sub">${r.sub}</div>
+      <div class="region-stats">
+        ${r.stats.map(([n, l]) => `
+          <div class="region-stat">
+            <div class="region-stat-num">${/^(SIA|ISO|BS|24)/.test(n) ? '<span class="cyan">' + n + '</span>' : n}</div>
+            <div class="region-stat-label">${l}</div>
+          </div>`).join('')}
+      </div>
+      <div class="region-clients">
+        <div class="lbl">— Sample client mix</div>
+        ${r.clients.map(c => `<span class="chip">${c}</span>`).join('')}
+      </div>
+    `;
+    document.querySelectorAll('.uk-pin').forEach(p => p.classList.toggle('active', p.dataset.id === id));
+  };
+
+  document.querySelectorAll('.uk-pin').forEach(p => {
+    p.addEventListener('click',      () => renderRegion(p.dataset.id));
+    p.addEventListener('mouseenter', () => renderRegion(p.dataset.id));
+    p.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); renderRegion(p.dataset.id); } });
+  });
+  renderRegion('south-shields');
+
+  // Recruit widget step machine
+  const progressbar = document.querySelector('[role="progressbar"]');
+  const showStep = (n) => {
+    document.querySelectorAll('.recruit-step').forEach(s => {
+      s.style.display = s.dataset.step === String(n) ? '' : 'none';
+    });
+    document.querySelectorAll('.recruit-step-pip').forEach(p => {
+      p.classList.toggle('active', Number(p.dataset.step) <= n);
+    });
+    if (progressbar && n <= 3) progressbar.setAttribute('aria-valuenow', n);
+  };
+  document.querySelectorAll('[data-next]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const n = Number(btn.dataset.next);
+      if (n === 4) {
+        const phone = document.getElementById('recruit-phone')?.value.trim();
+        if (!phone || phone.length < 7) {
+          document.getElementById('recruit-phone')?.focus();
+          return;
+        }
+      }
+      showStep(n);
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(btn => {
+    btn.addEventListener('click', () => showStep(Number(btn.dataset.back)));
+  });
+
+  // Quote modal
+  const modal    = document.getElementById('modal');
+  const mBackdrop = document.getElementById('modal-backdrop');
+  let lastFocus;
+  const openModal = () => {
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    mBackdrop.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('input')?.focus();
+  };
+  const closeModal = () => {
+    modal.classList.remove('open');
+    mBackdrop.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lastFocus?.focus();
+  };
+  document.querySelectorAll('[data-modal="quote"]').forEach(b => b.addEventListener('click', openModal));
+  document.getElementById('modal-close')?.addEventListener('click', closeModal);
+  mBackdrop?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+  // Toast
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toast-msg');
+  const showToast = (msg) => {
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4200);
+  };
+
+  // Form submissions
+  document.getElementById('quote-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name     = document.getElementById('q-name').value.trim();
+    const email    = document.getElementById('q-email').value.trim();
+    const postcode = document.getElementById('q-postcode').value.trim();
+    if (!name || !email || !postcode) return;
+    closeModal();
+    e.target.reset();
+    showToast('Quote requested — response within 60 minutes during UK business hours.');
+  });
+
+  document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name    = document.getElementById('cf-name').value.trim();
+    const company = document.getElementById('cf-company').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    if (!name || !company || !email) return;
+    e.target.reset();
+    showToast('Brief sent — a senior operator will respond within 48 hours.');
+  });
+})();
+</script>
+</body>
+</html>

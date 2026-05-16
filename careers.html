@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — TTS FM · Join Our Team</title>
+  <meta name="description" content="Join TTS FM — SIA-licensed security officers and FM operators across five UK regions. No CV required. We respond within 24 hours. Named operations manager from day one.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://rsms.me/"><link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── CAREERS PAGE LOCALS ──────────────────────────────── */
+
+    /* Service rows — alternating image/text layout */
+    .role-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: clamp(64px, 8vw, 112px) 0;
+      border-bottom: 1px solid var(--line-paper);
+    }
+    .role-row:last-child {
+      border-bottom: none;
+    }
+    .role-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+    .role-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .role-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--dark-soft);
+      margin: 0;
+    }
+
+    /* Why TTS — pillars section */
+    .why-section {
+      background: var(--slate);
+    }
+
+    /* Pillars card overrides for this section */
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      color: var(--cyan);
+    }
+
+    /* Vacancies placeholder */
+    .vacancy-placeholder {
+      border: 2px dashed rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 64px;
+      text-align: center;
+    }
+    .vacancy-placeholder .mono-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 24px;
+    }
+    .vacancy-placeholder .lead {
+      max-width: 52ch;
+      margin: 0 auto 32px;
+    }
+
+    /* Recruit section with radial gradient */
+    .recruit-section {
+      background: radial-gradient(ellipse at 20% 20%, rgba(0, 240, 255, 0.08), transparent 50%), var(--slate);
+      padding: clamp(80px, 12vw, 160px) 0;
+    }
+    .recruit-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .recruit-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 56px;
+      max-width: 480px;
+    }
+    .recruit-stat-num {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 980px) {
+      .role-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .role-row.reverse .role-img {
+        order: -1;
+      }
+      .recruit-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .recruit-stats {
+        max-width: 100%;
+      }
+      .vacancy-placeholder {
+        padding: 40px 24px;
+      }
+    }
+    @media (max-width: 640px) {
+      .recruit-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .role-img {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"></a>
+      <div class="nav-links">
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="careers.html" class="nav-link active">Careers</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="index.html" class="btn btn-line btn-sm">Home</a>
+        <button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1h12M1 6h12M1 11h12"/></svg>Menu</button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE DRAWER ─────────────────────────────────────── -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"><button id="drawer-close" style="padding:8px;color:var(--ink)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l12 12M14 2L2 14"/></svg></button></div>
+    <a href="services.html" class="drawer-link">Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    <a href="about.html" class="drawer-link">About <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    <a href="careers.html" class="drawer-link">Careers <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    <a href="contact.html" class="drawer-link">Contact <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    <button class="btn btn-cyan" style="margin-top:32px" data-modal="quote">Request a quote</button>
+  </aside>
+
+  <main>
+
+    <!-- ── 1. PAGE HERO ──────────────────────────────────────── -->
+    <section class="page-hero" aria-labelledby="hero-heading">
+      <div class="page-hero-bg">
+        <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-2-768x768.png" alt="TTS FM security professionals on duty">
+      </div>
+      <div class="page-hero-content">
+        <div class="container">
+          <span class="eyebrow reveal">Join TTS FM</span>
+          <h1 class="h1 reveal reveal-d1" id="hero-heading" style="margin-top: 24px; max-width: 20ch">
+            Elite professionals.<br><span class="cyan">Extraordinary work</span>.
+          </h1>
+          <p class="lead reveal reveal-d2" style="margin-top: 28px; max-width: 52ch">
+            We hire SIA-licensed security officers and FM operators across five regions. No CV required — we respond within 24 hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. WHY JOIN US ─────────────────────────────────────── -->
+    <section class="why-section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Why TTS FM</span>
+            <h2 class="h2" id="why-heading" style="margin-top: 24px">
+              Built on people.<br><span class="cyan">Driven by welfare</span>.
+            </h2>
+          </div>
+          <p class="lead">
+            Our Security Officer Welfare programme has been publicly cited by clients including the Port of Tyne and NHS Trust.
+          </p>
+        </div>
+
+        <div class="grid-3" role="list" aria-label="Why join TTS FM">
+
+          <article class="card reveal" role="listitem">
+            <div class="card-accent" aria-hidden="true"></div>
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="11" cy="8" r="3.5"/>
+                <path d="M4 19c0-3.866 3.134-7 7-7h0c3.866 0 7 3.134 7 7"/>
+                <circle cx="17" cy="7" r="2.5" stroke-dasharray="2 1"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Named Operations Manager</h3>
+            <p class="card-body">Every officer has a named Local Operations Manager. Not a call centre — a real person who knows your site, your shifts, and your team.</p>
+          </article>
+
+          <article class="card reveal reveal-d1" role="listitem">
+            <div class="card-accent" aria-hidden="true"></div>
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M11 2L4 6v6c0 4.5 3 8.74 7 10 4-1.26 7-5.5 7-10V6l-7-4z"/>
+                <path d="M8 11l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Welfare Programme</h3>
+            <p class="card-body">Our Security Officer Welfare programme supports officers in the field. Cited publicly by clients as a differentiator — from NHS Trusts to major UK ports.</p>
+          </article>
+
+          <article class="card reveal reveal-d2" role="listitem">
+            <div class="card-accent" aria-hidden="true"></div>
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="3" y="5" width="16" height="14" rx="2"/>
+                <path d="M3 10h16M8 5V3M14 5V3"/>
+              </svg>
+            </div>
+            <h3 class="card-title">No CV Required</h3>
+            <p class="card-body">We hire on capability and attitude. Drop your number — our team texts back within 24 hours. SIA licence welcome but not always a barrier to getting started.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. THREE SERVICE AREAS ─────────────────────────────── -->
+    <section class="paper" aria-labelledby="roles-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Roles we recruit</span>
+            <h2 class="h2 reveal reveal-d1" id="roles-heading" style="margin-top: 24px">
+              Where you could<br><span style="color: var(--cyan-deep)">make your mark</span>.
+            </h2>
+          </div>
+          <p class="lead reveal reveal-d2">
+            Three service areas hiring across five regional centres. From frontline security to facilities operations and management roles.
+          </p>
+        </div>
+
+        <!-- Row 1: Security Officers (image left) -->
+        <div class="role-row reveal">
+          <img
+            class="role-img"
+            src="https://ttsfm.co.uk/wp-content/uploads/2026/04/Top-Security-Company-in-Newcastle-What-Businesses-Need-to-Know.png"
+            alt="TTS FM security officers on assignment"
+            loading="lazy"
+          >
+          <div class="role-text">
+            <span class="eyebrow" style="color: var(--cyan-deep)">Security · SIA Licensed</span>
+            <h3 class="h3" style="color: var(--dark-ink)">Manned guarding, mobile patrols, keyholding and control room.</h3>
+            <p class="role-body">We recruit SIA Door Supervisors and Security Guards for commercial, industrial, NHS and port assignments across the UK. Named manager support from day one — you'll always have a point of contact who knows your site.</p>
+            <a href="#register" class="btn btn-dark btn-sm" style="width: fit-content">Register interest <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Row 2: Facilities Operators (image right) -->
+        <div class="role-row reveal">
+          <div class="role-text">
+            <span class="eyebrow" style="color: var(--cyan-deep)">Facilities Management</span>
+            <h3 class="h3" style="color: var(--dark-ink)">Cleaning, maintenance, grounds and washroom services.</h3>
+            <p class="role-body">Hard FM and Soft FM operators across all disciplines. BICSc-aligned cleaning, M&amp;E engineering, grounds maintenance, and washroom services. Roles across all five of our regional centres with structured local management.</p>
+            <a href="#register" class="btn btn-dark btn-sm" style="width: fit-content">Register interest <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          </div>
+          <img
+            class="role-img"
+            src="https://ttsfm.co.uk/wp-content/uploads/2026/04/Integrated-Facilities-Management-in-Leeds-Benefits-for-Businesses.png"
+            alt="TTS FM facilities management operations"
+            loading="lazy"
+          >
+        </div>
+
+        <!-- Row 3: Management & Support (image left) -->
+        <div class="role-row reveal">
+          <img
+            class="role-img"
+            src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-6-768x768.png"
+            alt="TTS FM operations and management team"
+            loading="lazy"
+          >
+          <div class="role-text">
+            <span class="eyebrow" style="color: var(--cyan-deep)">Operations &amp; Management</span>
+            <h3 class="h3" style="color: var(--dark-ink)">Regional operations, contract management and client services.</h3>
+            <p class="role-body">Operations Managers, Account Managers, and support roles based across our five regional centres. South Shields HQ and regional offices in Edinburgh, Manchester, Birmingham and London. Client-facing and operational management positions available.</p>
+            <a href="#register" class="btn btn-dark btn-sm" style="width: fit-content">Register interest <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 4. VACANCIES ───────────────────────────────────────── -->
+    <section style="background: var(--slate);" aria-labelledby="vacancies-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Live vacancies</span>
+            <h2 class="h2" id="vacancies-heading" style="margin-top: 24px">
+              Current opportunities<br><span class="cyan">to be supplied</span>.
+            </h2>
+          </div>
+          <p class="lead">
+            Specific job listings will be added here as they are confirmed. In the meantime, register your interest below — we respond within 24 hours.
+          </p>
+        </div>
+
+        <div class="vacancy-placeholder reveal">
+          <div class="mono-label">— Live vacancies · To be supplied by TTS FM</div>
+          <p class="lead">
+            Specific job listings will be published here. In the meantime, register your interest using the form below or contact us directly via ttsfm.co.uk/contact-us
+          </p>
+          <a href="contact.html" class="btn btn-line">Contact us <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. RECRUIT WIDGET ──────────────────────────────────── -->
+    <section class="recruit-section" id="register" aria-labelledby="register-heading">
+      <div class="container">
+        <div class="recruit-grid">
+
+          <!-- Left: copy -->
+          <div class="reveal">
+            <span class="eyebrow">Register interest</span>
+            <h2 class="h2" id="register-heading" style="margin-top: 32px">
+              No CV.<br>Just your number.
+            </h2>
+            <p class="lead" style="margin-top: 32px; max-width: 44ch">
+              We hire on capability. Drop your number and a local operations manager from the relevant regional centre will text you within 24 hours.
+            </p>
+            <div class="recruit-stats">
+              <div>
+                <div class="mono" style="color: var(--ink-faint); margin-bottom: 12px">— Response time</div>
+                <div class="recruit-stat-num">24<span style="color: var(--cyan)">h</span></div>
+              </div>
+              <div>
+                <div class="mono" style="color: var(--ink-faint); margin-bottom: 12px">— Recruitment</div>
+                <div class="recruit-stat-num">No <span style="color: var(--cyan)">CV</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: recruit widget -->
+          <div class="recruit-card reveal reveal-d1">
+            <div class="recruit-steps" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-label="Application progress">
+              <div class="recruit-step-pip active" data-step="1"></div>
+              <div class="recruit-step-pip" data-step="2"></div>
+              <div class="recruit-step-pip" data-step="3"></div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="recruit-step" data-step="1">
+              <div class="recruit-step-label">Step 01 of 03</div>
+              <h3 class="recruit-question">Do you hold a valid SIA Licence?</h3>
+              <div class="recruit-choice-row">
+                <button class="recruit-choice" data-next="2"><span>Yes — I have a valid SIA</span><span class="num">— 01</span></button>
+                <button class="recruit-choice" data-next="2"><span>No — but I'm interested</span><span class="num">— 02</span></button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="recruit-step" data-step="2" style="display:none">
+              <div class="recruit-step-label">Step 02 of 03</div>
+              <h3 class="recruit-question">Which region works best for you?</h3>
+              <div class="recruit-choice-row">
+                <button class="recruit-choice" data-next="3"><span>Newcastle · South Shields</span><span class="num">— HQ</span></button>
+                <button class="recruit-choice" data-next="3"><span>Edinburgh · Scotland</span><span class="num">— 02</span></button>
+                <button class="recruit-choice" data-next="3"><span>Manchester · North West</span><span class="num">— 03</span></button>
+                <button class="recruit-choice" data-next="3"><span>Birmingham · Midlands</span><span class="num">— 04</span></button>
+                <button class="recruit-choice" data-next="3"><span>London · South East</span><span class="num">— 05</span></button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="recruit-step" data-step="3" style="display:none">
+              <div class="recruit-step-label">Step 03 of 03</div>
+              <h3 class="recruit-question">Drop your number — we'll text you within 24 hours.</h3>
+              <input class="recruit-input" type="tel" placeholder="0700 000 0000" id="recruit-phone" autocomplete="tel">
+              <div class="recruit-actions">
+                <button class="btn btn-line" data-back="2">&#8592; Back</button>
+                <button class="btn btn-cyan" data-next="4">Text me <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+              </div>
+            </div>
+
+            <!-- Step 4: confirmation -->
+            <div class="recruit-step" data-step="4" style="display:none">
+              <div class="recruit-final">
+                <div style="display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:rgba(0,240,255,0.16);border:1px solid var(--cyan);margin-bottom:24px" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--cyan)"><path d="M5 11.5 9.5 16 17 7"/></svg>
+                </div>
+                <h4>You're in. We'll be in touch within 24 hours.</h4>
+                <p>A local operations manager will follow up by text. No CV required.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. ACCREDITATIONS BAND ─────────────────────────────── -->
+    <section class="authority" aria-label="Accreditations and partners">
+      <div class="container">
+        <div class="authority-grid reveal">
+          <div>
+            <span class="eyebrow">Accreditations</span>
+            <div style="font-family: var(--sans); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; margin-top: 16px">Verified by industry bodies.</div>
+          </div>
+          <div class="authority-logos">
+            <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="ACS Pacesetters accreditation">
+              <img src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol-300x212.jpg" alt="ACS Pacesetters" loading="lazy">
+            </a>
+            <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="WebEye partner">
+              <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize-150x150.jpg" alt="WebEye" loading="lazy">
+            </a>
+            <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="Parim partner">
+              <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize-150x150.jpg" alt="Parim" loading="lazy">
+            </a>
+            <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="ReSLink partner">
+              <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize-150x150.jpg" alt="ReSLink" loading="lazy">
+            </a>
+            <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="Combat Stress charity partner">
+              <img src="https://ttsfm.co.uk/wp-content/uploads/2023/09/Combat-stress.png" alt="Combat Stress" loading="lazy">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><img class="footer-logo" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"><p>UK's leading SIA Approved Integrated Risk Based Security Solutions and Facilities Contractor.</p><button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button></div>
+        <div><div class="col-title">Services</div><ul><li><a href="services.html">Security Services</a></li><li><a href="services.html">Facilities Management</a></li><li><a href="services.html">Property Services</a></li><li><a href="services.html">Training Services</a></li></ul></div>
+        <div><div class="col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="https://ttsfm.co.uk/news" target="_blank" rel="noreferrer">News</a></li></ul></div>
+        <div><div class="col-title">Offices</div><ul><li><span style="color:var(--ink);font-weight:600">South Shields</span></li><li>Edinburgh</li><li>Manchester</li><li>Birmingham</li><li>London</li></ul></div>
+      </div>
+      <div class="footer-bottom"><div>© 2026 TTS FM · All Rights Reserved</div><nav class="footer-bottom-links"><a href="https://ttsfm.co.uk/privacy-policy/" target="_blank" rel="noreferrer">Privacy</a><a href="https://ttsfm.co.uk/cookie-policy/" target="_blank" rel="noreferrer">Cookies</a><a href="https://ttsfm.co.uk/terms-of-use/" target="_blank" rel="noreferrer">Terms</a></nav></div>
+    </div>
+  </footer>
+
+  <!-- ── MODAL ──────────────────────────────────────────────── -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-head"><div><span class="eyebrow" style="margin-bottom:16px;display:inline-flex">Quick quote · 60 minutes</span><h3 id="modal-title" style="font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-0.025em;margin:16px 0 8px">Three fields. We'll do the rest.</h3><p style="color:var(--ink-soft);font-size:14px;margin:0">A senior operator quotes within 60 minutes.</p></div><button class="modal-close" id="modal-close" aria-label="Close"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l12 12M14 2L2 14"/></svg></button></div>
+    <form id="quote-form" style="display:grid;gap:14px" novalidate><input class="recruit-input" type="text" placeholder="Your name" id="q-name" required><input class="recruit-input" type="email" placeholder="Company email" id="q-email" required><input class="recruit-input" type="text" placeholder="Site postcode" id="q-postcode" required><button type="submit" class="btn btn-cyan btn-lg" style="margin-top:8px;justify-content:center">Get my quote in 60 minutes <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button></form>
+  </div>
+
+  <!-- ── TOAST ──────────────────────────────────────────────── -->
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg><span id="toast-msg"></span></div>
+
+  <script>
+  (() => {
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Mobile drawer
+    const drawer = document.getElementById('drawer');
+    const dOverlay = document.getElementById('drawer-overlay');
+    const burger = document.getElementById('burger');
+    const openDrawer = () => {
+      drawer.classList.add('open'); dOverlay.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      burger?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeDrawer = () => {
+      drawer.classList.remove('open'); dOverlay.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    burger?.addEventListener('click', openDrawer);
+    document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);
+    dOverlay?.addEventListener('click', closeDrawer);
+    drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+    // Quote modal
+    const modal = document.getElementById('modal');
+    const mBackdrop = document.getElementById('modal-backdrop');
+    let lastFocus;
+    const openModal = () => {
+      lastFocus = document.activeElement;
+      modal.classList.add('open'); mBackdrop.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('input')?.focus();
+    };
+    const closeModal = () => {
+      modal.classList.remove('open'); mBackdrop.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lastFocus?.focus();
+    };
+    document.querySelectorAll('[data-modal="quote"]').forEach(b => b.addEventListener('click', openModal));
+    document.getElementById('modal-close')?.addEventListener('click', closeModal);
+    mBackdrop?.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal?.classList.contains('open')) closeModal(); });
+
+    // Toast
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const showToast = msg => {
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4200);
+    };
+
+    // Quote form
+    document.getElementById('quote-form')?.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!document.getElementById('q-name').value || !document.getElementById('q-email').value || !document.getElementById('q-postcode').value) return;
+      closeModal(); e.target.reset();
+      showToast('Quote requested — response within 60 minutes.');
+    });
+
+    // Recruit widget step machine
+    const progressbar = document.querySelector('[role="progressbar"]');
+    const showStep = n => {
+      document.querySelectorAll('.recruit-step').forEach(s => {
+        s.style.display = s.dataset.step === String(n) ? '' : 'none';
+      });
+      document.querySelectorAll('.recruit-step-pip').forEach(p => {
+        p.classList.toggle('active', Number(p.dataset.step) <= n);
+      });
+      if (progressbar && n <= 3) progressbar.setAttribute('aria-valuenow', n);
+    };
+    document.querySelectorAll('[data-next]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const n = Number(btn.dataset.next);
+        if (n === 4) {
+          const phone = document.getElementById('recruit-phone')?.value.trim();
+          if (!phone || phone.length < 7) { document.getElementById('recruit-phone')?.focus(); return; }
+        }
+        showStep(n);
+      });
+    });
+    document.querySelectorAll('[data-back]').forEach(btn => btn.addEventListener('click', () => showStep(Number(btn.dataset.back))));
+  })();
+  </script>
+
+</body>
+</html>

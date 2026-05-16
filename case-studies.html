@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0F19">
+<meta name="description" content="TTS FM case studies — real security and facilities management outcomes at UK ports, NHS estates, and commercial properties across five regions.">
+<title>Case Studies — TTS FM</title>
+
+<link rel="preconnect" href="https://rsms.me/"><link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ── FEATURE CARDS ──────────────────────────────────────── */
+.feature-card {
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  color: var(--dark-ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,0.6);
+  transition: transform .4s cubic-bezier(.2,0,.2,1), box-shadow .4s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 56px 120px -30px rgba(0,0,0,0.7);
+}
+.feature-card-body {
+  padding: clamp(40px,5vw,72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.feature-card-num {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--dark-ink);
+  opacity: 0.05;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+.feature-card-img {
+  position: relative;
+  overflow: hidden;
+}
+.feature-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .8s cubic-bezier(.2,0,.2,1);
+}
+.feature-card:hover .feature-card-img img {
+  transform: scale(1.04);
+}
+.feature-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,194,214,0.12) 0%, transparent 60%);
+}
+.feature-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.feature-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cyan-deep);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.feature-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--cyan-deep);
+}
+.feature-client {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(24px, 2.4vw, 36px);
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--dark-ink);
+}
+.feature-quote {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--dark-ink);
+  margin: 0;
+  text-wrap: pretty;
+  quotes: "\201C" "\201D";
+}
+.feature-quote::before {
+  content: open-quote;
+  color: var(--cyan-deep);
+}
+.feature-quote::after {
+  content: close-quote;
+  color: var(--cyan-deep);
+}
+.feature-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-paper-strong);
+}
+.feature-attrib-name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--dark-ink);
+}
+.feature-attrib-role {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dark-faint);
+}
+.feature-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.feature-services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feature-services li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--dark-soft);
+  font-weight: 500;
+}
+.feature-services li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan-deep);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.feature-sector-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dark-faint);
+  background: var(--paper-2);
+  padding: 6px 12px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+/* ── PLACEHOLDER TILES ──────────────────────────────────── */
+.placeholder-tile {
+  border: 2px dashed rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255,255,255,0.015);
+  position: relative;
+  overflow: hidden;
+}
+.placeholder-tile-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0,240,255,0.06);
+  border: 1px solid rgba(0,240,255,0.14);
+  display: grid;
+  place-items: center;
+}
+.placeholder-tile-icon svg {
+  color: var(--cyan);
+  opacity: 0.7;
+}
+.placeholder-tile-title {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.016em;
+  color: var(--ink);
+  margin: 0;
+}
+.placeholder-tile-sector {
+  display: inline-flex;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0,240,255,0.07);
+  border: 1px solid rgba(0,240,255,0.14);
+  padding: 5px 10px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+.placeholder-tile-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── CTA SECTION ────────────────────────────────────────── */
+.cta-section {
+  background: var(--slate-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .feature-card {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .feature-card-img {
+    height: 320px;
+    order: -1;
+  }
+  .feature-card-num {
+    font-size: 80px;
+  }
+}
+@media (max-width: 640px) {
+  .feature-card-body {
+    padding: 36px 28px;
+  }
+  .feature-card-img {
+    height: 240px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"></a>
+    <div class="nav-links">
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="case-studies.html" class="nav-link active">Case Studies</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html" class="btn btn-line btn-sm">Home</a>
+      <button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1h12M1 6h12M1 11h12"/></svg>Menu</button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"><button id="drawer-close" style="padding:8px;color:var(--ink)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l12 12M14 2L2 14"/></svg></button></div>
+  <a href="services.html" class="drawer-link">Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="about.html" class="drawer-link">About <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="careers.html" class="drawer-link">Careers <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="contact.html" class="drawer-link">Contact <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <button class="btn btn-cyan" style="margin-top:32px" data-modal="quote">Request a quote</button>
+</aside>
+
+<!-- 1. PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-7-768x768.png" alt="TTS FM operations">
+  </div>
+  <div class="page-hero-content">
+    <div class="container">
+      <span class="eyebrow reveal">Case studies</span>
+      <h1 class="h1 reveal reveal-d1" style="margin-top:24px;max-width:18ch">Trusted by the organisations<br>that <span class="cyan">can't afford failure</span>.</h1>
+      <p class="lead reveal reveal-d2" style="margin-top:28px;max-width:54ch">Real outcomes from real clients. Security and FM delivered at major UK ports, NHS estates, and commercial properties across five regions.</p>
+    </div>
+  </div>
+</header>
+
+<!-- 2. FEATURED CASE STUDIES -->
+<section style="background:var(--slate);padding:clamp(80px,10vw,160px) 0;">
+  <div class="container">
+
+    <div class="section-head reveal" style="margin-bottom:72px;">
+      <div>
+        <span class="eyebrow">Featured clients</span>
+        <h2 class="h2" style="margin-top:20px">What our clients say.</h2>
+      </div>
+      <p class="lead">Every engagement is underpinned by a named operations team, rigorous SIA-approved standards, and a culture of accountability that our clients notice from day one.</p>
+    </div>
+
+    <!-- Card 01 — Port of Tyne -->
+    <div class="feature-card reveal" style="margin-bottom:32px;">
+      <div class="feature-card-body">
+        <div class="feature-card-num" aria-hidden="true">01</div>
+        <div class="feature-card-top">
+          <span class="feature-eyebrow">Port Security · Multi-site</span>
+          <h3 class="feature-client">Port of Tyne</h3>
+          <span class="feature-sector-tag">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 13V6l6-4 6 4v7"/><path d="M6 13V9h4v4"/></svg>
+            Port &amp; Maritime Security
+          </span>
+          <blockquote class="feature-quote" style="margin:0">TTS FM deliver a first class Security service across our multiple assignments. Their Security Office Welfare programme is excellent and their local Operations Manager Team always delivers every time and on time.</blockquote>
+          <div class="feature-attribution">
+            <span class="feature-attrib-name">Janice McGinnes</span>
+            <span class="feature-attrib-role">Security Manager, Port of Tyne</span>
+          </div>
+        </div>
+        <div class="feature-card-bottom">
+          <ul class="feature-services">
+            <li>Manned guarding across multiple port assignments</li>
+            <li>Security Officer Welfare programme</li>
+            <li>Named Local Operations Manager team</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature-card-img">
+        <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-1-768x768.png" alt="Port of Tyne security operations">
+        <div class="feature-card-img-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Card 02 — NHS Trust -->
+    <div class="feature-card reveal" style="direction:ltr;">
+      <div class="feature-card-img" style="order:0;">
+        <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-3-768x768.png" alt="NHS estate security">
+        <div class="feature-card-img-overlay"></div>
+      </div>
+      <div class="feature-card-body" style="order:1;">
+        <div class="feature-card-num" aria-hidden="true">02</div>
+        <div class="feature-card-top">
+          <span class="feature-eyebrow">NHS Estate · Healthcare Security</span>
+          <h3 class="feature-client">NHS Trust (North East)</h3>
+          <span class="feature-sector-tag">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 2v12M2 8h12"/></svg>
+            Healthcare · Public Sector
+          </span>
+          <blockquote class="feature-quote" style="margin:0">TTS FM supply physical manned guarding and fire watch foot patrols across our NHS estate. They are 100% reliable and support our Security officers assigned very well.</blockquote>
+          <div class="feature-attribution">
+            <span class="feature-attrib-name">Ian Hood</span>
+            <span class="feature-attrib-role">Facility Manager, NHS Trust</span>
+          </div>
+        </div>
+        <div class="feature-card-bottom">
+          <ul class="feature-services">
+            <li>Physical manned guarding across NHS estate</li>
+            <li>Fire watch foot patrols</li>
+            <li>SIA-approved officer support programme</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3. FURTHER CASE STUDIES — PLACEHOLDER -->
+<section style="background:var(--slate-2);border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:64px;">
+      <div>
+        <span class="eyebrow">Further case studies</span>
+        <h2 class="h2" style="margin-top:20px">Wider client portfolio.</h2>
+      </div>
+      <p class="lead">The following case studies are currently being prepared for publication. Contact us to discuss our wider client portfolio.</p>
+    </div>
+
+    <div class="grid-4">
+
+      <!-- Retail estate -->
+      <div class="placeholder-tile reveal">
+        <div class="placeholder-tile-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="12" rx="1"/><path d="M9 21V12h6v9"/>
+          </svg>
+        </div>
+        <h3 class="placeholder-tile-title">Retail Estate</h3>
+        <span class="placeholder-tile-sector">Commercial</span>
+        <p style="font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6">Commercial cleaning and integrated security services across a multi-unit retail estate.</p>
+        <p class="placeholder-tile-label mono">Case study to be supplied</p>
+      </div>
+
+      <!-- Logistics hub -->
+      <div class="placeholder-tile reveal reveal-d1">
+        <div class="placeholder-tile-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="placeholder-tile-title">Logistics Hub</h3>
+        <span class="placeholder-tile-sector">Industrial</span>
+        <p style="font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6">Integrated FM across a high-throughput logistics and distribution facility.</p>
+        <p class="placeholder-tile-label mono">Case study to be supplied</p>
+      </div>
+
+      <!-- Corporate HQ -->
+      <div class="placeholder-tile reveal reveal-d2">
+        <div class="placeholder-tile-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M3 21h18M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6"/><rect x="10" y="4" width="4" height="3" rx=".5"/>
+          </svg>
+        </div>
+        <h3 class="placeholder-tile-title">Corporate HQ</h3>
+        <span class="placeholder-tile-sector">Commercial</span>
+        <p style="font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6">Manned guarding and access control solutions for a corporate headquarters site.</p>
+        <p class="placeholder-tile-label mono">Case study to be supplied</p>
+      </div>
+
+      <!-- Industrial facility -->
+      <div class="placeholder-tile reveal reveal-d2">
+        <div class="placeholder-tile-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M2 21h20M4 21V9l6-4v4l6-4v4l4-2v14"/><path d="M12 21v-5h4v5"/>
+          </svg>
+        </div>
+        <h3 class="placeholder-tile-title">Industrial Facility</h3>
+        <span class="placeholder-tile-sector">Industrial</span>
+        <p style="font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6">Property maintenance and waste management services for a large industrial facility.</p>
+        <p class="placeholder-tile-label mono">Case study to be supplied</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. TESTIMONIALS -->
+<section class="paper">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:64px;">
+      <div>
+        <span class="eyebrow">Client testimonials</span>
+        <h2 class="h2" style="margin-top:20px;color:var(--dark-ink)">Heard from those who depend on us.</h2>
+      </div>
+      <p class="lead">First-hand accounts from the security managers and facility leads who rely on TTS FM day-to-day.</p>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="testi-card reveal">
+        <p class="testi-quote">"TTS FM deliver a first class Security service across our multiple assignments. Their Security Office Welfare programme is excellent and their local Operations Manager Team always delivers every time and on time."</p>
+        <div class="testi-meta">
+          <div>
+            <div class="testi-name">Janice McGinnes</div>
+            <div class="testi-role">Security Manager, Port of Tyne</div>
+          </div>
+          <div class="testi-logo">Port of Tyne</div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-d1">
+        <p class="testi-quote">"TTS FM supply physical manned guarding and fire watch foot patrols across our NHS estate. They are 100% reliable and support our Security officers assigned very well."</p>
+        <div class="testi-meta">
+          <div>
+            <div class="testi-name">Ian Hood</div>
+            <div class="testi-role">Facility Manager, NHS Trust</div>
+          </div>
+          <div class="testi-logo">NHS Trust</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 5. AUTHORITY / ACCREDITATIONS -->
+<div class="authority reveal">
+  <div class="container">
+    <div class="authority-grid">
+      <div>
+        <span class="eyebrow" style="margin-bottom:16px">Accreditations</span>
+        <p style="color:var(--ink-soft);font-size:14px;line-height:1.65;margin:0;max-width:24ch">Independently verified standards our clients rely on.</p>
+      </div>
+      <div class="authority-logos">
+        <div class="auth-badge">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/sia-approved-contractor.png" alt="SIA Approved Contractor">
+        </div>
+        <div class="auth-badge">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/safe-contractor.png" alt="Safe Contractor Approved">
+        </div>
+        <div class="auth-badge">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/chas.png" alt="CHAS Accredited">
+        </div>
+        <div class="auth-badge">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/constructionline.png" alt="Constructionline">
+        </div>
+        <div class="auth-badge">
+          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/iso9001.png" alt="ISO 9001">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <div style="text-align:center;max-width:680px;margin:0 auto;" class="reveal">
+      <span class="eyebrow" style="justify-content:center;margin-bottom:24px">Get in touch</span>
+      <h2 class="h2">Protect your operations.</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:52ch">Speak to a senior TTS FM operator about your specific requirements.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;flex-wrap:wrap;">
+        <button class="btn btn-cyan btn-lg" data-modal="quote">
+          Request a quote
+          <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-line btn-lg">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><img class="footer-logo" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"><p>UK's leading SIA Approved Integrated Risk Based Security Solutions and Facilities Contractor.</p><button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button></div>
+      <div><div class="col-title">Services</div><ul><li><a href="services.html">Security Services</a></li><li><a href="services.html">Facilities Management</a></li><li><a href="services.html">Property Services</a></li><li><a href="services.html">Training Services</a></li></ul></div>
+      <div><div class="col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="https://ttsfm.co.uk/news" target="_blank" rel="noreferrer">News</a></li></ul></div>
+      <div><div class="col-title">Offices</div><ul><li><span style="color:var(--ink);font-weight:600">South Shields</span></li><li>Edinburgh</li><li>Manchester</li><li>Birmingham</li><li>London</li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 TTS FM · All Rights Reserved</div><nav class="footer-bottom-links"><a href="https://ttsfm.co.uk/privacy-policy/" target="_blank" rel="noreferrer">Privacy</a><a href="https://ttsfm.co.uk/cookie-policy/" target="_blank" rel="noreferrer">Cookies</a><a href="https://ttsfm.co.uk/terms-of-use/" target="_blank" rel="noreferrer">Terms</a></nav></div>
+  </div>
+</footer>
+
+<!-- MODAL + TOAST -->
+<div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-head"><div><span class="eyebrow" style="margin-bottom:16px;display:inline-flex">Quick quote · 60 minutes</span><h3 id="modal-title" style="font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-0.025em;margin:16px 0 8px">Three fields. We'll do the rest.</h3><p style="color:var(--ink-soft);font-size:14px;margin:0">A senior operator quotes within 60 minutes.</p></div><button class="modal-close" id="modal-close" aria-label="Close"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l12 12M14 2L2 14"/></svg></button></div>
+  <form id="quote-form" style="display:grid;gap:14px" novalidate><input class="recruit-input" type="text" placeholder="Your name" id="q-name" required><input class="recruit-input" type="email" placeholder="Company email" id="q-email" required><input class="recruit-input" type="text" placeholder="Site postcode" id="q-postcode" required><button type="submit" class="btn btn-cyan btn-lg" style="margin-top:8px;justify-content:center">Get my quote in 60 minutes <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button></form>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg><span id="toast-msg"></span></div>
+
+<script>
+(() => {
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const drawer = document.getElementById('drawer'); const dOverlay = document.getElementById('drawer-overlay'); const burger = document.getElementById('burger');
+  const openDrawer = () => { drawer.classList.add('open'); dOverlay.classList.add('open'); drawer.setAttribute('aria-hidden','false'); burger?.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+  const closeDrawer = () => { drawer.classList.remove('open'); dOverlay.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); burger?.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+  burger?.addEventListener('click', openDrawer); document.getElementById('drawer-close')?.addEventListener('click', closeDrawer); dOverlay?.addEventListener('click', closeDrawer); drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+  const modal = document.getElementById('modal'); const mBackdrop = document.getElementById('modal-backdrop'); let lastFocus;
+  const openModal = () => { lastFocus=document.activeElement; modal.classList.add('open'); mBackdrop.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; modal.querySelector('input')?.focus(); };
+  const closeModal = () => { modal.classList.remove('open'); mBackdrop.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lastFocus?.focus(); };
+  document.querySelectorAll('[data-modal="quote"]').forEach(b => b.addEventListener('click', openModal));
+  document.getElementById('modal-close')?.addEventListener('click', closeModal); mBackdrop?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key==='Escape' && modal?.classList.contains('open')) closeModal(); });
+  const toast = document.getElementById('toast'); const toastMsg = document.getElementById('toast-msg');
+  const showToast = msg => { toastMsg.textContent=msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4200); };
+  document.getElementById('quote-form')?.addEventListener('submit', e => { e.preventDefault(); if (!document.getElementById('q-name').value||!document.getElementById('q-email').value||!document.getElementById('q-postcode').value) return; closeModal(); e.target.reset(); showToast('Quote requested — response within 60 minutes during UK business hours.'); });
+})();
+</script>
+
+</body>
+</html>
