@@ -3,235 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0B0F19">
+<meta name="theme-color" content="#080A0E">
 <meta name="description" content="Integrated security and facilities management services from TTS FM — SIA Approved manned guarding, mobile patrols, FM, cleaning, property maintenance and more across five UK regions.">
 <title>Services — TTS FM · Security &amp; Facilities Management</title>
-
-<link rel="preconnect" href="https://rsms.me/">
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
 /* ── PAGE-SPECIFIC ───────────────────────────────────────── */
 
-/* Pill anchors in hero */
-.hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 48px;
-}
+/* Navigation pills */
+.hero-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
 .hero-pill {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--rule-2);
   border-radius: 999px;
   padding: 10px 20px;
   transition: color .25s ease, border-color .25s ease, background .25s ease;
 }
-.hero-pill:hover {
-  color: var(--cyan);
-  border-color: var(--cyan);
-  background: rgba(0,240,255,0.06);
-}
+.hero-pill:hover { color: var(--red); border-color: var(--red); background: var(--red-dim); }
 
-/* Security cards — dark variant (default .card) used as-is */
-/* Service card icon size override for security icons */
+/* Security service icon */
 .svc-icon {
-  width: 48px;
-  height: 48px;
+  width: 48px; height: 48px;
   border-radius: 12px;
-  background: rgba(0,240,255,0.08);
-  border: 1px solid rgba(0,240,255,0.2);
-  display: grid;
-  place-items: center;
-  margin-bottom: 24px;
-  flex-shrink: 0;
+  background: var(--red-dim);
+  border: 1px solid rgba(196,18,47,0.2);
+  display: grid; place-items: center;
+  margin-bottom: 24px; flex-shrink: 0;
 }
-.svc-icon svg {
-  color: var(--cyan);
-}
+.svc-icon svg { color: var(--red); }
 
-/* Security section image strip */
+/* Security image strip */
 .security-image-strip {
-  width: 100%;
-  aspect-ratio: 21 / 9;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-  margin-top: 64px;
+  width: 100%; aspect-ratio: 21/9;
+  object-fit: cover; border-radius: 16px;
+  display: block; margin-top: 64px;
 }
 
-/* FM section — paper bg card overrides */
+/* FM cards (on cream bg) */
 .fm-card {
-  background: var(--paper);
-  border: 1px solid var(--line-paper-strong);
+  background: var(--white);
+  border: 1px solid var(--rule-cream2);
   border-radius: 16px;
   padding: 40px;
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
   color: var(--dark-ink);
   transition: border-color .3s ease, transform .4s cubic-bezier(.2,0,.2,1), box-shadow .4s ease;
 }
-.fm-card:hover {
-  border-color: var(--cyan-deep);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px -12px rgba(0,0,0,0.12);
-}
-.fm-card-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 48px;
-  background: var(--cyan-deep);
-}
-.fm-card .card-title {
-  color: var(--dark-ink);
-  margin-bottom: 12px;
-}
-.fm-card .card-body {
-  color: var(--dark-soft);
-}
+.fm-card:hover { border-color: var(--red); transform: translateY(-3px); box-shadow: 0 16px 40px -12px rgba(0,0,0,0.12); }
+.fm-card-accent { position: absolute; top: 0; left: 0; width: 4px; height: 48px; background: var(--red); }
+.fm-card .card-title { color: var(--dark-ink); margin-bottom: 12px; }
+.fm-card .card-body { color: var(--dark-2); }
 .fm-svc-icon {
-  width: 48px;
-  height: 48px;
+  width: 48px; height: 48px;
   border-radius: 12px;
-  background: rgba(0,194,214,0.10);
-  border: 1px solid rgba(0,194,214,0.22);
-  display: grid;
-  place-items: center;
-  margin-bottom: 24px;
-  flex-shrink: 0;
+  background: rgba(196,18,47,0.08);
+  border: 1px solid rgba(196,18,47,0.18);
+  display: grid; place-items: center;
+  margin-bottom: 24px; flex-shrink: 0;
 }
-.fm-svc-icon svg {
-  color: var(--cyan-deep);
-}
+.fm-svc-icon svg { color: var(--red); }
 
 /* FM photo quad */
 .fm-photo-quad {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 64px;
-  border-radius: 20px;
-  overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-top: 64px;
+  border-radius: 16px; overflow: hidden;
 }
 .fm-photo-quad img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
+  width: 100%; aspect-ratio: 4/3;
+  object-fit: cover; display: block;
   transition: transform .6s cubic-bezier(.2,0,.2,1);
 }
-.fm-photo-quad img:hover {
-  transform: scale(1.03);
-}
+.fm-photo-quad img:hover { transform: scale(1.03); }
 
-/* Why TTS FM — three column pillars */
+/* Why TTS FM */
 .why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 80px;
-  border: 1px solid var(--line-strong);
-  border-radius: 20px;
-  overflow: hidden;
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2px; margin-top: 80px;
+  border: 1px solid var(--rule-2);
+  border-radius: 16px; overflow: hidden;
 }
 .why-pillar {
   padding: 56px 48px;
-  background: var(--slate-2);
-  border-right: 1px solid var(--line);
+  background: var(--night-1);
+  border-right: 1px solid var(--rule);
   transition: background .3s ease;
 }
-.why-pillar:last-child {
-  border-right: none;
-}
-.why-pillar:hover {
-  background: var(--slate-3);
-}
+.why-pillar:last-child { border-right: none; }
+.why-pillar:hover { background: var(--night-2); }
 .why-pillar-label {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: clamp(28px, 3vw, 48px);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.8vw, 44px);
   letter-spacing: -0.035em;
   line-height: 1;
-  color: var(--cyan);
+  color: var(--red);
   margin-bottom: 16px;
 }
 .why-pillar-title {
-  font-family: var(--sans);
+  font-family: var(--display);
   font-weight: 700;
   font-size: 17px;
   letter-spacing: -0.015em;
   color: var(--ink);
   margin-bottom: 12px;
 }
-.why-pillar-body {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--ink-soft);
-  max-width: 28ch;
-}
+.why-pillar-body { font-size: 14px; line-height: 1.65; color: var(--ink-2); max-width: 28ch; }
 
-/* CTA section */
-.cta-section {
+/* CTA */
+.svc-cta-section {
   text-align: center;
-  background: var(--slate-2);
-  border-top: 1px solid var(--line);
+  background: var(--night-1);
+  border-top: 1px solid var(--rule);
 }
-.cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+.svc-cta-actions {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap; margin-top: 40px;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
-  .fm-photo-quad {
-    grid-template-columns: 1fr 1fr;
-  }
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-  .why-pillar {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-  }
-  .why-pillar:last-child {
-    border-bottom: none;
-  }
+  .fm-photo-quad { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .why-pillar { border-right: none; border-bottom: 1px solid var(--rule); }
+  .why-pillar:last-child { border-bottom: none; }
 }
 @media (max-width: 640px) {
-  .fm-photo-quad {
-    grid-template-columns: 1fr;
-  }
-  .fm-photo-quad img {
-    aspect-ratio: 16 / 9;
-  }
-  .security-image-strip {
-    aspect-ratio: 16 / 9;
-    margin-top: 40px;
-  }
-  .hero-pills {
-    margin-top: 36px;
-  }
-  .why-pillar {
-    padding: 40px 28px;
-  }
-  .why-pillar-body {
-    max-width: 100%;
-  }
+  .fm-photo-quad { grid-template-columns: 1fr; }
+  .fm-photo-quad img { aspect-ratio: 16/9; }
+  .security-image-strip { aspect-ratio: 16/9; margin-top: 40px; }
+  .hero-pills { margin-top: 36px; }
+  .why-pillar { padding: 40px 28px; }
+  .why-pillar-body { max-width: 100%; }
 }
 </style>
 </head>
@@ -240,7 +151,9 @@
 <!-- NAV -->
 <nav class="nav" id="nav" aria-label="Primary navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM"></a>
+    <a href="index.html" class="nav-logo" aria-label="TTS FM home">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM">
+    </a>
     <div class="nav-links">
       <a href="services.html"     class="nav-link active">Services</a>
       <a href="about.html"        class="nav-link">About</a>
@@ -248,64 +161,70 @@
       <a href="careers.html"      class="nav-link">Careers</a>
       <a href="contact.html"      class="nav-link">Contact</a>
     </div>
-    <div class="nav-cta">
-      <a href="index.html" class="btn btn-line btn-sm">Home</a>
-      <button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+    <div class="nav-end">
+      <a href="contact.html" class="btn btn-ghost btn-sm">Get in touch</a>
+      <button class="btn btn-red btn-sm" data-modal="quote">Request a quote
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
     </div>
-    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1h12M1 6h12M1 11h12"/></svg>Menu</button>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <svg width="15" height="11" viewBox="0 0 15 11" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1h13M1 5.5h13M1 10h13"/></svg>
+      Menu
+    </button>
   </div>
 </nav>
 
-<!-- DRAWER (mobile) -->
-<div class="drawer-overlay" id="drawer-overlay"></div>
+<!-- MOBILE DRAWER -->
+<div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
 <aside class="drawer" id="drawer" aria-label="Mobile navigation" aria-hidden="true">
   <div class="drawer-head">
     <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM">
-    <button id="drawer-close" style="padding: 8px; color: var(--ink)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l12 12M14 2L2 14"/></svg></button>
+    <button id="drawer-close" style="padding:8px;color:var(--ink-2)" aria-label="Close menu">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+    </button>
   </div>
-  <a href="services.html" class="drawer-link">Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <a href="about.html" class="drawer-link">About <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <a href="careers.html" class="drawer-link">Careers <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <a href="contact.html" class="drawer-link">Contact <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <button class="btn btn-cyan" style="margin-top: 32px" data-modal="quote">Request a quote</button>
+  <a href="services.html"     class="drawer-link">Services     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="about.html"        class="drawer-link">About        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="careers.html"      class="drawer-link">Careers      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <a href="contact.html"      class="drawer-link">Contact      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+  <button class="btn btn-red" style="margin-top:28px;justify-content:center" data-modal="quote">Request a quote</button>
 </aside>
 
 <!-- PAGE HERO -->
-<section class="page-hero" aria-label="Services overview">
-  <div class="page-hero-bg">
-    <img src="https://ttsfm.co.uk/wp-content/uploads/2026/04/scheduled-generated-9.png" alt="" aria-hidden="true" loading="eager">
+<header class="page-hero" aria-label="Services overview">
+  <div class="page-hero-bg" aria-hidden="true">
+    <img src="https://ttsfm.co.uk/wp-content/uploads/2026/04/scheduled-generated-9.png" alt="" loading="eager">
   </div>
-  <div class="container page-hero-content">
-    <div class="reveal">
-      <span class="eyebrow">Our services</span>
-    </div>
-    <h1 class="h1 reveal reveal-d1" style="margin-top: 28px; max-width: 18ch">Security. FM.<br><span class="cyan">Every touchpoint covered</span>.</h1>
-    <p class="lead reveal reveal-d2" style="margin-top: 28px; max-width: 52ch">Integrated risk-based security solutions and facilities management services, delivered across five regions by SIA Approved operators.</p>
-    <div class="hero-pills reveal reveal-d2">
-      <a href="#security" class="hero-pill">01 Security Solutions</a>
-      <a href="#fm" class="hero-pill">02 Facilities Management</a>
+  <div class="page-hero-content">
+    <div class="wrap">
+      <p class="eyebrow reveal">Our services</p>
+      <h1 class="h1 reveal reveal-d1" style="margin-top:28px;max-width:18ch">Security. FM.<br><span class="accent">Every touchpoint covered</span>.</h1>
+      <p class="lead reveal reveal-d2" style="margin-top:28px;max-width:52ch">Integrated risk-based security solutions and facilities management services, delivered across five regions by SIA Approved operators.</p>
+      <div class="hero-pills reveal reveal-d2">
+        <a href="#security" class="hero-pill">01 Security Solutions</a>
+        <a href="#fm" class="hero-pill">02 Facilities Management</a>
+      </div>
     </div>
   </div>
-</section>
+</header>
 
 <!-- SECURITY SERVICES -->
-<section id="security" style="background: var(--slate)" aria-label="Security services">
-  <div class="container">
+<section id="security" class="section" style="background:var(--night)" aria-label="Security services">
+  <div class="wrap">
 
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">01 / Security Solutions</span>
-        <h2 class="h2" style="margin-top: 24px">SIA Approved security.<br><span class="cyan">Risk-based. Always on.</span></h2>
+        <p class="eyebrow">01 / Security Solutions</p>
+        <h2 class="h2" style="margin-top:24px">SIA Approved security.<br><span class="accent">Risk-based. Always on.</span></h2>
       </div>
       <p class="lead">Manned guarding, mobile patrols, keyholding, control room monitoring, and specialist security services across commercial and public sector estates throughout the UK.</p>
     </div>
 
-    <div class="grid-3 reveal">
+    <div class="grid-3">
 
       <!-- Card 1: Manned Guarding -->
-      <div class="card">
-        <div class="card-accent"></div>
+      <div class="card card-red-top reveal">
         <div class="svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -316,8 +235,7 @@
       </div>
 
       <!-- Card 2: Mobile Patrols -->
-      <div class="card">
-        <div class="card-accent"></div>
+      <div class="card card-red-top reveal">
         <div class="svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
@@ -329,8 +247,7 @@
       </div>
 
       <!-- Card 3: Keyholding & Alarm Response -->
-      <div class="card">
-        <div class="card-accent"></div>
+      <div class="card card-red-top reveal">
         <div class="svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/>
@@ -341,8 +258,7 @@
       </div>
 
       <!-- Card 4: Control Room -->
-      <div class="card">
-        <div class="card-accent"></div>
+      <div class="card card-red-top reveal">
         <div class="svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -354,8 +270,7 @@
       </div>
 
       <!-- Card 5: Specialist Services -->
-      <div class="card">
-        <div class="card-accent"></div>
+      <div class="card card-red-top reveal">
         <div class="svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -366,8 +281,7 @@
       </div>
 
       <!-- Card 6: Training Services -->
-      <div class="card">
-        <div class="card-accent"></div>
+      <div class="card card-red-top reveal">
         <div class="svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
@@ -381,39 +295,37 @@
     </div><!-- /grid-3 -->
 
     <!-- Security image strip -->
-    <div class="reveal">
-      <img
-        class="security-image-strip"
-        src="https://ttsfm.co.uk/wp-content/uploads/2026/04/Top-Security-Company-in-Newcastle-What-Businesses-Need-to-Know.png"
-        alt="TTS FM security officers on duty"
-        loading="lazy">
+    <div class="reveal" style="margin-top:56px">
+      <img class="security-image-strip" src="https://ttsfm.co.uk/wp-content/uploads/2026/04/Top-Security-Company-in-Newcastle-What-Businesses-Need-to-Know.png" alt="TTS FM security officers on duty" loading="lazy">
     </div>
 
     <!-- Security CTA -->
-    <div class="reveal" style="margin-top: 56px; display: flex; justify-content: center">
-      <button class="btn btn-cyan btn-lg" data-modal="quote">Get a security quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+    <div class="reveal" style="margin-top:56px;display:flex;justify-content:center">
+      <button class="btn btn-red btn-lg" data-modal="quote">Get a security quote
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
     </div>
 
   </div>
 </section>
 
 <!-- FACILITIES MANAGEMENT -->
-<section id="fm" class="paper" aria-label="Facilities management services">
-  <div class="container">
+<section id="fm" class="section" style="background:var(--cream)" aria-label="Facilities management services">
+  <div class="wrap">
 
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">02 / Facilities Management</span>
-        <h2 class="h2" style="margin-top: 24px; color: var(--dark-ink)">Integrated FM. Every<br><span style="color: var(--cyan-deep)">commercial estate</span>.</h2>
+        <p class="eyebrow on-light">02 / Facilities Management</p>
+        <h2 class="h2" style="margin-top:24px;color:var(--dark-ink)">Integrated FM. Every<br><span class="accent">commercial estate</span>.</h2>
       </div>
-      <p class="lead" style="color: var(--dark-soft)">End-to-end facilities management aligned to your business objectives. Reduce operational costs, improve asset performance, and ensure full UK regulatory compliance.</p>
+      <p class="lead on-light">End-to-end facilities management aligned to your business objectives. Reduce operational costs, improve asset performance, and ensure full UK regulatory compliance.</p>
     </div>
 
     <!-- FM service cards -->
-    <div class="grid-3 reveal">
+    <div class="grid-3">
 
       <!-- FM Card 1: Commercial Cleaning -->
-      <div class="fm-card">
+      <div class="fm-card reveal">
         <div class="fm-card-accent"></div>
         <div class="fm-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -421,24 +333,24 @@
             <path d="M7.5 4.5l12 12"/>
           </svg>
         </div>
-        <div class="card-title" style="color: var(--dark-ink)">Commercial Cleaning</div>
-        <p class="card-body" style="color: var(--dark-soft)">BICSc-aligned cleaning programmes covering office, industrial, and public sector environments. Daily, periodic and specialist cleans.</p>
+        <div class="card-title">Commercial Cleaning</div>
+        <p class="card-body">BICSc-aligned cleaning programmes covering office, industrial, and public sector environments. Daily, periodic and specialist cleans.</p>
       </div>
 
       <!-- FM Card 2: Property Maintenance -->
-      <div class="fm-card">
+      <div class="fm-card reveal">
         <div class="fm-card-accent"></div>
         <div class="fm-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
           </svg>
         </div>
-        <div class="card-title" style="color: var(--dark-ink)">Property Maintenance</div>
-        <p class="card-body" style="color: var(--dark-soft)">Planned preventative maintenance (PPM), reactive repairs, M&amp;E, fabric, and HVAC maintenance delivered by qualified engineers.</p>
+        <div class="card-title">Property Maintenance</div>
+        <p class="card-body">Planned preventative maintenance (PPM), reactive repairs, M&amp;E, fabric, and HVAC maintenance delivered by qualified engineers.</p>
       </div>
 
       <!-- FM Card 3: Waste Management -->
-      <div class="fm-card">
+      <div class="fm-card reveal">
         <div class="fm-card-accent"></div>
         <div class="fm-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -448,12 +360,12 @@
             <path d="M9 6V4h6v2"/>
           </svg>
         </div>
-        <div class="card-title" style="color: var(--dark-ink)">Waste Management</div>
-        <p class="card-body" style="color: var(--dark-soft)">Commercial waste collection and disposal services. Duty of Care documentation, recycling programmes and specialist waste streams.</p>
+        <div class="card-title">Waste Management</div>
+        <p class="card-body">Commercial waste collection and disposal services. Duty of Care documentation, recycling programmes and specialist waste streams.</p>
       </div>
 
       <!-- FM Card 4: Washroom Services -->
-      <div class="fm-card">
+      <div class="fm-card reveal">
         <div class="fm-card-accent"></div>
         <div class="fm-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -463,12 +375,12 @@
             <path d="M12 12v4"/>
           </svg>
         </div>
-        <div class="card-title" style="color: var(--dark-ink)">Washroom Services</div>
-        <p class="card-body" style="color: var(--dark-soft)">Hygienic washroom maintenance, sanitary disposal, consumable supply and servicing. Regular scheduled visits with call-out cover.</p>
+        <div class="card-title">Washroom Services</div>
+        <p class="card-body">Hygienic washroom maintenance, sanitary disposal, consumable supply and servicing. Regular scheduled visits with call-out cover.</p>
       </div>
 
       <!-- FM Card 5: Grounds Maintenance -->
-      <div class="fm-card">
+      <div class="fm-card reveal">
         <div class="fm-card-accent"></div>
         <div class="fm-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -477,12 +389,12 @@
             <path d="M3 22c.5-3.17 2-9 9-13"/>
           </svg>
         </div>
-        <div class="card-title" style="color: var(--dark-ink)">Grounds Maintenance</div>
-        <p class="card-body" style="color: var(--dark-soft)">Landscaping, mowing, gritting, snow clearance and grounds upkeep. Seasonal programmes and one-off clearance works.</p>
+        <div class="card-title">Grounds Maintenance</div>
+        <p class="card-body">Landscaping, mowing, gritting, snow clearance and grounds upkeep. Seasonal programmes and one-off clearance works.</p>
       </div>
 
       <!-- FM Card 6: Consumables Supply -->
-      <div class="fm-card">
+      <div class="fm-card reveal">
         <div class="fm-card-accent"></div>
         <div class="fm-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -491,8 +403,8 @@
             <line x1="12" y1="22.08" x2="12" y2="12"/>
           </svg>
         </div>
-        <div class="card-title" style="color: var(--dark-ink)">Consumables Supply</div>
-        <p class="card-body" style="color: var(--dark-soft)">Paper, soap, sanitiser and PPE supply programmes. Managed replenishment to remove the admin from your facilities team.</p>
+        <div class="card-title">Consumables Supply</div>
+        <p class="card-body">Paper, soap, sanitiser and PPE supply programmes. Managed replenishment to remove the admin from your facilities team.</p>
       </div>
 
     </div><!-- /grid-3 fm -->
@@ -506,20 +418,22 @@
     </div>
 
     <!-- FM CTA -->
-    <div class="reveal" style="margin-top: 56px; display: flex; justify-content: center">
-      <button class="btn btn-dark btn-lg" data-modal="quote">Get an FM quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+    <div class="reveal" style="margin-top:56px;display:flex;justify-content:center">
+      <button class="btn btn-dark btn-lg" data-modal="quote">Get an FM quote
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
     </div>
 
   </div>
 </section>
 
 <!-- WHY TTS FM -->
-<section style="background: var(--slate)" aria-label="Why choose TTS FM">
-  <div class="container">
+<section class="section" style="background:var(--night)" aria-label="Why choose TTS FM">
+  <div class="wrap">
 
-    <div class="reveal" style="text-align: center; max-width: 56ch; margin: 0 auto">
-      <span class="eyebrow">Why TTS FM</span>
-      <h2 class="h2" style="margin-top: 24px">One contractor.<br><span class="cyan">Complete coverage</span>.</h2>
+    <div class="reveal" style="text-align:center;max-width:56ch;margin:0 auto">
+      <p class="eyebrow" style="justify-content:center">Why TTS FM</p>
+      <h2 class="h2" style="margin-top:24px">One contractor.<br><span class="accent">Complete coverage</span>.</h2>
     </div>
 
     <div class="why-grid reveal">
@@ -547,28 +461,28 @@
   </div>
 </section>
 
-<!-- AUTHORITY / ACCREDITATIONS -->
-<section class="authority" aria-label="Accreditations and partners">
-  <div class="container">
-    <div class="authority-grid reveal">
-      <div>
-        <span class="eyebrow">Accreditations</span>
-        <div style="font-family: var(--sans); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; margin-top: 16px; color: var(--ink)">Verified by industry bodies.</div>
+<!-- ACCREDITATIONS -->
+<section class="section" style="background:var(--cream);padding:64px 0" aria-label="Accreditations and partners">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="reveal">
+        <p class="eyebrow on-light" style="margin-bottom:14px">Accreditations</p>
+        <div style="font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.018em;color:var(--dark-ink)">Verified by industry bodies.</div>
       </div>
-      <div class="authority-logos">
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="ACS Pacesetters accreditation">
+      <div class="logo-strip logo-strip-light reveal reveal-d1">
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ACS Pacesetters accreditation">
           <img src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol-300x212.jpg" alt="ACS Pacesetters" loading="lazy">
         </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="WebEye partner">
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="WebEye partner">
           <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize-150x150.jpg" alt="WebEye" loading="lazy">
         </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="Parim partner">
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Parim partner">
           <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize-150x150.jpg" alt="Parim" loading="lazy">
         </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="ReSLink partner">
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ReSLink partner">
           <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize-150x150.jpg" alt="ReSLink" loading="lazy">
         </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="auth-badge" aria-label="Combat Stress charity partner">
+        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Combat Stress charity partner">
           <img src="https://ttsfm.co.uk/wp-content/uploads/2023/09/Combat-stress.png" alt="Combat Stress" loading="lazy">
         </a>
       </div>
@@ -577,55 +491,61 @@
 </section>
 
 <!-- CTA SECTION -->
-<section class="cta-section" aria-label="Request a quote">
-  <div class="container">
-    <div class="reveal" style="max-width: 48ch; margin: 0 auto; text-align: center">
-      <span class="eyebrow">Get started</span>
-      <h2 class="h2" style="margin-top: 24px">Ready to protect<br>your estate?</h2>
-      <p class="lead" style="margin-top: 24px; margin-left: auto; margin-right: auto">Get a quote from a senior operator within 60 minutes during UK business hours.</p>
+<section class="section svc-cta-section" aria-label="Request a quote">
+  <div class="wrap">
+    <div class="reveal" style="max-width:48ch;margin:0 auto;text-align:center">
+      <p class="eyebrow" style="justify-content:center;margin-bottom:24px">Get started</p>
+      <h2 class="h2">Ready to protect<br>your estate?</h2>
+      <p class="lead" style="margin:24px auto 0">Get a quote from a senior operator within 60 minutes during UK business hours.</p>
     </div>
-    <div class="cta-actions reveal reveal-d1">
-      <button class="btn btn-cyan btn-lg" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
-      <a href="contact.html" class="btn btn-line btn-lg">Get in touch <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    <div class="svc-cta-actions reveal reveal-d1">
+      <button class="btn btn-red btn-lg" data-modal="quote">Request a quote
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </button>
+      <a href="contact.html" class="btn btn-ghost btn-lg">Get in touch
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
+<footer class="footer" aria-label="Site footer">
+  <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img class="footer-logo" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM">
-        <p>UK's leading SIA Approved Integrated Risk Based Security Solutions and Facilities Contractor.</p>
-        <button class="btn btn-cyan btn-sm" data-modal="quote">Request a quote <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+        <img class="footer-logo" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM" loading="lazy">
+        <p class="footer-desc">UK's leading SIA Approved Integrated Risk Based Security Solutions and Facilities Contractor. Local, regional and nationwide coverage from South Shields.</p>
+        <button class="btn btn-red btn-sm" data-modal="quote">Request a quote
+          <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
       </div>
       <div>
-        <div class="col-title">Services</div>
-        <ul>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
           <li><a href="services.html">Security Services</a></li>
           <li><a href="services.html">Facilities Management</a></li>
           <li><a href="services.html">Property Services</a></li>
           <li><a href="services.html">Training Services</a></li>
           <li><a href="services.html">Cleaning &amp; Washroom</a></li>
-          <li><a href="services.html">Specialist · Waste</a></li>
+          <li><a href="services.html">Waste Management</a></li>
         </ul>
       </div>
       <div>
-        <div class="col-title">Company</div>
-        <ul>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
           <li><a href="about.html">About Us</a></li>
-          <li><a href="https://ttsfm.co.uk/leadership-team" target="_blank" rel="noreferrer">Leadership Team</a></li>
+          <li><a href="https://ttsfm.co.uk/leadership-team" target="_blank" rel="noreferrer noopener">Leadership</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="https://ttsfm.co.uk/news" target="_blank" rel="noreferrer">News</a></li>
+          <li><a href="https://ttsfm.co.uk/news" target="_blank" rel="noreferrer noopener">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
-        <div class="col-title">Offices</div>
-        <ul>
-          <li><span style="color:var(--ink);font-weight:600">South Shields</span><br><span class="mono" style="color:var(--ink-faint);display:inline-block;margin-top:4px">— HQ Newcastle</span></li>
+        <div class="footer-col-title">Offices</div>
+        <ul class="footer-links">
+          <li style="color:var(--ink-2);font-weight:600">South Shields <span style="font-weight:400;color:var(--ink-4);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;display:inline"> — HQ</span></li>
           <li>Edinburgh</li>
           <li>Manchester</li>
           <li>Birmingham</li>
@@ -633,75 +553,136 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>© 2026 TTS FM · All Rights Reserved</div>
-      <nav class="footer-bottom-links">
-        <a href="https://ttsfm.co.uk/privacy-policy/" target="_blank" rel="noreferrer">Privacy</a>
-        <a href="https://ttsfm.co.uk/cookie-policy/" target="_blank" rel="noreferrer">Cookies</a>
-        <a href="https://ttsfm.co.uk/terms-of-use/" target="_blank" rel="noreferrer">Terms</a>
-        <a href="https://ttsfm.co.uk/accessibility-policy/" target="_blank" rel="noreferrer">Accessibility</a>
+    <div class="footer-base">
+      <div>© 2026 TTS FM (UK) Ltd · All Rights Reserved</div>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="https://ttsfm.co.uk/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy</a>
+        <a href="https://ttsfm.co.uk/cookie-policy/" target="_blank" rel="noreferrer noopener">Cookies</a>
+        <a href="https://ttsfm.co.uk/terms-of-use/" target="_blank" rel="noreferrer noopener">Terms</a>
+        <a href="https://ttsfm.co.uk/accessibility-policy/" target="_blank" rel="noreferrer noopener">Accessibility</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<!-- MODAL -->
+<!-- QUOTE MODAL -->
 <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
   <div class="modal-head">
     <div>
-      <span class="eyebrow" style="margin-bottom:16px;display:inline-flex">Quick quote · 60 minutes</span>
-      <h3 id="modal-title" style="font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-0.025em;margin:16px 0 8px">Three fields. We'll do the rest.</h3>
-      <p style="color:var(--ink-soft);font-size:14px;margin:0;max-width:36ch">A senior operator quotes within 60 minutes during UK business hours.</p>
+      <p class="eyebrow" style="margin-bottom:14px;display:inline-flex">60-minute quote</p>
+      <h3 id="modal-title" style="font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-0.025em;margin:0 0 8px">Three fields. We'll do the rest.</h3>
+      <p style="color:var(--ink-3);font-size:13.5px;margin:0;max-width:34ch">A senior operator responds during UK business hours.</p>
     </div>
-    <button class="modal-close" id="modal-close" aria-label="Close"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l12 12M14 2L2 14"/></svg></button>
+    <button class="modal-close" id="modal-close" aria-label="Close modal">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+    </button>
   </div>
-  <form id="quote-form" style="display:grid;gap:14px" novalidate>
-    <input class="recruit-input" type="text" placeholder="Your name" id="q-name" required>
-    <input class="recruit-input" type="email" placeholder="Company email" id="q-email" required>
-    <input class="recruit-input" type="text" placeholder="Site postcode (e.g. NE33 5SE)" id="q-postcode" required>
-    <button type="submit" class="btn btn-cyan btn-lg" style="margin-top:8px;justify-content:center">Get my quote in 60 minutes <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+  <form id="quote-form" style="display:grid;gap:12px" novalidate>
+    <input class="field" type="text"  placeholder="Your name"                     id="q-name"     required autocomplete="name">
+    <input class="field" type="email" placeholder="Company email"                 id="q-email"    required autocomplete="email">
+    <input class="field" type="text"  placeholder="Site postcode (e.g. NE33 5SE)" id="q-postcode" required autocomplete="postal-code">
+    <button type="submit" class="btn btn-red btn-lg" style="margin-top:8px;justify-content:center">Get my quote
+      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </button>
   </form>
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast" role="status" aria-live="polite">
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8.5 6.5 12 13 4"/></svg>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+  <div class="ok" aria-hidden="true">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2"><path d="M2 5 4.5 7.5 8 3"/></svg>
+  </div>
   <span id="toast-msg"></span>
 </div>
 
-<!-- SHARED JS -->
 <script>
 (() => {
+  'use strict';
+
+  // Nav scroll behaviour
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  const drawer = document.getElementById('drawer');
-  const dOverlay = document.getElementById('drawer-overlay');
-  const burger = document.getElementById('burger');
-  const openDrawer = () => { drawer.classList.add('open'); dOverlay.classList.add('open'); drawer.setAttribute('aria-hidden','false'); burger?.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
-  const closeDrawer = () => { drawer.classList.remove('open'); dOverlay.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); burger?.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+
+  // Mobile drawer
+  const drawer  = document.getElementById('drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  const burger  = document.getElementById('burger');
+  const openDrawer = () => {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeDrawer = () => {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
   burger?.addEventListener('click', openDrawer);
   document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);
-  dOverlay?.addEventListener('click', closeDrawer);
+  overlay?.addEventListener('click', closeDrawer);
   drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-  const modal = document.getElementById('modal');
+
+  // Quote modal
+  const modal     = document.getElementById('modal');
   const mBackdrop = document.getElementById('modal-backdrop');
   let lastFocus;
-  const openModal = () => { lastFocus = document.activeElement; modal.classList.add('open'); mBackdrop.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; modal.querySelector('input')?.focus(); };
-  const closeModal = () => { modal.classList.remove('open'); mBackdrop.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lastFocus?.focus(); };
+  const openModal = () => {
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    mBackdrop.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('input')?.focus();
+  };
+  const closeModal = () => {
+    modal.classList.remove('open');
+    mBackdrop.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lastFocus?.focus();
+  };
   document.querySelectorAll('[data-modal="quote"]').forEach(b => b.addEventListener('click', openModal));
   document.getElementById('modal-close')?.addEventListener('click', closeModal);
   mBackdrop?.addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => { if (e.key==='Escape' && modal?.classList.contains('open')) closeModal(); });
-  const toast = document.getElementById('toast');
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  // Toast
+  const toast    = document.getElementById('toast');
   const toastMsg = document.getElementById('toast-msg');
-  const showToast = msg => { toastMsg.textContent=msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4200); };
+  const showToast = msg => {
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4400);
+  };
+
+  // Quote form
   document.getElementById('quote-form')?.addEventListener('submit', e => {
     e.preventDefault();
-    if (!document.getElementById('q-name').value || !document.getElementById('q-email').value || !document.getElementById('q-postcode').value) return;
-    closeModal(); e.target.reset();
+    const n  = document.getElementById('q-name').value.trim();
+    const em = document.getElementById('q-email').value.trim();
+    const pc = document.getElementById('q-postcode').value.trim();
+    if (!n || !em || !pc) return;
+    closeModal();
+    e.target.reset();
     showToast('Quote requested — response within 60 minutes during UK business hours.');
   });
 })();
