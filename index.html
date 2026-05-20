@@ -339,25 +339,26 @@
   align-items: center;
 }
 .uk-map-wrap { position: relative; }
-.uk-map-wrap svg { width: 100%; max-width: 420px; height: auto; }
-.uk-shape { fill: var(--night-2); stroke: var(--rule-2); stroke-width: 0.4; }
+.uk-map-wrap svg { width: 100%; max-width: 320px; height: auto; }
+.uk-shape { fill: var(--night-2); stroke: var(--rule-2); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .uk-pin { cursor: pointer; }
 .uk-pin-dot { fill: var(--ink-3); transition: fill .25s ease; }
 .uk-pin.active .uk-pin-dot { fill: var(--red); }
-.uk-pin.hq .uk-pin-dot { fill: var(--white); }
+.uk-pin.hq .uk-pin-dot { fill: var(--red); }
 .uk-pin-ring {
   fill: none;
   stroke: var(--ink-3);
-  stroke-width: 0.4;
-  opacity: 0.4;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.35;
   transform-origin: center;
   transform-box: fill-box;
   animation: ringPulse 3s ease-in-out infinite;
 }
-.uk-pin.active .uk-pin-ring { stroke: var(--red); opacity: 0.6; }
-.uk-pin.hq .uk-pin-ring { stroke: var(--white); opacity: 0.3; }
-.uk-label { font-family: var(--mono); font-size: 2.2px; fill: var(--ink-3); letter-spacing: 0.05em; text-transform: uppercase; }
-@keyframes ringPulse { 0%,100% { transform: scale(1); opacity:0.4; } 50% { transform: scale(2.8); opacity: 0; } }
+.uk-pin.active .uk-pin-ring { stroke: var(--red); opacity: 0.65; }
+.uk-pin.hq .uk-pin-ring { stroke: var(--red); opacity: 0.4; }
+.uk-label { font-family: var(--mono); font-size: 10px; fill: var(--ink-3); letter-spacing: 0.04em; text-transform: uppercase; }
+@keyframes ringPulse { 0%,100% { transform: scale(1); opacity:0.35; } 50% { transform: scale(1.9); opacity: 0; } }
 
 .region-panel {
   background: var(--night-1);
@@ -597,32 +598,36 @@
     </div>
     <div class="uk-map-section reveal">
       <div class="uk-map-wrap">
-        <svg viewBox="0 0 100 130" preserveAspectRatio="xMidYMid meet" aria-label="UK map showing TTS FM office locations">
-          <path class="uk-shape" d="M50 5 Q40 8 38 18 Q30 22 32 32 Q28 38 30 48 Q25 55 28 66 Q22 72 28 82 Q24 92 32 100 Q38 108 42 118 Q50 124 58 122 Q65 118 68 108 Q72 98 70 88 Q75 80 72 70 Q75 60 70 50 Q72 40 65 32 Q68 22 60 16 Q55 8 50 5Z"/>
-          <g class="uk-pin hq" data-id="south-shields" tabindex="0" role="button" aria-label="South Shields Head Office">
-            <circle class="uk-pin-ring" cx="56" cy="28" r="2.6"/>
-            <circle class="uk-pin-dot" cx="56" cy="28" r="2"/>
-            <text class="uk-label" x="60" y="29">South Shields</text>
+        <svg viewBox="0 0 380 560" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="TTS FM UK office locations">
+          <path d="M171.4,446.9L157.6,450.3L148.2,460.6L132.4,460.5L118.8,446.7L98.8,450.8L98.8,446.9L108.6,443.3L97.7,443.2L95.4,436.2L69.7,448.2L61.7,443.1L74.0,440.9L74.9,435.8L70.0,437.1L71.1,440.6L58.9,442.4L55.9,439.7L62.1,436.9L61.4,432.1L53.2,431.6L63.9,421.5L74.1,422.2L79.6,416.1L97.6,409.7L106.9,400.4L109.2,390.2L114.1,388.9L106.2,385.5L112.3,377.4L105.1,372.6L108.3,365.5L93.6,367.6L88.7,374.0L77.7,374.0L103.8,347.3L119.3,342.9L117.2,339.9L129.5,342.9L141.7,339.0L152.5,346.3L148.1,336.4L153.9,333.8L161.8,342.9L169.9,339.0L159.8,339.1L151.9,326.2L161.0,315.1L154.3,313.0L153.9,304.5L162.8,300.7L164.1,297.7L160.1,296.5L165.6,290.9L163.0,286.6L165.6,283.2L159.2,289.0L154.3,284.8L150.0,294.7L145.7,291.7L147.2,282.3L142.8,286.7L128.1,266.8L139.1,243.7L155.5,238.0L131.0,236.7L130.5,243.7L119.9,243.5L119.6,247.4L111.2,250.9L93.8,242.2L94.7,256.4L73.4,244.8L69.1,248.6L73.4,259.3L60.0,244.0L59.4,235.9L61.9,234.5L67.3,241.4L66.7,227.7L84.1,205.6L80.8,198.8L70.6,192.4L72.1,179.2L90.2,178.7L81.7,176.6L74.2,169.2L76.9,174.7L73.7,175.0L78.0,161.4L73.7,167.2L70.6,163.8L71.9,174.9L69.1,174.4L67.8,182.2L61.5,173.6L63.2,180.4L59.0,176.1L58.1,184.7L53.8,183.4L51.9,174.4L70.6,156.9L50.6,173.6L47.2,172.5L52.9,187.7L45.1,196.3L40.9,209.8L43.6,214.1L32.1,216.9L36.6,194.5L46.7,183.8L40.3,188.9L37.5,186.8L41.5,178.3L35.9,179.5L41.5,171.9L35.4,177.8L43.3,168.9L44.3,162.5L40.0,165.5L45.0,158.0L40.6,158.7L41.5,153.8L47.0,151.8L43.0,151.8L46.6,146.8L57.7,146.4L64.2,139.1L58.1,145.5L46.7,145.0L47.9,140.8L56.2,139.1L48.6,140.3L52.9,133.1L67.3,129.7L56.4,129.6L61.7,123.3L36.9,143.3L22.0,134.3L42.8,130.9L15.1,132.0L11.9,128.9L33.2,125.4L29.0,122.6L37.5,119.9L25.9,118.6L29.9,112.2L43.7,111.8L32.4,107.3L38.2,103.9L49.2,105.4L36.6,102.2L41.2,95.4L48.9,97.7L44.6,94.7L47.4,92.1L34.5,93.4L47.0,85.8L30.9,89.9L29.5,76.0L38.4,80.2L44.1,78.3L37.5,78.1L31.0,72.0L36.9,67.8L31.1,65.7L30.8,60.2L35.8,57.9L40.0,64.1L39.7,54.2L45.3,58.7L48.5,55.5L57.2,59.3L50.7,53.3L63.9,60.2L47.1,44.5L53.6,45.4L56.2,40.6L49.5,33.5L70.0,35.9L59.3,27.8L60.7,24.0L66.3,25.6L62.3,18.3L67.6,10.7L74.4,12.1L75.2,17.1L77.0,12.0L82.3,15.2L77.7,21.9L85.6,14.1L90.5,14.6L89.6,21.8L110.5,12.7L140.2,12.4L139.7,7.6L155.6,9.9L150.7,26.8L111.7,53.8L108.0,52.0L111.3,58.0L94.2,55.5L110.0,61.1L121.6,58.8L112.3,68.7L108.3,66.6L93.3,74.5L111.3,69.2L107.1,76.0L100.0,77.6L100.6,81.0L110.2,77.4L108.0,75.5L130.1,72.1L138.2,67.0L154.9,70.4L201.3,68.3L208.8,73.8L211.9,82.5L202.1,92.1L192.8,117.3L182.1,127.5L178.2,137.4L168.6,145.0L142.0,151.5L161.6,145.7L165.3,152.7L175.4,156.9L166.1,162.3L158.1,161.4L141.2,172.5L119.0,167.6L127.1,173.6L153.0,177.5L164.4,170.5L172.8,170.6L195.0,179.5L209.4,197.1L217.7,200.0L222.7,226.7L233.6,252.1L238.2,255.0L236.8,259.7L265.4,269.0L274.0,283.3L287.2,291.7L280.8,297.2L296.5,325.2L278.9,315.1L258.1,317.3L278.1,316.9L300.4,334.8L306.5,351.8L291.0,368.0L307.8,375.3L316.1,362.8L347.6,365.3L364.1,374.8L368.7,384.2L369.8,392.9L361.3,418.0L350.1,426.8L342.4,421.3L347.4,425.8L338.4,426.0L347.9,426.4L344.2,430.7L347.6,432.8L338.2,437.1L334.4,432.8L329.6,438.8L321.8,440.5L332.2,439.1L331.9,448.7L307.8,457.1L321.7,455.7L315.4,459.7L334.3,463.6L355.3,461.5L352.5,475.9L338.3,481.3L334.4,490.4L324.7,489.6L302.7,501.1L278.5,495.8L255.3,502.1L248.6,495.1L242.2,499.0L242.8,495.1L238.5,495.1L239.1,498.9L225.0,490.4L231.7,497.8L220.8,502.8L203.9,504.6L199.4,501.5L197.5,504.1L203.3,505.5L202.7,510.1L183.4,507.4L180.9,514.7L162.5,501.9L140.0,509.2L135.7,505.3L134.7,519.0L131.6,520.7L134.7,522.4L126.9,533.8L109.3,528.9L102.8,519.0L98.8,522.8L103.1,527.5L96.7,524.5L80.7,526.2L67.0,538.6L64.7,535.4L61.4,541.6L64.5,543.8L58.5,550.1L53.5,542.6L45.8,539.4L35.5,544.3L36.5,537.5L53.0,531.8L64.8,520.9L66.4,514.1L74.0,515.6L70.6,510.9L76.3,510.5L86.0,499.4L88.2,484.4L96.7,485.5L102.5,480.6L101.5,473.4L122.1,469.9L155.5,473.4L157.6,461.4L170.1,453.4L184.0,437.2L171.4,446.9Z" class="uk-shape"/>
+          <path d="M-33.4,232.1L-24.8,233.4L-20.7,224.3L-11.4,225.4L1.1,221.0L17.8,223.2L20.7,226.0L19.6,231.8L23.8,233.7L23.0,237.6L27.4,240.1L31.3,247.6L35.1,249.9L31.4,246.1L33.5,245.3L36.2,249.3L34.5,253.3L27.2,256.8L26.5,261.0L33.6,256.3L41.6,256.5L47.8,268.5L45.8,276.4L44.0,277.6L41.3,273.6L41.3,265.8L35.7,262.7L35.1,265.3L39.1,266.5L37.1,267.2L39.1,271.2L35.4,276.8L41.1,274.8L42.3,280.1L37.7,284.4L28.5,284.3L27.1,292.2L20.5,296.4L6.5,291.8L5.5,294.7L-5.8,296.1L-7.7,294.4L-6.3,288.2L-12.9,286.0L-17.1,281.4L-17.0,277.4L-23.2,273.0L-31.0,277.8L-29.2,284.7L-33.5,286.4L-34.9,290.8L-35.6,288.4L-36.2,291.5L-43.8,290.7L-43.4,246.1L-40.5,236.2L-33.4,232.1Z" class="uk-shape"/>
+          <path d="M-20.3,65.7L-27.9,59.9L-25.9,61.4L-18.5,58.0L-20.7,56.3L-14.9,55.9L-15.2,53.8L-27.4,50.4L-19.4,46.5L-25.0,47.4L-23.4,44.8L-25.7,45.9L-27.4,43.6L-27.4,38.5L-23.1,38.0L-25.0,36.5L-23.7,34.6L-18.2,36.3L-16.1,43.1L-16.5,38.0L-9.4,38.0L-14.2,32.0L11.5,18.0L14.9,23.7L12.7,26.9L14.9,28.2L6.0,35.0L10.2,36.3L15.6,33.7L15.2,36.3L11.9,38.3L4.5,36.7L5.7,41.0L-5.3,44.4L4.2,43.1L6.0,46.1L4.5,46.9L6.6,47.4L3.4,49.5L-2.0,48.7L2.0,51.2L-1.7,54.7L-5.8,52.5L-5.3,55.1L-7.2,54.2L-9.4,49.5L-4.1,46.1L-8.4,46.1L-11.8,49.5L-7.2,57.2L-12.8,56.1L-10.8,60.3L-15.8,60.2L-20.3,65.7Z" class="uk-shape"/>
+          <path d="M-2.9,90.4L-8.8,89.3L-12.7,83.6L-9.9,83.6L-9.7,80.0L-4.8,84.4L-5.8,80.8L-2.9,80.7L-6.9,77.6L-6.3,74.2L3.5,79.8L2.5,81.6L4.5,79.6L8.5,83.2L3.8,71.8L8.5,68.3L15.5,75.3L16.4,82.4L13.9,87.5L16.7,86.6L17.9,91.3L15.5,93.0L20.3,92.8L18.9,94.7L26.8,96.9L38.1,95.5L36.2,100.2L22.1,110.2L22.9,104.6L29.3,100.3L23.0,101.1L20.4,97.7L21.3,99.8L18.4,104.1L15.0,99.5L8.1,102.0L10.0,99.4L6.9,100.3L5.4,98.1L6.9,96.9L4.1,96.9L0.8,92.6L7.9,92.6L1.7,90.4L-1.4,86.1L-2.9,90.4Z" class="uk-shape"/>
+          <path d="M36.3,147.2L37.7,149.3L33.9,148.4L32.0,151.5L35.6,151.5L30.9,154.4L27.7,154.0L28.0,152.0L10.4,157.8L6.3,155.3L7.4,152.8L11.3,154.8L21.4,150.5L13.3,150.6L16.7,146.3L21.9,145.0L21.6,142.9L16.7,144.7L7.2,139.9L9.4,138.6L7.8,136.5L13.8,134.1L19.7,134.4L24.0,141.5L31.5,142.1L38.1,146.4L36.3,147.2Z" class="uk-shape"/>
+          <g class="uk-pin hq" data-id="south-shields" tabindex="0" role="button" aria-label="South Shields — Head Office">
+            <circle class="uk-pin-ring" cx="226.7" cy="237.1" r="9"/>
+            <circle class="uk-pin-dot" cx="226.7" cy="237.1" r="5"/>
+            <text class="uk-label" x="239.7" y="241.6">South Shields</text>
           </g>
-          <g class="uk-pin" data-id="edinburgh" tabindex="0" role="button" aria-label="Edinburgh Regional Centre">
-            <circle class="uk-pin-ring" cx="48" cy="18" r="2.2"/>
-            <circle class="uk-pin-dot" cx="48" cy="18" r="1.7"/>
-            <text class="uk-label" x="52" y="19.5">Edinburgh</text>
+          <g class="uk-pin" data-id="edinburgh" tabindex="0" role="button" aria-label="Edinburgh — Regional Centre">
+            <circle class="uk-pin-ring" cx="148.0" cy="177.3" r="7"/>
+            <circle class="uk-pin-dot" cx="148.0" cy="177.3" r="3.5"/>
+            <text class="uk-label" x="161.0" y="181.8">Edinburgh</text>
           </g>
-          <g class="uk-pin" data-id="manchester" tabindex="0" role="button" aria-label="Manchester Regional Centre">
-            <circle class="uk-pin-ring" cx="45" cy="42" r="2.2"/>
-            <circle class="uk-pin-dot" cx="45" cy="42" r="1.7"/>
-            <text class="uk-label" x="49" y="43.5">Manchester</text>
+          <g class="uk-pin" data-id="manchester" tabindex="0" role="button" aria-label="Manchester — Regional Centre">
+            <circle class="uk-pin-ring" cx="190.4" cy="331.0" r="7"/>
+            <circle class="uk-pin-dot" cx="190.4" cy="331.0" r="3.5"/>
+            <text class="uk-label" x="203.4" y="335.5">Manchester</text>
           </g>
-          <g class="uk-pin" data-id="birmingham" tabindex="0" role="button" aria-label="Birmingham Regional Centre">
-            <circle class="uk-pin-ring" cx="50" cy="57" r="2.2"/>
-            <circle class="uk-pin-dot" cx="50" cy="57" r="1.7"/>
-            <text class="uk-label" x="54" y="58.5">Birmingham</text>
+          <g class="uk-pin" data-id="birmingham" tabindex="0" role="button" aria-label="Birmingham — Regional Centre">
+            <circle class="uk-pin-ring" cx="205.6" cy="393.2" r="7"/>
+            <circle class="uk-pin-dot" cx="205.6" cy="393.2" r="3.5"/>
+            <text class="uk-label" x="218.6" y="397.7">Birmingham</text>
           </g>
-          <g class="uk-pin" data-id="london" tabindex="0" role="button" aria-label="London Regional Centre">
-            <circle class="uk-pin-ring" cx="63" cy="73" r="2.2"/>
-            <circle class="uk-pin-dot" cx="63" cy="73" r="1.7"/>
-            <text class="uk-label" x="67" y="74.5">London</text>
+          <g class="uk-pin" data-id="london" tabindex="0" role="button" aria-label="London — Regional Centre">
+            <circle class="uk-pin-ring" cx="284.8" cy="453.6" r="7"/>
+            <circle class="uk-pin-dot" cx="284.8" cy="453.6" r="3.5"/>
+            <text class="uk-label" x="297.8" y="458.1">London</text>
           </g>
         </svg>
       </div>
