@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="none" aria-label="TTS FM">
-  <!-- Brand mark: stacked red bars (T shape abstracted) -->
-  <rect x="0" y="0" width="6" height="44" fill="#C4122F"/>
-  <rect x="0" y="0" width="32" height="6" fill="#C4122F"/>
-  <!-- Wordmark -->
-  <text x="46" y="31" font-family="'DM Sans', Arial, sans-serif" font-weight="700" font-size="26" fill="#FFFFFF" letter-spacing="-0.5">TTS</text>
-  <text x="106" y="31" font-family="'DM Sans', Arial, sans-serif" font-weight="400" font-size="26" fill="rgba(255,255,255,0.55)" letter-spacing="0">FM</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 56" fill="none" aria-label="TTS FM">
+  <!-- Lime-green blob (logo circle) -->
+  <ellipse cx="48" cy="30" rx="46" ry="28" fill="#C5D44C"/>
+  <ellipse cx="44" cy="26" rx="32" ry="20" fill="#D8E870" opacity="0.55"/>
+  <!-- "tts" in logo navy, rounded bold -->
+  <text x="7" y="46" font-family="'DM Sans', 'Arial Rounded MT Bold', Arial, sans-serif" font-weight="900" font-size="40" fill="#2D5282" letter-spacing="-1">tts</text>
+  <!-- "FM" in logo purple, smaller, top-right -->
+  <text x="96" y="28" font-family="'DM Sans', Arial, sans-serif" font-weight="700" font-size="19" fill="#7A4C8C" letter-spacing="0.5">FM</text>
 </svg>
