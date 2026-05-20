@@ -63,7 +63,7 @@ input, textarea, select { font-family: inherit; }
   /* layout */
   --max: 1380px;
   --gap: clamp(24px, 5vw, 80px);
-  --section-pad: clamp(80px, 10vw, 160px);
+  --section-pad: clamp(56px, 7vw, 112px);
 }
 
 ::selection { background: var(--red); color: var(--white); }
@@ -72,7 +72,7 @@ input, textarea, select { font-family: inherit; }
 .display {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(56px, 9vw, 152px);
+  font-size: clamp(40px, 6vw, 88px);
   letter-spacing: -0.04em;
   line-height: 0.92;
   margin: 0;
@@ -81,7 +81,7 @@ input, textarea, select { font-family: inherit; }
 .h1 {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(44px, 6vw, 100px);
+  font-size: clamp(32px, 4.5vw, 72px);
   letter-spacing: -0.035em;
   line-height: 0.94;
   margin: 0;
@@ -90,7 +90,7 @@ input, textarea, select { font-family: inherit; }
 .h2 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(34px, 4.5vw, 72px);
+  font-size: clamp(26px, 3.2vw, 52px);
   letter-spacing: -0.03em;
   line-height: 1.0;
   margin: 0;
@@ -99,7 +99,7 @@ input, textarea, select { font-family: inherit; }
 .h3 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(22px, 2.4vw, 38px);
+  font-size: clamp(18px, 2vw, 30px);
   letter-spacing: -0.022em;
   line-height: 1.1;
   margin: 0;
@@ -186,7 +186,7 @@ section { position: relative; }
   padding: 20px var(--gap);
   gap: 24px;
 }
-.nav-logo img { height: 30px; filter: brightness(0) invert(1); }
+.nav-logo img { height: 32px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 2px; }
 .nav-link {
   padding: 8px 14px;
@@ -313,7 +313,7 @@ section { position: relative; }
 .metric-val {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(38px, 5vw, 68px);
+  font-size: clamp(28px, 3.8vw, 52px);
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--ink);
@@ -733,7 +733,7 @@ section { position: relative; }
   padding-bottom: 64px;
   border-bottom: 1px solid var(--rule);
 }
-.footer-logo { height: 36px; filter: brightness(0) invert(1); margin-bottom: 24px; }
+.footer-logo { height: 36px; width: auto; margin-bottom: 24px; }
 .footer-desc {
   color: var(--ink-3);
   font-size: 14px;
