@@ -128,10 +128,10 @@
 .engine {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 80vh;
+  /* natural height */
 }
 .engine-panel {
-  padding: clamp(64px, 8vw, 112px) clamp(40px, 5vw, 72px);
+  padding: clamp(40px, 5vw, 72px) clamp(32px, 4vw, 60px);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -156,9 +156,9 @@
 .engine-title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(34px, 4.2vw, 64px);
-  letter-spacing: -0.035em;
-  line-height: 0.97;
+  font-size: clamp(20px, 2vw, 30px);
+  letter-spacing: -0.022em;
+  line-height: 1.1;
   margin: 0 0 24px;
   text-wrap: balance;
 }
@@ -222,7 +222,7 @@
 /* Testimonial feature */
 .testi-feature {
   background: var(--cream);
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(48px, 6vw, 80px) 0;
   color: var(--dark-ink);
 }
 .testi-feature-inner {
@@ -330,6 +330,118 @@
     rgba(8,10,14,0.55);
 }
 .cta-content { position: relative; z-index: 5; }
+
+
+/* Section headings — refined, proportionate */
+.sh {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 34px);
+  letter-spacing: -0.022em;
+  line-height: 1.12;
+  margin: 0;
+}
+.sh em { font-style:normal; color:var(--red); }
+
+/* Accreditation band */
+.accred-band {
+  background: var(--night-1);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0;
+}
+.accred-inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  flex-wrap: wrap;
+}
+.accred-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.accred-logos {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 48px);
+  flex-wrap: wrap;
+  flex: 1;
+}
+.accred-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.65;
+  filter: grayscale(0.4) brightness(1.1);
+  transition: opacity .2s;
+}
+.accred-logo:hover { opacity: 1; filter: none; }
+
+/* Differentiators grid */
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.diff-cell {
+  padding: 32px 28px;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.diff-val {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 44px);
+  letter-spacing: -0.04em;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.diff-lbl {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 12px;
+}
+.diff-body {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 26ch;
+}
+@media (max-width: 640px) {
+  .diff-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Section intro layout */
+.sec-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.sec-intro.centered {
+  grid-template-columns: 1fr;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sec-intro.centered .lead { max-width: 54ch; margin: 16px auto 0; }
+@media (max-width: 768px) {
+  .sec-intro { grid-template-columns: 1fr; }
+}
 
 /* UK Map section */
 .uk-map-section {
@@ -477,7 +589,7 @@
   <div class="hero-content">
     <div class="wrap">
       <p class="eyebrow hero-eyebrow">Security &amp; Facilities Management</p>
-      <h1 class="display hero-title">Total<br><em>Protection</em>.<br>Flawless<br>Operations.</h1>
+      <h1 class="h1 hero-title">Total Protection.<br><em>Flawless Operations.</em></h1>
       <p class="hero-sub">Next-generation security and integrated facilities management across the United Kingdom. Local presence, regional management, national capability — from South Shields to London.</p>
       <div class="hero-actions">
         <button class="btn btn-red btn-lg" data-modal="quote">Request a quote
@@ -508,6 +620,23 @@
     <div class="metric">
       <div class="metric-val">5</div>
       <div class="metric-desc">Regional support centres across the United Kingdom</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ACCREDITATIONS BAND -->
+<div class="accred-band" aria-label="Accreditations and partners">
+  <div class="wrap">
+    <div class="accred-inner">
+      <span class="accred-label">Accredited by</span>
+      <div class="accred-logos">
+        <img class="accred-logo" src="assets/acred-acs.png"          alt="ACS Pacesetters"  loading="lazy">
+        <img class="accred-logo" src="assets/acred-webeye.png"       alt="WebEye"           loading="lazy">
+        <img class="accred-logo" src="assets/acred-parim.png"        alt="Parim"            loading="lazy">
+        <img class="accred-logo" src="assets/acred-reslink.png"      alt="ReSLink"          loading="lazy">
+        <img class="accred-logo" src="assets/acred-combat-stress.png" alt="Combat Stress"   loading="lazy">
+      </div>
     </div>
   </div>
 </div>
@@ -560,7 +689,12 @@
 <!-- TESTIMONIAL FEATURE -->
 <section class="testi-feature" id="clients" aria-label="Client testimonials">
   <div class="wrap">
-    <p class="eyebrow on-light reveal" style="margin-bottom:48px; color:var(--red)">Client voices</p>
+    <div class="sec-intro centered reveal" style="margin-bottom:48px">
+      <div>
+        <p class="eyebrow on-light" style="margin-bottom:14px">Client voices</p>
+        <h2 class="sh" style="color:var(--dark-ink)">What our clients say.</h2>
+      </div>
+    </div>
     <div class="testi-feature-inner">
       <div class="testi-feature-text reveal">
         <div class="testi-open-quote" aria-hidden="true">"</div>
@@ -589,12 +723,12 @@
 <!-- COVERAGE + UK MAP -->
 <section class="section" id="coverage" style="background:var(--night)">
   <div class="wrap">
-    <div class="section-head">
-      <div class="reveal">
-        <p class="eyebrow" style="margin-bottom:28px">UK Coverage</p>
-        <h2 class="h1">Five regions.<br><span class="accent">One operating model.</span></h2>
+    <div class="sec-intro reveal">
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">UK Coverage</p>
+        <h2 class="sh">Five regions. <em>One operating model.</em></h2>
       </div>
-      <p class="lead reveal reveal-d1">Click any hub to see local operations data. South Shields is the heart — four Regional Support Centres extend our reach to every corner of the United Kingdom.</p>
+      <p class="lead" style="margin:0">Click any hub. South Shields is the heart — four Regional Support Centres extend TTS FM's reach to every corner of the United Kingdom.</p>
     </div>
     <div class="uk-map-section reveal">
       <div class="uk-map-wrap">
@@ -670,8 +804,8 @@
   <div class="wrap">
     <div class="section-2col" style="align-items:center">
       <div class="reveal">
-        <p class="eyebrow" style="margin-bottom:28px">Join TTS FM</p>
-        <h2 class="h1">Elite professionals.<br><span class="accent">No CV required.</span></h2>
+        <p class="eyebrow" style="margin-bottom:14px">Join TTS FM</p>
+        <h2 class="sh">Elite professionals. <em>No CV required.</em></h2>
         <p class="lead" style="margin-top:28px;max-width:42ch">SIA-licensed security officers and FM operators across the UK. Named regional managers, above-sector pay, and a Security Officer Welfare programme cited publicly by our clients.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px;max-width:380px">
           <div>
@@ -736,35 +870,6 @@
             <p>A named local operations manager will follow up. No CV required.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ACCREDITATIONS -->
-<section class="section" style="background:var(--cream);padding:64px 0" aria-label="Accreditations and partners">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="reveal">
-        <p class="eyebrow on-light" style="margin-bottom:14px">Accreditations</p>
-        <div style="font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.018em;color:var(--dark-ink)">Verified by industry bodies.</div>
-      </div>
-      <div class="logo-strip logo-strip-light reveal reveal-d1">
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ACS Pacesetters">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol-300x212.jpg" alt="ACS Pacesetters" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="WebEye">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize-150x150.jpg" alt="WebEye" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Parim">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize-150x150.jpg" alt="Parim" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ReSLink">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize-150x150.jpg" alt="ReSLink" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Combat Stress">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2023/09/Combat-stress.png" alt="Combat Stress" loading="lazy">
-        </a>
       </div>
     </div>
   </div>
