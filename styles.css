@@ -11,7 +11,7 @@ body {
   text-rendering: optimizeLegibility;
   background: var(--night);
   color: var(--ink);
-  line-height: 1.5;
+  line-height: 1.618;
   overflow-x: hidden;
   font-weight: 400;
 }
@@ -65,8 +65,8 @@ input, textarea, select { font-family: inherit; }
 
   /* layout */
   --max: 1380px;
-  --gap: clamp(24px, 5vw, 80px);
-  --section-pad: clamp(56px, 7vw, 112px);
+  --gap: clamp(21px, 4vw, 55px);
+  --section-pad: clamp(55px, 6.2vw, 89px);
 }
 
 ::selection { background: var(--red); color: #07090F; }
@@ -75,7 +75,7 @@ input, textarea, select { font-family: inherit; }
 .display {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(40px, 6vw, 88px);
+  font-size: clamp(42px, 7.6vw, 110px);
   letter-spacing: -0.04em;
   line-height: 0.92;
   margin: 0;
@@ -84,7 +84,7 @@ input, textarea, select { font-family: inherit; }
 .h1 {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(32px, 4.5vw, 72px);
+  font-size: clamp(26px, 4.7vw, 68px);
   letter-spacing: -0.035em;
   line-height: 0.94;
   margin: 0;
@@ -93,7 +93,7 @@ input, textarea, select { font-family: inherit; }
 .h2 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(26px, 3.2vw, 52px);
+  font-size: clamp(21px, 2.9vw, 42px);
   letter-spacing: -0.03em;
   line-height: 1.0;
   margin: 0;
@@ -102,14 +102,14 @@ input, textarea, select { font-family: inherit; }
 .h3 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(18px, 2vw, 30px);
+  font-size: clamp(16px, 1.8vw, 26px);
   letter-spacing: -0.022em;
   line-height: 1.1;
   margin: 0;
 }
 .lead {
-  font-size: clamp(17px, 1.3vw, 21px);
-  line-height: 1.6;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.618;
   color: var(--ink-2);
   font-weight: 400;
   margin: 0;
@@ -153,16 +153,16 @@ section { position: relative; }
 .section { padding: var(--section-pad) 0; }
 .section-2col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(48px, 6vw, 96px);
+  grid-template-columns: 1fr 1.618fr;
+  gap: clamp(34px, 5vw, 89px);
   align-items: start;
 }
 .section-head {
   display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: clamp(40px, 5vw, 80px);
+  grid-template-columns: 1.618fr 1fr;
+  gap: clamp(34px, 4vw, 55px);
   align-items: end;
-  margin-bottom: clamp(48px, 6vw, 96px);
+  margin-bottom: clamp(55px, 5.5vw, 89px);
 }
 
 /* ── NAV ────────────────────────────────────────────────── */
@@ -189,7 +189,7 @@ section { position: relative; }
   padding: 20px var(--gap);
   gap: 24px;
 }
-.nav-logo img { height: 32px; width: auto; }
+.nav-logo img { height: 52px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 2px; }
 .nav-link {
   padding: 8px 14px;
@@ -309,14 +309,14 @@ section { position: relative; }
   margin: 0 auto;
 }
 .metric {
-  padding: 44px var(--gap);
+  padding: 34px var(--gap);
   border-right: 1px solid var(--rule);
 }
 .metric:last-child { border-right: none; }
 .metric-val {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(28px, 3.8vw, 52px);
+  font-size: clamp(26px, 3.6vw, 42px);
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--ink);
@@ -736,7 +736,7 @@ section { position: relative; }
   padding-bottom: 64px;
   border-bottom: 1px solid var(--rule);
 }
-.footer-logo { height: 36px; width: auto; margin-bottom: 24px; }
+.footer-logo { height: 55px; width: auto; margin-bottom: 24px; }
 .footer-desc {
   color: var(--ink-3);
   font-size: 14px;
