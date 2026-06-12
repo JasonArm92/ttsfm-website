@@ -4,181 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080A0E">
-<meta name="description" content="TTS FM (UK) is a SIA Approved Integrated Risk Based Security Solutions and Facilities Management contractor delivering services across the United Kingdom from our South Shields headquarters.">
-<title>About TTS FM — Professional Security &amp; Facilities Management, South Shields</title>
+<meta name="description" content="About TTS FM — professional security and facilities management based in South Shields. SIA Approved, North East founded, operating across the UK.">
+<title>About — TTS FM · Security &amp; Facilities Management</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-/* ── ABOUT PAGE LOCALS ──────────────────────────────────── */
-.about-statement { background: var(--night-1); }
-.statement-quote {
-  font-family: var(--display);
-  font-size: clamp(26px, 3.2vw, 48px);
-  font-weight: 700;
-  letter-spacing: -0.028em;
-  line-height: 1.1;
-  max-width: 68ch;
-  color: var(--ink);
-  margin: 0;
-  text-wrap: pretty;
-}
-.values-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule-2);
-  margin-top: 80px;
-}
-.value-item {
-  padding: 48px 40px;
-  border-right: 1px solid var(--rule);
-}
-.value-item:last-child { border-right: none; }
-.value-num {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 20px;
-}
-.value-title {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.018em;
-  margin: 0 0 14px;
-  color: var(--ink);
-}
-.value-body {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--ink-2);
-  margin: 0;
-}
-
-/* ── PILLARS ────────────────────────────────────────────── */
-.pillar-card {
-  background: var(--cream);
-  border: 1px solid var(--rule-cream2);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform .4s cubic-bezier(.2,0,.2,1), box-shadow .4s ease;
-  color: var(--dark-ink);
-}
-.pillar-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px -16px rgba(0,0,0,0.18);
-}
-.pillar-img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
-.pillar-body { padding: 32px; }
-.pillar-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 12px;
-}
-.pillar-title {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  margin: 0 0 12px;
-  color: var(--dark-ink);
-}
-.pillar-desc {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--dark-2);
-  margin: 0;
-}
-
-/* ── COVERAGE ───────────────────────────────────────────── */
-.coverage-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  margin-top: 64px;
-}
-.coverage-card {
-  background: var(--night-1);
-  border: 1px solid var(--rule);
-  border-radius: 16px;
-  padding: 36px 28px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .3s ease, transform .4s cubic-bezier(.2,0,.2,1);
-}
-.coverage-card:hover {
-  border-color: var(--red);
-  transform: translateY(-3px);
-}
-.coverage-card.hq { border-color: rgba(196,18,47,0.3); }
-.coverage-card.hq::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 2px;
-  background: linear-gradient(90deg, var(--red), transparent);
-}
-.coverage-city {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(18px, 1.8vw, 26px);
-  letter-spacing: -0.025em;
-  margin: 0 0 10px;
-  color: var(--ink);
-}
-.coverage-role {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-  line-height: 1.6;
-}
-.coverage-role .region { color: var(--red); font-weight: 500; }
-.hq-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(196,18,47,0.1);
-  border: 1px solid rgba(196,18,47,0.25);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 16px;
-}
-
-/* ── RESPONSIVE ─────────────────────────────────────────── */
-@media (max-width: 980px) {
-  .values-strip { grid-template-columns: 1fr; }
-  .value-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 36px 0; }
-  .value-item:last-child { border-bottom: none; }
-  .coverage-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 640px) {
-  .statement-quote { font-size: clamp(22px, 5.5vw, 32px); }
-  .coverage-grid { grid-template-columns: 1fr 1fr; }
-}
-</style>
 </head>
 <body>
 
-<!-- ── NAV ──────────────────────────────────────────────── -->
 <nav class="nav" id="nav" aria-label="Primary navigation">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" aria-label="TTS FM home">
@@ -193,9 +27,9 @@
     </div>
     <div class="nav-end">
       <a href="contact.html" class="btn btn-ghost btn-sm">Get in touch</a>
-      <button class="btn btn-red btn-sm" data-modal="quote">Request a quote
+      <a href="contact.html" class="btn btn-red btn-sm">Request Cover
         <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-      </button>
+      </a>
     </div>
     <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <svg width="15" height="11" viewBox="0 0 15 11" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1h13M1 5.5h13M1 10h13"/></svg>
@@ -204,7 +38,6 @@
   </div>
 </nav>
 
-<!-- ── DRAWER ────────────────────────────────────────────── -->
 <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
 <aside class="drawer" id="drawer" aria-label="Mobile navigation" aria-hidden="true">
   <div class="drawer-head">
@@ -218,275 +51,167 @@
   <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
   <a href="careers.html"      class="drawer-link">Careers      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
   <a href="contact.html"      class="drawer-link">Contact      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <button class="btn btn-red" style="margin-top:28px;justify-content:center" data-modal="quote">Request a quote</button>
+  <a href="contact.html" class="btn btn-red" style="margin-top:28px;justify-content:center">Request Cover</a>
 </aside>
 
 <main>
 
-  <!-- ── 1. PAGE HERO ──────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero-bg" aria-hidden="true">
-      <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-768x768.png" alt="" loading="eager">
-    </div>
-    <div class="page-hero-content">
-      <div class="wrap">
-        <p class="eyebrow reveal">About TTS FM</p>
-        <h1 class="h1 reveal reveal-d1" style="margin-top:24px;max-width:22ch">
-          Operational security and site support<br><span class="accent">from the North East.</span>
-        </h1>
-        <p class="lead reveal reveal-d2" style="margin-top:28px;max-width:52ch">
-          TTS FM is a South Shields-based security and facilities management company providing professional cover for commercial, industrial and operational environments.
-        </p>
-      </div>
+  <!-- PAGE HERO -->
+  <header style="background:var(--night);padding:var(--section-pad) 0;border-bottom:1px solid var(--rule)">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="margin-bottom:21px">About TTS FM</p>
+      <h1 class="h1 reveal reveal-d1">Professional, operational,<br><span class="accent">North East founded.</span></h1>
+      <p class="lead reveal reveal-d2" style="margin-top:34px;max-width:60ch">TTS FM is a security and facilities management company based in South Shields. We provide professional guarding, site support and integrated FM services for commercial, industrial and operational sites across the UK.</p>
     </div>
   </header>
 
-  <!-- ── 2. COMPANY STATEMENT ──────────────────────────────── -->
-  <section class="about-statement" style="padding:var(--section-pad) 0" aria-labelledby="statement-heading">
+  <!-- WHO WE ARE -->
+  <section class="section" style="background:var(--night)">
     <div class="wrap">
-      <p class="eyebrow reveal" id="statement-heading">Who we are</p>
-      <div class="section-2col reveal reveal-d1" style="margin-top:55px">
+      <div class="section-2col reveal">
         <div>
-          <p style="font-size:16px;line-height:1.618;color:var(--ink-2);margin:0 0 21px">TTS FM is a practical, no-nonsense operation. We focus on reliability, clear communication and doing the job properly. Our clients do not want complexity — they want cover that works and a team they can reach when they need to.</p>
-          <p style="font-size:16px;line-height:1.618;color:var(--ink-2);margin:0 0 21px">We are SIA-approved, operate 24/7 and are based in South Shields — close to the sites we serve across the North East and beyond.</p>
-          <p style="font-size:16px;line-height:1.618;color:var(--ink-2);margin:0">Combining security and facilities management under one provider means fewer contacts, clearer accountability and a single team who understand your site.</p>
+          <p class="eyebrow" style="margin-bottom:21px">Who We Are</p>
+          <h2 class="h2" style="margin-bottom:34px">A security and FM company<br>that operates directly.</h2>
+          <p style="font-size:15px;line-height:1.618;color:var(--ink-2);margin:0 0 21px">TTS FM was established in the North East to provide security and facilities services to sites that need reliable, professional cover — not agencies, not layers of subcontractors, not a call centre. A company that operates directly and takes accountability seriously.</p>
+          <p style="font-size:15px;line-height:1.618;color:var(--ink-2);margin:0">We are SIA Approved and operate from our South Shields head office, with regional support centres in Edinburgh, Manchester, Birmingham and London. Our work covers commercial property, industrial sites, NHS estates, ports and vacant property across the UK.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:21px">
-          <div style="border-top:1px solid var(--rule);padding-top:21px">
-            <div class="lbl" style="margin-bottom:8px">Location</div>
-            <div style="font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em">South Shields, Tyne &amp; Wear</div>
-          </div>
-          <div style="border-top:1px solid var(--rule);padding-top:21px">
-            <div class="lbl" style="margin-bottom:8px">Licence</div>
-            <div style="font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em">SIA Approved Contractor</div>
-          </div>
-          <div style="border-top:1px solid var(--rule);padding-top:21px">
-            <div class="lbl" style="margin-bottom:8px">Capability</div>
-            <div style="font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em">Security + FM Combined</div>
-          </div>
-          <div style="border-top:1px solid var(--rule);padding-top:21px">
-            <div class="lbl" style="margin-bottom:8px">Availability</div>
-            <div style="font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em">24/7 Operational Support</div>
+        <div>
+          <div class="why-grid" style="grid-template-columns:1fr 1fr;gap:21px">
+            <div class="why-card">
+              <span class="why-card-icon">📍</span>
+              <h3 class="why-card-title">South Shields HQ</h3>
+              <p class="why-card-desc">Founded and operated from the North East of England.</p>
+            </div>
+            <div class="why-card">
+              <span class="why-card-icon">🛡</span>
+              <h3 class="why-card-title">SIA Approved</h3>
+              <p class="why-card-desc">Approved Contractor for front-line security operations.</p>
+            </div>
+            <div class="why-card">
+              <span class="why-card-icon">🕐</span>
+              <h3 class="why-card-title">24/7 Operations</h3>
+              <p class="why-card-desc">Operational cover and management around the clock.</p>
+            </div>
+            <div class="why-card">
+              <span class="why-card-icon">🏢</span>
+              <h3 class="why-card-title">5 Regions</h3>
+              <p class="why-card-desc">Regional support centres across the United Kingdom.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 3. WHY CLIENTS CHOOSE TTS FM ─────────────────────── -->
-  <section style="background:var(--night-1);padding:var(--section-pad) 0" aria-labelledby="why-heading">
+  <!-- SECURITY AND FM COMBINED -->
+  <section class="section" style="background:var(--night-1)">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div>
-          <p class="eyebrow reveal">Why TTS FM</p>
-          <h2 class="h2 reveal reveal-d1" id="why-heading" style="margin-top:20px">
-            Why clients<br><span class="accent">choose TTS FM.</span>
-          </h2>
+          <p class="eyebrow" style="margin-bottom:14px">Our Approach</p>
+          <h2 class="h2">Security and FM<br>under one contract.</h2>
         </div>
-        <p class="lead reveal reveal-d2">
-          We do not over-promise. We deliver reliable, professional cover with clear communication and no corporate runaround.
-        </p>
+        <p class="lead">Most sites need both security and facilities support. Managing two separate providers creates gaps in accountability and communication. TTS FM delivers both under a single, managed contract.</p>
       </div>
       <div class="why-grid reveal">
         <div class="why-card">
-          <span class="why-card-icon">✓</span>
-          <h3 class="why-card-title">Trained and Vetted Staff</h3>
-          <p class="why-card-desc">All security personnel are SIA-licensed and background checked. We do not cut corners on vetting or training.</p>
-        </div>
-        <div class="why-card">
-          <span class="why-card-icon">📞</span>
-          <h3 class="why-card-title">Responsive and Reliable</h3>
-          <p class="why-card-desc">We pick up the phone. Cover requests are handled promptly by the operations team — not a call centre.</p>
-        </div>
-        <div class="why-card">
           <span class="why-card-icon">📋</span>
-          <h3 class="why-card-title">Straightforward Reporting</h3>
-          <p class="why-card-desc">Clear reporting and direct communication with no corporate jargon. You know what is happening on your site.</p>
+          <h3 class="why-card-title">Single Point of Contact</h3>
+          <p class="why-card-desc">One contract, one manager, one point of contact. No confusion about who is responsible for what.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-card-icon">⚙</span>
+          <h3 class="why-card-title">Integrated Delivery</h3>
+          <p class="why-card-desc">Security and FM teams are briefed together, work to the same site standards and report through the same management structure.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-card-icon">✓</span>
+          <h3 class="why-card-title">Clear Accountability</h3>
+          <p class="why-card-desc">When something needs attention, TTS FM deals with it. No finger-pointing between separate providers.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 4. COVERAGE ───────────────────────────────────────── -->
-  <section style="background:var(--night);padding:var(--section-pad) 0" aria-labelledby="coverage-heading">
+  <!-- WHY CLIENTS CHOOSE US -->
+  <section class="section" style="background:var(--night)">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div>
-          <p class="eyebrow reveal">UK Coverage</p>
-          <h2 class="h2 reveal reveal-d1" id="coverage-heading" style="margin-top:20px">
-            Five regions.<br><span class="accent">One operating model</span>.
-          </h2>
+          <p class="eyebrow" style="margin-bottom:14px">Why Clients Choose TTS FM</p>
+          <h2 class="h2">Reliability is not a selling point.<br>It is the baseline.</h2>
         </div>
-        <p class="lead reveal reveal-d2">
-          South Shields HQ. Four regional support centres extending our reach across the United Kingdom.
-        </p>
+        <p class="lead">We do not pitch on price and cut corners later. We are transparent about what we deliver and consistent in how we deliver it.</p>
       </div>
-
-      <div class="coverage-grid" role="list" aria-label="Regional offices">
-
-        <div class="coverage-card hq reveal" role="listitem">
-          <div class="hq-badge">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
-            Headquarters
-          </div>
-          <div class="coverage-city">South Shields</div>
-          <div class="coverage-role">
-            <span class="region">HQ · Newcastle</span><br>North East England
+      <div class="role-list reveal">
+        <div class="role-item">
+          <div>
+            <h3 class="role-title">Direct communication</h3>
+            <p class="role-desc">Named operations managers. Direct lines. When there is a problem on site, you speak to someone who knows your site — not a call centre operative reading from a script.</p>
           </div>
         </div>
-
-        <div class="coverage-card reveal reveal-d1" role="listitem">
-          <div class="coverage-city">Edinburgh</div>
-          <div class="coverage-role">
-            <span class="region">Scotland</span><br>Regional Office
+        <div class="role-item">
+          <div>
+            <h3 class="role-title">Properly briefed personnel</h3>
+            <p class="role-desc">Every officer deployed to a site receives a site-specific brief. They know the access procedures, the escalation protocols and what is expected of them before they arrive.</p>
           </div>
         </div>
-
-        <div class="coverage-card reveal reveal-d1" role="listitem">
-          <div class="coverage-city">Manchester</div>
-          <div class="coverage-role">
-            <span class="region">North West</span><br>Regional Office
+        <div class="role-item">
+          <div>
+            <h3 class="role-title">Structured reporting</h3>
+            <p class="role-desc">Accurate, timely logs and reports as standard. If something happens on site, it is documented correctly. Our clients are never left guessing about what occurred during a shift.</p>
           </div>
         </div>
-
-        <div class="coverage-card reveal reveal-d2" role="listitem">
-          <div class="coverage-city">Birmingham</div>
-          <div class="coverage-role">
-            <span class="region">Midlands</span><br>Regional Office
+        <div class="role-item">
+          <div>
+            <h3 class="role-title">Standards maintained</h3>
+            <p class="role-desc">We do not lower our standards to fill a rota. We would rather cover operationally than deploy someone who is not ready. Our clients notice the difference.</p>
           </div>
-        </div>
-
-        <div class="coverage-card reveal reveal-d2" role="listitem">
-          <div class="coverage-city">London</div>
-          <div class="coverage-role">
-            <span class="region">South &amp; South East</span><br>Regional Office
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 5. TESTIMONIALS ───────────────────────────────────── -->
-  <section style="background:var(--cream);padding:var(--section-pad) 0;color:var(--dark-ink)" aria-labelledby="testi-heading">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow on-light reveal">Client feedback</p>
-          <h2 class="h2 reveal reveal-d1" id="testi-heading" style="margin-top:20px">
-            Trusted by the<br><span class="accent">organisations that matter</span>.
-          </h2>
-        </div>
-        <p class="lead reveal reveal-d2">
-          From critical NHS estates to major port operations — our clients rely on TTS FM because we deliver, every time and on time.
-        </p>
-      </div>
-
-      <div class="grid-2" role="list" aria-label="Client testimonials">
-
-        <article class="testi-card reveal" role="listitem">
-          <blockquote class="testi-pullquote">
-            "TTS FM deliver a first class Security service across our multiple assignments. Their Security Office Welfare programme is excellent and their local Operations Manager Team always delivers every time and on time."
-          </blockquote>
-          <div class="testi-attr-name">Janice McGinnes</div>
-          <div class="testi-attr-role">Security Manager</div>
-          <div class="testi-badge" style="margin-top:12px">Port of Tyne</div>
-        </article>
-
-        <article class="testi-card reveal reveal-d1" role="listitem">
-          <blockquote class="testi-pullquote">
-            "TTS FM supply physical manned guarding and fire watch foot patrols across our NHS estate. They are 100% reliable and support our Security officers assigned very well."
-          </blockquote>
-          <div class="testi-attr-name">Ian Hood</div>
-          <div class="testi-attr-role">Facility Manager</div>
-          <div class="testi-badge" style="margin-top:12px">NHS Trust</div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 6. ACCREDITATIONS ─────────────────────────────────── -->
-  <section style="background:var(--cream);padding:64px 0" aria-label="Accreditations and partners">
-    <div class="wrap">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-        <div class="reveal">
-          <p class="eyebrow on-light" style="margin-bottom:14px">Accreditations</p>
-          <div style="font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.018em;color:var(--dark-ink)">Independently certified. Professionally assured.</div>
-        </div>
-        <div class="logo-strip logo-strip-light reveal reveal-d1">
-          <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ACS Pacesetters">
-            <img src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol-300x212.jpg" alt="ACS Pacesetters" loading="lazy">
-          </a>
-          <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="WebEye">
-            <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize-150x150.jpg" alt="WebEye" loading="lazy">
-          </a>
-          <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Parim">
-            <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize-150x150.jpg" alt="Parim" loading="lazy">
-          </a>
-          <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ReSLink">
-            <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize-150x150.jpg" alt="ReSLink" loading="lazy">
-          </a>
-          <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Combat Stress">
-            <img src="https://ttsfm.co.uk/wp-content/uploads/2023/09/Combat-stress.png" alt="Combat Stress" loading="lazy">
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 7. CTA ────────────────────────────────────────────── -->
-  <section style="background:var(--night-1);padding:var(--section-pad) 0;text-align:center" aria-labelledby="cta-heading">
+  <!-- CTA -->
+  <section class="cta-band">
     <div class="wrap">
-      <p class="eyebrow reveal" style="justify-content:center">Get in touch</p>
-      <h2 class="h2 reveal reveal-d1" id="cta-heading" style="margin-top:24px;margin-left:auto;margin-right:auto;max-width:20ch">
-        Ready to talk?
-      </h2>
-      <p class="lead reveal reveal-d2" style="margin-top:24px;margin-left:auto;margin-right:auto;max-width:44ch">
-        A senior operator responds from a regional office, not a contact centre.
-      </p>
-      <div class="reveal reveal-d2" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;flex-wrap:wrap">
-        <button class="btn btn-red btn-lg" data-modal="quote">
-          Request a quote
+      <p class="cta-band-title reveal">Ready to discuss your site?</p>
+      <p class="cta-band-sub reveal">Contact TTS FM to discuss security cover, facilities support or a combined service package for your site.</p>
+      <div class="cta-band-actions reveal">
+        <a href="contact.html" class="btn btn-red btn-lg">Get in Touch
           <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </button>
-        <a href="contact.html" class="btn btn-ghost btn-lg">Contact us</a>
+        </a>
+        <a href="services.html" class="btn btn-ghost btn-lg">View Services</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ── FOOTER ────────────────────────────────────────────── -->
 <footer class="footer" aria-label="Site footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <img class="footer-logo" src="assets/logo.png" alt="TTS FM" loading="lazy">
         <p class="footer-desc">Professional security and facilities management for commercial, industrial and operational sites across the North East and beyond. South Shields based.</p>
-        <button class="btn btn-red btn-sm" data-modal="quote">Request a quote
+        <a href="contact.html" class="btn btn-red btn-sm">Request Cover
           <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </button>
+        </a>
       </div>
       <div>
         <div class="footer-col-title">Services</div>
         <ul class="footer-links">
-          <li><a href="services.html">Security Services</a></li>
-          <li><a href="services.html">Facilities Management</a></li>
-          <li><a href="services.html">Property Services</a></li>
-          <li><a href="services.html">Training Services</a></li>
-          <li><a href="services.html">Cleaning &amp; Washroom</a></li>
-          <li><a href="services.html">Waste Management</a></li>
+          <li><a href="services.html#security">Security Services</a></li>
+          <li><a href="services.html#facilities">Facilities Services</a></li>
+          <li><a href="services.html">View All Services</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
           <li><a href="about.html">About Us</a></li>
-          <li><a href="https://ttsfm.co.uk/leadership-team" target="_blank" rel="noreferrer noopener">Leadership</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="https://ttsfm.co.uk/news" target="_blank" rel="noreferrer noopener">News</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -504,45 +229,13 @@
     <div class="footer-base">
       <div>© 2026 TTS FM (UK) Ltd · All Rights Reserved</div>
       <nav class="footer-legal" aria-label="Legal links">
-        <a href="https://ttsfm.co.uk/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy</a>
-        <a href="https://ttsfm.co.uk/cookie-policy/" target="_blank" rel="noreferrer noopener">Cookies</a>
-        <a href="https://ttsfm.co.uk/terms-of-use/" target="_blank" rel="noreferrer noopener">Terms</a>
-        <a href="https://ttsfm.co.uk/accessibility-policy/" target="_blank" rel="noreferrer noopener">Accessibility</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Terms</a>
       </nav>
     </div>
   </div>
 </footer>
-
-<!-- ── MODAL ─────────────────────────────────────────────── -->
-<div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-  <div class="modal-head">
-    <div>
-      <p class="eyebrow" style="margin-bottom:14px;display:inline-flex">60-minute quote</p>
-      <h3 id="modal-title" style="font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-0.025em;margin:0 0 8px">Three fields. We'll do the rest.</h3>
-      <p style="color:var(--ink-3);font-size:13.5px;margin:0;max-width:34ch">A senior operator responds during UK business hours.</p>
-    </div>
-    <button class="modal-close" id="modal-close" aria-label="Close modal">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
-    </button>
-  </div>
-  <form id="quote-form" style="display:grid;gap:12px" novalidate>
-    <input class="field" type="text"  placeholder="Your name"                    id="q-name"     required autocomplete="name">
-    <input class="field" type="email" placeholder="Company email"                id="q-email"    required autocomplete="email">
-    <input class="field" type="text"  placeholder="Site postcode (e.g. NE33 5SE)" id="q-postcode" required autocomplete="postal-code">
-    <button type="submit" class="btn btn-red btn-lg" style="margin-top:8px;justify-content:center">Get my quote
-      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </button>
-  </form>
-</div>
-
-<!-- ── TOAST ─────────────────────────────────────────────── -->
-<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
-  <div class="ok" aria-hidden="true">
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2"><path d="M2 5 4.5 7.5 8 3"/></svg>
-  </div>
-  <span id="toast-msg"></span>
-</div>
 
 <script>
 (() => {
@@ -564,29 +257,7 @@
   document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);
   overlay?.addEventListener('click', closeDrawer);
   drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-  const modal = document.getElementById('modal');
-  const mBackdrop = document.getElementById('modal-backdrop');
-  let lastFocus;
-  const openModal = () => { lastFocus=document.activeElement; modal.classList.add('open'); mBackdrop.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; modal.querySelector('input')?.focus(); };
-  const closeModal = () => { modal.classList.remove('open'); mBackdrop.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lastFocus?.focus(); };
-  document.querySelectorAll('[data-modal="quote"]').forEach(b => b.addEventListener('click', openModal));
-  document.getElementById('modal-close')?.addEventListener('click', closeModal);
-  mBackdrop?.addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => { if (e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
-  const toast = document.getElementById('toast');
-  const toastMsg = document.getElementById('toast-msg');
-  const showToast = msg => { toastMsg.textContent=msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4400); };
-  document.getElementById('quote-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    const n=document.getElementById('q-name').value.trim();
-    const em=document.getElementById('q-email').value.trim();
-    const pc=document.getElementById('q-postcode').value.trim();
-    if (!n||!em||!pc) return;
-    closeModal(); e.target.reset();
-    showToast('Quote requested — response within 60 minutes during UK business hours.');
-  });
 })();
 </script>
-
 </body>
 </html>

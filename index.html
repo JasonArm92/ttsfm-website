@@ -43,7 +43,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 15% 60%, rgba(196,18,47,0.15), transparent 55%),
+    radial-gradient(ellipse at 15% 60%, rgba(184,204,42,0.10), transparent 55%),
     linear-gradient(to top, rgba(8,10,14,0.96) 0%, rgba(8,10,14,0.55) 40%, rgba(8,10,14,0.2) 100%);
 }
 .hero-content {
@@ -51,57 +51,6 @@
   z-index: 5;
   width: 100%;
 }
-.hero-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 6;
-  padding: 32px var(--gap);
-  max-width: var(--max);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.hero-badge {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  padding: 7px 14px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 4px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.hero-badge .dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #4ade80;
-  margin-right: 7px;
-  animation: pulse 2.4s ease-in-out infinite;
-  vertical-align: middle;
-}
-
-.hero-eyebrow { margin-bottom: 32px; }
-.hero-title { color: var(--white); margin-bottom: 28px; }
-.hero-title em {
-  font-style: normal;
-  color: var(--red);
-}
-.hero-sub {
-  font-size: clamp(17px, 1.3vw, 21px);
-  line-height: 1.55;
-  color: rgba(255,255,255,0.72);
-  max-width: 52ch;
-  margin-bottom: 44px;
-}
-.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .hero-scroll {
   position: absolute;
   bottom: 40px;
@@ -132,11 +81,25 @@
   margin: 20px 0 0;
 }
 
+.hero-eyebrow { margin-bottom: 32px; }
+.hero-title { color: var(--white); margin-bottom: 28px; }
+.hero-title em {
+  font-style: normal;
+  color: var(--brand-lime);
+}
+.hero-sub {
+  font-size: clamp(17px, 1.3vw, 21px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  max-width: 52ch;
+  margin-bottom: 44px;
+}
+.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
 /* Dual-engine section */
 .engine {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* natural height */
 }
 .engine-panel {
   padding: clamp(34px, 4vw, 55px) clamp(21px, 3vw, 34px);
@@ -147,8 +110,8 @@
 }
 .engine-dark { background: var(--night); }
 .engine-light { background: var(--cream); color: var(--dark-ink); }
-.engine-light .eyebrow { color: var(--red); }
-.engine-light .eyebrow::before { background: var(--red); }
+.engine-light .eyebrow { color: var(--brand-lime); }
+.engine-light .eyebrow::before { background: var(--brand-lime); }
 .engine-num {
   font-family: var(--mono);
   font-size: 11px;
@@ -197,80 +160,6 @@
 .engine-row-a { font-size: 14px; opacity: 0.4; transition: opacity .25s ease, transform .25s ease; }
 .engine-row:hover .engine-row-a { opacity: 1; transform: translateX(4px); }
 
-/* Photo strip for FM */
-.fm-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 6px;
-  margin: 32px 0;
-  border-radius: 8px;
-  overflow: hidden;
-  aspect-ratio: 1.1;
-}
-.fm-photo {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-}
-.fm-photo::after {
-  content: attr(data-label);
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Testimonial feature */
-.testi-feature {
-  background: var(--cream);
-  padding: clamp(48px, 6vw, 80px) 0;
-  color: var(--dark-ink);
-}
-.testi-feature-inner {
-  display: grid;
-  grid-template-columns: 1.618fr 1fr;
-  gap: clamp(48px, 6vw, 96px);
-  align-items: center;
-}
-.testi-feature-photo {
-  position: relative;
-  aspect-ratio: 4/5;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.testi-feature-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.testi-feature-photo::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 80px;
-  background: var(--red);
-  z-index: 2;
-  border-radius: 0 2px 2px 0;
-}
-.testi-open-quote {
-  font-family: var(--display);
-  font-size: 96px;
-  line-height: 0.8;
-  color: var(--red);
-  margin-bottom: 8px;
-  font-weight: 800;
-}
-.testi-feature-text { display: flex; flex-direction: column; justify-content: center; }
-
 /* Coverage strip */
 .coverage-strip {
   display: grid;
@@ -290,7 +179,7 @@
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.18em;
-  color: var(--red);
+  color: var(--brand-lime);
   margin-bottom: 10px;
 }
 .cov-city {
@@ -311,36 +200,7 @@
 .cov-cell.hq .cov-city { color: var(--white); }
 .cov-cell.hq .cov-num::before { content: "★ "; }
 
-/* CTA section */
-.cta-section {
-  position: relative;
-  min-height: 560px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.cta-bg {
-  position: absolute;
-  inset: 0;
-}
-.cta-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.28) saturate(0.6);
-}
-.cta-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 80% 50%, rgba(196,18,47,0.2), transparent 60%),
-    rgba(8,10,14,0.55);
-}
-.cta-content { position: relative; z-index: 5; }
-
-
-/* Section headings — refined, proportionate */
+/* Section headings */
 .sh {
   font-family: var(--display);
   font-weight: 700;
@@ -349,7 +209,7 @@
   line-height: 1.12;
   margin: 0;
 }
-.sh em { font-style:normal; color:var(--red); }
+.sh em { font-style:normal; color:var(--brand-lime); }
 
 /* Accreditation band */
 .accred-band {
@@ -390,47 +250,6 @@
 }
 .accred-logo:hover { opacity: 1; filter: none; }
 
-/* Differentiators grid */
-.diff-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule);
-  border-left: 1px solid var(--rule);
-  margin-top: clamp(40px, 5vw, 64px);
-}
-.diff-cell {
-  padding: 32px 28px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.diff-val {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(28px, 3vw, 44px);
-  letter-spacing: -0.04em;
-  color: var(--red);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-.diff-lbl {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-  margin-bottom: 12px;
-}
-.diff-body {
-  font-size: 14px;
-  color: var(--ink-2);
-  line-height: 1.6;
-  max-width: 26ch;
-}
-@media (max-width: 640px) {
-  .diff-grid { grid-template-columns: 1fr 1fr; }
-}
-
 /* Section intro layout */
 .sec-intro {
   display: grid;
@@ -463,8 +282,8 @@
 .uk-shape { fill: var(--night-2); stroke: var(--rule-2); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .uk-pin { cursor: pointer; }
 .uk-pin-dot { fill: var(--ink-3); transition: fill .25s ease; }
-.uk-pin.active .uk-pin-dot { fill: var(--red); }
-.uk-pin.hq .uk-pin-dot { fill: var(--red); }
+.uk-pin.active .uk-pin-dot { fill: var(--brand-lime); }
+.uk-pin.hq .uk-pin-dot { fill: var(--brand-lime); }
 .uk-pin-ring {
   fill: none;
   stroke: var(--ink-3);
@@ -475,8 +294,8 @@
   transform-box: fill-box;
   animation: ringPulse 3s ease-in-out infinite;
 }
-.uk-pin.active .uk-pin-ring { stroke: var(--red); opacity: 0.65; }
-.uk-pin.hq .uk-pin-ring { stroke: var(--red); opacity: 0.4; }
+.uk-pin.active .uk-pin-ring { stroke: var(--brand-lime); opacity: 0.65; }
+.uk-pin.hq .uk-pin-ring { stroke: var(--brand-lime); opacity: 0.4; }
 .uk-label { font-family: var(--mono); font-size: 10px; fill: var(--ink-3); letter-spacing: 0.04em; text-transform: uppercase; }
 @keyframes ringPulse { 0%,100% { transform: scale(1); opacity:0.35; } 50% { transform: scale(1.9); opacity: 0; } }
 
@@ -496,16 +315,16 @@
   left: 0;
   width: 3px;
   height: 48px;
-  background: var(--red);
+  background: var(--brand-lime);
 }
-.region-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+.region-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-lime); margin-bottom: 16px; }
 .region-city { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 3.5vw, 48px); letter-spacing: -0.03em; margin: 0 0 8px; }
 .region-sub { font-size: 14px; color: var(--ink-3); margin: 0 0 28px; }
 .region-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--rule); }
 .region-fact { padding: 18px 0; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
 .region-fact:nth-child(even) { border-right: none; padding-left: 18px; }
 .region-fact-val { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }
-.region-fact-val .accent { color: var(--red); }
+.region-fact-val .accent { color: var(--brand-lime); }
 .region-fact-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; }
 .region-clients { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--rule); }
 .region-chip {
@@ -521,8 +340,6 @@
 /* Responsive overrides */
 @media (max-width: 900px) {
   .engine { grid-template-columns: 1fr; }
-  .testi-feature-inner { grid-template-columns: 1fr; }
-  .testi-feature-photo { aspect-ratio: 16/9; max-height: 360px; }
   .coverage-strip { grid-template-columns: repeat(3,1fr); }
   .coverage-strip .cov-cell:nth-child(3) { border-right: none; }
   .coverage-strip .cov-cell:nth-child(n+4) { border-top: 1px solid var(--rule); }
@@ -531,11 +348,9 @@
 }
 @media (max-width: 640px) {
   .hero-scroll { display: none; }
-  .fm-photos { aspect-ratio: auto; grid-template-columns: 1fr 1fr; }
   .coverage-strip { grid-template-columns: repeat(2, 1fr); }
   .coverage-strip .cov-cell:nth-child(even) { border-right: none; }
   .coverage-strip .cov-cell:nth-child(n+3) { border-top: 1px solid var(--rule); }
-  .hero-top { display: none; }
 }
 </style>
 </head>
@@ -589,15 +404,10 @@
   <div class="hero-bg" aria-hidden="true">
     <img src="https://ttsfm.co.uk/wp-content/uploads/2026/04/Top-Security-Company-in-Newcastle-What-Businesses-Need-to-Know.png" alt="" loading="eager" fetchpriority="high">
   </div>
-  <div class="hero-top" aria-hidden="true">
-    <span class="hero-badge"><span class="dot"></span>Operations Live</span>
-    <span class="hero-badge">SIA Approved</span>
-    <span class="hero-badge">ISO 9001 · ISO 45001</span>
-  </div>
   <div class="hero-content">
     <div class="wrap">
       <p class="eyebrow hero-eyebrow">Security &amp; Facilities Management</p>
-      <h1 class="h1 hero-title">Security and facilities support for sites that<br><em>cannot afford disruption.</em></h1>
+      <h1 class="display hero-title">Security and facilities support for sites that<br><em>cannot afford disruption.</em></h1>
       <p class="hero-sub">TTS FM provides professional security, site support and facilities services for commercial, industrial and operational environments across the North East and beyond.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn btn-red btn-lg">Request Site Support
@@ -611,28 +421,29 @@
   <div class="hero-scroll" aria-hidden="true">Scroll</div>
 </header>
 
-<!-- METRICS STRIP -->
-<div class="metrics" aria-label="Key credentials">
-  <div class="metrics-inner">
-    <div class="metric">
-      <div class="metric-val"><span class="accent">24/7</span></div>
-      <div class="metric-desc">Support and rapid response — every assignment, every region</div>
-    </div>
-    <div class="metric">
-      <div class="metric-val">UK-Wide</div>
-      <div class="metric-desc">Local, regional and national coverage from one operating model</div>
-    </div>
-    <div class="metric">
-      <div class="metric-val"><span class="accent">SIA</span></div>
-      <div class="metric-desc">Approved Contractor — integrated risk-based security solutions</div>
-    </div>
-    <div class="metric">
-      <div class="metric-val">5</div>
-      <div class="metric-desc">Regional support centres across the United Kingdom</div>
-    </div>
+<!-- PROOF STRIP -->
+<div class="proof-strip" aria-label="Key credentials">
+  <div class="proof-card">
+    <span class="proof-card-icon">🛡</span>
+    <div class="proof-card-title">SIA Licensed</div>
+    <div class="proof-card-desc">SIA Approved Contractor for front-line security operations</div>
+  </div>
+  <div class="proof-card">
+    <span class="proof-card-icon">🕐</span>
+    <div class="proof-card-title">24/7 Support</div>
+    <div class="proof-card-desc">Operational cover and rapid response around the clock</div>
+  </div>
+  <div class="proof-card">
+    <span class="proof-card-icon">⚙</span>
+    <div class="proof-card-title">Security + FM</div>
+    <div class="proof-card-desc">Integrated security and facilities management under one contract</div>
+  </div>
+  <div class="proof-card">
+    <span class="proof-card-icon">📍</span>
+    <div class="proof-card-title">North East Base</div>
+    <div class="proof-card-desc">South Shields HQ with five regional support centres across the UK</div>
   </div>
 </div>
-
 
 <!-- ACCREDITATIONS BAND -->
 <div class="accred-band" aria-label="Accreditations and partners">
@@ -657,7 +468,7 @@
   <div class="engine-panel engine-dark">
     <div class="engine-num">01 — Security Solutions</div>
     <h2 class="engine-title reveal">Manned Security &amp;<br><span class="accent">Site Protection.</span></h2>
-    <p class="engine-lead reveal reveal-d1">Professional guarding, patrols, access control, gatehouse operations and incident response for live sites.</p>
+    <p class="engine-lead reveal reveal-d1">Professional guarding, patrols, access control, gatehouse operations and incident response for live sites. SIA-licensed personnel deployed with clear briefings and structured reporting.</p>
     <div class="engine-list svc-list reveal reveal-d2" role="list">
       <div class="engine-row" role="listitem"><span><span class="engine-row-n">01</span> Manned Guarding &amp; Static Posts</span><span class="engine-row-a">→</span></div>
       <div class="engine-row" role="listitem"><span><span class="engine-row-n">02</span> Mobile Patrol &amp; Keyholding</span><span class="engine-row-a">→</span></div>
@@ -673,13 +484,7 @@
   <div class="engine-panel engine-light">
     <div class="engine-num">02 — Facilities Management</div>
     <h2 class="engine-title reveal" style="color:var(--dark-ink)">Facilities &amp;<br><span class="accent">Site Support.</span></h2>
-    <p class="engine-lead reveal reveal-d1">Site support that keeps premises clean, compliant, operational and ready for staff, visitors and contractors.</p>
-    <div class="fm-photos reveal reveal-d2" aria-hidden="true">
-      <div class="fm-photo" data-label="Commercial Cleaning" style="background-image:url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Commercial-Cleaning-Services-in-London-What-to-Expect.png')"></div>
-      <div class="fm-photo" data-label="Property Maintenance" style="background-image:url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Property-Maintenance-Services-in-Glasgow-A-Complete-Guide.png')"></div>
-      <div class="fm-photo" data-label="Integrated FM" style="background-image:url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Integrated-Facilities-Management-in-Leeds-Benefits-for-Businesses.png')"></div>
-      <div class="fm-photo" data-label="Waste Management" style="background-image:url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Commercial-Waste-Management-Services-in-London-Best-Practices-1.png')"></div>
-    </div>
+    <p class="engine-lead reveal reveal-d1">Site support that keeps premises clean, compliant, operational and ready for staff, visitors and contractors. Delivered by a reliable, professionally managed team.</p>
     <div class="engine-list reveal" style="border-top:1px solid var(--rule-cream2); margin-bottom:28px;" role="list">
       <div class="engine-row" role="listitem" style="border-color:var(--rule-cream2);color:var(--dark-2)"><span><span class="engine-row-n">01</span> Cleaning &amp; Site Maintenance</span><span class="engine-row-a">→</span></div>
       <div class="engine-row" role="listitem" style="border-color:var(--rule-cream2);color:var(--dark-2)"><span><span class="engine-row-n">02</span> Front-of-House Support</span><span class="engine-row-a">→</span></div>
@@ -772,36 +577,18 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL FEATURE -->
-<section class="testi-feature" id="clients" aria-label="Client testimonials">
+<!-- TESTIMONIAL -->
+<section class="section" id="clients" style="background:var(--night)" aria-label="Client testimonial">
   <div class="wrap">
-    <div class="sec-intro centered reveal" style="margin-bottom:48px">
-      <div>
-        <p class="eyebrow on-light" style="margin-bottom:14px">Client voices</p>
-        <h2 class="sh" style="color:var(--dark-ink)">What our clients say.</h2>
-      </div>
-    </div>
-    <div class="testi-feature-inner">
-      <div class="testi-feature-text reveal">
-        <div class="testi-open-quote" aria-hidden="true">"</div>
-        <blockquote class="testi-pullquote" style="color:var(--dark-ink)">
-          TTS FM have provided consistent, professional cover for our site. The team are reliable and easy to work with — exactly what we needed.
-        </blockquote>
-        <!-- Anonymised client testimonial — replace with verified quote when available -->
-        <div class="testi-attr-name">Operations Manager</div>
-        <div class="testi-attr-role">North East manufacturing client</div>
-        <div style="margin-top:40px;padding-top:40px;border-top:1px solid var(--rule-cream2)">
-          <blockquote style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--dark-2);font-weight:500;margin:0 0 20px;font-style:italic">
-            "Responsive, professional and they actually pick up the phone. Straightforward to work with — no corporate runaround."
-          </blockquote>
-          <!-- Anonymised client testimonial — replace with verified quote when available -->
-          <div class="testi-attr-name">Facilities Manager</div>
-          <div class="testi-attr-role">Commercial property client</div>
-        </div>
-      </div>
-      <div class="testi-feature-photo reveal reveal-d2">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-1-768x768.png" alt="TTS FM security operations" loading="lazy">
-      </div>
+    <div style="max-width:680px;margin:0 auto;text-align:center" class="reveal">
+      <p class="eyebrow" style="margin-bottom:21px">Client voices</p>
+      <div style="font-size:56px;color:var(--brand-lime);font-family:var(--display);font-weight:800;line-height:0.9;margin-bottom:21px" aria-hidden="true">"</div>
+      <blockquote style="font-size:clamp(19px,1.8vw,24px);line-height:1.55;color:var(--ink);font-weight:500;margin:0 0 34px;font-style:normal">
+        TTS FM have provided consistent, professional cover for our site. The team are reliable and easy to work with — exactly what we needed.
+      </blockquote>
+      <!-- Anonymised client testimonial — replace with verified quote when available -->
+      <div style="font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink);margin-bottom:4px">Operations Manager</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand-lime)">North East manufacturing client</div>
     </div>
   </div>
 </section>
@@ -885,100 +672,16 @@
   </div>
 </section>
 
-<!-- CAREERS WIDGET -->
-<section class="section" id="careers" style="background:var(--night-1)">
-  <div class="wrap">
-    <div class="section-2col" style="align-items:center">
-      <div class="reveal">
-        <p class="eyebrow" style="margin-bottom:14px">Join TTS FM</p>
-        <h2 class="sh">Elite professionals. <em>No CV required.</em></h2>
-        <p class="lead" style="margin-top:28px;max-width:42ch">SIA-licensed security officers and FM operators across the UK. Named regional managers, above-sector pay, and a Security Officer Welfare programme cited publicly by our clients.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px;max-width:380px">
-          <div>
-            <div class="lbl" style="margin-bottom:10px">Response time</div>
-            <div style="font-family:var(--display);font-weight:800;font-size:38px;letter-spacing:-0.035em">24<span class="accent">h</span></div>
-          </div>
-          <div>
-            <div class="lbl" style="margin-bottom:10px">Friction</div>
-            <div style="font-family:var(--display);font-weight:800;font-size:38px;letter-spacing:-0.035em">No <span class="accent">CV</span></div>
-          </div>
-        </div>
-        <a href="careers.html" class="btn btn-ghost" style="margin-top:36px">View careers page
-          <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </a>
-      </div>
-      <div class="widget reveal reveal-d1">
-        <div class="widget-pips" aria-label="Application progress">
-          <div class="widget-pip active" data-step="1"></div>
-          <div class="widget-pip" data-step="2"></div>
-          <div class="widget-pip" data-step="3"></div>
-        </div>
-        <!-- Step 1 -->
-        <div class="widget-step" data-step="1">
-          <div class="widget-label">Step 01 of 03</div>
-          <h3 class="widget-q">Do you hold a valid SIA Licence?</h3>
-          <div class="widget-choices">
-            <button class="widget-choice" data-next="2"><span>Yes — valid SIA</span><span class="idx">01 →</span></button>
-            <button class="widget-choice" data-next="2"><span>No — but interested</span><span class="idx">02 →</span></button>
-          </div>
-        </div>
-        <!-- Step 2 -->
-        <div class="widget-step" data-step="2" style="display:none">
-          <div class="widget-label">Step 02 of 03</div>
-          <h3 class="widget-q">Which region suits you?</h3>
-          <div class="widget-choices">
-            <button class="widget-choice" data-next="3"><span>Newcastle · South Shields</span><span class="idx">HQ</span></button>
-            <button class="widget-choice" data-next="3"><span>Edinburgh · Scotland</span><span class="idx">02</span></button>
-            <button class="widget-choice" data-next="3"><span>Manchester · North West</span><span class="idx">03</span></button>
-            <button class="widget-choice" data-next="3"><span>Birmingham · Midlands</span><span class="idx">04</span></button>
-            <button class="widget-choice" data-next="3"><span>London · South East</span><span class="idx">05</span></button>
-          </div>
-        </div>
-        <!-- Step 3 -->
-        <div class="widget-step" data-step="3" style="display:none">
-          <div class="widget-label">Step 03 of 03</div>
-          <h3 class="widget-q">Drop your number — we'll text within 24 hours.</h3>
-          <input class="field" type="tel" placeholder="07700 000 000" id="recruit-phone" autocomplete="tel" style="margin-bottom:16px">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-            <button class="btn btn-ghost btn-sm" data-back="2">← Back</button>
-            <button class="btn btn-red" data-next="4">Text me
-              <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-            </button>
-          </div>
-        </div>
-        <!-- Step 4: confirm -->
-        <div class="widget-step" data-step="4" style="display:none">
-          <div class="widget-confirm">
-            <div style="display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(196,18,47,0.12);border:1px solid var(--red);margin-bottom:20px">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="2.5" aria-hidden="true"><path d="M4 10.5 8.5 15 16 6"/></svg>
-            </div>
-            <h4>You're in. Expect a text within 24 hours.</h4>
-            <p>A named local operations manager will follow up. No CV required.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
-<section class="cta-section" aria-label="Contact call to action">
-  <div class="cta-bg" aria-hidden="true">
-    <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-768x768.png" alt="" loading="lazy">
-  </div>
-  <div class="cta-content wrap">
-    <div style="max-width:640px" class="reveal">
-      <p class="eyebrow" style="margin-bottom:32px">Ready to protect your site?</p>
-      <h2 class="h1">Speak to the TTS FM<br><span class="accent">operations team.</span></h2>
-      <p style="font-size:clamp(17px,1.3vw,21px);color:rgba(255,255,255,0.7);margin:28px 0 44px;max-width:44ch;line-height:1.55">
-        Whether you need security cover, facilities support or a combined service package — contact TTS FM directly.
-      </p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="contact.html" class="btn btn-red btn-lg">Request Site Support
-          <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </a>
-        <a href="services.html" class="btn btn-ghost btn-lg">View All Services</a>
-      </div>
+<section class="cta-band">
+  <div class="wrap">
+    <p class="cta-band-title reveal">Ready to protect your site?</p>
+    <p class="cta-band-sub reveal">Whether you need security cover, facilities support or a combined service package — contact TTS FM directly.</p>
+    <div class="cta-band-actions reveal">
+      <a href="contact.html" class="btn btn-red btn-lg">Request Site Support
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+      <a href="services.html" class="btn btn-ghost btn-lg">View All Services</a>
     </div>
   </div>
 </section>
