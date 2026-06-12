@@ -4,201 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080A0E">
-<meta name="description" content="Contact TTS FM — a senior operator responds from a regional centre within 48 hours. Five regional offices across the UK: South Shields, Edinburgh, Manchester, Birmingham, London.">
-<title>Contact — TTS FM · SIA Approved Security &amp; Facilities Management</title>
+<meta name="description" content="Contact TTS FM — speak to the operations team about security cover, facilities support or a combined service package. South Shields based, 24/7 operational.">
+<title>Contact — TTS FM · Security &amp; Facilities Management</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-
-<style>
-/* ── CONTACT PAGE LOCALS ─────────────────────────────────── */
-
-.contact-section { background: var(--cream); color: var(--dark-ink); }
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 96px; align-items: start;
-}
-
-/* Info column */
-.contact-h2 {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(32px,3.2vw,52px);
-  letter-spacing: -0.03em;
-  line-height: 1.06;
-  margin: 0 0 28px;
-  text-wrap: balance; color: var(--dark-ink);
-}
-.info-rows {
-  display: flex; flex-direction: column; gap: 0;
-  border-top: 1px solid var(--rule-cream2); margin-bottom: 48px;
-}
-.info-row {
-  display: flex; justify-content: space-between;
-  align-items: baseline;
-  padding: 20px 0; border-bottom: 1px solid var(--rule-cream);
-  gap: 24px;
-}
-.info-row-label {
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--dark-3); white-space: nowrap; flex-shrink: 0;
-}
-.info-row-value {
-  font-size: 15px; font-weight: 600;
-  color: var(--dark-ink); text-align: right;
-}
-
-/* Offices quick ref */
-.offices-ref-label {
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--dark-3); margin-bottom: 16px;
-}
-.offices-ref-grid {
-  display: flex; flex-direction: column;
-  border: 1px solid var(--rule-cream2);
-  border-radius: 12px; overflow: hidden;
-}
-.office-ref-row {
-  display: flex; justify-content: space-between;
-  align-items: center; padding: 14px 20px;
-  border-bottom: 1px solid var(--rule-cream);
-  gap: 16px;
-}
-.office-ref-row:last-child { border-bottom: none; }
-.office-ref-city {
-  font-family: var(--display);
-  font-size: 14px; font-weight: 700;
-  color: var(--dark-ink);
-}
-.office-ref-city.hq { color: var(--red); }
-.office-ref-role {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--dark-3); text-align: right;
-}
-
-/* Contact form */
-.contact-form-wrap {
-  background: var(--white);
-  border: 1px solid var(--rule-cream2);
-  border-radius: 16px; padding: 48px;
-  box-shadow: 0 24px 64px -16px rgba(8,10,14,0.08);
-}
-.form-title {
-  font-family: var(--display);
-  font-weight: 800; font-size: 26px;
-  letter-spacing: -0.025em; color: var(--dark-ink); margin: 0 0 8px;
-}
-.form-subtitle { font-size: 14px; color: var(--dark-2); margin: 0 0 36px; }
-.form-grid { display: grid; gap: 16px; }
-.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-field { display: flex; flex-direction: column; gap: 8px; }
-.form-label {
-  font-family: var(--mono); font-size: 11px;
-  font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--dark-3);
-}
-.form-input {
-  background: var(--cream);
-  color: var(--dark-ink);
-  border: 1px solid var(--rule-cream2);
-  border-radius: 8px; padding: 16px 18px;
-  width: 100%; font-size: 15px; font-family: var(--sans);
-  transition: border-color .25s ease, background .25s ease;
-  appearance: none; -webkit-appearance: none;
-}
-.form-input:focus { outline: none; border-color: var(--red); background: var(--white); }
-.form-input::placeholder { color: var(--dark-3); }
-.form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none' stroke='%23080A0E' stroke-width='1.6'%3E%3Cpath d='M2 4.5l5 5 5-5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  padding-right: 48px; cursor: pointer;
-}
-.form-textarea { resize: vertical; min-height: 120px; line-height: 1.55; }
-.form-actions {
-  display: flex; flex-direction: column;
-  align-items: flex-end; gap: 12px; margin-top: 8px;
-}
-.form-note {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--dark-3);
-}
-
-/* Offices section */
-.offices-section { background: var(--night); }
-.offices-strip {
-  display: grid; grid-template-columns: repeat(5,1fr);
-  border: 1px solid var(--rule-2);
-  border-radius: 16px; overflow: hidden; margin-top: 64px;
-}
-.office-card {
-  padding: 40px 32px;
-  border-right: 1px solid var(--rule);
-  position: relative; transition: background .3s ease;
-}
-.office-card:last-child { border-right: none; }
-.office-card:hover { background: rgba(196,18,47,0.03); }
-.office-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
-.office-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%; background: var(--red);
-  box-shadow: 0 0 8px rgba(196,18,47,0.5); flex-shrink: 0;
-}
-.office-dot-secondary { background: var(--ink-4); box-shadow: none; }
-.office-region-tag {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-4);
-}
-.office-city {
-  font-family: var(--display);
-  font-weight: 700; font-size: 22px;
-  letter-spacing: -0.02em; color: var(--ink); margin: 0 0 6px;
-}
-.office-type {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin: 0 0 16px;
-}
-.office-type-secondary { color: var(--ink-4); }
-.office-coverage { font-size: 13px; line-height: 1.55; color: var(--ink-2); margin: 0; }
-
-/* CTA */
-.contact-cta { background: var(--night-1); text-align: center; border-top: 1px solid var(--rule); }
-
-@media (max-width: 1100px) {
-  .contact-grid { gap: 64px; }
-  .offices-strip { grid-template-columns: repeat(3,1fr); }
-  .offices-strip .office-card:nth-child(3) { border-right: none; }
-  .offices-strip .office-card:nth-child(4),
-  .offices-strip .office-card:nth-child(5) { border-top: 1px solid var(--rule); }
-}
-@media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
-  .contact-form-wrap { padding: 36px 32px; }
-}
-@media (max-width: 680px) {
-  .offices-strip { grid-template-columns: 1fr 1fr; }
-  .offices-strip .office-card:nth-child(odd) { border-right: 1px solid var(--rule); }
-  .offices-strip .office-card:nth-child(even) { border-right: none; }
-  .offices-strip .office-card:nth-child(n+3) { border-top: 1px solid var(--rule); }
-  .offices-strip .office-card:nth-child(3) { border-right: 1px solid var(--rule); }
-  .form-row-2 { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .offices-strip { grid-template-columns: 1fr; }
-  .offices-strip .office-card { border-right: none !important; border-top: 1px solid var(--rule); }
-  .offices-strip .office-card:first-child { border-top: none; }
-  .contact-form-wrap { padding: 28px 20px; }
-}
-</style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav" id="nav" aria-label="Primary navigation">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" aria-label="TTS FM home">
@@ -212,10 +26,7 @@
       <a href="contact.html"      class="nav-link active">Contact</a>
     </div>
     <div class="nav-end">
-      <a href="contact.html" class="btn btn-ghost btn-sm">Get in touch</a>
-      <button class="btn btn-red btn-sm" data-modal="quote">Request a quote
-        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-      </button>
+      <a href="services.html" class="btn btn-ghost btn-sm">View Services</a>
     </div>
     <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <svg width="15" height="11" viewBox="0 0 15 11" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1h13M1 5.5h13M1 10h13"/></svg>
@@ -224,7 +35,6 @@
   </div>
 </nav>
 
-<!-- MOBILE DRAWER -->
 <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
 <aside class="drawer" id="drawer" aria-label="Mobile navigation" aria-hidden="true">
   <div class="drawer-head">
@@ -238,252 +48,134 @@
   <a href="case-studies.html" class="drawer-link">Case Studies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
   <a href="careers.html"      class="drawer-link">Careers      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
   <a href="contact.html"      class="drawer-link">Contact      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
-  <button class="btn btn-red" style="margin-top:28px;justify-content:center" data-modal="quote">Request a quote</button>
 </aside>
 
-<!-- PAGE HERO -->
-<header class="page-hero">
-  <div class="page-hero-bg" aria-hidden="true">
-    <img src="https://ttsfm.co.uk/wp-content/uploads/2026/05/scheduled-generated-4-768x768.png" alt="" loading="eager">
-  </div>
-  <div class="page-hero-content">
+<main>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" style="background:var(--night)">
     <div class="wrap">
-      <p class="eyebrow reveal">Get in touch</p>
-      <h1 class="h1 reveal reveal-d1" style="margin-top:24px;margin-bottom:28px">Tell us about<br>your <span class="accent">estate</span>.</h1>
-      <p class="lead reveal reveal-d2" style="max-width:52ch">A senior operator responds from a regional office — not a contact centre. We respond to all briefs within 48 hours.</p>
+      <p class="eyebrow reveal" style="margin-bottom:21px">Get in Touch</p>
+      <h1 class="h1 reveal reveal-d1">Speak to the<br><span class="accent">operations team.</span></h1>
+      <p class="lead reveal reveal-d2" style="margin-top:34px">Whether you need security cover, facilities support or want to discuss a combined service — contact TTS FM directly.</p>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- CONTACT SECTION -->
-<section class="contact-section section">
-  <div class="wrap">
-    <div class="contact-grid">
-
-      <!-- Left info column -->
-      <div class="contact-info reveal">
-        <p class="eyebrow on-light" style="margin-bottom:24px">How we respond</p>
-        <h2 class="contact-h2">Regional operator.<br>Not a call centre.</h2>
-        <p class="lead on-light">Every enquiry is handled by a senior TTS FM operator from the relevant regional centre. You won't speak to a central dispatch — you'll speak to someone who knows your area.</p>
-        <div class="info-rows">
-          <div class="info-row">
-            <span class="info-row-label">— Response time</span>
-            <span class="info-row-value">Within 48 hours</span>
+  <!-- CONTACT FORM + DETAILS -->
+  <section class="section" style="background:var(--night)">
+    <div class="wrap">
+      <!-- Static form only. Backend/form handling still required before this form submits data. -->
+      <div class="contact-layout reveal">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="c-name">Your name</label>
+            <input type="text" id="c-name" name="name" required autocomplete="name" placeholder="John Smith">
           </div>
-          <div class="info-row">
-            <span class="info-row-label">— Head office</span>
-            <span class="info-row-value">South Shields · Newcastle · North East</span>
+          <div class="form-group">
+            <label for="c-company">Company</label>
+            <input type="text" id="c-company" name="company" autocomplete="organization" placeholder="Company Ltd">
           </div>
-          <div class="info-row">
-            <span class="info-row-label">— Online</span>
-            <span class="info-row-value">
-              <a href="https://ttsfm.co.uk/contact-us" target="_blank" rel="noreferrer" style="color:var(--red);text-decoration:underline;text-decoration-color:rgba(196,18,47,0.3);text-underline-offset:3px">ttsfm.co.uk/contact-us</a>
-            </span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:21px">
+            <div class="form-group">
+              <label for="c-phone">Phone</label>
+              <input type="tel" id="c-phone" name="phone" autocomplete="tel" placeholder="+44 ...">
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" name="email" required autocomplete="email" placeholder="you@company.co.uk">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-type">Enquiry type</label>
+            <select id="c-type" name="type">
+              <option value="">Select enquiry type</option>
+              <option value="security">Request security cover</option>
+              <option value="facilities">Discuss facilities support</option>
+              <option value="combined">Combined service package</option>
+              <option value="recruitment">Recruitment enquiry</option>
+              <option value="general">General enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" rows="5" placeholder="Tell us about your site, requirements and timeline..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-red btn-lg" style="align-self:flex-start">Send Enquiry
+            <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </button>
+          <p class="form-smallprint">By submitting this form you agree to TTS FM contacting you regarding your enquiry.</p>
+        </form>
+
+        <div class="contact-detail-block">
+          <div>
+            <h2 class="contact-detail-title">TTS FM Operations</h2>
+            <p class="contact-detail-sub">South Shields, Tyne and Wear<br>North East England</p>
+          </div>
+          <div>
+            <div class="lbl" style="margin-bottom:13px">Availability</div>
+            <p class="contact-detail-sub" style="color:var(--ink)">Available 24/7 for operational enquiries.</p>
+            <p class="contact-detail-sub" style="margin-top:8px">Standard business hours for non-urgent admin and recruitment enquiries.</p>
+          </div>
+          <div>
+            <!-- Add phone number -->
+            <div class="contact-placeholder">
+              <div style="margin-bottom:8px">📞</div>
+              Call the operations team<br>
+              <span style="color:var(--ink-4)">[Phone number to be added]</span>
+            </div>
+          </div>
+          <div>
+            <!-- Add email address -->
+            <div class="contact-placeholder">
+              <div style="margin-bottom:8px">✉</div>
+              Email the team<br>
+              <span style="color:var(--ink-4)">[Email address to be added]</span>
+            </div>
+          </div>
+          <div>
+            <div class="lbl" style="margin-bottom:13px">Enquiry Types</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:13px;color:var(--ink-2)">• Request security cover</div>
+              <div style="font-size:13px;color:var(--ink-2)">• Discuss facilities support</div>
+              <div style="font-size:13px;color:var(--ink-2)">• Combined service package</div>
+              <div style="font-size:13px;color:var(--ink-2)">• Recruitment enquiry</div>
+            </div>
           </div>
         </div>
-        <div class="offices-ref-label">Our five regional centres</div>
-        <div class="offices-ref-grid">
-          <div class="office-ref-row"><span class="office-ref-city hq">South Shields</span><span class="office-ref-role">Head Office · HQ</span></div>
-          <div class="office-ref-row"><span class="office-ref-city">Edinburgh</span><span class="office-ref-role">Scotland Regional Centre</span></div>
-          <div class="office-ref-row"><span class="office-ref-city">Manchester</span><span class="office-ref-role">North West Regional Centre</span></div>
-          <div class="office-ref-row"><span class="office-ref-city">Birmingham</span><span class="office-ref-role">Midlands Regional Centre</span></div>
-          <div class="office-ref-row"><span class="office-ref-city">London</span><span class="office-ref-role">South &amp; South East Regional Centre</span></div>
-        </div>
-      </div>
-
-      <!-- Right form column -->
-      <div class="reveal reveal-d1">
-        <div class="contact-form-wrap">
-          <h3 class="form-title">Send us your brief</h3>
-          <p class="form-subtitle">A senior operator will respond within 48 hours — not a bot, not a call centre.</p>
-          <form id="contact-form" class="form-grid" novalidate>
-            <div class="form-row-2">
-              <div class="form-field">
-                <label class="form-label" for="cf-name">Full name <span aria-hidden="true" style="color:var(--red)">*</span></label>
-                <input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane Smith" autocomplete="name" required>
-              </div>
-              <div class="form-field">
-                <label class="form-label" for="cf-company">Company <span aria-hidden="true" style="color:var(--red)">*</span></label>
-                <input class="form-input" type="text" id="cf-company" name="company" placeholder="Acme Ltd" autocomplete="organization" required>
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cf-email">Work email <span aria-hidden="true" style="color:var(--red)">*</span></label>
-              <input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@acme.co.uk" autocomplete="email" required>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cf-service">Service needed</label>
-              <select class="form-input form-select" id="cf-service" name="service">
-                <option value="" disabled selected>Select a service…</option>
-                <option value="security">Security Services</option>
-                <option value="fm">Facilities Management</option>
-                <option value="both">Both</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cf-postcode">Site postcode</label>
-              <input class="form-input" type="text" id="cf-postcode" name="postcode" placeholder="NE33 1AA" autocomplete="postal-code" style="text-transform:uppercase">
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cf-brief">Tell us about your estate</label>
-              <textarea class="form-input form-textarea" id="cf-brief" name="brief" rows="5" placeholder="Describe your site, service requirements, scale of operation, any current challenges…"></textarea>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-red btn-lg">
-                Send brief
-                <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-              </button>
-              <span class="form-note">Senior operator response · within 48 hours</span>
-            </div>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- REGIONAL OFFICES -->
-<section class="offices-section section" aria-label="Regional offices">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="eyebrow" style="margin-bottom:24px">Our regions</p>
-      <h2 class="h2" style="margin-top:0;margin-bottom:0">Five regional centres.<br><span class="accent">One operating model</span>.</h2>
-    </div>
-    <div class="offices-strip reveal reveal-d1">
-
-      <!-- South Shields HQ -->
-      <div class="office-card">
-        <div class="office-card-top">
-          <div class="office-dot"></div>
-          <span class="office-region-tag">North East</span>
-        </div>
-        <div class="office-city">South Shields</div>
-        <div class="office-type">Head Office</div>
-        <p class="office-coverage">National headquarters. Newcastle &amp; North East England. Group leadership, compliance &amp; national operations oversight.</p>
-      </div>
-
-      <!-- Edinburgh -->
-      <div class="office-card">
-        <div class="office-card-top">
-          <div class="office-dot office-dot-secondary"></div>
-          <span class="office-region-tag">Scotland</span>
-        </div>
-        <div class="office-city">Edinburgh</div>
-        <div class="office-type office-type-secondary">Regional Centre</div>
-        <p class="office-coverage">Scotland Regional Support Centre. Security &amp; FM operations across the central belt and wider Scotland.</p>
-      </div>
-
-      <!-- Manchester -->
-      <div class="office-card">
-        <div class="office-card-top">
-          <div class="office-dot office-dot-secondary"></div>
-          <span class="office-region-tag">North West</span>
-        </div>
-        <div class="office-city">Manchester</div>
-        <div class="office-type office-type-secondary">Regional Centre</div>
-        <p class="office-coverage">North West Regional Support Centre. Covering Greater Manchester, Lancashire, Merseyside &amp; the wider North West.</p>
-      </div>
-
-      <!-- Birmingham -->
-      <div class="office-card">
-        <div class="office-card-top">
-          <div class="office-dot office-dot-secondary"></div>
-          <span class="office-region-tag">Midlands</span>
-        </div>
-        <div class="office-city">Birmingham</div>
-        <div class="office-type office-type-secondary">Regional Centre</div>
-        <p class="office-coverage">Midlands Regional Support Centre. Covering the West Midlands, East Midlands &amp; surrounding counties.</p>
-      </div>
-
-      <!-- London -->
-      <div class="office-card">
-        <div class="office-card-top">
-          <div class="office-dot office-dot-secondary"></div>
-          <span class="office-region-tag">South &amp; South East</span>
-        </div>
-        <div class="office-city">London</div>
-        <div class="office-type office-type-secondary">Regional Centre</div>
-        <p class="office-coverage">South &amp; South East Regional Support Centre. Covering Greater London, Home Counties &amp; the South East.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ACCREDITATIONS -->
-<section class="section" style="background:var(--cream);padding:64px 0" aria-label="Accreditations and partners">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="reveal">
-        <p class="eyebrow on-light" style="margin-bottom:14px">Accreditations</p>
-        <div style="font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.018em;color:var(--dark-ink)">Verified by industry bodies.</div>
-      </div>
-      <div class="logo-strip logo-strip-light reveal reveal-d1">
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ACS Pacesetters">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol-300x212.jpg" alt="ACS Pacesetters" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="WebEye">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize-150x150.jpg" alt="WebEye" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Parim">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize-150x150.jpg" alt="Parim" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="ReSLink">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize-150x150.jpg" alt="ReSLink" loading="lazy">
-        </a>
-        <a href="https://ttsfm.co.uk" target="_blank" rel="noreferrer noopener" class="logo-badge" aria-label="Combat Stress">
-          <img src="https://ttsfm.co.uk/wp-content/uploads/2023/09/Combat-stress.png" alt="Combat Stress" loading="lazy">
-        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="contact-cta section">
-  <div class="wrap" style="text-align:center">
-    <p class="eyebrow reveal" style="justify-content:center;margin-bottom:32px">Ready to talk?</p>
-    <h2 class="h2 reveal reveal-d1" style="margin-bottom:24px">Need security or FM services?</h2>
-    <p class="lead reveal reveal-d2" style="max-width:52ch;margin:0 auto 40px">Get a response from a senior operator within 60 minutes during UK business hours.</p>
-    <button class="btn btn-red btn-lg reveal reveal-d2" data-modal="quote">
-      Request a quote
-      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </button>
-  </div>
-</section>
+</main>
 
-<!-- FOOTER -->
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+  <div class="ok" aria-hidden="true">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2"><path d="M2 5 4.5 7.5 8 3"/></svg>
+  </div>
+  <span id="toast-msg"></span>
+</div>
+
 <footer class="footer" aria-label="Site footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <img class="footer-logo" src="assets/logo.png" alt="TTS FM" loading="lazy">
-        <p class="footer-desc">UK's leading SIA Approved Integrated Risk Based Security Solutions and Facilities Contractor. Local, regional and nationwide coverage from South Shields.</p>
-        <button class="btn btn-red btn-sm" data-modal="quote">Request a quote
-          <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </button>
+        <p class="footer-desc">Professional security and facilities management for commercial, industrial and operational sites across the North East and beyond. South Shields based.</p>
       </div>
       <div>
         <div class="footer-col-title">Services</div>
         <ul class="footer-links">
-          <li><a href="services.html">Security Services</a></li>
-          <li><a href="services.html">Facilities Management</a></li>
-          <li><a href="services.html">Property Services</a></li>
-          <li><a href="services.html">Training Services</a></li>
-          <li><a href="services.html">Cleaning &amp; Washroom</a></li>
-          <li><a href="services.html">Waste Management</a></li>
+          <li><a href="services.html#security">Security Services</a></li>
+          <li><a href="services.html#facilities">Facilities Services</a></li>
+          <li><a href="services.html">View All Services</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
           <li><a href="about.html">About Us</a></li>
-          <li><a href="https://ttsfm.co.uk/leadership-team" target="_blank" rel="noreferrer noopener">Leadership</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="https://ttsfm.co.uk/news" target="_blank" rel="noreferrer noopener">News</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -501,156 +193,46 @@
     <div class="footer-base">
       <div>© 2026 TTS FM (UK) Ltd · All Rights Reserved</div>
       <nav class="footer-legal" aria-label="Legal links">
-        <a href="https://ttsfm.co.uk/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy</a>
-        <a href="https://ttsfm.co.uk/cookie-policy/" target="_blank" rel="noreferrer noopener">Cookies</a>
-        <a href="https://ttsfm.co.uk/terms-of-use/" target="_blank" rel="noreferrer noopener">Terms</a>
-        <a href="https://ttsfm.co.uk/accessibility-policy/" target="_blank" rel="noreferrer noopener">Accessibility</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Terms</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<!-- QUOTE MODAL -->
-<div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-  <div class="modal-head">
-    <div>
-      <p class="eyebrow" style="margin-bottom:14px;display:inline-flex">60-minute quote</p>
-      <h3 id="modal-title" style="font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-0.025em;margin:0 0 8px">Three fields. We'll do the rest.</h3>
-      <p style="color:var(--ink-3);font-size:13.5px;margin:0;max-width:34ch">A senior operator responds during UK business hours.</p>
-    </div>
-    <button class="modal-close" id="modal-close" aria-label="Close modal">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
-    </button>
-  </div>
-  <form id="quote-form" style="display:grid;gap:12px" novalidate>
-    <input class="field" type="text"  placeholder="Your name"                     id="q-name"     required autocomplete="name">
-    <input class="field" type="email" placeholder="Company email"                 id="q-email"    required autocomplete="email">
-    <input class="field" type="text"  placeholder="Site postcode (e.g. NE33 5SE)" id="q-postcode" required autocomplete="postal-code">
-    <button type="submit" class="btn btn-red btn-lg" style="margin-top:8px;justify-content:center">Get my quote
-      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </button>
-  </form>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
-  <div class="ok" aria-hidden="true">
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2"><path d="M2 5 4.5 7.5 8 3"/></svg>
-  </div>
-  <span id="toast-msg"></span>
-</div>
-
 <script>
 (() => {
   'use strict';
-
-  // Nav scroll behaviour
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
-
-  // Scroll reveal
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Mobile drawer
-  const drawer  = document.getElementById('drawer');
+  const drawer = document.getElementById('drawer');
   const overlay = document.getElementById('drawer-overlay');
-  const burger  = document.getElementById('burger');
-  const openDrawer = () => {
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-    drawer.setAttribute('aria-hidden', 'false');
-    overlay.setAttribute('aria-hidden', 'false');
-    burger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  };
-  const closeDrawer = () => {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-    drawer.setAttribute('aria-hidden', 'true');
-    overlay.setAttribute('aria-hidden', 'true');
-    burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
+  const burger = document.getElementById('burger');
+  const openDrawer = () => { drawer.classList.add('open'); overlay.classList.add('open'); drawer.setAttribute('aria-hidden','false'); overlay.setAttribute('aria-hidden','false'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+  const closeDrawer = () => { drawer.classList.remove('open'); overlay.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); overlay.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
   burger?.addEventListener('click', openDrawer);
   document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);
   overlay?.addEventListener('click', closeDrawer);
   drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-
-  // Quote modal
-  const modal     = document.getElementById('modal');
-  const mBackdrop = document.getElementById('modal-backdrop');
-  let lastFocus;
-  const openModal = () => {
-    lastFocus = document.activeElement;
-    modal.classList.add('open');
-    mBackdrop.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    modal.querySelector('input')?.focus();
-  };
-  const closeModal = () => {
-    modal.classList.remove('open');
-    mBackdrop.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    lastFocus?.focus();
-  };
-  document.querySelectorAll('[data-modal="quote"]').forEach(b => b.addEventListener('click', openModal));
-  document.getElementById('modal-close')?.addEventListener('click', closeModal);
-  mBackdrop?.addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-  });
-
-  // Toast
-  const toast    = document.getElementById('toast');
+  const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toast-msg');
-  const showToast = msg => {
-    toastMsg.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4400);
-  };
-
-  // Quote form
-  document.getElementById('quote-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    const n  = document.getElementById('q-name').value.trim();
-    const em = document.getElementById('q-email').value.trim();
-    const pc = document.getElementById('q-postcode').value.trim();
-    if (!n || !em || !pc) return;
-    closeModal();
-    e.target.reset();
-    showToast('Quote requested — response within 60 minutes during UK business hours.');
-  });
-
-  // Contact form
+  const showToast = msg => { toastMsg.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4400); };
   document.getElementById('contact-form')?.addEventListener('submit', e => {
     e.preventDefault();
-    const name    = document.getElementById('cf-name')?.value.trim();
-    const company = document.getElementById('cf-company')?.value.trim();
-    const email   = document.getElementById('cf-email')?.value.trim();
-    if (!name || !company || !email) return;
+    const name = document.getElementById('c-name').value.trim();
+    const email = document.getElementById('c-email').value.trim();
+    if (!name || !email) return;
     e.target.reset();
-    showToast('Brief sent — a senior operator will respond within 48 hours.');
-  });
-
-  // Postcode auto-uppercase
-  const postcodeInput = document.getElementById('cf-postcode');
-  postcodeInput?.addEventListener('input', () => {
-    const pos = postcodeInput.selectionStart;
-    postcodeInput.value = postcodeInput.value.toUpperCase();
-    postcodeInput.setSelectionRange(pos, pos);
+    showToast('Enquiry sent — the TTS FM team will be in touch shortly.');
   });
 })();
 </script>
-
 </body>
 </html>
