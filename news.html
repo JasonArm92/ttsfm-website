@@ -3,55 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Careers — TTS FM (UK)</title>
-<meta name="description" content="Join the TTS FM team. We provide integrated security and facilities management services, and we're always looking for passionate people to join us.">
+<title>News — TTS FM (UK)</title>
+<meta name="description" content="Latest news and updates from TTS FM — celebrating growth, achievements and exceptional service delivery across the UK.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 <style>
-  .careers-intro { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
-  @media(max-width:768px){ .careers-intro{ grid-template-columns:1fr; } }
-  .careers-intro-img { border-radius:12px; overflow:hidden; }
-  .careers-intro-img img { width:100%; height:auto; display:block; }
+  .news-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.75rem;
+    margin-top:2rem;
+  }
+  @media(max-width:900px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:580px){ .news-grid{ grid-template-columns:1fr; } }
 
-  .policy-links { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin-top:1.5rem; }
-  .policy-link-card {
-    display:flex; align-items:center; gap:1rem;
-    padding:1rem 1.25rem;
+  .news-card {
     background:#fff;
     border:1px solid var(--color-border);
-    border-radius:8px;
+    border-radius:12px;
+    padding:1.5rem;
+    display:flex; flex-direction:column;
+    transition:box-shadow .2s, transform .2s;
+  }
+  .news-card:hover { box-shadow:0 8px 32px var(--color-shadow); transform:translateY(-3px); }
+
+  .news-meta { display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem; flex-wrap:wrap; }
+  .news-date { font-size:.8rem; color:#888; }
+  .news-cat {
+    font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+    background:var(--color-lime); color:var(--color-heading);
+    padding:.18rem .6rem; border-radius:20px;
+  }
+
+  .news-card h3 { font-size:1.05rem; color:var(--color-heading); margin:0 0 .6rem; line-height:1.4; }
+  .news-card p  { font-size:.9rem; color:var(--color-text); line-height:1.6; flex:1; margin:0 0 1.25rem; }
+
+  .news-read-more {
+    display:inline-flex; align-items:center; gap:.35rem;
+    font-weight:700; font-size:.88rem; color:var(--color-blue);
     text-decoration:none;
-    color:var(--color-heading);
-    font-weight:600;
-    font-size:.95rem;
-    transition:box-shadow .2s, border-color .2s;
+    margin-top:auto;
+    transition:color .2s;
   }
-  .policy-link-card:hover { border-color:var(--color-lime); box-shadow:0 4px 16px var(--color-shadow); }
-  .policy-link-card .icon { font-size:1.4rem; color:var(--color-lime-dark); flex-shrink:0; }
-
-  .cv-form-wrap {
-    max-width:680px; margin:0 auto;
-    background:#fff; border:1px solid var(--color-border);
-    border-radius:12px; padding:2.5rem;
-    box-shadow:0 4px 24px var(--color-shadow);
-  }
-  .form-row { margin-bottom:1.25rem; }
-  .form-row label { display:block; font-weight:600; font-size:.9rem; color:var(--color-heading); margin-bottom:.4rem; }
-  .form-row input[type="text"],
-  .form-row input[type="email"],
-  .form-row input[type="file"] {
-    width:100%; padding:.7rem 1rem;
-    border:1px solid var(--color-border);
-    border-radius:6px;
-    font-family:var(--font-body); font-size:.95rem;
-    color:var(--color-text);
-    background:#fff;
-    box-sizing:border-box;
-    transition:border-color .2s;
-  }
-  .form-row input:focus { outline:none; border-color:var(--color-blue); }
-  .form-row .file-note { font-size:.8rem; color:var(--color-text); margin-top:.35rem; }
-  .form-note { font-size:.82rem; color:#888; margin-top:1.25rem; }
+  .news-read-more:hover { color:var(--color-blue-hover); }
+  .news-read-more::after { content:'→'; }
 </style>
 </head>
 <body>
@@ -103,9 +98,9 @@
 
         <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
         <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
-        <li class="nav-item"><a class="nav-link active" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
         <li class="nav-item"><a class="nav-link" href="shining-star.html">Shining Star</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
 
         <li class="nav-item nav-cta">
           <a class="btn btn-primary" href="contact.html">Contact Us</a>
@@ -168,111 +163,245 @@
 <!-- ═══════════════════════════════════════════════════════════
      PAGE HERO
 ════════════════════════════════════════════════════════════ -->
-<section class="page-hero" aria-label="Careers hero">
+<section class="page-hero" aria-label="News hero">
   <div class="container">
-    <h1>Careers</h1>
+    <h1>News</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">Home</a>
       <span aria-hidden="true">›</span>
-      <span aria-current="page">Careers</span>
+      <span aria-current="page">News</span>
     </nav>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     INTRO
+     NEWS INTRO
 ════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Careers introduction">
+<section class="section section-light" aria-label="News introduction">
   <div class="container">
-    <div class="careers-intro">
-
-      <div class="reveal">
-        <span class="eyebrow">Join Our Team</span>
-        <h2>Your Next Career Could Be With TTS FM</h2>
-        <hr class="lime-rule">
-        <p>Here at TTS FM we are a local, regional and national contributor of Integrated Risk Based Security Solutions and Facilities Management Services. We allow ourselves to undertake opportunities like becoming three specialist divisions under one expertly organised group by employing the right people for the job.</p>
-        <p>People who will work constantly with our clients to offer the best available service. Your next career could be with TTS FM, providing security services, delivering facility management services from concierge roles to landscaping. You will be able to turn your hand to anything!</p>
-        <a class="btn btn-primary mt-3" href="#upload-cv">Upload Your CV</a>
-      </div>
-
-      <div class="careers-intro-img reveal reveal-delay-2">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/careers-one-osw05ppqod00faz3vla17zeeu9bt3g7xgf43auyrak.jpg" alt="TTS FM careers" loading="lazy">
-      </div>
-
+    <div class="text-center reveal" style="max-width:760px;margin:0 auto;">
+      <span class="eyebrow">Latest Updates</span>
+      <h2 class="section-title">TTS FM News</h2>
+      <hr class="lime-rule" style="margin:1rem auto;">
+      <p class="section-intro">At TTS FM, our team is continuously striving to bring updates that represent our on-going growth and exceptional service delivery regionally and nationally. The purpose of sharing our activity with yourself is to make you feel part of TTS FM's growth story which has, over the past nearly ten years, seen some fantastic achievements amidst challenges.</p>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     TRAINING & POLICIES
+     NEWS GRID
 ════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="Training and policies">
+<section class="section" aria-labelledby="newsGridHeading">
   <div class="container">
+    <h2 id="newsGridHeading" class="sr-only">News articles</h2>
 
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Our Commitment</span>
-      <h2 class="section-title">Training &amp; Development</h2>
-      <p class="section-intro">We invest in our people. The following policies outline our commitment to equal opportunities, staff development and responsible recruitment.</p>
-    </div>
+    <div class="news-grid">
 
-    <div class="policy-links reveal">
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Equal_Opportunities_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Equal Opportunities Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Staff_Development_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Staff Development Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Training_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Training Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Disclosure_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Disclosure Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Recruitment_FAQ.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Recruitment FAQ
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CV UPLOAD
-════════════════════════════════════════════════════════════ -->
-<section class="section section-light" id="upload-cv" aria-label="Upload your CV">
-  <div class="container">
-
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Apply Now</span>
-      <h2 class="section-title">Upload Your Resume</h2>
-      <p class="section-intro">Interested in joining TTS FM? Send us your CV and we'll be in touch when a suitable opportunity arises.</p>
-    </div>
-
-    <div class="cv-form-wrap reveal">
-      <!-- NOTE: Static form — submission requires backend integration (e.g. Formspree, Netlify Forms, or custom handler). -->
-      <form id="cvForm" novalidate>
-        <div class="form-row">
-          <label for="cvName">Full Name <span aria-hidden="true">*</span></label>
-          <input type="text" id="cvName" name="name" placeholder="Your full name" required>
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">2 July 2025</span>
+          <span class="news-cat">TTS FM News</span>
         </div>
-        <div class="form-row">
-          <label for="cvEmail">Email Address <span aria-hidden="true">*</span></label>
-          <input type="email" id="cvEmail" name="email" placeholder="your@email.com" required>
+        <h3>Pacesetters Membership</h3>
+        <p>TTS FM is proud to share our latest milestone as a recognised member of the Pacesetters programme — a mark of excellence in our industry.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/pacesetters-membership" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">2 July 2025</span>
+          <span class="news-cat">TTS FM News</span>
         </div>
-        <div class="form-row">
-          <label for="cvFile">CV / Resume <span aria-hidden="true">*</span></label>
-          <input type="file" id="cvFile" name="cv" accept=".doc,.docx,.pdf,.jpeg,.jpg,.png" required>
-          <p class="file-note">Accepted formats: .doc, .docx, .pdf, .jpeg, .jpg, .png (max 5 MB)</p>
+        <h3>Barbour's Party in the Park 2025</h3>
+        <p>We were delighted to support Barbour's Party in the Park 2025 — a wonderful community event reflecting our commitment to our clients and the local region.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/barbours-party-in-the-park-2025" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-2">
+        <div class="news-meta">
+          <span class="news-date">2 July 2025</span>
+          <span class="news-cat">TTS FM News</span>
         </div>
-        <button class="btn btn-primary" type="submit">Submit Application</button>
-        <p class="form-note">* This form requires backend configuration to process submissions. Please <a href="contact.html">contact us</a> directly if you experience any issues.</p>
-      </form>
+        <h3>Ibstock Brick Red Barns Quarry</h3>
+        <p>TTS FM is proud to share news of our expanding relationship with Ibstock Brick, including our engagement at the Red Barns Quarry site.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/ibstock-brick-red-barns-quarry" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">2 July 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Site Eye – Formica</h3>
+        <p>We are pleased to share the latest update from our on-site security partnership with Formica — delivering reliable and professional site coverage.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/23202-2" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">2 July 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>TTS FM Wins Sytner Group – Mercedes Benz</h3>
+        <p>We are thrilled to announce that TTS FM has been awarded the security contract for Sytner Group's Mercedes Benz sites — a fantastic addition to our growing client portfolio.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/tts-fm-wins-sytner-group-mercedes-benz" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-2">
+        <div class="news-meta">
+          <span class="news-date">2 July 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Cenergis Ltd</h3>
+        <p>TTS FM is pleased to welcome Cenergis Ltd to our growing family of clients, continuing our expansion into the energy sector.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/cenergis-ltd" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">10 June 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>TTSFM Secures Ibstock Brick Ltd – Throckley</h3>
+        <p>We are delighted to announce TTS FM has secured the Ibstock Brick Ltd contract at their Throckley site — a testament to our reputation for quality and reliability.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/ttsfm-secures-ibstock-brick-ltd-throckley" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">28 April 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>TTS FM Wins Northern Freight Services</h3>
+        <p>Another exciting contract win for TTS FM — we are proud to be delivering security and FM services to Northern Freight Services.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/tts-fm-wins-northern-freight-services" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-2">
+        <div class="news-meta">
+          <span class="news-date">28 April 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Welcome Aboard Boaz House</h3>
+        <p>TTS FM warmly welcomes Boaz House as a new client — we look forward to delivering the highest standard of service to support their operations.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/welcome-aboard-boaz-house" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">28 April 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Woodhorn Museum</h3>
+        <p>We are proud to be working with Woodhorn Museum, providing facilities management services to help protect and maintain this important cultural site.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/woodhorn-museum" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">28 April 2025</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>SMD – Promotion</h3>
+        <p>Celebrating growth within the TTS FM family — we are delighted to share news of a well-deserved promotion within our SMD operations team.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/smd-promotion" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-2">
+        <div class="news-meta">
+          <span class="news-date">24 September 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>New Opportunity for Barbour</h3>
+        <p>TTS FM is pleased to share an exciting new service opportunity we have secured with long-standing client Barbour, extending our partnership further.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/new-opportunity-for-barbour" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">24 September 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Teesside EXPO</h3>
+        <p>TTS FM was proud to attend and exhibit at the Teesside EXPO — connecting with businesses and showcasing our comprehensive security and FM services.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/22202-2" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">25 July 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>International Security Officer Day</h3>
+        <p>On International Security Officer Day we took a moment to recognise and celebrate the dedication, professionalism and hard work of every TTS FM security officer.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/international-security-officer-day" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-2">
+        <div class="news-meta">
+          <span class="news-date">23 July 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Fantastic New Edition at Cavendish House</h3>
+        <p>We are thrilled to share news of a fantastic new addition at Cavendish House — enhancing the service experience we deliver to this valued client.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/fantastic-new-edition-at-cavendish-house" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">4 July 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Barbour's Party in the Park 2024</h3>
+        <p>TTS FM was proud to support Barbour's Party in the Park 2024 — a brilliant community event that reflects the spirit of our long-standing client relationship.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/barbours-party-in-the-park-2024" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">20 June 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Congratulations!</h3>
+        <p>A big congratulations to a member of the TTS FM family on a fantastic personal achievement — we are incredibly proud of our people and their ongoing success.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/congratulations" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-2">
+        <div class="news-meta">
+          <span class="news-date">19 June 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>An Excellent New Addition</h3>
+        <p>TTS FM is pleased to welcome an excellent new addition to our team — bringing fresh talent and expertise to support our continued growth.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/an-excellent-new-addition" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-meta">
+          <span class="news-date">7 May 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>We Welcome Brose!</h3>
+        <p>TTS FM is delighted to welcome Brose as a new client — we look forward to building a long and successful partnership delivering outstanding security services.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/we-welcome-brose" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="news-card reveal reveal-delay-1">
+        <div class="news-meta">
+          <span class="news-date">7 May 2024</span>
+          <span class="news-cat">TTS FM News</span>
+        </div>
+        <h3>Well Deserved Retirement.</h3>
+        <p>TTS FM wishes a very happy and well-deserved retirement to a valued member of our team who has given so much to the organisation over the years.</p>
+        <a class="news-read-more" href="https://ttsfm.co.uk/well-deserved-retirement" target="_blank" rel="noopener">Read More</a>
+      </article>
+
     </div>
+
+    <p class="text-center" style="margin-top:2.5rem;color:#888;font-size:.9rem;">
+      Showing 20 most recent articles. <a href="https://ttsfm.co.uk/news" target="_blank" rel="noopener" style="color:var(--color-blue);">View full archive on ttsfm.co.uk &#x2192;</a>
+    </p>
 
   </div>
 </section>
