@@ -2139,11 +2139,11 @@ html[data-theme="dark"] .industry-card:hover {
    ============================================================ */
 :root {
   --page-base: #EAF1F8;
-  --dot: rgba(10,37,64,.08);
-  --orb-1: rgba(4,107,210,.42);
-  --orb-2: rgba(150,170,58,.45);
-  --orb-3: rgba(20,55,89,.30);
-  --orb-cursor: rgba(120,150,40,.34);
+  --dot: rgba(10,37,64,.07);
+  --orb-1: rgba(4,107,210,.40);
+  --orb-2: rgba(150,170,58,.16);
+  --orb-3: rgba(18,52,96,.34);
+  --orb-cursor: rgba(150,170,58,.20);
 }
 html[data-theme="dark"] {
   --page-base: #06121F;
@@ -2228,7 +2228,7 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
   width: min(640px, 54vw); aspect-ratio: 1;
   pointer-events: none; opacity: .6;
 }
-.hero-radar .r-ring { position: absolute; inset: 0; margin: auto; border: 1px solid rgba(199,224,74,.20); border-radius: 50%; }
+.hero-radar .r-ring { position: absolute; inset: 0; margin: auto; border: 1px solid rgba(199,224,74,.30); border-radius: 50%; }
 .hero-radar .r-ring:nth-child(2) { width: 72%; height: 72%; }
 .hero-radar .r-ring:nth-child(3) { width: 44%; height: 44%; }
 .hero-radar .r-ring:nth-child(4) { width: 18%; height: 18%; border-color: rgba(199,224,74,.4); }
@@ -2237,7 +2237,7 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
 .hero-radar .r-cross::after  { top: 50%; left: 0; right: 0; height: 1px; }
 .hero-radar .r-sweep {
   position: absolute; inset: 0; border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(199,224,74,.28), rgba(199,224,74,0) 28%);
+  background: conic-gradient(from 0deg, rgba(199,224,74,.18), rgba(199,224,74,0) 26%);
   animation: radarSweep 7s linear infinite;
 }
 .hero-radar .r-ping {
