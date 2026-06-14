@@ -154,6 +154,19 @@
     });
   }
 
+  /* ── Photographic heroes: inject photo layer from data-hero-img ── */
+  document.querySelectorAll('[data-hero-img]').forEach(function (h) {
+    if (h.querySelector('.hero-photo-layer')) return;
+    var ph = document.createElement('div');
+    ph.className = 'hero-photo-layer';
+    ph.setAttribute('aria-hidden', 'true');
+    ph.style.backgroundImage = 'url("' + h.dataset.heroImg + '")';
+    if (h.dataset.heroPos) ph.style.backgroundPosition = h.dataset.heroPos;
+    var bg = h.querySelector('.prop-hero-bg, .policy-hero-bg, .hero-mesh');
+    if (bg) bg.insertAdjacentElement('afterend', ph);
+    else h.insertBefore(ph, h.firstChild);
+  });
+
   /* ── Living background: inject aurora + cursor light ─── */
   (function bgFx() {
     if (document.querySelector('.bg-fx')) return;

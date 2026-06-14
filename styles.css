@@ -1587,7 +1587,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .hero-home .hero-photo {       /* real photography behind the scrim */
   position: absolute; inset: 0; z-index: 0;
   background-image: url('https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/about-us-one-osvxm67l37opqfy0f0s1e30c5cixgmt07bvqqqp19o.jpg');
-  background-size: cover; background-position: center right;
+  background-size: cover; background-position: right 18%;
 }
 .hero-home::after {            /* readability scrim */
   content: '';
@@ -1855,6 +1855,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   background: var(--mesh);
   filter: saturate(1.08);
   animation: meshDrift 26s var(--ease-in-out) infinite alternate;
+}
+/* Photographic hero layer (injected by main.js from data-hero-img) */
+.hero-photo-layer {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 .prop-hero::after {
   content: ''; position: absolute; inset: 0; z-index: 1;
