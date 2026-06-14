@@ -3,126 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Security Services UK — SIA Approved Security Company &amp; Manned Guarding | TTS FM</title>
-<meta name="description" content="Leading SIA approved security company in the UK offering manned guarding, corporate security, and 24/7 protection services tailored to your business needs.">
+<title>Our Services — Integrated Security &amp; Facilities Management | TTS FM</title>
+<meta name="description" content="Explore the full range of TTS FM services — security, facilities management, cleaning, washroom, ground maintenance, training and specialist services. One accountable partner across the UK.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-<style>
-  /* ── Services Hero ── */
-  .services-hero {
-    position:relative; overflow:hidden;
-    min-height:580px;
-    display:flex; align-items:center;
-    background-color:var(--color-bg-dark);
-  }
-  .services-hero-bg {
-    position:absolute; inset:0;
-    background-image:url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Top-Security-Company-in-Newcastle-What-Businesses-Need-to-Know.png');
-    background-size:cover; background-position:center;
-    opacity:.35;
-  }
-  .services-hero .container { position:relative; z-index:1; padding-top:5rem; padding-bottom:5rem; }
-  .services-hero h1 { color:#fff; font-size:clamp(2rem,4vw,3.25rem); margin:0 0 1rem; }
-  .services-hero h1 .lime { color:var(--color-lime); }
-  .services-hero p.hero-sub { color:rgba(255,255,255,.82); max-width:680px; font-size:1.05rem; margin:0 0 2rem; line-height:1.65; }
-  .hero-btn-row { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1.75rem; }
-  .services-hero .hero-checklist { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; }
-  .services-hero .hero-check-item {
-    color:rgba(255,255,255,.9); font-size:.9rem; font-weight:600;
-    display:flex; align-items:center; gap:.45rem;
-  }
-  .services-hero .hero-check-item::before { content:'✓'; color:var(--color-lime); font-weight:700; }
-
-  /* ── Sub-service card strip ── */
-  .sub-service-strip { background:var(--color-bg-dark); padding:2rem 0; }
-  .sub-service-grid {
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;
-  }
-  @media(max-width:860px){ .sub-service-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:480px){ .sub-service-grid{ grid-template-columns:1fr; } }
-  .sub-service-card {
-    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
-    border-radius:8px; padding:1.25rem 1.5rem;
-    text-decoration:none; color:#fff; font-weight:700; font-size:1rem;
-    text-align:center; transition:background .2s, border-color .2s;
-  }
-  .sub-service-card:hover { background:var(--color-lime); color:var(--color-heading); border-color:var(--color-lime); }
-
-  /* ── Section two-col helpers ── */
-  .two-col-img { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
-  @media(max-width:768px){ .two-col-img{ grid-template-columns:1fr; } }
-  .two-col-img .img-wrap { border-radius:12px; overflow:hidden; }
-  .two-col-img .img-wrap img { width:100%; height:auto; display:block; }
-
-  /* ── Checklist ── */
-  .check-list { list-style:none; padding:0; margin:1rem 0; }
-  .check-list li {
-    display:flex; align-items:flex-start; gap:.65rem;
-    padding:.4rem 0; font-size:.95rem; color:var(--color-text);
-    border-bottom:1px solid var(--color-border);
-  }
-  .check-list li:last-child { border:none; }
-  .check-list li::before { content:'✓'; color:var(--color-lime-dark); font-weight:700; font-size:1rem; flex-shrink:0; margin-top:.05rem; }
-
-  /* ── Partners band ── */
-  .partners-logos-wrap {
-    display:flex; flex-wrap:wrap; gap:1.5rem 2rem; align-items:center; justify-content:center;
-    margin-top:1.5rem;
-  }
-  .partner-logo-img { height:48px; width:auto; object-fit:contain; filter:grayscale(1); opacity:.65; transition:filter .2s, opacity .2s; }
-  .partner-logo-img:hover { filter:none; opacity:1; }
-
-  /* ── CTA band ── */
-  .cta-band {
-    background:var(--color-bg-dark); padding:3.5rem 0; text-align:center;
-  }
-  .cta-band h2 { color:#fff; margin-bottom:.75rem; font-size:clamp(1.5rem,2.5vw,2.2rem); }
-  .cta-band p { color:rgba(255,255,255,.78); max-width:620px; margin:0 auto 2rem; }
-
-  /* ── Accordion ── */
-  .acc-item { border:1px solid var(--color-border); border-radius:8px; margin-bottom:.75rem; overflow:hidden; }
-  .acc-item summary {
-    list-style:none; padding:1rem 1.25rem;
-    font-weight:700; font-size:.97rem; color:var(--color-heading);
-    cursor:pointer; display:flex; justify-content:space-between; align-items:center;
-    background:#fff; transition:background .15s;
-  }
-  .acc-item summary::-webkit-details-marker { display:none; }
-  .acc-item summary::after { content:'+'; font-size:1.3rem; color:var(--color-lime-dark); flex-shrink:0; }
-  .acc-item[open] summary { background:var(--color-bg-light); }
-  .acc-item[open] summary::after { content:'−'; }
-  .acc-body { padding:1rem 1.25rem 1.25rem; background:var(--color-bg-light); font-size:.92rem; color:var(--color-text); line-height:1.7; }
-  .acc-body ul { margin:.5rem 0 0; padding-left:1.1rem; }
-  .acc-body ul li { margin-bottom:.35rem; }
-
-  /* ── Industry cards ── */
-  .industry-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
-  @media(max-width:768px){ .industry-grid{ grid-template-columns:1fr; } }
-  .industry-card {
-    background:#fff; border:1px solid var(--color-border);
-    border-top:4px solid var(--color-lime);
-    border-radius:8px; padding:1.75rem 1.5rem;
-  }
-  .industry-card h4 { color:var(--color-heading); margin:0 0 .65rem; font-size:1.05rem; }
-  .industry-card p  { color:var(--color-text); font-size:.9rem; margin:0; line-height:1.6; }
-
-  /* ── Coverage + Why choose ── */
-  .coverage-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
-  @media(max-width:768px){ .coverage-grid{ grid-template-columns:1fr; } }
-
-  /* ── FAQ ── */
-  .faq-list { margin-top:1.5rem; }
-  .faq-item { border-bottom:1px solid var(--color-border); }
-  .faq-item summary {
-    list-style:none; padding:1.1rem 0;
-    font-weight:600; font-size:.97rem; color:var(--color-heading);
-    cursor:pointer; display:flex; justify-content:space-between; align-items:center;
-  }
-  .faq-item summary::-webkit-details-marker { display:none; }
-  .faq-item summary::after { content:'+'; font-size:1.2rem; color:var(--color-lime-dark); flex-shrink:0; }
-  .faq-item[open] summary::after { content:'−'; }
-  .faq-body { padding:0 0 1rem; font-size:.92rem; color:var(--color-text); line-height:1.7; }
-</style>
 </head>
 <body>
 
@@ -238,329 +122,168 @@
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ════════════════════════════════════════════════════════════ -->
-<section class="services-hero" aria-label="Security Services hero">
-  <div class="services-hero-bg" aria-hidden="true"></div>
+<section class="prop-hero" aria-label="Our Services hero">
+  <div class="prop-hero-bg" aria-hidden="true"></div>
   <div class="container">
-    <h1>Professional <span class="lime">Security Services</span> In UK</h1>
-    <p class="hero-sub">Delivering SIA-approved professional security services across the UK, TTS FM safeguards your people, assets, and premises with tailored solutions, rapid response, and full regulatory compliance for commercial, industrial, and corporate environments.</p>
+    <h1>Our <span class="lime" data-kinetic>Services</span></h1>
+    <p class="hero-sub">One accountable partner for security and facilities management across the UK.</p>
     <div class="hero-btn-row">
-      <a class="btn btn-primary" href="contact.html">Get a Free Consultation</a>
-      <a class="btn btn-outline" href="#our-services">Explore Our Services</a>
-    </div>
-    <div class="hero-checklist">
-      <span class="hero-check-item">UK-Wide Coverage</span>
-      <span class="hero-check-item">24/7 Support &amp; Rapid Response</span>
-      <span class="hero-check-item">Trusted by Commercial &amp; Industrial Clients</span>
+      <a class="btn btn-lime btn-magnetic" href="contact.html">Get your free site assessment</a>
+      <a class="btn btn-ghost" href="#all-services">Browse services</a>
     </div>
   </div>
 </section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     SUB-SERVICE STRIP
-════════════════════════════════════════════════════════════ -->
-<div class="sub-service-strip" id="our-services" aria-label="Security service divisions">
-  <div class="container">
-    <div class="sub-service-grid">
-      <a class="sub-service-card" href="https://ttsfm.co.uk/tts-guarding/" target="_blank" rel="noopener">TTS Guarding</a>
-      <a class="sub-service-card" href="https://ttsfm.co.uk/tts-despatch" target="_blank" rel="noopener">TTS Despatch</a>
-      <a class="sub-service-card" href="https://ttsfm.co.uk/tts-watch" target="_blank" rel="noopener">TTS Watch</a>
-      <a class="sub-service-card" href="https://ttsfm.co.uk/security-dog-handlers/" target="_blank" rel="noopener">Security Dog Handlers</a>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      INTRO
 ════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Security services introduction">
+<section class="section section-light" aria-label="Services introduction">
   <div class="container">
     <div class="text-center reveal" style="max-width:820px;margin:0 auto;">
-      <p style="font-size:1.05rem;line-height:1.75;">We deliver <strong>professional security services across the UK</strong>, tailored to safeguard businesses, assets, and people. As an <strong>SIA approved security company</strong>, we provide highly trained personnel and end-to-end protection solutions designed for commercial, industrial, and corporate environments. Whether you require <strong>manned guarding services</strong>, <strong>corporate security</strong>, or <strong>specialised industry protection</strong>, our security solutions are engineered for reliability, compliance, and operational excellence.</p>
+      <p style="font-size:1.05rem;line-height:1.75;">TTS FM (UK) is a local, regional and nationwide provider of <strong>integrated, risk-based security solutions and facilities management services</strong>. Our unique &lsquo;One Stop Shop&rsquo; approach brings security and facilities management together under a single accountable partner — reducing your management overhead, driving operational efficiency, and giving every site one point of contact. We use our insight and knowledge to create the most appropriate service solution for each client, taking into account the risk profile and culture of the organisation.</p>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     MANNED GUARDING
+     OUR SERVICES — BENTO GRID
 ════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="Manned guarding services">
+<section class="section" id="all-services" aria-labelledby="servicesHeading">
   <div class="container">
-    <div class="two-col-img">
+    <div class="text-center mb-3 reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2 id="servicesHeading" class="section-title">Comprehensive Security &amp; FM Solutions</h2>
+      <p class="section-intro">From security guarding to specialist cleaning, we deliver fully managed, accredited services across the United Kingdom — all from one accountable partner.</p>
+    </div>
 
-      <div class="reveal">
-        <span class="eyebrow">Core Service</span>
-        <h2>Manned Guarding Services UK</h2>
-        <hr class="lime-rule">
-        <p>Our <strong>manned guarding services in the UK</strong> provide a visible and effective deterrent against theft, vandalism, and unauthorized access.</p>
-        <ul class="check-list">
-          <li>24/7 on-site security presence</li>
-          <li>Access control and visitor management</li>
-          <li>Mobile patrols and surveillance support</li>
-          <li>Incident reporting and emergency response</li>
-        </ul>
-        <p style="margin-top:1.25rem;">Our objective is to maintain a long-lasting, mutually beneficial relationship with each and every customer on our books. We pride ourselves on our commitment, ownership, proactive approach and excellence demonstrated by each member of staff. All of our staff are trained to the highest industry standards, with ongoing support training and investment — each team member is fully equipped to deal with ever-changing customer needs.</p>
-        <p>TTS FM offer a true partnership approach and are always flexible to our customers' needs.</p>
-        <a class="btn btn-primary mt-3" href="contact.html">Get a Quote</a>
-      </div>
+    <div class="bento reveal">
 
-      <div class="img-wrap reveal reveal-delay-2">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/Gemini_Generated_Image_yillanyillanyill-1-rkz8lzjsgelca6hr72ezx9x81k21bbtovon56lxv2s.png" alt="Manned guarding services UK" loading="lazy">
-      </div>
+      <a class="bento-cell bento-cell--feature" href="services.html">
+        <span class="bento-tag">Flagship</span>
+        <div class="bento-icon" aria-hidden="true">&#x1F6E1;&#xFE0F;</div>
+        <h3>Security Services</h3>
+        <p>SIA-approved manned guarding, mobile patrols, key-holding and integrated electronic security — monitored 24/7 from our control room.</p>
+        <span class="card-link">Explore security &#x203A;</span>
+      </a>
+
+      <a class="bento-cell bento-cell--wide" href="services.html">
+        <div class="bento-icon" aria-hidden="true">&#x1F3E2;</div>
+        <h3>Facilities Management</h3>
+        <p>Integrated hard &amp; soft FM for commercial and industrial properties — one contract, total accountability.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell" href="property-services.html">
+        <div class="bento-icon" aria-hidden="true">&#x1F3E0;</div>
+        <h3>Property Services</h3>
+        <p>Building maintenance, fabric repairs and reactive property management.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell" href="training-services.html">
+        <div class="bento-icon" aria-hidden="true">&#x1F4DA;</div>
+        <h3>Training Services</h3>
+        <p>SIA &amp; H&amp;S training programmes for security and FM professionals.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell" href="cleaning-services.html">
+        <div class="bento-icon" aria-hidden="true">&#x2728;</div>
+        <h3>Cleaning Services</h3>
+        <p>Commercial, industrial and specialist cleaning to the highest standards.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell" href="washroom-services.html">
+        <div class="bento-icon" aria-hidden="true">&#x1F6BF;</div>
+        <h3>Washroom Services</h3>
+        <p>Fully managed washroom hygiene and consumable replenishment.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell" href="ground-maintenance-services.html">
+        <div class="bento-icon" aria-hidden="true">&#x1F33F;</div>
+        <h3>Ground Maintenance</h3>
+        <p>Grounds care, landscaping and winter gritting, year-round.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell" href="specialist-services.html">
+        <div class="bento-icon" aria-hidden="true">&#x2699;&#xFE0F;</div>
+        <h3>Specialist Services</h3>
+        <p>Rope access, height safety and technically demanding work.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell bento-cell--wide" href="services.html">
+        <div class="bento-icon" aria-hidden="true">&#x1F4E6;</div>
+        <h3>Consumables</h3>
+        <p>Supply of cleaning, hygiene and facilities consumables nationwide.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
+
+      <a class="bento-cell bento-cell--wide" href="services.html">
+        <div class="bento-icon" aria-hidden="true">&#x267B;&#xFE0F;</div>
+        <h3>Waste Management</h3>
+        <p>Responsible waste collection, recycling and disposal for all site types.</p>
+        <span class="card-link">Learn more &#x203A;</span>
+      </a>
 
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     EXPERIENCE & VISION
+     WHY CHOOSE US
 ════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="TTS FM experience and vision">
+<section class="section section-light" aria-label="Why choose TTS FM">
   <div class="container">
-    <div class="two-col-img">
-
-      <div class="img-wrap reveal">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/AdobeStock_131556661-scaled-qbmsdwa51ywdb907tkyns7y7apmy2ksni9ry5gbclw.jpeg" alt="Security camera installation" loading="lazy">
+    <div class="text-center mb-3 reveal">
+      <span class="eyebrow">Why TTS FM</span>
+      <h2 class="section-title">One Partner, Total Accountability</h2>
+    </div>
+    <div class="industry-grid reveal">
+      <div class="industry-card">
+        <h4>Single Accountable Partner</h4>
+        <p>Consolidate security and facilities management under one contract and one point of contact. Our &lsquo;One Stop Shop&rsquo; model removes the cost and complexity of juggling multiple suppliers.</p>
       </div>
-
-      <div class="reveal reveal-delay-2">
-        <span class="eyebrow">Our Approach</span>
-        <h2>Fifty Years of Security Expertise</h2>
-        <hr class="lime-rule">
-        <p>With over fifty years of combined experience within our Senior Leadership Team, TTS FM holds a unique vision within the security industry. We aim to provide a wide range of quality-driven, tailored services to meet our customers' needs.</p>
-        <p>Our unique vision has allowed our company to grow considerably and now benefits all of our customers by providing a <strong>'One Stop Shop'</strong> Security and Facilities solution. We continue to operate a tried and tested 'Building Block' based approach, as security is not a one size fits all operation.</p>
-        <p>Over the years we have gained knowledge and expertise delivering highly efficient and reliable services to customers. Our unique approach helps us to provide service to clients locally, regionally and nationally.</p>
+      <div class="industry-card">
+        <h4>Fully Accredited &amp; Compliant</h4>
+        <p>As an SIA Approved Contractor working to ISO 9001, 14001 and 45001 standards, every service we deliver is independently assured for quality, safety and regulatory compliance.</p>
       </div>
-
+      <div class="industry-card">
+        <h4>Nationwide Local Teams</h4>
+        <p>With regional operating hubs across the UK, we combine national reach with locally based teams — ensuring rapid response times and area-specific expertise on every contract.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     CORPORATE SECURITY
+     ACCREDITATIONS
 ════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="Corporate security services">
+<div class="partners-band" aria-label="Partners and accreditations">
   <div class="container">
-    <div class="two-col-img">
-
-      <div class="reveal">
-        <span class="eyebrow">Corporate Solutions</span>
-        <h2>Corporate Security Services</h2>
-        <hr class="lime-rule">
-        <p>We deliver tailored <strong>corporate security solutions in the UK</strong> to protect business operations and personnel. Our approach integrates <strong>security risk management services</strong> with real-time monitoring.</p>
-        <p><strong>Coverage includes:</strong></p>
-        <ul class="check-list">
-          <li>Office security guards</li>
-          <li>Corporate building security</li>
-          <li>Front-of-house security</li>
-          <li>Executive protection</li>
-        </ul>
-        <a class="btn btn-primary mt-3" href="contact.html">Enquire Now</a>
-      </div>
-
-      <div class="img-wrap reveal reveal-delay-2">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/Gemini_Generated_Image_mvbinumvbinumvbi-rkz7pdjdcby7h7v2mgxyx06i3asl9dcy29tos0akyc.png" alt="Corporate security services" loading="lazy">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PARTNERS
-════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Partners and accreditations">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Accreditations</span>
-      <h2 class="section-title">Our Partners</h2>
-      <hr class="lime-rule" style="margin:1rem auto;">
-    </div>
-    <div class="partners-logos-wrap reveal">
-      <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/webeye-resize.jpg" alt="WebEye" loading="lazy">
-      <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/parim-resize.jpg" alt="Parim" loading="lazy">
-      <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/06/reslink-resize.jpg" alt="ReSLink" loading="lazy">
-      <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2023/11/Combat-stress.png" alt="Combat Stress" loading="lazy">
-      <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2025/03/ACSPacesetters_LOGO-v01-ol.jpg" alt="ACS Pacesetters" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PROPERTY SERVICES CTA
-════════════════════════════════════════════════════════════ -->
-<div class="cta-band" aria-label="Property services call to action">
-  <div class="container">
-    <div class="reveal">
-      <h2>Professional Property Services You Can Rely On Across the UK</h2>
-      <p>Partner with a trusted property services company delivering maintenance, compliance, and integrated support to keep your properties safe, efficient, and fully operational.</p>
-      <a class="btn btn-primary" href="contact.html">Get a Property Services Quote</a>
+    <h3>Our Partners &amp; Accreditations</h3>
+    <div class="partners-logos reveal">
+      <span class="partner-logo">WebEye</span>
+      <span class="partner-logo">Parim</span>
+      <span class="partner-logo">ReSLink</span>
+      <span class="partner-logo">Combat Stress</span>
+      <span class="partner-logo">ACS Pacesetters</span>
     </div>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     HOW OUR PROCESS WORKS
+     CTA BAND
 ════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Security process">
+<section class="cta-mesh" aria-label="Get started">
   <div class="container">
-    <div class="two-col-img" style="align-items:start;">
-
-      <div class="reveal">
-        <span class="eyebrow">Our Process</span>
-        <h2>How Our Security Process Works</h2>
-        <hr class="lime-rule">
-        <p>Our end-to-end <strong>security service solutions</strong> are designed to identify risks, deploy SIA licensed guards, and ensure continuous monitoring. We help businesses across the UK stay secure, compliant, and protected at all times.</p>
-      </div>
-
-      <div class="reveal reveal-delay-2">
-        <details class="acc-item" open>
-          <summary>1. Risk Assessment</summary>
-          <div class="acc-body">
-            <p>We conduct a comprehensive security risk assessment to identify vulnerabilities across your premises, operations, and workforce. Our process includes site inspection and threat analysis, identification of risks such as theft, vandalism, and unauthorised access, evaluation of existing security measures, and industry-specific risk profiling (retail, construction, corporate, warehouse). All assessments align with SIA compliance standards.</p>
-          </div>
-        </details>
-        <details class="acc-item">
-          <summary>2. Custom Security Plan</summary>
-          <div class="acc-body">
-            <p>Based on the assessment, we develop a bespoke security strategy tailored to your business requirements. Our custom plans include deployment of SIA licensed security guards, integration of manned guarding and surveillance systems, access control and visitor management strategies, and 24/7 security coverage planning — delivered as scalable, cost-effective solutions.</p>
-          </div>
-        </details>
-        <details class="acc-item">
-          <summary>3. Deployment</summary>
-          <div class="acc-body">
-            <p>Our highly trained SIA approved security guards are deployed strategically to ensure maximum coverage and efficiency — including on-site manned guarding, mobile patrol security, front-of-house personnel, construction site and warehouse security teams, and rapid response units. Every officer is trained in conflict management, incident response, and customer-facing professionalism.</p>
-          </div>
-        </details>
-        <details class="acc-item">
-          <summary>4. Monitoring &amp; Reporting</summary>
-          <div class="acc-body">
-            <p>We provide continuous security monitoring and reporting for transparency, accountability, and performance optimisation. Clients benefit from real-time incident reporting, daily activity logs, performance tracking of security personnel, continuous risk reassessment, data-driven security insights, and reduced risks and liabilities.</p>
-          </div>
-        </details>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     INDUSTRY-SPECIFIC SOLUTIONS
-════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="Industry-specific security solutions">
-  <div class="container">
-
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Tailored Protection</span>
-      <h2 class="section-title">Industry-Specific Security Solutions</h2>
-    </div>
-
-    <div class="industry-grid">
-      <div class="industry-card reveal">
-        <h4>&#x1F6D2; Retail Security Services</h4>
-        <p>Protect your retail environment with trained personnel focused on loss prevention and customer safety.</p>
-      </div>
-      <div class="industry-card reveal reveal-delay-1">
-        <h4>&#x1F3D7; Construction Site Security</h4>
-        <p>Secure high-risk sites with 24-hour surveillance and access control, reducing theft and liability.</p>
-      </div>
-      <div class="industry-card reveal reveal-delay-2">
-        <h4>&#x1F4E6; Warehouse &amp; Logistics Security</h4>
-        <p>Ensure operational continuity with warehouse security services designed to safeguard inventory and logistics chains.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     LOCAL COVERAGE + WHY CHOOSE
-════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Local coverage and why choose TTS FM">
-  <div class="container">
-    <div class="coverage-grid">
-
-      <div class="reveal">
-        <span class="eyebrow">Nationwide Reach</span>
-        <h2>Local Security Services Across the UK</h2>
-        <hr class="lime-rule">
-        <p>We provide <strong>nationwide coverage</strong>, including:</p>
-        <ul class="check-list">
-          <li>Security company Newcastle</li>
-          <li>Security company Manchester</li>
-          <li>Security company Birmingham</li>
-          <li>Security services London</li>
-          <li>North East UK security services</li>
-        </ul>
-        <p style="margin-top:1rem;">Our local deployment ensures <strong>rapid response times and area-specific expertise</strong>.</p>
-      </div>
-
-      <div class="reveal reveal-delay-2">
-        <span class="eyebrow">Why TTS FM</span>
-        <h2>Why Choose TTS FM as Your Security Partner</h2>
-        <hr class="lime-rule">
-        <ul class="check-list">
-          <li>SIA Approved &amp; Fully Compliant</li>
-          <li>Nationwide Coverage</li>
-          <li>Industry-Specific Expertise</li>
-          <li>24/7 Security Services</li>
-          <li>Scalable Contract Security Solutions</li>
-        </ul>
-        <a class="btn btn-primary mt-3" href="contact.html">Get a Free Consultation</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     ABOUT US
-════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="About TTS FM">
-  <div class="container">
-    <div class="text-center reveal" style="max-width:760px;margin:0 auto;">
-      <span class="eyebrow">Who We Are</span>
-      <h2 class="section-title">About Us</h2>
-      <hr class="lime-rule" style="margin:1rem auto;">
-      <p>TTS FM (UK) is a local, regional and nationwide provider of Integrated Risk Based Security Solutions and Facilities Management Services. Leading the industry through the most advanced innovative and cost-effective solutions, we drive value by applying innovative solutions focused on excellent customer service. We use our insight and knowledge to create the most appropriate service solution for each client, taking into account the risk profile and culture of the organisation.</p>
-      <a class="btn btn-primary mt-3" href="about.html">More About Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FAQ
-════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Frequently asked questions">
-  <div class="container" style="max-width:760px;margin:0 auto;">
-
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Quick Answers</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-    </div>
-
-    <div class="faq-list reveal">
-
-      <details class="faq-item">
-        <summary>What services does a security company provide?</summary>
-        <div class="faq-body">A security company offers services such as <strong>manned guarding, corporate security, retail security, and construction site protection</strong>. TTS FM provides all of these and more as part of our comprehensive security offering.</div>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much do security services cost in the UK?</summary>
-        <div class="faq-body">Costs vary depending on service type, risk level, and hours required. <a href="contact.html">Contact us</a> for a tailored quote specific to your business needs.</div>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is manned guarding?</summary>
-        <div class="faq-body">Manned guarding involves <strong>trained security personnel stationed on-site</strong> to monitor, protect, and respond to incidents. Our SIA licensed guards provide round-the-clock protection for a wide range of commercial and industrial environments.</div>
-      </details>
-
-      <details class="faq-item">
-        <summary>How do I hire security guards in the UK?</summary>
-        <div class="faq-body">Choose an <strong>SIA approved security company</strong> like TTS FM to ensure compliance and quality service. <a href="contact.html">Get in touch</a> with our team to discuss your requirements and receive a free consultation.</div>
-      </details>
-
-    </div>
+    <h2>Ready to simplify your security &amp; FM?</h2>
+    <p>Book a no-obligation site assessment and we&rsquo;ll show you exactly where a single, accountable partner can cut cost, risk and hassle.</p>
+    <a class="btn btn-lime btn-magnetic" href="contact.html">Get your free site assessment</a>
+    <p class="cta-trust">Typical response within one working day · Nationwide coverage · 24/7 control room</p>
   </div>
 </section>
 
@@ -569,25 +292,39 @@
 ════════════════════════════════════════════════════════════ -->
 <footer class="site-footer" aria-label="Site footer">
 
+  <!-- Static region grid (replaces auto-rotating carousel) -->
   <div class="region-grid" aria-label="Our regional coverage">
-    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Sields-Block.jpg" alt="South Shields region" loading="lazy"><div class="region-label">South Shields</div></div>
-    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland region" loading="lazy"><div class="region-label">Scotland</div></div>
-    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West region" loading="lazy"><div class="region-label">North West</div></div>
-    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands region" loading="lazy"><div class="region-label">Midlands</div></div>
-    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South region" loading="lazy"><div class="region-label">South</div></div>
+    <div class="region-tile">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Sields-Block.jpg" alt="South Shields region" loading="lazy">
+      <div class="region-label">South Shields</div>
+    </div>
+    <div class="region-tile">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland region" loading="lazy">
+      <div class="region-label">Scotland</div>
+    </div>
+    <div class="region-tile">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West region" loading="lazy">
+      <div class="region-label">North West</div>
+    </div>
+    <div class="region-tile">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands region" loading="lazy">
+      <div class="region-label">Midlands</div>
+    </div>
+    <div class="region-tile">
+      <img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South region" loading="lazy">
+      <div class="region-label">South</div>
+    </div>
   </div>
 
   <div class="footer-main">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-col">
           <div class="footer-logo">
             <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM" width="286" height="237">
           </div>
           <p class="footer-desc">TTS FM (UK) is a local, regional and nationwide provider of Integrated Risk Based Security Solutions and Facilities Management Services — leading the industry with innovative, cost-effective solutions.</p>
         </div>
-
         <div class="footer-col">
           <h4>Quick Links</h4>
           <nav class="footer-links" aria-label="Quick links">
@@ -600,7 +337,6 @@
             <a href="contact.html">Contact Us</a>
           </nav>
         </div>
-
         <div class="footer-col">
           <h4>Our Services</h4>
           <nav class="footer-links" aria-label="Services links">
@@ -614,17 +350,15 @@
             <a href="specialist-services.html">Specialist Services</a>
           </nav>
         </div>
-
         <div class="footer-col">
           <h4>Policies</h4>
           <nav class="footer-links" aria-label="Policy links">
-            <a href="#">Accessibility Policy</a>
-            <a href="#">Cookie Policy</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Privacy Policy</a>
+            <a href="accessibility-policy.html">Accessibility Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
           </nav>
         </div>
-
       </div>
     </div>
   </div>
@@ -634,10 +368,10 @@
       <div class="footer-bottom-inner">
         <p class="footer-copyright">&copy;2026 TTS FM. All Rights Reserved.</p>
         <nav class="footer-policy" aria-label="Legal links">
-          <a href="#">Accessibility Policy</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
+          <a href="accessibility-policy.html">Accessibility Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="terms-of-use.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
         </nav>
       </div>
     </div>
@@ -649,6 +383,9 @@
   <i class="fa fa-chevron-up" aria-hidden="true"></i>
 </button>
 
+<!-- ═══════════════════════════════════════════════════════════
+     MOTION LIBRARIES (CDN) + SITE JS
+════════════════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
