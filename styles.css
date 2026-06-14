@@ -2138,12 +2138,12 @@ html[data-theme="dark"] .industry-card:hover {
    through on every page. Theme-aware + reduced-motion-safe.
    ============================================================ */
 :root {
-  --page-base: #F4F8FC;
-  --dot: rgba(10,37,64,.055);
-  --orb-1: rgba(4,107,210,.18);
-  --orb-2: rgba(180,202,82,.20);
-  --orb-3: rgba(20,55,89,.14);
-  --orb-cursor: rgba(150,170,58,.16);
+  --page-base: #EAF1F8;
+  --dot: rgba(10,37,64,.08);
+  --orb-1: rgba(4,107,210,.42);
+  --orb-2: rgba(150,170,58,.45);
+  --orb-3: rgba(20,55,89,.30);
+  --orb-cursor: rgba(120,150,40,.34);
 }
 html[data-theme="dark"] {
   --page-base: #06121F;
@@ -2195,9 +2195,9 @@ html:not([data-theme]) body { background-color: transparent; }
 
 /* Frosted translucent light sections so the aurora shows through */
 .section-light {
-  background: rgba(240,245,250,.70);
-  -webkit-backdrop-filter: blur(7px) saturate(115%);
-  backdrop-filter: blur(7px) saturate(115%);
+  background: rgba(238,244,250,.62);
+  -webkit-backdrop-filter: blur(7px) saturate(120%);
+  backdrop-filter: blur(7px) saturate(120%);
 }
 html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
 
