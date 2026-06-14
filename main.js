@@ -143,6 +143,17 @@
     scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   }
 
+  /* ── Cursor-following light on hero / CTA surfaces ───── */
+  if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.hero-home, .prop-hero, .policy-hero, .cta-mesh').forEach(function (el) {
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--hx', ((e.clientX - r.left) / r.width * 100) + '%');
+        el.style.setProperty('--hy', ((e.clientY - r.top) / r.height * 100) + '%');
+      }, { passive: true });
+    });
+  }
+
   /* ── Living background: inject aurora + cursor light ─── */
   (function bgFx() {
     if (document.querySelector('.bg-fx')) return;

@@ -2200,3 +2200,23 @@ html:not([data-theme]) body { background-color: transparent; }
   backdrop-filter: blur(7px) saturate(115%);
 }
 html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
+
+/* ============================================================
+   PHASE 5b — Showpiece: hero cursor-light + capabilities marquee
+   ============================================================ */
+
+/* Cursor-following light on dark hero / CTA areas (interactivity) */
+.hero-home::before, .prop-hero::before, .policy-hero::before, .cta-mesh::before {
+  content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(460px circle at var(--hx, 50%) var(--hy, 30%), rgba(199,224,74,.16), transparent 60%);
+  transition: background .25s ease-out;
+}
+
+/* Infinite capabilities marquee (motion + personality) */
+.marquee { overflow: hidden; padding: 1.15rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: inline-flex; align-items: center; gap: 2.5rem; white-space: nowrap; animation: marquee 38s linear infinite; will-change: transform; }
+.marquee-item { display: inline-flex; align-items: center; gap: 2.5rem; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; letter-spacing: .04em; text-transform: uppercase; color: var(--color-heading); }
+.marquee-item::after { content: '✦'; color: var(--color-lime); font-size: .8rem; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
