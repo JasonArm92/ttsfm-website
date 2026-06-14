@@ -2078,3 +2078,55 @@ html.theme-anim .prose h2 {
   body.has-quote-bar { padding-bottom: 66px; }
   body.has-quote-bar .scroll-top { bottom: 80px; }
 }
+
+/* ============================================================
+   PHASE 4 — Craft layer: texture, depth, custom detail
+   (mostly global — lifts every page; de-templates + adds polish)
+   ============================================================ */
+
+/* ── Film-grain texture on mesh / dark surfaces (tactile depth) ── */
+.hero-mesh::after,
+.prop-hero-bg::after,
+.about-section::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 170px 170px; opacity: .055; mix-blend-mode: overlay;
+}
+
+/* ── Soft radial glow accents on dark bands (depth) ── */
+.about-section, .dark-two-col-wrap, .cs-stats { position: relative; overflow: hidden; }
+.about-section > .container, .dark-two-col-wrap > .container, .cs-stats > .container { position: relative; z-index: 1; }
+.about-section::after, .dark-two-col-wrap::before, .cs-stats::before {
+  content: ''; position: absolute; z-index: 0; pointer-events: none;
+  width: 560px; height: 560px; border-radius: 50%;
+  top: -200px; right: -180px;
+  background: radial-gradient(circle, rgba(180,202,82,.12), transparent 70%);
+}
+.dark-two-col-wrap::before { left: -200px; right: auto; top: auto; bottom: -220px; background: radial-gradient(circle, rgba(4,107,210,.16), transparent 70%); }
+
+/* ── Eyebrow: leading rule (editorial detail) ── */
+.eyebrow { display: inline-flex; align-items: center; gap: .55rem; }
+.eyebrow::before { content: ''; width: 26px; height: 2px; border-radius: 2px; background: currentColor; opacity: .65; }
+
+/* ── Lime rule → directional gradient ── */
+.lime-rule { background: linear-gradient(90deg, var(--color-lime), transparent); }
+.lime-rule-center { background: linear-gradient(90deg, transparent, var(--color-lime), transparent); }
+
+/* ── Cards: subtle top sheen + deeper lift on hover (craft) ── */
+.bento-cell:hover, .service-card:hover, .industry-card:hover {
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.55);
+}
+html[data-theme="dark"] .bento-cell:hover,
+html[data-theme="dark"] .service-card:hover,
+html[data-theme="dark"] .industry-card:hover {
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* ── Custom SVG line icons (replace emoji) ── */
+.bento-icon svg, .svg-ico { width: 30px; height: 30px; display: block; }
+.bento-icon { color: var(--color-lime-dark); }
+.bento-cell--feature .bento-icon { color: var(--lime-bright); }
+.bento-cell--feature .bento-icon svg { width: 40px; height: 40px; }
+
+/* ── Oversized section index marker (de-templating) ── */
+.sec-num { font-family: var(--font-mono); font-weight: 700; font-size: .82rem; letter-spacing: .14em; color: var(--color-lime-dark); }
