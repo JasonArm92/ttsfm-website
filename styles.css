@@ -1546,31 +1546,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .site-nav.nav-home {
   position: fixed;
   inset: 0 0 auto 0;
-  background: transparent;
-  box-shadow: none;
-}
-.site-nav.nav-home .nav-link        { color: #fff; }
-.site-nav.nav-home .nav-logo img    { filter: brightness(0) invert(1); transition: filter var(--transition); }
-.site-nav.nav-home .nav-hamburger span { background: #fff; }
-.site-nav.nav-home .nav-link:hover,
-.site-nav.nav-home .nav-item:hover > .nav-link {
-  color: #fff;
-  background: rgba(255,255,255,.12);
-}
-.site-nav.nav-home.scrolled {
-  background: rgba(255,255,255,.82);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  backdrop-filter: saturate(180%) blur(14px);
-  box-shadow: 0 4px 30px rgba(10,37,64,.12);
-  border-bottom: 1px solid rgba(255,255,255,.4);
-}
-.site-nav.nav-home.scrolled .nav-link     { color: var(--color-heading); }
-.site-nav.nav-home.scrolled .nav-logo img { filter: none; }
-.site-nav.nav-home.scrolled .nav-hamburger span { background: var(--color-heading); }
-.site-nav.nav-home.scrolled .nav-link:hover,
-.site-nav.nav-home.scrolled .nav-item:hover > .nav-link {
-  color: var(--color-blue);
-  background: var(--color-bg-light);
 }
 
 /* ── Buttons added for the dark hero ───────────────────────── */
@@ -2083,8 +2058,6 @@ html.theme-anim .prose h2 {
 .theme-toggle:hover { background: var(--color-bg-light); color: var(--color-blue); }
 .theme-toggle:focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; }
 /* on the homepage transparent nav, the toggle is white over the hero */
-.site-nav.nav-home .theme-toggle { color: #fff; }
-.site-nav.nav-home.scrolled .theme-toggle { color: var(--color-heading); }
 /* when the desktop menu is visible, the menu's auto-margin handles spacing */
 @media (min-width: 769px) { .theme-toggle { margin-left: .25rem; } }
 
