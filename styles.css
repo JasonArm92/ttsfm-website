@@ -2220,3 +2220,32 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* ── Signature hero motif: nationwide-coverage radar ── */
+.hero-radar {
+  position: absolute; z-index: 2; top: 50%; right: -5%;
+  transform: translateY(-50%);
+  width: min(640px, 54vw); aspect-ratio: 1;
+  pointer-events: none; opacity: .6;
+}
+.hero-radar .r-ring { position: absolute; inset: 0; margin: auto; border: 1px solid rgba(199,224,74,.20); border-radius: 50%; }
+.hero-radar .r-ring:nth-child(2) { width: 72%; height: 72%; }
+.hero-radar .r-ring:nth-child(3) { width: 44%; height: 44%; }
+.hero-radar .r-ring:nth-child(4) { width: 18%; height: 18%; border-color: rgba(199,224,74,.4); }
+.hero-radar .r-cross::before, .hero-radar .r-cross::after { content: ''; position: absolute; background: rgba(199,224,74,.10); }
+.hero-radar .r-cross::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+.hero-radar .r-cross::after  { top: 50%; left: 0; right: 0; height: 1px; }
+.hero-radar .r-sweep {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(199,224,74,.28), rgba(199,224,74,0) 28%);
+  animation: radarSweep 7s linear infinite;
+}
+.hero-radar .r-ping {
+  position: absolute; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--lime-bright); box-shadow: 0 0 14px 2px rgba(199,224,74,.7);
+  animation: radarPing 3.2s ease-in-out infinite; animation-delay: var(--d, 0s);
+}
+@keyframes radarSweep { to { transform: rotate(360deg); } }
+@keyframes radarPing { 0%,100% { transform: scale(.7); opacity: .5; } 50% { transform: scale(1.15); opacity: 1; } }
+@media (max-width: 900px) { .hero-radar { opacity: .22; right: -34%; } }
+@media (prefers-reduced-motion: reduce) { .hero-radar .r-sweep, .hero-radar .r-ping { animation: none; } }
