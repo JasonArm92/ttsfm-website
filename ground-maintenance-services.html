@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Professional Ground Maintenance Services UK | TTS FM</title>
+<meta name="description" content="Professional ground maintenance services across the UK from TTS FM — landscaping, grounds care, and winter gritting for commercial and industrial sites.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+<style>
+.prop-hero { position:relative; overflow:hidden; min-height:580px; display:flex; align-items:center; background-color:var(--color-bg-dark); }
+.prop-hero-bg { position:absolute; inset:0; background-size:cover; background-position:center; opacity:.35; }
+.prop-hero .container { position:relative; z-index:1; padding-top:5rem; padding-bottom:5rem; }
+.prop-hero h1 { color:#fff; font-size:clamp(2rem,4vw,3.25rem); margin:0 0 1rem; }
+.prop-hero h1 .lime { color:var(--color-lime); }
+.prop-hero p.hero-sub { color:rgba(255,255,255,.82); max-width:680px; font-size:1.05rem; margin:0 0 2rem; line-height:1.65; }
+.hero-btn-row { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1.75rem; }
+.prop-hero .hero-checklist { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; }
+.prop-hero .hero-check-item { color:rgba(255,255,255,.9); font-size:.9rem; font-weight:600; display:flex; align-items:center; gap:.45rem; }
+.prop-hero .hero-check-item::before { content:'✓'; color:var(--color-lime); font-weight:700; }
+.sub-service-strip { background:var(--color-bg-dark); padding:2rem 0; }
+.sub-service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+@media(max-width:720px){ .sub-service-grid{ grid-template-columns:1fr; } }
+.sub-service-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:1.25rem 1.5rem; text-decoration:none; color:#fff; font-weight:700; font-size:1rem; text-align:center; transition:background .2s, border-color .2s; }
+.sub-service-card:hover { background:var(--color-lime); color:var(--color-heading); border-color:var(--color-lime); }
+.two-col-img { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+@media(max-width:768px){ .two-col-img{ grid-template-columns:1fr; } }
+.two-col-img .img-wrap { border-radius:12px; overflow:hidden; }
+.two-col-img .img-wrap img { width:100%; height:auto; display:block; }
+.check-list { list-style:none; padding:0; margin:1rem 0; }
+.check-list li { display:flex; align-items:flex-start; gap:.65rem; padding:.4rem 0; font-size:.95rem; color:var(--color-text); border-bottom:1px solid var(--color-border); }
+.check-list li:last-child { border:none; }
+.check-list li::before { content:'✓'; color:var(--color-lime-dark); font-weight:700; font-size:1rem; flex-shrink:0; margin-top:.05rem; }
+.dark-two-col-wrap { background:var(--color-bg-dark); padding:4rem 0; }
+.dark-two-col { display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; }
+@media(max-width:768px){ .dark-two-col{ grid-template-columns:1fr; } }
+.dark-two-col h2 { color:#fff; margin-bottom:1rem; font-size:clamp(1.5rem,2.5vw,2rem); }
+.dark-two-col p  { color:rgba(255,255,255,.8); font-size:.95rem; line-height:1.7; margin-bottom:1rem; }
+.dark-check-list { list-style:none; padding:0; margin:.75rem 0 1rem; }
+.dark-check-list li { display:flex; align-items:flex-start; gap:.65rem; padding:.4rem 0; font-size:.92rem; color:rgba(255,255,255,.85); border-bottom:1px solid rgba(255,255,255,.1); }
+.dark-check-list li:last-child { border:none; }
+.dark-check-list li::before { content:'✓'; color:var(--color-lime); font-weight:700; font-size:.95rem; flex-shrink:0; margin-top:.07rem; }
+.why-wrap { background:var(--color-bg-light); }
+.acc-item { border:1px solid var(--color-border); border-radius:8px; margin-bottom:.75rem; overflow:hidden; }
+.acc-item summary { list-style:none; padding:1rem 1.25rem; font-weight:700; font-size:.97rem; color:var(--color-heading); cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:#fff; transition:background .15s; }
+.acc-item summary::-webkit-details-marker { display:none; }
+.acc-item summary::after { content:'+'; font-size:1.3rem; color:var(--color-lime-dark); flex-shrink:0; }
+.acc-item[open] summary { background:var(--color-bg-light); }
+.acc-item[open] summary::after { content:'−'; }
+.acc-body { padding:1rem 1.25rem 1.25rem; background:var(--color-bg-light); font-size:.92rem; color:var(--color-text); line-height:1.7; }
+.process-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+@media(max-width:768px){ .process-grid{ grid-template-columns:1fr; } }
+.industry-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
+@media(max-width:768px){ .industry-grid{ grid-template-columns:1fr; } }
+.industry-card { background:#fff; border:1px solid var(--color-border); border-top:4px solid var(--color-lime); border-radius:8px; padding:1.75rem 1.5rem; }
+.industry-card h4 { color:var(--color-heading); margin:0 0 .65rem; font-size:1.05rem; }
+.industry-card p  { color:var(--color-text); font-size:.9rem; margin:0; line-height:1.6; }
+.cta-band { background:var(--color-bg-dark); padding:3.5rem 0; text-align:center; }
+.cta-band h2 { color:#fff; margin-bottom:.75rem; font-size:clamp(1.5rem,2.5vw,2.2rem); }
+.cta-band p  { color:rgba(255,255,255,.78); max-width:620px; margin:0 auto 2rem; }
+.partners-logos-wrap { display:flex; flex-wrap:wrap; gap:1.5rem 2rem; align-items:center; justify-content:center; margin-top:1.5rem; }
+.partner-logo-img { height:48px; width:auto; object-fit:contain; filter:grayscale(1); opacity:.65; transition:filter .2s, opacity .2s; }
+.partner-logo-img:hover { filter:none; opacity:1; }
+.faq-list { margin-top:1.5rem; }
+.faq-item { border-bottom:1px solid var(--color-border); }
+.faq-item summary { list-style:none; padding:1.1rem 0; font-weight:600; font-size:.97rem; color:var(--color-heading); cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after { content:'+'; font-size:1.2rem; color:var(--color-lime-dark); flex-shrink:0; }
+.faq-item[open] summary::after { content:'−'; }
+.faq-body { padding:0 0 1rem; font-size:.92rem; color:var(--color-text); line-height:1.7; }
+.about-section { background:var(--color-bg-dark); padding:4.5rem 0; text-align:center; }
+.about-section h2 { color:#fff; margin-bottom:1.25rem; letter-spacing:.08em; }
+.about-section p  { color:rgba(255,255,255,.8); max-width:720px; margin:0 auto 1rem; font-size:.97rem; line-height:1.75; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<nav class="site-nav" id="siteNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="TTS FM Home">
+        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM logo" width="286" height="237">
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="about.html" role="menuitem">Our Company</a>
+            <a href="about.html#leadership" role="menuitem">Leadership Team</a>
+            <a href="about.html#vision" role="menuitem">Leadership Vision</a>
+            <a href="about.html#mission" role="menuitem">Leadership Mission</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="services.html">Our Services
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="services.html" role="menuitem">Security</a>
+            <a href="#" role="menuitem">Facilities Management</a>
+            <a href="property-services.html" role="menuitem">Property Services</a>
+            <a href="training-services.html" role="menuitem">Training Services</a>
+            <a href="cleaning-services.html" role="menuitem">Cleaning Services</a>
+            <a href="washroom-services.html" role="menuitem">Washroom Services</a>
+            <a href="ground-maintenance-services.html" role="menuitem">Ground Maintenance Services</a>
+            <a href="specialist-services.html" role="menuitem">Specialist Services</a>
+            <a href="#" role="menuitem">Consumables</a>
+            <a href="#" role="menuitem">Waste Management</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="shining-star.html">Shining Star</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item nav-cta"><a class="btn btn-primary" href="contact.html">Contact Us</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer-overlay" id="drawerOverlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="drawer-close"><button id="drawerClose" aria-label="Close menu">&#x2715;</button></div>
+    <nav>
+      <div class="drawer-nav-item">
+        <button class="drawer-nav-link" aria-expanded="false">About Us <span class="arrow">&#x203A;</span></button>
+        <div class="drawer-submenu">
+          <a href="about.html">Our Company</a>
+          <a href="about.html#leadership">Leadership Team</a>
+          <a href="about.html#vision">Leadership Vision</a>
+          <a href="about.html#mission">Leadership Mission</a>
+        </div>
+      </div>
+      <div class="drawer-nav-item">
+        <button class="drawer-nav-link" aria-expanded="false">Our Services <span class="arrow">&#x203A;</span></button>
+        <div class="drawer-submenu">
+          <a href="services.html">Security</a>
+          <a href="#">Facilities Management</a>
+          <a href="property-services.html">Property Services</a>
+          <a href="training-services.html">Training Services</a>
+          <a href="cleaning-services.html">Cleaning Services</a>
+          <a href="washroom-services.html">Washroom Services</a>
+          <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
+          <a href="specialist-services.html">Specialist Services</a>
+          <a href="#">Consumables</a>
+          <a href="#">Waste Management</a>
+        </div>
+      </div>
+      <a class="drawer-simple-link" href="case-studies.html">Case Studies</a>
+      <a class="drawer-simple-link" href="testimonials.html">Testimonials</a>
+      <a class="drawer-simple-link" href="careers.html">Careers</a>
+      <a class="drawer-simple-link" href="shining-star.html">Shining Star</a>
+      <a class="drawer-simple-link" href="news.html">News</a>
+      <a class="drawer-simple-link" href="contact.html">Contact Us</a>
+    </nav>
+    <div class="drawer-cta"><a class="btn btn-primary" href="contact.html">Get a Free Consultation</a></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<header class="prop-hero">
+  <div class="prop-hero-bg"></div>
+  <div class="container">
+    <div class="reveal">
+      <h1>Professional <span class="lime">Ground Maintenance Services</span> In The UK</h1>
+      <p class="hero-sub">Expert grounds maintenance for commercial and industrial properties across the UK — keeping your exterior environments safe, presentable, and compliant throughout every season.</p>
+      <div class="hero-btn-row">
+        <a class="btn btn-primary" href="contact.html">Get a Free Consultation</a>
+        <a class="btn btn-outline-light" href="#ground-maintenance">Explore Our Services</a>
+      </div>
+      <div class="hero-checklist">
+        <span class="hero-check-item">UK-Wide Coverage</span>
+        <span class="hero-check-item">Seasonal Year-Round Service</span>
+        <span class="hero-check-item">Trusted by Commercial &amp; Industrial Clients</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SUB-SERVICE STRIP
+════════════════════════════════════════════════════════════ -->
+<section class="sub-service-strip" id="ground-maintenance" aria-label="Ground maintenance service categories">
+  <div class="container">
+    <div class="sub-service-grid">
+      <a class="sub-service-card" href="contact.html">Grass Cutting &amp; Lawn Care</a>
+      <a class="sub-service-card" href="contact.html">Weed Control &amp; Treatment</a>
+      <a class="sub-service-card" href="contact.html">Hedge &amp; Tree Trimming</a>
+      <a class="sub-service-card" href="contact.html">Winter Gritting &amp; Snow Clearance</a>
+      <a class="sub-service-card" href="contact.html">Hard Landscaping</a>
+      <a class="sub-service-card" href="contact.html">Seasonal Planting &amp; Bedding</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     INTRO
+════════════════════════════════════════════════════════════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="reveal" style="max-width:820px; margin:0 auto; text-align:center;">
+      <p style="font-size:1.05rem; color:var(--color-text); line-height:1.75;">Professional grounds maintenance is essential for keeping commercial properties safe, compliant, and visually impressive throughout every season. At TTS FM, we deliver comprehensive ground maintenance services that cover everything from routine lawn care and weed control to winter gritting and hard landscaping — giving businesses across the UK a reliable, year-round grounds management partner they can depend on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TWO-COL ABOUT
+════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="two-col-img reveal">
+      <div>
+        <h2>Comprehensive Grounds Maintenance for Commercial Sites</h2>
+        <p>TTS FM takes an integrated approach to ground maintenance, combining scheduled preventative care with reactive services to ensure your exterior environments always meet the highest standards. Our experienced grounds teams work across a wide range of commercial environments, from business parks and retail centres to industrial estates and logistics hubs.</p>
+        <p>With TTS FM managing your grounds, you benefit from a single, accountable partner who understands the seasonal demands of your site and delivers a consistent, high-quality service throughout the year — reducing risk, protecting your reputation, and creating environments that people want to work in and visit.</p>
+        <ul class="check-list">
+          <li>Scheduled grounds maintenance programmes</li>
+          <li>Reactive call-out for urgent requirements</li>
+          <li>Full winter management and gritting services</li>
+          <li>Trained and qualified grounds operatives</li>
+          <li>Detailed service records and client reporting</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="https://ttsfm.co.uk/wp-content/uploads/2025/11/ground-maintenance.jpg" alt="TTS FM ground maintenance services" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PROCESS ACCORDIONS
+════════════════════════════════════════════════════════════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="process-grid reveal">
+      <div>
+        <h2>How Our Grounds Maintenance Process Works</h2>
+        <p style="color:var(--color-text); font-size:.95rem; line-height:1.7; margin-top:.75rem;">Our grounds maintenance service is built around a structured process that ensures every site receives the right level of care at the right time — year-round, without interruption.</p>
+      </div>
+      <div>
+        <details class="acc-item">
+          <summary>1. Site Survey</summary>
+          <div class="acc-body">We begin with a detailed survey of your grounds, assessing the scope of work required, identifying any immediate maintenance needs, and evaluating seasonal considerations that will shape your service programme.</div>
+        </details>
+        <details class="acc-item">
+          <summary>2. Annual Maintenance Plan</summary>
+          <div class="acc-body">Based on the site survey, we produce a structured annual maintenance plan that outlines scheduled visits, seasonal tasks, and reactive service provisions — giving you full visibility and control over your grounds maintenance programme.</div>
+        </details>
+        <details class="acc-item">
+          <summary>3. Seasonal Service Delivery</summary>
+          <div class="acc-body">Our grounds teams deliver services in line with seasonal demands — from spring and summer grass cutting and planting to autumn leaf clearance and winter gritting and snow removal. Each visit is documented and reported.</div>
+        </details>
+        <details class="acc-item">
+          <summary>4. Reporting &amp; Review</summary>
+          <div class="acc-body">We provide regular service reports and hold periodic review meetings to assess performance, adapt the service plan to changing needs, and ensure your grounds are consistently maintained to the agreed standard.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DARK TWO-COL BAND
+════════════════════════════════════════════════════════════ -->
+<div class="dark-two-col-wrap">
+  <div class="container">
+    <div class="dark-two-col reveal">
+      <div>
+        <h2>Ground Maintenance Services Across the UK</h2>
+        <p>TTS FM delivers grounds maintenance services to commercial and industrial clients throughout the United Kingdom, with regional teams providing consistent, locally managed service wherever you are.</p>
+        <ul class="dark-check-list">
+          <li>London &amp; South East</li>
+          <li>Manchester &amp; North West</li>
+          <li>Birmingham &amp; Midlands</li>
+          <li>Newcastle &amp; North East</li>
+          <li>Nationwide coverage across the UK</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Why Choose TTS FM for Ground Maintenance</h2>
+        <p>TTS FM combines experienced grounds teams with structured service management to deliver ground maintenance services that are reliable, compliant, and consistently high quality.</p>
+        <ul class="dark-check-list">
+          <li>Experienced grounds maintenance teams</li>
+          <li>Year-round seasonal service programmes</li>
+          <li>Compliance with health &amp; safety regulations</li>
+          <li>Flexible contracts — no long-term lock-in</li>
+          <li>Single point of contact for all sites</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     INDUSTRY CARDS
+════════════════════════════════════════════════════════════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2>Industry-Specific Grounds Maintenance Solutions</h2>
+      <p style="color:var(--color-text); font-size:.97rem; line-height:1.7; max-width:720px; margin:.75rem auto 0;">We tailor our grounds maintenance programmes to the specific requirements of each sector, ensuring that every site receives the appropriate level of care and attention.</p>
+      <div class="industry-grid">
+        <div class="industry-card">
+          <h4>Commercial &amp; Business Parks</h4>
+          <p>Manicured grounds, well-maintained car parks, and pristine landscaping help commercial and business park properties create a strong first impression for tenants and visitors.</p>
+        </div>
+        <div class="industry-card">
+          <h4>Retail &amp; Leisure Sites</h4>
+          <p>Customer-facing exterior environments must always be at their best. Our grounds maintenance services ensure retail parks and leisure venues are safe, attractive, and welcoming throughout the year.</p>
+        </div>
+        <div class="industry-card">
+          <h4>Industrial &amp; Logistics Sites</h4>
+          <p>Safety compliance, perimeter maintenance, and hard surface management are essential for industrial and logistics sites. TTS FM delivers robust grounds maintenance programmes built around operational requirements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BAND
+════════════════════════════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2>Year-Round Ground Maintenance You Can Trust</h2>
+      <p>From spring planting to winter gritting, TTS FM keeps your grounds safe, compliant, and looking their best — 365 days a year.</p>
+      <a class="btn btn-primary" href="contact.html">Get a Free Grounds Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════════════════════ -->
+<section class="about-section">
+  <div class="container">
+    <div class="reveal">
+      <h2>ABOUT TTS FM</h2>
+      <p>TTS FM (UK) is a leading provider of integrated facilities management and support services, delivering professional solutions to commercial, public sector, and industrial clients across the United Kingdom.</p>
+      <p>Our ground maintenance services are delivered by experienced, trained operatives who understand the demands of commercial exterior environments. From routine grounds care to complex winter management programmes, TTS FM provides a consistent, reliable service backed by structured account management and detailed reporting.</p>
+      <p>Trusted by clients across the UK, TTS FM is the partner of choice for businesses seeking a dependable, professional grounds maintenance service that keeps their properties safe, compliant, and visually impressive throughout every season.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PARTNERS
+════════════════════════════════════════════════════════════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2>Our Accreditations &amp; Partners</h2>
+      <p style="color:var(--color-text); font-size:.95rem; margin-top:.5rem;">Trusted, accredited, and recognised by leading industry bodies across the UK.</p>
+      <div class="partners-logos-wrap">
+        <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/07/SIA-logo.png" alt="SIA" loading="lazy">
+        <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/07/CHAS-logo.png" alt="CHAS" loading="lazy">
+        <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/07/SafeContractor-logo.png" alt="SafeContractor" loading="lazy">
+        <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/07/ISO-9001-logo.png" alt="ISO 9001" loading="lazy">
+        <img class="partner-logo-img" src="https://ttsfm.co.uk/wp-content/uploads/2020/07/constructionline-logo.png" alt="Constructionline" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="max-width:820px; margin:0 auto;">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What ground maintenance services does TTS FM provide?</summary>
+          <div class="faq-body">TTS FM provides a comprehensive range of grounds maintenance services including grass cutting and lawn care, weed control and treatment, hedge and tree trimming, hard landscaping, seasonal planting, winter gritting and snow clearance, leaf clearance, and site-specific grounds management programmes.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer winter gritting services?</summary>
+          <div class="faq-body">Yes. TTS FM provides professional winter gritting and snow clearance services for commercial and industrial sites across the UK. Our winter management service includes reactive gritting, pre-planned gritting schedules, snow clearance, and full documentation of all treatments for compliance purposes.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How are your grounds maintenance schedules structured?</summary>
+          <div class="faq-body">We work with each client to develop an annual grounds maintenance plan that reflects the specific needs of their site and the seasonal demands of their environment. Schedules are agreed in advance and can be adjusted throughout the year to accommodate changing requirements.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can you manage multiple sites across the UK?</summary>
+          <div class="faq-body">Yes. TTS FM has the regional coverage and operational infrastructure to deliver consistent grounds maintenance services across multiple sites anywhere in the UK, managed through a single point of contact and supported by detailed site-by-site reporting.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Are your grounds teams trained and qualified?</summary>
+          <div class="faq-body">Absolutely. All TTS FM grounds operatives are trained in the safe operation of grounds maintenance equipment and comply with relevant health and safety legislation. Our teams hold appropriate certifications and are fully insured for all grounds maintenance activities.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="regional-carousel" aria-label="Regional coverage">
+    <div class="regional-track" id="regionalTrack">
+      <div class="regional-slide"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Shields-Block.png" alt="South Shields" loading="lazy"><div class="regional-label">South Shields</div></div>
+      <div class="regional-slide"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland" loading="lazy"><div class="regional-label">Scotland</div></div>
+      <div class="regional-slide"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West" loading="lazy"><div class="regional-label">North West</div></div>
+      <div class="regional-slide"><img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands" loading="lazy"><div class="regional-label">Midlands</div></div>
+      <div class="regional-slide"><img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South" loading="lazy"><div class="regional-label">South</div></div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM" width="286" height="237"></div>
+          <p class="footer-desc">TTS FM (UK) is a local, regional and nationwide provider of Integrated Risk Based Security Solutions and Facilities Management Services — leading the industry with innovative, cost-effective solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="footer-links" aria-label="Quick links">
+            <a href="about.html">About Us</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="shining-star.html">Shining Star</a>
+            <a href="contact.html">Contact Us</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <nav class="footer-links" aria-label="Services links">
+            <a href="services.html">Security Services</a>
+            <a href="services.html">Facilities Management</a>
+            <a href="property-services.html">Property Services</a>
+            <a href="training-services.html">Training Services</a>
+            <a href="cleaning-services.html">Cleaning Services</a>
+            <a href="washroom-services.html">Washroom Services</a>
+            <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
+            <a href="specialist-services.html">Specialist Services</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <nav class="footer-links" aria-label="Policy links">
+            <a href="accessibility-policy.html">Accessibility Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">&copy;2026 TTS FM. All Rights Reserved.</p>
+        <nav class="footer-policy" aria-label="Legal links">
+          <a href="accessibility-policy.html">Accessibility Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="terms-of-use.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fa fa-chevron-up" aria-hidden="true"></i>
+</button>
+<script>
+(function () {
+  'use strict';
+  const siteNav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function () { siteNav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  const hamburger = document.getElementById('navHamburger');
+  const drawerClose = document.getElementById('drawerClose');
+  const overlay = document.getElementById('drawerOverlay');
+  function openNav()  { document.body.classList.add('nav-open');    hamburger.setAttribute('aria-expanded', 'true');  }
+  function closeNav() { document.body.classList.remove('nav-open'); hamburger.setAttribute('aria-expanded', 'false'); }
+  hamburger.addEventListener('click', openNav);
+  drawerClose.addEventListener('click', closeNav);
+  overlay.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+  document.querySelectorAll('.drawer-nav-link').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.drawer-nav-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.drawer-nav-item').forEach(function (i) { i.classList.remove('open'); i.querySelector('.drawer-nav-link').setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+  var regTrack  = document.getElementById('regionalTrack');
+  var regSlides = regTrack ? regTrack.querySelectorAll('.regional-slide') : [];
+  var regIdx = 0;
+  var regVisible = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 4);
+  if (regSlides.length) {
+    function showRegSlide() { var maxIdx = Math.max(0, regSlides.length - regVisible); if (regIdx > maxIdx) regIdx = 0; regTrack.style.transform = 'translateX(-' + (regIdx * (100 / regVisible)) + '%)'; }
+    setInterval(function () { var maxIdx = Math.max(0, regSlides.length - regVisible); regIdx = regIdx >= maxIdx ? 0 : regIdx + 1; showRegSlide(); }, 3500);
+    window.addEventListener('resize', function () { regVisible = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 4); }, { passive: true });
+  }
+  var scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function () { scrollTopBtn.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+  scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); } }); }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { obs.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('revealed'); }); }
+})();
+</script>
+</body>
+</html>
