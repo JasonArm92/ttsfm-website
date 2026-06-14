@@ -1587,7 +1587,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .hero-home .hero-photo {       /* real photography behind the scrim */
   position: absolute; inset: 0; z-index: 0;
   background-image: url('https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/about-us-one-osvxm67l37opqfy0f0s1e30c5cixgmt07bvqqqp19o.jpg');
-  background-size: cover; background-position: right 18%;
+  background-size: cover; background-position: center top;
 }
 .hero-home::after {            /* readability scrim */
   content: '';
