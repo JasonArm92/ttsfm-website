@@ -1584,6 +1584,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   from { transform: translate3d(-2%, -1%, 0) scale(1.05) rotate(0deg); }
   to   { transform: translate3d(2%, 1.5%, 0) scale(1.13) rotate(3deg); }
 }
+.hero-home .hero-photo {       /* real photography behind the scrim */
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://ttsfm.co.uk/wp-content/uploads/elementor/thumbs/about-us-one-osvxm67l37opqfy0f0s1e30c5cixgmt07bvqqqp19o.jpg');
+  background-size: cover; background-position: center right;
+}
 .hero-home::after {            /* readability scrim */
   content: '';
   position: absolute; inset: 0; z-index: 1;
