@@ -1215,8 +1215,6 @@ body.nav-open .nav-drawer-panel {
   height: 52px;
   width: auto;
   margin-bottom: 1rem;
-  filter: brightness(0) invert(1);
-  opacity: .8;
 }
 
 .footer-desc {
