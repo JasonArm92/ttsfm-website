@@ -4,129 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Case Studies — TTS FM (UK) · Security &amp; Facilities Management</title>
-<meta name="description" content="TTS FM case studies — real-world security and facilities management contracts across the North East and UK. Manned guarding, NHS estates, ports, retail and more.">
+<meta name="description" content="TTS FM case studies — real security and facilities management contracts across the North East and UK: ports, NHS estates, retail, industrial and corporate sites.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 <style>
-/* ── Case Studies grid ─────────────────────────────────── */
-.cs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 48px;
-}
+  /* ── Case-studies proof engine (cs- scoped) ── */
+  .cs-stats { background: var(--ink-800); padding: var(--section) 0; }
+  .cs-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  @media (max-width: 768px) { .cs-stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  .cs-stat { text-align: center; padding: 1rem; }
+  .cs-stat .cs-stat-num { font-family: var(--font-mono); font-weight: 700; font-size: clamp(2rem,4vw,2.8rem); color: var(--lime-bright); letter-spacing: -.03em; line-height: 1; }
+  .cs-stat .cs-stat-label { display: block; margin-top: .6rem; color: rgba(255,255,255,.78); font-size: .85rem; line-height: 1.4; }
 
-.cs-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+  .cs-filters { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin: 2.5rem 0 0; }
+  .cs-filter {
+    border: 1px solid var(--color-border); background: var(--color-white); color: var(--color-text);
+    font-family: var(--font-body); font-weight: 600; font-size: .85rem;
+    padding: .55rem 1.1rem; border-radius: 999px; cursor: pointer;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+  }
+  .cs-filter:hover { border-color: var(--color-lime); color: var(--color-heading); }
+  .cs-filter.active { background: var(--color-heading); color: #fff; border-color: var(--color-heading); }
 
-.cs-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: transparent;
-  transition: background 0.3s ease;
-}
+  .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  @media (max-width: 900px) { .cs-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .cs-grid { grid-template-columns: 1fr; } }
 
-.cs-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px var(--color-shadow);
-  border-color: rgba(180,202,82,.4);
-}
+  .cs-card {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    border-radius: var(--radius-md); padding: 1.75rem 1.5rem;
+    display: flex; flex-direction: column; gap: .85rem; position: relative; overflow: hidden;
+    transition: transform var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
+  }
+  .cs-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: transparent; transition: background var(--transition); }
+  .cs-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: transparent; }
+  .cs-card:hover::before { background: var(--color-lime); }
 
-.cs-card:hover::before {
-  background: var(--color-lime);
-}
-
-.cs-card-title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-heading);
-  line-height: 1.3;
-  margin: 0;
-  text-decoration: none;
-  display: block;
-  transition: color 0.2s ease;
-}
-
-.cs-card-title:hover {
-  color: var(--color-blue);
-}
-
-.cs-card-excerpt {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: var(--color-text);
-  margin: 0;
-  flex: 1;
-}
-
-.cs-card-footer {
-  padding-top: 14px;
-  border-top: 1px solid var(--color-border);
-  margin-top: auto;
-}
-
-.cs-read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-lime);
-  text-decoration: none;
-  transition: gap 0.2s ease, color 0.2s ease;
-}
-
-.cs-read-more:hover {
-  gap: 10px;
-  color: var(--color-lime-dark);
-}
-
-.cta-section {
-  background: var(--color-bg-dark);
-  padding: 72px 0;
-  text-align: center;
-}
-
-.cta-section h2 {
-  color: var(--color-white);
-  margin-bottom: 1rem;
-}
-
-.cta-section p {
-  color: rgba(255,255,255,.75);
-  max-width: 540px;
-  margin: 0 auto 2rem;
-}
-
-.cta-section .btn-outline {
-  color: var(--color-white);
-  border-color: var(--color-white);
-}
-
-.cta-section .btn-outline:hover {
-  background: var(--color-white);
-  color: var(--color-heading);
-}
-
-@media (max-width: 900px) {
-  .cs-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 580px) {
-  .cs-grid { grid-template-columns: 1fr; }
-}
+  .cs-card-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+  .cs-tag { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--color-lime-dark); background: rgba(180,202,82,.14); padding: .3rem .6rem; border-radius: 999px; }
+  .cs-metric { font-family: var(--font-mono); font-weight: 700; font-size: .9rem; color: var(--color-heading); white-space: nowrap; }
+  .cs-card-title { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--color-heading); line-height: 1.3; margin: 0; }
+  .cs-card-excerpt { font-size: .875rem; line-height: 1.65; color: var(--color-text); margin: 0; flex: 1; }
+  .cs-card-footer { padding-top: .85rem; border-top: 1px solid var(--color-border); margin-top: auto; }
+  .cs-read-more { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; font-weight: 600; color: var(--color-blue); transition: gap var(--transition); }
+  .cs-read-more:hover { gap: .7rem; }
 </style>
 </head>
 <body>
@@ -137,13 +58,10 @@
 <nav class="site-nav" id="siteNav" aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
-
       <a class="nav-logo" href="index.html" aria-label="TTS FM Home">
         <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM logo" width="286" height="237">
       </a>
-
       <ul class="nav-menu" role="list">
-
         <li class="nav-item">
           <a class="nav-link" href="about.html">
             About Us
@@ -156,7 +74,6 @@
             <a href="about.html#mission" role="menuitem">Leadership Mission</a>
           </div>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="services.html">
             Our Services
@@ -175,24 +92,18 @@
             <a href="services.html" role="menuitem">Waste Management</a>
           </div>
         </li>
-
         <li class="nav-item"><a class="nav-link active" href="case-studies.html">Case Studies</a></li>
         <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
         <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
         <li class="nav-item"><a class="nav-link" href="shining-star.html">Shining Star</a></li>
         <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-
         <li class="nav-item nav-cta">
           <a class="btn btn-primary" href="contact.html">Contact Us</a>
         </li>
       </ul>
-
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
-
     </div>
   </div>
 </nav>
@@ -206,9 +117,7 @@
     </div>
     <nav>
       <div class="drawer-nav-item">
-        <button class="drawer-nav-link" aria-expanded="false">
-          About Us <span class="arrow">&#x203A;</span>
-        </button>
+        <button class="drawer-nav-link" aria-expanded="false">About Us <span class="arrow">&#x203A;</span></button>
         <div class="drawer-submenu">
           <a href="about.html">Our Company</a>
           <a href="about.html#leadership">Leadership Team</a>
@@ -217,9 +126,7 @@
         </div>
       </div>
       <div class="drawer-nav-item">
-        <button class="drawer-nav-link" aria-expanded="false">
-          Our Services <span class="arrow">&#x203A;</span>
-        </button>
+        <button class="drawer-nav-link" aria-expanded="false">Our Services <span class="arrow">&#x203A;</span></button>
         <div class="drawer-submenu">
           <a href="services.html">Security</a>
           <a href="services.html">Facilities Management</a>
@@ -229,6 +136,8 @@
           <a href="washroom-services.html">Washroom Services</a>
           <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
           <a href="specialist-services.html">Specialist Services</a>
+          <a href="services.html">Consumables</a>
+          <a href="services.html">Waste Management</a>
         </div>
       </div>
       <a class="drawer-simple-link" href="case-studies.html">Case Studies</a>
@@ -245,148 +154,148 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     PAGE HERO
+     HERO (mesh)
 ════════════════════════════════════════════════════════════ -->
-<section class="page-hero" aria-label="Case Studies page header">
+<section class="prop-hero" aria-label="Case Studies hero">
+  <div class="prop-hero-bg" aria-hidden="true"></div>
   <div class="container">
-    <h1>CASE STUDIES</h1>
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
-      <span>&#x203A;</span>
-      <span>Case Studies</span>
-    </nav>
+    <h1>Proven on the <span class="lime">front line</span></h1>
+    <p class="hero-sub">Real security and facilities management contracts across the North East and UK — from major ports and NHS estates to retail, industrial and corporate sites. The results speak for themselves.</p>
+    <div class="hero-btn-row">
+      <a class="btn btn-lime btn-magnetic" href="contact.html">Get your free site assessment</a>
+      <a class="btn btn-ghost" href="#case-grid">Browse case studies</a>
+    </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     INTRO
+     STATS BAND
 ════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="Case Studies intro">
+<div class="cs-stats" aria-label="Track record by the numbers">
+  <div class="container">
+    <div class="cs-stats-grid reveal">
+      <div class="cs-stat"><span class="cs-stat-num" data-count="13">0</span><span class="cs-stat-label">Featured live contracts</span></div>
+      <div class="cs-stat"><span class="cs-stat-num" data-count="25">0</span><span class="cs-stat-label">Years — longest partnership</span></div>
+      <div class="cs-stat"><span class="cs-stat-num" data-count="7">0</span><span class="cs-stat-label">Sectors served</span></div>
+      <div class="cs-stat"><span class="cs-stat-num" data-count="5">0</span><span class="cs-stat-label">UK regions covered</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     INTRO + FILTERS + GRID
+════════════════════════════════════════════════════════════ -->
+<section class="section" id="case-grid" aria-label="Case studies">
   <div class="container">
     <div class="text-center reveal" style="max-width:700px;margin:0 auto">
       <span class="eyebrow">Client Work</span>
-      <h2>Real contracts, real outcomes.</h2>
-      <hr class="lime-rule" style="margin:1rem auto">
-      <p>A selection of TTS FM security and facilities management deployments across the North East, Midlands and beyond — demonstrating our capability to deliver professional, consistent service.</p>
+      <h2>Real contracts, real outcomes</h2>
+      <hr class="lime-rule lime-rule-center">
+      <p>A selection of TTS FM deployments demonstrating our capability to mobilise on time and deliver professional, consistent service. Filter by sector to explore.</p>
     </div>
 
-    <div class="cs-grid">
+    <div class="cs-filters" role="group" aria-label="Filter case studies by sector">
+      <button class="cs-filter active" data-filter="all" aria-pressed="true">All</button>
+      <button class="cs-filter" data-filter="security" aria-pressed="false">Security</button>
+      <button class="cs-filter" data-filter="maritime" aria-pressed="false">Ports &amp; Maritime</button>
+      <button class="cs-filter" data-filter="healthcare" aria-pressed="false">Healthcare</button>
+      <button class="cs-filter" data-filter="retail" aria-pressed="false">Retail</button>
+      <button class="cs-filter" data-filter="industrial" aria-pressed="false">Industrial</button>
+      <button class="cs-filter" data-filter="corporate" aria-pressed="false">Corporate</button>
+      <button class="cs-filter" data-filter="cleaning" aria-pressed="false">Cleaning</button>
+    </div>
 
-      <!-- 1 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Nov 2025 — Wayne Fraser, SMD</a>
-        <p class="cs-card-excerpt">TTS FM Shining Star Award — Nov 2025. One of our Northeast Security Assignment Supervisors, Wayne Fraser has been recognised for outstanding performance and dedication in his role, representing everything TTS FM stands for on the front line.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+    <div class="cs-grid" id="csGrid">
+
+      <article class="cs-card" data-cat="maritime">
+        <div class="cs-card-top"><span class="cs-tag">Ports &amp; Maritime</span><span class="cs-metric">£300k+/yr</span></div>
+        <h3 class="cs-card-title">Port of Tyne — North East</h3>
+        <p class="cs-card-excerpt">Start date September 2018, successfully re-awarded September 2019. A long-standing partnership delivering critical port security at one of the UK's major operational ports.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 2 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">A Cleaning Division Scoop</a>
-        <p class="cs-card-excerpt">Well done the TTS FM mobilisation team, delivered on time and always, every time. TTS FM secures American client — another major contract win for our growing Cleaning Division, mobilised on schedule and to the highest standard.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="maritime">
+        <div class="cs-card-top"><span class="cs-tag">Ports &amp; Maritime</span><span class="cs-metric">£350k+/yr · 25 yrs</span></div>
+        <h3 class="cs-card-title">A&amp;P Group — North East</h3>
+        <p class="cs-card-excerpt">Start date January 2000. Manned guarding under a two-decade partnership delivering security excellence at one of the region's most important maritime facilities.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 3 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Dundas Shopping Centre — Dodds Brown</a>
-        <p class="cs-card-excerpt">Start date: 20th April 2024. Contract Value — £120k per annum. Type of Services — Retail Shopping Centre, Manned Guarding, providing professional security cover for a busy North East retail environment.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="retail">
+        <div class="cs-card-top"><span class="cs-tag">Retail</span><span class="cs-metric">£400k+/yr</span></div>
+        <h3 class="cs-card-title">Barbour — North East</h3>
+        <p class="cs-card-excerpt">Start date June 2021. Retail manned guarding protecting the iconic Barbour brand headquarters and retail operation — one of our highest-value North East contracts.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 4 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Berwick Infirmary — Northumbria NHS</a>
-        <p class="cs-card-excerpt">TTS FM are delighted to share our news securing the Northumbria Healthcare Foundation Trust at Berwick Infirmary. Security Manned Guarding contract — another significant NHS estate win for our North East operations team.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="retail">
+        <div class="cs-card-top"><span class="cs-tag">Retail</span><span class="cs-metric">£120k/yr</span></div>
+        <h3 class="cs-card-title">Dundas Shopping Centre — Dodds Brown</h3>
+        <p class="cs-card-excerpt">Start date 20th April 2024. Retail shopping centre manned guarding, providing professional security cover for a busy North East retail environment.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 5 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Cavendish House — Dodds Brown</a>
-        <p class="cs-card-excerpt">TTS FM secures new business with Dodds Brown Chartered Surveyors &amp; Property Consultants at their prestigious Cavendish House located in the heart of the North East, providing professional front-of-house security services.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="healthcare">
+        <div class="cs-card-top"><span class="cs-tag">Healthcare</span><span class="cs-metric">NHS estate</span></div>
+        <h3 class="cs-card-title">Berwick Infirmary — Northumbria NHS</h3>
+        <p class="cs-card-excerpt">TTS FM secured the Northumbria Healthcare Foundation Trust at Berwick Infirmary on a manned guarding contract — another significant NHS estate win for our North East operations team.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 6 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Port of Tyne — North East</a>
-        <p class="cs-card-excerpt">Start Date — September 2018, successfully re-awarded in September 2019. Contract Value — £300k+ per annum. A long-standing partnership delivering critical port security at one of the UK's major operational ports.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="corporate">
+        <div class="cs-card-top"><span class="cs-tag">Corporate</span><span class="cs-metric">Since 2023</span></div>
+        <h3 class="cs-card-title">Newcastle Helix — Corporate Estate</h3>
+        <p class="cs-card-excerpt">Start date June 2023. Corporate front-of-house estate security with physical manned guarding across the landmark Newcastle Helix development, a flagship science and technology district.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 7 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Newcastle Helix — Corporate Estate</a>
-        <p class="cs-card-excerpt">Start date — June 2023. Type of Service — Corporate Front of House Estate Security Services. Physical Manned Guarding across the landmark Newcastle Helix development, a flagship science and technology district.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="corporate">
+        <div class="cs-card-top"><span class="cs-tag">Corporate</span><span class="cs-metric">Front of house</span></div>
+        <h3 class="cs-card-title">Cavendish House — Dodds Brown</h3>
+        <p class="cs-card-excerpt">TTS FM secured new business with Dodds Brown Chartered Surveyors &amp; Property Consultants at their prestigious Cavendish House in the North East, providing professional front-of-house security services.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 8 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Ibstock Bricks — Wakefield</a>
-        <p class="cs-card-excerpt">Start date — 9th October 2023. Contract Value — £140k per annum. Night rota and Bank Holiday cover, providing specialist industrial manned guarding for a major brick manufacturing facility in West Yorkshire.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="industrial">
+        <div class="cs-card-top"><span class="cs-tag">Industrial</span><span class="cs-metric">£140k/yr</span></div>
+        <h3 class="cs-card-title">Ibstock Bricks — Wakefield</h3>
+        <p class="cs-card-excerpt">Start date 9th October 2023. Night rota and Bank Holiday cover, providing specialist industrial manned guarding for a major brick manufacturing facility in West Yorkshire.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 9 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Ibstock Bricks — Birmingham</a>
-        <p class="cs-card-excerpt">Start date — 1st July 2023. Contract Value — £135,000 per annum. Physical Manned Guarding Services to a major Midlands brick production facility, delivered with consistent professional cover.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="industrial">
+        <div class="cs-card-top"><span class="cs-tag">Industrial</span><span class="cs-metric">£135k/yr</span></div>
+        <h3 class="cs-card-title">Ibstock Bricks — Birmingham</h3>
+        <p class="cs-card-excerpt">Start date 1st July 2023. Physical manned guarding services to a major Midlands brick production facility, delivered with consistent professional cover.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 10 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">A&amp;P Group — North East</a>
-        <p class="cs-card-excerpt">Start date — January 2000. Contract Value — £350k+ per annum. Type of Service — Manned Guarding. A two-decade partnership delivering security excellence at one of the region's most important maritime facilities.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="security">
+        <div class="cs-card-top"><span class="cs-tag">Security</span><span class="cs-metric">£195k+/yr</span></div>
+        <h3 class="cs-card-title">AAF — North East</h3>
+        <p class="cs-card-excerpt">Start date April 2018. Manned guarding plus CCTV install and monitoring — a comprehensive integrated security solution combining physical guarding with technology deployment.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 11 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">NFS — North East</a>
-        <p class="cs-card-excerpt">Start date — October 2019. Contract Value — £120k+ per annum. Type of Service — Manned Guarding Services. Providing reliable, professional security cover across multiple sites in the North East region.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="security">
+        <div class="cs-card-top"><span class="cs-tag">Security</span><span class="cs-metric">£120k+/yr</span></div>
+        <h3 class="cs-card-title">NFS — North East</h3>
+        <p class="cs-card-excerpt">Start date October 2019. Manned guarding services providing reliable, professional security cover across multiple sites in the North East region.</p>
+        <div class="cs-card-footer"><a href="contact.html" class="cs-read-more">Discuss a similar site <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 12 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">Barbour — North East</a>
-        <p class="cs-card-excerpt">Start Date — June 2021. Contract Value — £400k+ per annum. Type of Service — Retail Manned Guarding. Protecting the iconic Barbour brand headquarters and retail operation — one of our highest-value North East contracts.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="security">
+        <div class="cs-card-top"><span class="cs-tag">Security · People</span><span class="cs-metric">Nov 2025</span></div>
+        <h3 class="cs-card-title">Shining Star — Wayne Fraser, SMD</h3>
+        <p class="cs-card-excerpt">TTS FM Shining Star Award, November 2025. North East Security Assignment Supervisor Wayne Fraser recognised for outstanding performance and dedication, representing everything TTS FM stands for on the front line.</p>
+        <div class="cs-card-footer"><a href="shining-star.html" class="cs-read-more">See our Shining Stars <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
-      <!-- 13 -->
-      <article class="cs-card reveal">
-        <a href="#" class="cs-card-title">AAF — North East</a>
-        <p class="cs-card-excerpt">Start date — April 2018. Contract Value — £195k+ per annum. Type of Service — Manned Guarding, CCTV Install, Monitor. A comprehensive integrated security solution combining physical guarding with technology deployment.</p>
-        <div class="cs-card-footer">
-          <a href="#" class="cs-read-more">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+      <article class="cs-card" data-cat="cleaning">
+        <div class="cs-card-top"><span class="cs-tag">Cleaning</span><span class="cs-metric">New win · 2025</span></div>
+        <h3 class="cs-card-title">A Cleaning Division Scoop</h3>
+        <p class="cs-card-excerpt">TTS FM secures an American client — another major contract win for our growing Cleaning Division, mobilised on schedule and to the highest standard by our dedicated mobilisation team.</p>
+        <div class="cs-card-footer"><a href="cleaning-services.html" class="cs-read-more">Explore cleaning services <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
       </article>
 
     </div>
@@ -394,16 +303,14 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     CTA BAND
+     CTA BAND (mesh)
 ════════════════════════════════════════════════════════════ -->
-<section class="cta-section" aria-label="Contact call to action">
+<section class="cta-mesh" aria-label="Contact call to action">
   <div class="container">
     <h2>Ready to discuss your site?</h2>
     <p>Contact TTS FM to discuss security cover, facilities support or a combined service package tailored to your requirements.</p>
-    <div class="hero-buttons" style="justify-content:center">
-      <a class="btn btn-primary" href="contact.html">Contact TTS FM</a>
-      <a class="btn btn-outline" href="services.html">View Services</a>
-    </div>
+    <a class="btn btn-lime btn-magnetic" href="contact.html">Get your free site assessment</a>
+    <p class="cta-trust">Typical response within one working day · Nationwide coverage · 24/7 control room</p>
   </div>
 </section>
 
@@ -423,14 +330,12 @@
   <div class="footer-main">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-col">
           <div class="footer-logo">
             <img src="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png" alt="TTS FM" width="286" height="237">
           </div>
           <p class="footer-desc">TTS FM (UK) is a local, regional and nationwide provider of Integrated Risk Based Security Solutions and Facilities Management Services — leading the industry with innovative, cost-effective solutions.</p>
         </div>
-
         <div class="footer-col">
           <h4>Quick Links</h4>
           <nav class="footer-links" aria-label="Quick links">
@@ -443,7 +348,6 @@
             <a href="contact.html">Contact Us</a>
           </nav>
         </div>
-
         <div class="footer-col">
           <h4>Our Services</h4>
           <nav class="footer-links" aria-label="Services links">
@@ -457,17 +361,15 @@
             <a href="specialist-services.html">Specialist Services</a>
           </nav>
         </div>
-
         <div class="footer-col">
           <h4>Policies</h4>
           <nav class="footer-links" aria-label="Policy links">
-            <a href="#">Accessibility Policy</a>
-            <a href="#">Cookie Policy</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Privacy Policy</a>
+            <a href="accessibility-policy.html">Accessibility Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
           </nav>
         </div>
-
       </div>
     </div>
   </div>
@@ -477,10 +379,10 @@
       <div class="footer-bottom-inner">
         <p class="footer-copyright">&copy;2026 TTS FM. All Rights Reserved.</p>
         <nav class="footer-policy" aria-label="Legal links">
-          <a href="#">Accessibility Policy</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
+          <a href="accessibility-policy.html">Accessibility Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="terms-of-use.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
         </nav>
       </div>
     </div>
@@ -499,6 +401,25 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="main.js"></script>
+<script>
+/* Case-studies sector filter (page-specific) */
+(function () {
+  'use strict';
+  var filters = document.querySelectorAll('.cs-filter');
+  var cards = document.querySelectorAll('#csGrid .cs-card');
+  if (!filters.length || !cards.length) return;
+  filters.forEach(function (f) {
+    f.addEventListener('click', function () {
+      filters.forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+      f.classList.add('active'); f.setAttribute('aria-pressed', 'true');
+      var cat = f.dataset.filter;
+      cards.forEach(function (c) {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
