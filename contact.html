@@ -45,12 +45,12 @@
   /* Regional image gallery */
   .contact-gallery { }
   .contact-gallery h2 { color:var(--color-heading); margin-bottom:1.25rem; }
-  .region-grid {
+  .contact-region-grid {
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:.75rem;
   }
-  @media(max-width:480px){ .region-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:480px){ .contact-region-grid{ grid-template-columns:repeat(2,1fr); } }
 
   .region-img {
     border-radius:8px;
@@ -101,12 +101,12 @@
           <div class="nav-dropdown" role="menu">
             <a href="services.html" role="menuitem">Security</a>
             <a href="services.html" role="menuitem">Facilities Management</a>
-            <a href="services.html" role="menuitem">Property Services</a>
-            <a href="services.html" role="menuitem">Training Services</a>
-            <a href="services.html" role="menuitem">Cleaning Services</a>
-            <a href="services.html" role="menuitem">Washroom Services</a>
-            <a href="services.html" role="menuitem">Ground Maintenance Services</a>
-            <a href="services.html" role="menuitem">Specialist Services</a>
+            <a href="property-services.html" role="menuitem">Property Services</a>
+            <a href="training-services.html" role="menuitem">Training Services</a>
+            <a href="cleaning-services.html" role="menuitem">Cleaning Services</a>
+            <a href="washroom-services.html" role="menuitem">Washroom Services</a>
+            <a href="ground-maintenance-services.html" role="menuitem">Ground Maintenance Services</a>
+            <a href="specialist-services.html" role="menuitem">Specialist Services</a>
             <a href="services.html" role="menuitem">Consumables</a>
             <a href="services.html" role="menuitem">Waste Management</a>
           </div>
@@ -153,12 +153,12 @@
         <div class="drawer-submenu">
           <a href="services.html">Security</a>
           <a href="services.html">Facilities Management</a>
-          <a href="services.html">Property Services</a>
-          <a href="services.html">Training Services</a>
-          <a href="services.html">Cleaning Services</a>
-          <a href="services.html">Washroom Services</a>
-          <a href="services.html">Ground Maintenance Services</a>
-          <a href="services.html">Specialist Services</a>
+          <a href="property-services.html">Property Services</a>
+          <a href="training-services.html">Training Services</a>
+          <a href="cleaning-services.html">Cleaning Services</a>
+          <a href="washroom-services.html">Washroom Services</a>
+          <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
+          <a href="specialist-services.html">Specialist Services</a>
           <a href="services.html">Consumables</a>
           <a href="services.html">Waste Management</a>
         </div>
@@ -229,7 +229,7 @@
         <h2>Our Regions</h2>
         <hr class="lime-rule">
         <p>TTS FM delivers security and facilities management services across the length and breadth of the UK — from Scotland to the South, and everywhere in between.</p>
-        <div class="region-grid" style="margin-top:1.5rem;">
+        <div class="contact-region-grid" style="margin-top:1.5rem;">
           <div class="region-img">
             <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Shields-Block.png" alt="South Shields" loading="lazy">
           </div>
@@ -260,29 +260,12 @@
 ════════════════════════════════════════════════════════════ -->
 <footer class="site-footer" aria-label="Site footer">
 
-  <div class="regional-carousel" aria-label="Our regions" aria-hidden="true">
-    <div class="regional-track" id="regionalTrack">
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Sields-Block.jpg" alt="South Shields" loading="lazy">
-        <div class="regional-label">South Shields</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland" loading="lazy">
-        <div class="regional-label">Scotland</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West" loading="lazy">
-        <div class="regional-label">North West</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands" loading="lazy">
-        <div class="regional-label">Midlands</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South" loading="lazy">
-        <div class="regional-label">South</div>
-      </div>
-    </div>
+  <div class="region-grid" aria-label="Our regional coverage">
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Sields-Block.jpg" alt="South Shields region" loading="lazy"><div class="region-label">South Shields</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland region" loading="lazy"><div class="region-label">Scotland</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West region" loading="lazy"><div class="region-label">North West</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands region" loading="lazy"><div class="region-label">Midlands</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South region" loading="lazy"><div class="region-label">South</div></div>
   </div>
 
   <div class="footer-main">
@@ -314,12 +297,12 @@
           <nav class="footer-links" aria-label="Services links">
             <a href="services.html">Security Services</a>
             <a href="services.html">Facilities Management</a>
-            <a href="services.html">Property Services</a>
-            <a href="services.html">Training Services</a>
-            <a href="services.html">Cleaning Services</a>
-            <a href="services.html">Washroom Services</a>
-            <a href="services.html">Ground Maintenance Services</a>
-            <a href="services.html">Specialist Services</a>
+            <a href="property-services.html">Property Services</a>
+            <a href="training-services.html">Training Services</a>
+            <a href="cleaning-services.html">Cleaning Services</a>
+            <a href="washroom-services.html">Washroom Services</a>
+            <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
+            <a href="specialist-services.html">Specialist Services</a>
           </nav>
         </div>
 
@@ -357,82 +340,10 @@
   <i class="fa fa-chevron-up" aria-hidden="true"></i>
 </button>
 
-<script>
-(function () {
-  'use strict';
-
-  const siteNav = document.getElementById('siteNav');
-  window.addEventListener('scroll', function () {
-    siteNav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  const hamburger   = document.getElementById('navHamburger');
-  const drawerClose = document.getElementById('drawerClose');
-  const overlay     = document.getElementById('drawerOverlay');
-
-  function openNav()  { document.body.classList.add('nav-open');    hamburger.setAttribute('aria-expanded', 'true');  }
-  function closeNav() { document.body.classList.remove('nav-open'); hamburger.setAttribute('aria-expanded', 'false'); }
-
-  hamburger.addEventListener('click', openNav);
-  drawerClose.addEventListener('click', closeNav);
-  overlay.addEventListener('click', closeNav);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
-
-  document.querySelectorAll('.drawer-nav-link').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item   = btn.closest('.drawer-nav-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.drawer-nav-item').forEach(function (i) {
-        i.classList.remove('open');
-        i.querySelector('.drawer-nav-link').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
-    });
-  });
-
-  var regTrack   = document.getElementById('regionalTrack');
-  var regSlides  = regTrack ? regTrack.querySelectorAll('.regional-slide') : [];
-  var regIdx     = 0;
-  var regVisible = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 4);
-
-  if (regSlides.length) {
-    function showRegSlide() {
-      var maxIdx = Math.max(0, regSlides.length - regVisible);
-      if (regIdx > maxIdx) regIdx = 0;
-      regTrack.style.transform = 'translateX(-' + (regIdx * (100 / regVisible)) + '%)';
-    }
-    setInterval(function () {
-      var maxIdx = Math.max(0, regSlides.length - regVisible);
-      regIdx = regIdx >= maxIdx ? 0 : regIdx + 1;
-      showRegSlide();
-    }, 3500);
-    window.addEventListener('resize', function () {
-      regVisible = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 4);
-    }, { passive: true });
-  }
-
-  var scrollTopBtn = document.getElementById('scrollTop');
-  window.addEventListener('scroll', function () {
-    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
-  scrollTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(function (el) { obs.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('revealed'); });
-  }
-
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>

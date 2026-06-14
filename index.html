@@ -43,15 +43,15 @@
           </a>
           <div class="nav-dropdown" role="menu">
             <a href="services.html" role="menuitem">Security</a>
-            <a href="#" role="menuitem">Facilities Management</a>
+            <a href="services.html" role="menuitem">Facilities Management</a>
             <a href="property-services.html" role="menuitem">Property Services</a>
             <a href="training-services.html" role="menuitem">Training Services</a>
             <a href="cleaning-services.html" role="menuitem">Cleaning Services</a>
             <a href="washroom-services.html" role="menuitem">Washroom Services</a>
             <a href="ground-maintenance-services.html" role="menuitem">Ground Maintenance Services</a>
             <a href="specialist-services.html" role="menuitem">Specialist Services</a>
-            <a href="#" role="menuitem">Consumables</a>
-            <a href="#" role="menuitem">Waste Management</a>
+            <a href="services.html" role="menuitem">Consumables</a>
+            <a href="services.html" role="menuitem">Waste Management</a>
           </div>
         </li>
         <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
@@ -93,15 +93,15 @@
         <button class="drawer-nav-link" aria-expanded="false">Our Services <span class="arrow">&#x203A;</span></button>
         <div class="drawer-submenu">
           <a href="services.html">Security</a>
-          <a href="#">Facilities Management</a>
+          <a href="services.html">Facilities Management</a>
           <a href="property-services.html">Property Services</a>
           <a href="training-services.html">Training Services</a>
           <a href="cleaning-services.html">Cleaning Services</a>
           <a href="washroom-services.html">Washroom Services</a>
           <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
           <a href="specialist-services.html">Specialist Services</a>
-          <a href="#">Consumables</a>
-          <a href="#">Waste Management</a>
+          <a href="services.html">Consumables</a>
+          <a href="services.html">Waste Management</a>
         </div>
       </div>
       <a class="drawer-simple-link" href="case-studies.html">Case Studies</a>
@@ -531,139 +531,7 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script>
-(function () {
-  'use strict';
-
-  var reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hasGSAP = typeof window.gsap !== 'undefined';
-  var hasST   = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
-  if (hasST) gsap.registerPlugin(ScrollTrigger);
-
-  /* ── Lenis smooth scroll (driven once) ───────────────── */
-  if (typeof window.Lenis !== 'undefined' && !reduce) {
-    var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-    if (hasST) {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })();
-    }
-  }
-
-  /* ── Nav: transparent → glass on scroll ──────────────── */
-  var siteNav = document.getElementById('siteNav');
-  function onScroll() { siteNav.classList.toggle('scrolled', window.scrollY > 40); }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ── Nav: hamburger / drawer ─────────────────────────── */
-  var hamburger   = document.getElementById('navHamburger');
-  var drawerClose = document.getElementById('drawerClose');
-  var overlay     = document.getElementById('drawerOverlay');
-  function openNav()  { document.body.classList.add('nav-open');    hamburger.setAttribute('aria-expanded', 'true'); }
-  function closeNav() { document.body.classList.remove('nav-open'); hamburger.setAttribute('aria-expanded', 'false'); }
-  hamburger.addEventListener('click', openNav);
-  drawerClose.addEventListener('click', closeNav);
-  overlay.addEventListener('click', closeNav);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
-  document.querySelectorAll('.drawer-nav-link').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item = btn.closest('.drawer-nav-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.drawer-nav-item').forEach(function (i) {
-        i.classList.remove('open');
-        i.querySelector('.drawer-nav-link').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
-    });
-  });
-
-  /* ── Kinetic hero headline (build word by word) ──────── */
-  var kin = document.querySelector('[data-kinetic]');
-  if (kin) {
-    var words = kin.textContent.trim().split(/\s+/);
-    kin.innerHTML = words.map(function (w) { return '<span class="kw"><span>' + w + '</span></span>'; }).join(' ');
-    if (hasGSAP && !reduce) {
-      gsap.from(kin.querySelectorAll('.kw > span'), {
-        yPercent: 120, opacity: 0, duration: 0.85, ease: 'power3.out', stagger: 0.08, delay: 0.15
-      });
-    }
-  }
-
-  /* ── Animated stat counters ──────────────────────────── */
-  function runCounters() {
-    document.querySelectorAll('[data-count]').forEach(function (el) {
-      var target = parseFloat(el.dataset.count);
-      if (reduce) { el.textContent = target; return; }
-      var dur = 1500, start = null;
-      function step(ts) {
-        if (!start) start = ts;
-        var p = Math.min((ts - start) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * target).toString();
-        if (p < 1) requestAnimationFrame(step); else el.textContent = target.toString();
-      }
-      requestAnimationFrame(step);
-    });
-  }
-  runCounters();
-
-  /* ── Reveal on scroll ────────────────────────────────── */
-  var revealEls = document.querySelectorAll('.reveal');
-  if (hasST && !reduce) {
-    revealEls.forEach(function (el) {
-      el.style.transition = 'none';
-      gsap.fromTo(el, { opacity: 0, y: 34 },
-        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 86%', once: true } });
-    });
-  } else if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('revealed'); });
-  }
-
-  /* ── Magnetic buttons (desktop, fine pointer only) ───── */
-  if (!reduce && window.matchMedia('(pointer:fine)').matches) {
-    document.querySelectorAll('.btn-magnetic').forEach(function (btn) {
-      btn.addEventListener('mousemove', function (e) {
-        var r = btn.getBoundingClientRect();
-        var x = e.clientX - r.left - r.width / 2;
-        var y = e.clientY - r.top - r.height / 2;
-        btn.style.transform = 'translate(' + (x * 0.25) + 'px,' + (y * 0.35) + 'px)';
-      });
-      btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
-    });
-  }
-
-  /* ── Testimonial carousel (manual; no auto-rotate) ───── */
-  var testTrack = document.getElementById('testimonialTrack');
-  var testDots  = document.querySelectorAll('.testimonial-dot');
-  var testIdx   = 0;
-  function showTestSlide(n) {
-    testDots[testIdx].classList.remove('active');
-    testIdx = (n + testDots.length) % testDots.length;
-    testTrack.style.transform = 'translateX(-' + (testIdx * 100) + '%)';
-    testDots[testIdx].classList.add('active');
-  }
-  document.getElementById('testPrev').addEventListener('click', function () { showTestSlide(testIdx - 1); });
-  document.getElementById('testNext').addEventListener('click', function () { showTestSlide(testIdx + 1); });
-  testDots.forEach(function (dot, i) { dot.addEventListener('click', function () { showTestSlide(i); }); });
-
-  /* ── Scroll to top ───────────────────────────────────── */
-  var scrollTopBtn = document.getElementById('scrollTop');
-  window.addEventListener('scroll', function () {
-    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
-  scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-})();
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>

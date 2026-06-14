@@ -7,158 +7,6 @@
 <meta name="description" content="Professional property services in the UK delivering maintenance, compliance, and building support solutions. Keep your commercial properties safe, efficient, and fully operational.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-<style>
-  /* ── Property Hero ── */
-  .prop-hero {
-    position:relative; overflow:hidden;
-    min-height:580px;
-    display:flex; align-items:center;
-    background-color:var(--color-bg-dark);
-  }
-  .prop-hero-bg {
-    position:absolute; inset:0;
-    background-image:url('https://ttsfm.co.uk/wp-content/uploads/2026/04/Integrated-Facilities-Management-in-Leeds-Benefits-for-Businesses.png');
-    background-size:cover; background-position:center;
-    opacity:.35;
-  }
-  .prop-hero .container { position:relative; z-index:1; padding-top:5rem; padding-bottom:5rem; }
-  .prop-hero h1 { color:#fff; font-size:clamp(2rem,4vw,3.25rem); margin:0 0 1rem; }
-  .prop-hero h1 .lime { color:var(--color-lime); }
-  .prop-hero p.hero-sub { color:rgba(255,255,255,.82); max-width:680px; font-size:1.05rem; margin:0 0 2rem; line-height:1.65; }
-  .hero-btn-row { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1.75rem; }
-  .prop-hero .hero-checklist { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; }
-  .prop-hero .hero-check-item {
-    color:rgba(255,255,255,.9); font-size:.9rem; font-weight:600;
-    display:flex; align-items:center; gap:.45rem;
-  }
-  .prop-hero .hero-check-item::before { content:'✓'; color:var(--color-lime); font-weight:700; }
-
-  /* ── Sub-service strip ── */
-  .sub-service-strip { background:var(--color-bg-dark); padding:2rem 0; }
-  .sub-service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-  @media(max-width:720px){ .sub-service-grid{ grid-template-columns:1fr; } }
-  .sub-service-card {
-    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
-    border-radius:8px; padding:1.25rem 1.5rem;
-    text-decoration:none; color:#fff; font-weight:700; font-size:1rem;
-    text-align:center; transition:background .2s, border-color .2s;
-  }
-  .sub-service-card:hover { background:var(--color-lime); color:var(--color-heading); border-color:var(--color-lime); }
-
-  /* ── Two-col image layout ── */
-  .two-col-img { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
-  @media(max-width:768px){ .two-col-img{ grid-template-columns:1fr; } }
-  .two-col-img .img-wrap { border-radius:12px; overflow:hidden; }
-  .two-col-img .img-wrap img { width:100%; height:auto; display:block; }
-
-  /* ── Checklist ── */
-  .check-list { list-style:none; padding:0; margin:1rem 0; }
-  .check-list li {
-    display:flex; align-items:flex-start; gap:.65rem;
-    padding:.4rem 0; font-size:.95rem; color:var(--color-text);
-    border-bottom:1px solid var(--color-border);
-  }
-  .check-list li:last-child { border:none; }
-  .check-list li::before { content:'✓'; color:var(--color-lime-dark); font-weight:700; font-size:1rem; flex-shrink:0; margin-top:.05rem; }
-
-  /* ── Bullet list (circle icons) ── */
-  .circle-list { list-style:none; padding:0; margin:1rem 0; }
-  .circle-list li {
-    display:flex; align-items:flex-start; gap:.75rem;
-    padding:.55rem 0; font-size:.95rem; color:var(--color-text); line-height:1.6;
-    border-bottom:1px solid var(--color-border);
-  }
-  .circle-list li:last-child { border:none; }
-  .circle-list li::before {
-    content:''; flex-shrink:0; margin-top:.45rem;
-    width:8px; height:8px; border-radius:50%;
-    background:var(--color-lime-dark);
-  }
-
-  /* ── Dark two-col (coverage/why) ── */
-  .dark-two-col-wrap {
-    background:var(--color-bg-dark); padding:4rem 0;
-  }
-  .dark-two-col {
-    display:grid; grid-template-columns:1fr 1fr; gap:3.5rem;
-  }
-  @media(max-width:768px){ .dark-two-col{ grid-template-columns:1fr; } }
-  .dark-two-col h2 { color:#fff; margin-bottom:1rem; font-size:clamp(1.5rem,2.5vw,2rem); }
-  .dark-two-col p  { color:rgba(255,255,255,.8); font-size:.95rem; line-height:1.7; margin-bottom:1rem; }
-  .dark-check-list { list-style:none; padding:0; margin:.75rem 0 1rem; }
-  .dark-check-list li {
-    display:flex; align-items:flex-start; gap:.65rem;
-    padding:.4rem 0; font-size:.92rem; color:rgba(255,255,255,.85);
-    border-bottom:1px solid rgba(255,255,255,.1);
-  }
-  .dark-check-list li:last-child { border:none; }
-  .dark-check-list li::before { content:'✓'; color:var(--color-lime); font-weight:700; font-size:.95rem; flex-shrink:0; margin-top:.07rem; }
-
-  /* ── Why choose section (light bg, image left) ── */
-  .why-wrap { background:var(--color-bg-light); }
-
-  /* ── Accordion ── */
-  .acc-item { border:1px solid var(--color-border); border-radius:8px; margin-bottom:.75rem; overflow:hidden; }
-  .acc-item summary {
-    list-style:none; padding:1rem 1.25rem;
-    font-weight:700; font-size:.97rem; color:var(--color-heading);
-    cursor:pointer; display:flex; justify-content:space-between; align-items:center;
-    background:#fff; transition:background .15s;
-  }
-  .acc-item summary::-webkit-details-marker { display:none; }
-  .acc-item summary::after { content:'+'; font-size:1.3rem; color:var(--color-lime-dark); flex-shrink:0; }
-  .acc-item[open] summary { background:var(--color-bg-light); }
-  .acc-item[open] summary::after { content:'−'; }
-  .acc-body { padding:1rem 1.25rem 1.25rem; background:var(--color-bg-light); font-size:.92rem; color:var(--color-text); line-height:1.7; }
-
-  /* ── Process two-col ── */
-  .process-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
-  @media(max-width:768px){ .process-grid{ grid-template-columns:1fr; } }
-
-  /* ── Industry cards ── */
-  .industry-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
-  @media(max-width:768px){ .industry-grid{ grid-template-columns:1fr; } }
-  .industry-card {
-    background:#fff; border:1px solid var(--color-border);
-    border-top:4px solid var(--color-lime);
-    border-radius:8px; padding:1.75rem 1.5rem;
-  }
-  .industry-card h4 { color:var(--color-heading); margin:0 0 .65rem; font-size:1.05rem; }
-  .industry-card p  { color:var(--color-text); font-size:.9rem; margin:0; line-height:1.6; }
-
-  /* ── CTA band ── */
-  .cta-band { background:var(--color-bg-dark); padding:3.5rem 0; text-align:center; }
-  .cta-band h2 { color:#fff; margin-bottom:.75rem; font-size:clamp(1.5rem,2.5vw,2.2rem); }
-  .cta-band p  { color:rgba(255,255,255,.78); max-width:620px; margin:0 auto 2rem; }
-
-  /* ── Partners band ── */
-  .partners-logos-wrap {
-    display:flex; flex-wrap:wrap; gap:1.5rem 2rem;
-    align-items:center; justify-content:center; margin-top:1.5rem;
-  }
-  .partner-logo-img { height:48px; width:auto; object-fit:contain; filter:grayscale(1); opacity:.65; transition:filter .2s, opacity .2s; }
-  .partner-logo-img:hover { filter:none; opacity:1; }
-
-  /* ── FAQ ── */
-  .faq-list { margin-top:1.5rem; }
-  .faq-item { border-bottom:1px solid var(--color-border); }
-  .faq-item summary {
-    list-style:none; padding:1.1rem 0;
-    font-weight:600; font-size:.97rem; color:var(--color-heading);
-    cursor:pointer; display:flex; justify-content:space-between; align-items:center;
-  }
-  .faq-item summary::-webkit-details-marker { display:none; }
-  .faq-item summary::after { content:'+'; font-size:1.2rem; color:var(--color-lime-dark); flex-shrink:0; }
-  .faq-item[open] summary::after { content:'−'; }
-  .faq-body { padding:0 0 1rem; font-size:.92rem; color:var(--color-text); line-height:1.7; }
-
-  /* ── About section (centered dark) ── */
-  .about-section {
-    background:var(--color-bg-dark); padding:4.5rem 0; text-align:center;
-  }
-  .about-section h2 { color:#fff; margin-bottom:1.25rem; letter-spacing:.08em; }
-  .about-section p  { color:rgba(255,255,255,.8); max-width:720px; margin:0 auto 1rem; font-size:.97rem; line-height:1.75; }
-</style>
 </head>
 <body>
 
@@ -197,11 +45,11 @@
             <a href="services.html" role="menuitem">Security</a>
             <a href="services.html" role="menuitem">Facilities Management</a>
             <a href="property-services.html" role="menuitem">Property Services</a>
-            <a href="services.html" role="menuitem">Training Services</a>
-            <a href="services.html" role="menuitem">Cleaning Services</a>
-            <a href="services.html" role="menuitem">Washroom Services</a>
-            <a href="services.html" role="menuitem">Ground Maintenance Services</a>
-            <a href="services.html" role="menuitem">Specialist Services</a>
+            <a href="training-services.html" role="menuitem">Training Services</a>
+            <a href="cleaning-services.html" role="menuitem">Cleaning Services</a>
+            <a href="washroom-services.html" role="menuitem">Washroom Services</a>
+            <a href="ground-maintenance-services.html" role="menuitem">Ground Maintenance Services</a>
+            <a href="specialist-services.html" role="menuitem">Specialist Services</a>
             <a href="services.html" role="menuitem">Consumables</a>
             <a href="services.html" role="menuitem">Waste Management</a>
           </div>
@@ -249,11 +97,11 @@
           <a href="services.html">Security</a>
           <a href="services.html">Facilities Management</a>
           <a href="property-services.html">Property Services</a>
-          <a href="services.html">Training Services</a>
-          <a href="services.html">Cleaning Services</a>
-          <a href="services.html">Washroom Services</a>
-          <a href="services.html">Ground Maintenance Services</a>
-          <a href="services.html">Specialist Services</a>
+          <a href="training-services.html">Training Services</a>
+          <a href="cleaning-services.html">Cleaning Services</a>
+          <a href="washroom-services.html">Washroom Services</a>
+          <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
+          <a href="specialist-services.html">Specialist Services</a>
           <a href="services.html">Consumables</a>
           <a href="services.html">Waste Management</a>
         </div>
@@ -578,29 +426,12 @@
 ════════════════════════════════════════════════════════════ -->
 <footer class="site-footer" aria-label="Site footer">
 
-  <div class="regional-carousel" aria-label="Regional coverage">
-    <div class="regional-track" id="regionalTrack">
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Shields-Block.png" alt="South Shields" loading="lazy">
-        <div class="regional-label">South Shields</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland" loading="lazy">
-        <div class="regional-label">Scotland</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West" loading="lazy">
-        <div class="regional-label">North West</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands" loading="lazy">
-        <div class="regional-label">Midlands</div>
-      </div>
-      <div class="regional-slide">
-        <img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South" loading="lazy">
-        <div class="regional-label">South</div>
-      </div>
-    </div>
+  <div class="region-grid" aria-label="Our regional coverage">
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Shields-Block.png" alt="South Shields region" loading="lazy"><div class="region-label">South Shields</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/Scotland.jpg" alt="Scotland region" loading="lazy"><div class="region-label">Scotland</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2020/07/North-West-Block.png" alt="North West region" loading="lazy"><div class="region-label">North West</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2022/09/Midlands-Block.png" alt="Midlands region" loading="lazy"><div class="region-label">Midlands</div></div>
+    <div class="region-tile"><img src="https://ttsfm.co.uk/wp-content/uploads/2021/09/south-block-new.png" alt="South region" loading="lazy"><div class="region-label">South</div></div>
   </div>
 
   <div class="footer-main">
@@ -633,11 +464,11 @@
             <a href="services.html">Security Services</a>
             <a href="services.html">Facilities Management</a>
             <a href="property-services.html">Property Services</a>
-            <a href="services.html">Training Services</a>
-            <a href="services.html">Cleaning Services</a>
-            <a href="services.html">Washroom Services</a>
-            <a href="services.html">Ground Maintenance Services</a>
-            <a href="services.html">Specialist Services</a>
+            <a href="training-services.html">Training Services</a>
+            <a href="cleaning-services.html">Cleaning Services</a>
+            <a href="washroom-services.html">Washroom Services</a>
+            <a href="ground-maintenance-services.html">Ground Maintenance Services</a>
+            <a href="specialist-services.html">Specialist Services</a>
           </nav>
         </div>
 
@@ -675,82 +506,10 @@
   <i class="fa fa-chevron-up" aria-hidden="true"></i>
 </button>
 
-<script>
-(function () {
-  'use strict';
-
-  const siteNav = document.getElementById('siteNav');
-  window.addEventListener('scroll', function () {
-    siteNav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  const hamburger   = document.getElementById('navHamburger');
-  const drawerClose = document.getElementById('drawerClose');
-  const overlay     = document.getElementById('drawerOverlay');
-
-  function openNav()  { document.body.classList.add('nav-open');    hamburger.setAttribute('aria-expanded', 'true');  }
-  function closeNav() { document.body.classList.remove('nav-open'); hamburger.setAttribute('aria-expanded', 'false'); }
-
-  hamburger.addEventListener('click', openNav);
-  drawerClose.addEventListener('click', closeNav);
-  overlay.addEventListener('click', closeNav);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
-
-  document.querySelectorAll('.drawer-nav-link').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item   = btn.closest('.drawer-nav-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.drawer-nav-item').forEach(function (i) {
-        i.classList.remove('open');
-        i.querySelector('.drawer-nav-link').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
-    });
-  });
-
-  var regTrack   = document.getElementById('regionalTrack');
-  var regSlides  = regTrack ? regTrack.querySelectorAll('.regional-slide') : [];
-  var regIdx     = 0;
-  var regVisible = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 4);
-
-  if (regSlides.length) {
-    function showRegSlide() {
-      var maxIdx = Math.max(0, regSlides.length - regVisible);
-      if (regIdx > maxIdx) regIdx = 0;
-      regTrack.style.transform = 'translateX(-' + (regIdx * (100 / regVisible)) + '%)';
-    }
-    setInterval(function () {
-      var maxIdx = Math.max(0, regSlides.length - regVisible);
-      regIdx = regIdx >= maxIdx ? 0 : regIdx + 1;
-      showRegSlide();
-    }, 3500);
-    window.addEventListener('resize', function () {
-      regVisible = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 4);
-    }, { passive: true });
-  }
-
-  var scrollTopBtn = document.getElementById('scrollTop');
-  window.addEventListener('scroll', function () {
-    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
-  scrollTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(function (el) { obs.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('revealed'); });
-  }
-
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>
