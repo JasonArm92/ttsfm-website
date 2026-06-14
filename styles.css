@@ -1940,7 +1940,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   list-style: none; padding: 1rem 1.25rem;
   font-weight: 700; font-size: .97rem; color: var(--color-heading);
   cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-  background: #fff; transition: background .15s;
+  background: var(--color-white); transition: background .15s;
 }
 .acc-item summary::-webkit-details-marker { display: none; }
 .acc-item summary::after { content: '+'; font-size: 1.3rem; color: var(--color-lime-dark); flex-shrink: 0; }
@@ -1954,7 +1954,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
 @media (max-width: 768px) { .industry-grid { grid-template-columns: 1fr; } }
 .industry-card {
-  background: #fff; border: 1px solid var(--color-border);
+  background: var(--color-white); border: 1px solid var(--color-border);
   border-top: 4px solid var(--color-lime);
   border-radius: var(--radius-md); padding: 1.75rem 1.5rem;
   transition: transform var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out);
@@ -2016,3 +2016,92 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .prose a { color: var(--color-blue); }
 .prose a:hover { text-decoration: underline; }
 .prose .section-num { color: var(--color-lime-dark); font-weight: 700; margin-right: .35rem; }
+
+/* ============================================================
+   PHASE 3 — Dark mode, theme toggle, sticky mobile quote bar
+   ============================================================ */
+
+html { color-scheme: light; }
+
+/* ── Dark theme: override the themeable surface/ink tokens ─── */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-white:    #13294A;   /* elevated surfaces: cards, nav, dropdown */
+  --color-bg-light: #0C1D33;   /* "light" sections become deep navy       */
+  --surface-sunken: #081626;
+  --color-heading:  #EAF1F8;
+  --color-text:     #AAB8C8;
+  --color-border:   #22405F;
+  --color-shadow:   rgba(0,0,0,.55);
+}
+html[data-theme="dark"] body { background: #081626; }           /* page = deepest layer */
+
+/* Flash-free default: honour the OS preference before JS sets data-theme */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+    --color-white:    #13294A;
+    --color-bg-light: #0C1D33;
+    --surface-sunken: #081626;
+    --color-heading:  #EAF1F8;
+    --color-text:     #AAB8C8;
+    --color-border:   #22405F;
+    --color-shadow:   rgba(0,0,0,.55);
+  }
+  html:not([data-theme]) body { background: #081626; }
+}
+html[data-theme="dark"] .partner-logo { color: #8aa0bd; }
+html[data-theme="dark"] .trust-strip .trust-item { color: #8aa0bd; }
+html[data-theme="dark"] .form-row input,
+html[data-theme="dark"] .form-row textarea { background: #0C1D33; color: var(--color-heading); }
+/* keep the outline-button hover legible on lime in dark */
+html[data-theme="dark"] .btn-outline:hover { color: var(--ink-800); }
+
+/* Smooth cross-fade only while toggling (added by JS), never on load */
+html.theme-anim body,
+html.theme-anim .site-nav,
+html.theme-anim .nav-dropdown,
+html.theme-anim .bento-cell,
+html.theme-anim .service-card,
+html.theme-anim .industry-card,
+html.theme-anim .acc-item summary,
+html.theme-anim .partner-logo,
+html.theme-anim .trust-strip,
+html.theme-anim .tick-item,
+html.theme-anim .prose h2 {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+}
+
+/* ── Theme toggle button (injected into the nav by main.js) ── */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; margin-left: auto;
+  border: none; border-radius: var(--radius); cursor: pointer;
+  background: transparent; color: var(--color-heading); font-size: 1rem;
+  transition: background var(--transition), color var(--transition);
+}
+.theme-toggle:hover { background: var(--color-bg-light); color: var(--color-blue); }
+.theme-toggle:focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; }
+/* on the homepage transparent nav, the toggle is white over the hero */
+.site-nav.nav-home .theme-toggle { color: #fff; }
+.site-nav.nav-home.scrolled .theme-toggle { color: var(--color-heading); }
+/* when the desktop menu is visible, the menu's auto-margin handles spacing */
+@media (min-width: 769px) { .theme-toggle { margin-left: .25rem; } }
+
+/* ── Sticky mobile "get a quote" bar (injected by main.js) ── */
+.mobile-quote-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+  display: none; align-items: center; gap: .75rem;
+  padding: .6rem .9rem;
+  background: rgba(8,22,38,.97);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.mobile-quote-bar .mqb-text { color: #fff; font-size: .82rem; font-weight: 700; line-height: 1.2; }
+.mobile-quote-bar .mqb-text small { display: block; color: rgba(255,255,255,.6); font-weight: 500; font-size: .72rem; }
+.mobile-quote-bar .btn { margin-left: auto; padding: .6rem 1.15rem; font-size: .85rem; white-space: nowrap; }
+@media (max-width: 768px) {
+  .mobile-quote-bar { display: flex; }
+  body.has-quote-bar { padding-bottom: 66px; }
+  body.has-quote-bar .scroll-top { bottom: 80px; }
+}

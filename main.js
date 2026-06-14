@@ -143,4 +143,50 @@
     scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   }
 
+  /* ── Dark mode: init, inject toggle, persist ─────────── */
+  (function theme() {
+    var root = document.documentElement;
+    var stored = null;
+    try { stored = localStorage.getItem('tts-theme'); } catch (e) {}
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+
+    var navInner = document.querySelector('.nav-inner');
+    if (!navInner) return;
+    var btn = document.createElement('button');
+    btn.className = 'theme-toggle';
+    btn.type = 'button';
+    function sync() {
+      var dark = root.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = '<i class="fa-solid fa-' + (dark ? 'sun' : 'moon') + '" aria-hidden="true"></i>';
+      btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    }
+    sync();
+    var ham = document.getElementById('navHamburger');
+    if (ham) navInner.insertBefore(btn, ham); else navInner.appendChild(btn);
+    btn.addEventListener('click', function () {
+      root.classList.add('theme-anim');
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('tts-theme', next); } catch (e) {}
+      sync();
+      window.setTimeout(function () { root.classList.remove('theme-anim'); }, 450);
+    });
+  })();
+
+  /* ── Sticky mobile quote bar (every page except contact) ── */
+  (function quoteBar() {
+    var page = location.pathname.split('/').pop() || 'index.html';
+    if (page === 'contact.html') return;
+    if (document.querySelector('.mobile-quote-bar')) return;
+    var bar = document.createElement('div');
+    bar.className = 'mobile-quote-bar';
+    bar.innerHTML =
+      '<span class="mqb-text">Free site assessment<small>No obligation · 1 working day</small></span>' +
+      '<a class="btn btn-lime" href="contact.html">Get a quote</a>';
+    document.body.appendChild(bar);
+    document.body.classList.add('has-quote-bar');
+  })();
+
 })();
