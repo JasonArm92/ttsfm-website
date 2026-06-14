@@ -143,6 +143,29 @@
     scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   }
 
+  /* ── Living background: inject aurora + cursor light ─── */
+  (function bgFx() {
+    if (document.querySelector('.bg-fx')) return;
+    var fx = document.createElement('div');
+    fx.className = 'bg-fx';
+    fx.setAttribute('aria-hidden', 'true');
+    fx.innerHTML = '<span class="orb orb-1"></span><span class="orb orb-2"></span>' +
+                   '<span class="orb orb-3"></span><span class="orb orb-cursor"></span>';
+    document.body.insertBefore(fx, document.body.firstChild);
+    if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+      var raf = null, mx = 50, my = 38;
+      document.addEventListener('mousemove', function (e) {
+        mx = (e.clientX / window.innerWidth) * 100;
+        my = (e.clientY / window.innerHeight) * 100;
+        if (!raf) raf = requestAnimationFrame(function () {
+          fx.style.setProperty('--mx', mx + '%');
+          fx.style.setProperty('--my', my + '%');
+          raf = null;
+        });
+      }, { passive: true });
+    }
+  })();
+
   /* ── Dark mode: init, inject toggle, persist ─────────── */
   (function theme() {
     var root = document.documentElement;

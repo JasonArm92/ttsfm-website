@@ -2009,7 +2009,7 @@ html[data-theme="dark"] {
   --color-border:   #22405F;
   --color-shadow:   rgba(0,0,0,.55);
 }
-html[data-theme="dark"] body { background: #081626; }           /* page = deepest layer */
+html[data-theme="dark"] body { background-color: #081626; }           /* page = deepest layer */
 
 /* Flash-free default: honour the OS preference before JS sets data-theme */
 @media (prefers-color-scheme: dark) {
@@ -2130,3 +2130,73 @@ html[data-theme="dark"] .industry-card:hover {
 
 /* ── Oversized section index marker (de-templating) ── */
 .sec-num { font-family: var(--font-mono); font-weight: 700; font-size: .82rem; letter-spacing: .14em; color: var(--color-lime-dark); }
+
+/* ============================================================
+   PHASE 5 — Living interactive background (site-wide)
+   A fixed aurora of drifting brand orbs + dot weave + a light
+   that follows the cursor. Sections go translucent so it shows
+   through on every page. Theme-aware + reduced-motion-safe.
+   ============================================================ */
+:root {
+  --page-base: #F4F8FC;
+  --dot: rgba(10,37,64,.055);
+  --orb-1: rgba(4,107,210,.18);
+  --orb-2: rgba(180,202,82,.20);
+  --orb-3: rgba(20,55,89,.14);
+  --orb-cursor: rgba(150,170,58,.16);
+}
+html[data-theme="dark"] {
+  --page-base: #06121F;
+  --dot: rgba(255,255,255,.05);
+  --orb-1: rgba(4,107,210,.42);
+  --orb-2: rgba(199,224,74,.20);
+  --orb-3: rgba(20,55,89,.55);
+  --orb-cursor: rgba(199,224,74,.20);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --page-base: #06121F;
+    --dot: rgba(255,255,255,.05);
+    --orb-1: rgba(4,107,210,.42);
+    --orb-2: rgba(199,224,74,.20);
+    --orb-3: rgba(20,55,89,.55);
+    --orb-cursor: rgba(199,224,74,.20);
+  }
+}
+
+html { background: var(--page-base); }
+/* body transparent in BOTH themes so the fixed aurora shows through */
+body,
+html[data-theme="dark"] body,
+html:not([data-theme]) body { background-color: transparent; }
+
+.bg-fx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bg-fx .orb { position: absolute; border-radius: 50%; filter: blur(90px); will-change: transform; }
+.bg-fx .orb-1 { width: 48vw; height: 48vw; background: var(--orb-1); top: -12vw; left: -8vw;  animation: orbDrift1 26s ease-in-out infinite alternate; }
+.bg-fx .orb-2 { width: 42vw; height: 42vw; background: var(--orb-2); bottom: -14vw; right: -6vw; animation: orbDrift2 32s ease-in-out infinite alternate; }
+.bg-fx .orb-3 { width: 54vw; height: 54vw; background: var(--orb-3); top: 28vh;  left: 34vw;  animation: orbDrift3 40s ease-in-out infinite alternate; }
+.bg-fx .orb-cursor {
+  width: 38vw; height: 38vw; background: var(--orb-cursor);
+  left: var(--mx, 50%); top: var(--my, 38%); transform: translate(-50%, -50%);
+  transition: left .35s ease-out, top .35s ease-out;
+}
+.bg-fx::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+}
+@keyframes orbDrift1 { to { transform: translate(8vw, 6vh)  scale(1.15); } }
+@keyframes orbDrift2 { to { transform: translate(-7vw,-5vh) scale(1.10); } }
+@keyframes orbDrift3 { to { transform: translate(-6vw, 8vh) scale(1.20); } }
+@media (prefers-reduced-motion: reduce) {
+  .bg-fx .orb { animation: none; }
+  .bg-fx .orb-cursor { transition: none; }
+}
+
+/* Frosted translucent light sections so the aurora shows through */
+.section-light {
+  background: rgba(240,245,250,.70);
+  -webkit-backdrop-filter: blur(7px) saturate(115%);
+  backdrop-filter: blur(7px) saturate(115%);
+}
+html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
