@@ -1894,6 +1894,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 @media (max-width: 768px) { .two-col-img { grid-template-columns: 1fr; } }
 .two-col-img .img-wrap { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); }
 .two-col-img .img-wrap img { width: 100%; height: auto; display: block; }
+.two-col-img--rev .img-wrap { order: -1; }
+@media (max-width: 768px) { .two-col-img--rev .img-wrap { order: 0; } }
 
 /* ── Circle bullet list ────────────────────────────────────── */
 .circle-list { list-style: none; padding: 0; margin: 1rem 0; }
