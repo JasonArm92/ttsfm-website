@@ -1583,7 +1583,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 86px; /* nudge the banner down from under the nav */
+  margin-top: 81px; /* nudge the banner down from under the nav */
 }
 .hero-scrim {            /* darkens the right so the headline stays legible, leaves the logo bright on the left */
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -1591,7 +1591,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
     rgba(6,24,43,.92) 0%, rgba(6,24,43,.58) 38%, rgba(6,24,43,.12) 70%, rgba(6,24,43,0) 100%);
 }
 .hero-home .container {  /* overlay the text on top of the banner, pushed to the right */
-  position: absolute; inset: 86px 0 0 0; z-index: 2;
+  position: absolute; inset: 81px 0 0 0; z-index: 2;
   display: flex; align-items: center; justify-content: flex-end;
 }
 .hero-home .hero-content {
@@ -2259,3 +2259,83 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.85); }
 @keyframes radarPing { 0%,100% { transform: scale(.7); opacity: .5; } 50% { transform: scale(1.15); opacity: 1; } }
 @media (max-width: 900px) { .hero-radar { opacity: .22; right: -34%; } }
 @media (prefers-reduced-motion: reduce) { .hero-radar .r-sweep, .hero-radar .r-ping { animation: none; } }
+
+/* ============================================================
+   LIQUID GLASS — homepage only (.page-home)
+   A brand-tinted take on Apple's "liquid glass": frosted
+   translucent surfaces with a bright top rim-light, a lime
+   specular glint and a blue depth-tint — the unique twist.
+   Backdrop-blur is applied only to discrete cards + the nav
+   (never to full-width sections), so scrolling stays snappy.
+   ============================================================ */
+.page-home {
+  /* adaptive glass for surfaces that follow the page theme (bento cards) */
+  --lg-bg:
+    linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,0) 24%),
+    radial-gradient(130% 85% at 6% -12%, rgba(199,224,74,.22), transparent 46%),
+    radial-gradient(130% 130% at 112% 122%, rgba(4,107,210,.14), transparent 55%),
+    linear-gradient(140deg, rgba(255,255,255,.66), rgba(255,255,255,.42));
+  --lg-border: rgba(255,255,255,.85);
+  --lg-rim:    rgba(255,255,255,.95);
+  --lg-ring:   0 0 0 1px rgba(10,37,64,.06);
+  --lg-shadow: 0 22px 46px -24px rgba(10,37,64,.42), 0 3px 10px -6px rgba(10,37,64,.20);
+  --lg-hover:  0 34px 64px -24px rgba(10,37,64,.50);
+  --lg-blur:   14px;
+  /* fixed dark glass for surfaces that always sit on a dark band */
+  --lg-dark:
+    linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0) 24%),
+    radial-gradient(130% 85% at 6% -12%, rgba(199,224,74,.16), transparent 46%),
+    radial-gradient(130% 130% at 112% 122%, rgba(4,107,210,.20), transparent 55%),
+    linear-gradient(140deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+}
+html[data-theme="dark"] .page-home {
+  --lg-bg:     var(--lg-dark);
+  --lg-border: rgba(255,255,255,.16);
+  --lg-rim:    rgba(255,255,255,.40);
+  --lg-ring:   0 0 0 1px rgba(255,255,255,.04);
+  --lg-shadow: 0 26px 54px -24px rgba(0,0,0,.62);
+  --lg-hover:  0 36px 66px -24px rgba(0,0,0,.7);
+}
+
+/* Service bento cards — the headline glass moment */
+.page-home .bento-cell {
+  background: var(--lg-bg);
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(160%);
+  backdrop-filter: blur(var(--lg-blur)) saturate(160%);
+  border: 1px solid var(--lg-border);
+  border-radius: 20px;
+  box-shadow: var(--lg-ring), var(--lg-shadow), inset 0 1px 0 var(--lg-rim);
+}
+.page-home .bento-cell:hover {
+  transform: translateY(-6px);
+  border-color: var(--lg-border);
+  box-shadow: var(--lg-ring), var(--lg-hover), inset 0 1px 0 var(--lg-rim);
+}
+
+/* Hero stat tiles + testimonial card — always on a dark band, so fixed dark glass */
+.page-home .glass-stat,
+.page-home .testimonial-card {
+  background: var(--lg-dark);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 24px 52px -22px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.40);
+}
+.page-home .glass-stat { border-radius: 18px; }
+
+/* Frosted glass navigation (homepage) */
+.page-home .site-nav {
+  background: rgba(255,255,255,.62);
+  -webkit-backdrop-filter: blur(18px) saturate(165%);
+  backdrop-filter: blur(18px) saturate(165%);
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 8px 30px -18px rgba(10,37,64,.5);
+}
+.page-home .site-nav.scrolled { background: rgba(255,255,255,.80); }
+html[data-theme="dark"] .page-home .site-nav {
+  background: rgba(10,24,42,.55);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 8px 30px -18px rgba(0,0,0,.6);
+}
+html[data-theme="dark"] .page-home .site-nav.scrolled { background: rgba(10,24,42,.80); }
+@media (prefers-reduced-motion: reduce) { .page-home .bento-cell:hover { transform: none; } }
