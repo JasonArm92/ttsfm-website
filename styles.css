@@ -1962,9 +1962,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .cta-band p  { color: rgba(255,255,255,.78); max-width: 620px; margin: 0 auto 2rem; }
 
 /* ── Partner logos (inner-page variant) ────────────────────── */
-.partners-logos-wrap { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: center; justify-content: center; margin-top: 1.5rem; }
-.partner-logo-img { height: 48px; width: auto; object-fit: contain; filter: grayscale(1); opacity: .65; transition: filter var(--transition), opacity var(--transition); }
-.partner-logo-img:hover { filter: none; opacity: 1; }
+.partners-logos-wrap { display: flex; flex-wrap: wrap; gap: 2rem 3rem; align-items: center; justify-content: center; margin-top: 1.5rem; }
+.partner-logo-img { height: 96px; width: auto; object-fit: contain; transition: transform var(--transition), filter var(--transition); }
+.partner-logo-img:hover { transform: translateY(-4px); }
 
 /* ── FAQ ───────────────────────────────────────────────────── */
 .faq-list { margin-top: 1.5rem; }
