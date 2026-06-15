@@ -1584,17 +1584,17 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   width: 100%;
   height: auto;
 }
-.hero-scrim {            /* darkens the left so the headline stays legible */
+.hero-scrim {            /* darkens the right so the headline stays legible, leaves the logo bright on the left */
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(100deg,
-    rgba(6,24,43,.90) 0%, rgba(6,24,43,.66) 36%, rgba(6,24,43,.18) 64%, rgba(6,24,43,0) 100%);
+  background: linear-gradient(to left,
+    rgba(6,24,43,.92) 0%, rgba(6,24,43,.58) 38%, rgba(6,24,43,.12) 70%, rgba(6,24,43,0) 100%);
 }
-.hero-home .container {  /* overlay the text on top of the banner */
+.hero-home .container {  /* overlay the text on top of the banner, pushed to the right */
   position: absolute; inset: 0; z-index: 2;
-  display: flex; align-items: center;
+  display: flex; align-items: center; justify-content: flex-end;
 }
 .hero-home .hero-content {
-  max-width: 600px;
+  max-width: 540px;
   padding: 0;
 }
 .hero-eyebrow {
