@@ -12,17 +12,10 @@
   var hasST   = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
   if (hasST) gsap.registerPlugin(ScrollTrigger);
 
-  /* ── Lenis smooth scroll (driven once) ───────────────── */
-  if (typeof window.Lenis !== 'undefined' && !reduce) {
-    var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-    if (hasST) {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })();
-    }
-  }
+  /* ── Scrolling: native (snappy) ───────────────────────
+     Lenis smooth-scroll added perceptible latency (the "floaty/slow"
+     feel) and competed with paint during scroll. Native scrolling is
+     instant; ScrollTrigger updates against it automatically. */
 
   /* ── Nav: solid/glass on scroll (CSS handles the rest) ── */
   var siteNav = document.getElementById('siteNav');
@@ -143,13 +136,19 @@
     scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   }
 
-  /* ── Cursor-following light on hero / CTA surfaces ───── */
+  /* ── Cursor-following light on hero / CTA surfaces (rAF-throttled) ── */
   if (!reduce && window.matchMedia('(pointer:fine)').matches) {
     document.querySelectorAll('.hero-home, .prop-hero, .policy-hero, .cta-mesh').forEach(function (el) {
+      var raf = null, hx = 50, hy = 30;
       el.addEventListener('mousemove', function (e) {
         var r = el.getBoundingClientRect();
-        el.style.setProperty('--hx', ((e.clientX - r.left) / r.width * 100) + '%');
-        el.style.setProperty('--hy', ((e.clientY - r.top) / r.height * 100) + '%');
+        hx = (e.clientX - r.left) / r.width * 100;
+        hy = (e.clientY - r.top) / r.height * 100;
+        if (!raf) raf = requestAnimationFrame(function () {
+          el.style.setProperty('--hx', hx + '%');
+          el.style.setProperty('--hy', hy + '%');
+          raf = null;
+        });
       }, { passive: true });
     });
   }
@@ -177,13 +176,13 @@
                    '<span class="orb orb-3"></span><span class="orb orb-cursor"></span>';
     document.body.insertBefore(fx, document.body.firstChild);
     if (!reduce && window.matchMedia('(pointer:fine)').matches) {
-      var raf = null, mx = 50, my = 38;
+      var raf = null, mx = '50vw', my = '38vh';
       document.addEventListener('mousemove', function (e) {
-        mx = (e.clientX / window.innerWidth) * 100;
-        my = (e.clientY / window.innerHeight) * 100;
+        mx = e.clientX + 'px';
+        my = e.clientY + 'px';
         if (!raf) raf = requestAnimationFrame(function () {
-          fx.style.setProperty('--mx', mx + '%');
-          fx.style.setProperty('--my', my + '%');
+          fx.style.setProperty('--mx', mx);
+          fx.style.setProperty('--my', my);
           raf = null;
         });
       }, { passive: true });

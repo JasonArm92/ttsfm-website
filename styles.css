@@ -1583,7 +1583,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 96px; /* nudge the banner down from under the nav */
+  margin-top: 86px; /* nudge the banner down from under the nav */
 }
 .hero-scrim {            /* darkens the right so the headline stays legible, leaves the logo bright on the left */
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -1591,7 +1591,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
     rgba(6,24,43,.92) 0%, rgba(6,24,43,.58) 38%, rgba(6,24,43,.12) 70%, rgba(6,24,43,0) 100%);
 }
 .hero-home .container {  /* overlay the text on top of the banner, pushed to the right */
-  position: absolute; inset: 96px 0 0 0; z-index: 2;
+  position: absolute; inset: 86px 0 0 0; z-index: 2;
   display: flex; align-items: center; justify-content: flex-end;
 }
 .hero-home .hero-content {
@@ -2079,8 +2079,7 @@ html.theme-anim .prose h2 {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
   display: none; align-items: center; gap: .75rem;
   padding: .6rem .9rem;
-  background: rgba(8,22,38,.97);
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  background: rgba(8,22,38,.98); /* opaque enough that backdrop blur was wasted work */
   border-top: 1px solid rgba(255,255,255,.12);
 }
 .mobile-quote-bar .mqb-text { color: #fff; font-size: .82rem; font-weight: 700; line-height: 1.2; }
@@ -2184,14 +2183,15 @@ html[data-theme="dark"] body,
 html:not([data-theme]) body { background-color: transparent; }
 
 .bg-fx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.bg-fx .orb { position: absolute; border-radius: 50%; filter: blur(90px); will-change: transform; }
+.bg-fx .orb { position: absolute; border-radius: 50%; filter: blur(70px); will-change: transform; }
 .bg-fx .orb-1 { width: 48vw; height: 48vw; background: var(--orb-1); top: -12vw; left: -8vw;  animation: orbDrift1 26s ease-in-out infinite alternate; }
 .bg-fx .orb-2 { width: 42vw; height: 42vw; background: var(--orb-2); bottom: -14vw; right: -6vw; animation: orbDrift2 32s ease-in-out infinite alternate; }
 .bg-fx .orb-3 { width: 54vw; height: 54vw; background: var(--orb-3); top: 28vh;  left: 34vw;  animation: orbDrift3 40s ease-in-out infinite alternate; }
 .bg-fx .orb-cursor {
   width: 38vw; height: 38vw; background: var(--orb-cursor);
-  left: var(--mx, 50%); top: var(--my, 38%); transform: translate(-50%, -50%);
-  transition: left .35s ease-out, top .35s ease-out;
+  left: 0; top: 0;
+  transform: translate3d(var(--mx, 50vw), var(--my, 38vh), 0) translate(-50%, -50%);
+  transition: transform .2s ease-out;
 }
 .bg-fx::after {
   content: ''; position: absolute; inset: 0;
@@ -2208,11 +2208,9 @@ html:not([data-theme]) body { background-color: transparent; }
 
 /* Frosted translucent light sections so the aurora shows through */
 .section-light {
-  background: rgba(238,244,250,.62);
-  -webkit-backdrop-filter: blur(7px) saturate(120%);
-  backdrop-filter: blur(7px) saturate(120%);
+  background: rgba(238,244,250,.85); /* translucent (aurora still shows) without per-frame backdrop blur */
 }
-html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
+html[data-theme="dark"] .section-light { background: rgba(12,29,51,.85); }
 
 /* ============================================================
    PHASE 5b — Showpiece: hero cursor-light + capabilities marquee
@@ -2222,7 +2220,6 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.58); }
 .hero-home::before, .prop-hero::before, .policy-hero::before, .cta-mesh::before {
   content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
   background: radial-gradient(460px circle at var(--hx, 50%) var(--hy, 30%), rgba(199,224,74,.16), transparent 60%);
-  transition: background .25s ease-out;
 }
 
 /* Infinite capabilities marquee (motion + personality) */
