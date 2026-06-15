@@ -1597,7 +1597,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   grid-template-columns: 1.04fr .96fr;
   gap: 3.5rem;
   align-items: center;
-  padding: 124px 0 0;
+  padding: 124px 0 84px;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -1671,9 +1671,14 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   font-size: .82rem; line-height: 1.4; color: rgba(255,255,255,.78);
 }
 
+/* Right column: banner on top, stats beneath — balances the headline */
+.hero-right {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
 /* Hero banner shown whole (no crop) in its own framed panel */
 .hero-visual {
-  position: relative; z-index: 2; margin: 0;
+  margin: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
@@ -1681,11 +1686,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 }
 .hero-visual img { display: block; width: 100%; height: auto; }
 
-/* Stat cards as a full-width row beneath the hero */
+/* Stat cards in a 2×2 grid under the banner */
 .hero-stats {
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-  margin-top: 3rem; padding-bottom: 92px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
 }
 
 /* ── BENTO services grid ───────────────────────────────────── */
@@ -1763,8 +1766,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .bento-cell--feature { grid-column: span 2; grid-row: span 1; min-height: 240px; }
   .bento-cell--wide    { grid-column: span 2; }
-  .hero-home .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding: 108px 0 0; }
-  .hero-stats { grid-template-columns: 1fr 1fr; margin-top: 2rem; padding-bottom: 64px; }
+  .hero-home .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding: 108px 0 56px; }
 }
 @media (max-width: 560px) {
   .bento { grid-template-columns: 1fr; }
