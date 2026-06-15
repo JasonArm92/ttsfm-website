@@ -1571,33 +1571,31 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .btn-magnetic { will-change: transform; transition: transform .2s var(--ease-out), box-shadow var(--transition); }
 
 /* ── HERO (gradient-mesh, replaces slideshow) ──────────────── */
-.hero-home { min-height: min(92vh, 820px); }
-.hero-home > .container { position: relative; z-index: 2; width: 100%; }
-.hero-home .hero-mesh {
-  position: absolute; inset: -20%;
-  z-index: 0;
-  background: var(--mesh);
-  filter: saturate(1.08);
-  animation: meshDrift 26s var(--ease-in-out) infinite alternate;
+.hero-home {
+  position: relative;
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+  background: #06182b;
 }
-@keyframes meshDrift {
-  from { transform: translate3d(-2%, -1%, 0) scale(1.05) rotate(0deg); }
-  to   { transform: translate3d(2%, 1.5%, 0) scale(1.13) rotate(3deg); }
-}
-.hero-home::after {            /* readability scrim over the mesh */
-  content: '';
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(6,24,43,.55), rgba(6,24,43,.80));
-  pointer-events: none;
-}
-.hero-home .hero-grid {
-  position: relative; z-index: 2;
+/* Full-bleed banner: full width, never cropped — it sets the hero's height */
+.hero-bg-img {
+  display: block;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.04fr .96fr;
-  gap: 3.5rem;
-  align-items: center;
-  padding: 124px 0 84px;
+  height: auto;
+}
+.hero-scrim {            /* darkens the left so the headline stays legible */
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg,
+    rgba(6,24,43,.90) 0%, rgba(6,24,43,.66) 36%, rgba(6,24,43,.18) 64%, rgba(6,24,43,0) 100%);
+}
+.hero-home .container {  /* overlay the text on top of the banner */
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center;
+}
+.hero-home .hero-content {
+  max-width: 600px;
+  padding: 0;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -1671,24 +1669,14 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   font-size: .82rem; line-height: 1.4; color: rgba(255,255,255,.78);
 }
 
-/* Right column: banner on top, stats beneath — balances the headline */
-.hero-right {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; gap: 1.25rem;
+/* Key facts band beneath the hero */
+.hero-stats-band {
+  background: #08203a;
+  border-top: 1px solid rgba(255,255,255,.06);
 }
-/* Hero banner shown whole (no crop) in its own framed panel */
-.hero-visual {
-  margin: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 30px 70px rgba(0,0,0,.45);
-}
-.hero-visual img { display: block; width: 100%; height: auto; }
-
-/* Stat cards in a 2×2 grid under the banner */
+.hero-stats-band .container { padding-top: 2.25rem; padding-bottom: 2.25rem; }
 .hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
 }
 
 /* ── BENTO services grid ───────────────────────────────────── */
@@ -1766,7 +1754,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .bento-cell--feature { grid-column: span 2; grid-row: span 1; min-height: 240px; }
   .bento-cell--wide    { grid-column: span 2; }
-  .hero-home .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding: 108px 0 56px; }
+  .hero-home .container { position: static; padding-top: 1.5rem; padding-bottom: 2.25rem; }
+  .hero-scrim { display: none; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .bento { grid-template-columns: 1fr; }
