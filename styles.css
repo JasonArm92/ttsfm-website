@@ -2261,17 +2261,18 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.85); }
 @media (prefers-reduced-motion: reduce) { .hero-radar .r-sweep, .hero-radar .r-ping { animation: none; } }
 
 /* ============================================================
-   LIQUID GLASS — homepage only (.page-home)
+   LIQUID GLASS — site-wide
    A brand-tinted take on Apple's "liquid glass": frosted
    translucent surfaces with a bright top rim-light, a lime
    specular glint and a blue depth-tint — the unique twist.
    Backdrop-blur is applied only to discrete cards + the nav
    (never to full-width sections), so scrolling stays snappy.
+   Tokens live on <body> (theme-adaptive); the `body` prefix on
+   card rules lets them override each page's local backgrounds.
    ============================================================ */
-.page-home {
-  /* adaptive glass for surfaces that follow the page theme (bento cards).
-     Top sheen fades to transparent by 30% so the OPAQUE base shows behind
-     body text near the bottom — keeps text legible while the card reads as glass. */
+body {
+  /* adaptive glass for content cards. Top sheen fades out by 30% so the
+     OPAQUE base shows behind body text near the bottom — legible + glassy. */
   --lg-bg:
     linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,0) 30%),
     radial-gradient(120% 80% at 2% -14%, rgba(199,224,74,.26), transparent 42%),
@@ -2290,7 +2291,7 @@ html[data-theme="dark"] .section-light { background: rgba(12,29,51,.85); }
     radial-gradient(130% 130% at 116% 126%, rgba(4,107,210,.26), transparent 54%),
     linear-gradient(140deg, rgba(255,255,255,.13), rgba(255,255,255,.055));
 }
-html[data-theme="dark"] .page-home {
+html[data-theme="dark"] body {
   --lg-bg:     var(--lg-dark);
   --lg-border: rgba(255,255,255,.22);
   --lg-rim:    rgba(255,255,255,.50);
@@ -2299,60 +2300,72 @@ html[data-theme="dark"] .page-home {
   --lg-hover:  0 40px 72px -26px rgba(0,0,0,.72);
 }
 
-/* Service bento cards — adaptive glass (the flagship feature card keeps its
-   own dark mesh background, so exclude it from the light fill) */
-.page-home .bento-cell:not(.bento-cell--feature) {
+/* Theme-adaptive content cards across every page.
+   Image/photo cards (.benefit-card, .region-tile) and dark cards with light
+   text (.bento-cell--feature) are intentionally excluded. */
+body :is(.service-card, .industry-card, .sub-service-card, .news-card, .cs-card,
+         .recruit-card, .policy-link-card, .star-card, .testi-card, .test-card,
+         .region-panel, .bento-cell:not(.bento-cell--feature)) {
   background: var(--lg-bg);
   -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(170%);
   backdrop-filter: blur(var(--lg-blur)) saturate(170%);
   border: 1px solid var(--lg-border);
-}
-.page-home .bento-cell {
-  border-radius: 20px;
+  border-radius: 18px;
   box-shadow: var(--lg-ring), var(--lg-shadow), inset 0 1px 0 var(--lg-rim);
 }
-.page-home .bento-cell--feature {                 /* glass rim only; dark bg + white text preserved */
-  box-shadow: var(--lg-ring), var(--lg-shadow), inset 0 1px 0 rgba(255,255,255,.28);
-}
-.page-home .bento-cell:hover {
+body :is(.service-card, .industry-card, .sub-service-card, .news-card, .cs-card,
+         .recruit-card, .policy-link-card, .star-card, .testi-card, .test-card,
+         .region-panel, .bento-cell):hover {
   transform: translateY(-6px);
   border-color: var(--lg-border);
   box-shadow: var(--lg-ring), var(--lg-hover), inset 0 1px 0 var(--lg-rim);
 }
-/* Text contrast on glass cards (AA in both themes) */
-.page-home .bento-cell:not(.bento-cell--feature) h3        { color: #07203a; }
-.page-home .bento-cell:not(.bento-cell--feature) p         { color: #33455a; }
-.page-home .bento-cell:not(.bento-cell--feature) .card-link { color: #045cb4; }
-html[data-theme="dark"] .page-home .bento-cell:not(.bento-cell--feature) h3        { color: #F4F8FC; }
-html[data-theme="dark"] .page-home .bento-cell:not(.bento-cell--feature) p         { color: #CBD8E6; }
-html[data-theme="dark"] .page-home .bento-cell:not(.bento-cell--feature) .card-link { color: #8FC0F0; }
+.bento-cell--feature {                 /* glass rim only; dark bg + white text preserved */
+  border-radius: 20px;
+  box-shadow: var(--lg-ring), var(--lg-shadow), inset 0 1px 0 rgba(255,255,255,.28);
+}
 
-/* Hero stat tiles + testimonial card — always on a dark band, so fixed dark glass */
-.page-home .glass-stat,
-.page-home .testimonial-card {
+/* Text contrast on glass cards (AA-verified in both themes) */
+body :is(.service-card, .industry-card, .sub-service-card, .news-card, .cs-card,
+         .recruit-card, .policy-link-card, .star-card, .testi-card, .test-card,
+         .region-panel, .bento-cell:not(.bento-cell--feature)) p { color: #33455a; }
+html[data-theme="dark"] body :is(.service-card, .industry-card, .sub-service-card, .news-card,
+         .cs-card, .recruit-card, .policy-link-card, .star-card, .testi-card, .test-card,
+         .region-panel, .bento-cell:not(.bento-cell--feature)) p { color: #CBD8E6; }
+html[data-theme="dark"] body :is(.service-card, .industry-card, .sub-service-card, .news-card,
+         .cs-card, .recruit-card, .policy-link-card, .star-card, .testi-card, .test-card,
+         .region-panel, .bento-cell:not(.bento-cell--feature)) :is(h2,h3,h4) { color: #F4F8FC; }
+html[data-theme="dark"] body :is(.service-card, .industry-card, .sub-service-card, .news-card,
+         .cs-card, .recruit-card, .policy-link-card, .star-card, .testi-card, .test-card,
+         .region-panel, .bento-cell:not(.bento-cell--feature)) :is(.card-link, [class*="read-more"]) { color: #8FC0F0; }
+
+/* Surfaces that always sit on a dark band — fixed dark glass */
+body :is(.glass-stat, .testimonial-card) {
   background: var(--lg-dark);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid rgba(255,255,255,.22);
   box-shadow: 0 24px 52px -22px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.45);
 }
-.page-home .glass-stat { border-radius: 18px; }
-.page-home .glass-stat .gs-label { color: rgba(255,255,255,.92); }
-.page-home .testimonial-quote { color: rgba(255,255,255,.95); }
+.glass-stat { border-radius: 18px; }
+.glass-stat .gs-label { color: rgba(255,255,255,.92); }
+.testimonial-quote { color: rgba(255,255,255,.95); }
 
-/* Frosted glass navigation (homepage) — kept opaque enough for legible links */
-.page-home .site-nav {
+/* Frosted glass navigation (site-wide) — kept opaque enough for legible links */
+.site-nav {
   background: rgba(255,255,255,.72);
   -webkit-backdrop-filter: blur(20px) saturate(170%);
   backdrop-filter: blur(20px) saturate(170%);
   border-bottom: 1px solid rgba(255,255,255,.55);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 8px 30px -18px rgba(10,37,64,.5);
 }
-.page-home .site-nav.scrolled { background: rgba(255,255,255,.90); }
-html[data-theme="dark"] .page-home .site-nav {
+.site-nav.scrolled { background: rgba(255,255,255,.90); }
+html[data-theme="dark"] .site-nav {
   background: rgba(10,24,42,.62);
   border-bottom: 1px solid rgba(255,255,255,.10);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 8px 30px -18px rgba(0,0,0,.6);
 }
-html[data-theme="dark"] .page-home .site-nav.scrolled { background: rgba(10,24,42,.88); }
-@media (prefers-reduced-motion: reduce) { .page-home .bento-cell:hover { transform: none; } }
+html[data-theme="dark"] .site-nav.scrolled { background: rgba(10,24,42,.88); }
+@media (prefers-reduced-motion: reduce) {
+  body :is(.service-card,.industry-card,.sub-service-card,.news-card,.cs-card,.recruit-card,.policy-link-card,.star-card,.testi-card,.test-card,.region-panel,.bento-cell):hover { transform: none; }
+}
