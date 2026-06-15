@@ -1583,7 +1583,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 40px; /* nudge the banner down from under the nav */
+  margin-top: 96px; /* nudge the banner down from under the nav */
 }
 .hero-scrim {            /* darkens the right so the headline stays legible, leaves the logo bright on the left */
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -1591,7 +1591,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
     rgba(6,24,43,.92) 0%, rgba(6,24,43,.58) 38%, rgba(6,24,43,.12) 70%, rgba(6,24,43,0) 100%);
 }
 .hero-home .container {  /* overlay the text on top of the banner, pushed to the right */
-  position: absolute; inset: 0; z-index: 2;
+  position: absolute; inset: 96px 0 0 0; z-index: 2;
   display: flex; align-items: center; justify-content: flex-end;
 }
 .hero-home .hero-content {
