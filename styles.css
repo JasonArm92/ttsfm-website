@@ -1583,6 +1583,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   display: block;
   width: 100%;
   height: auto;
+  margin-top: 40px; /* nudge the banner down from under the nav */
 }
 .hero-scrim {            /* darkens the right so the headline stays legible, leaves the logo bright on the left */
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -1756,6 +1757,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   .bento-cell--wide    { grid-column: span 2; }
   .hero-home .container { position: static; padding-top: 1.5rem; padding-bottom: 2.25rem; }
   .hero-scrim { display: none; }
+  .hero-bg-img { margin-top: 0; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
