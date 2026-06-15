@@ -1584,27 +1584,20 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   from { transform: translate3d(-2%, -1%, 0) scale(1.05) rotate(0deg); }
   to   { transform: translate3d(2%, 1.5%, 0) scale(1.13) rotate(3deg); }
 }
-.hero-home .hero-photo {       /* real photography behind the scrim */
-  position: absolute; inset: 0; z-index: 0;
-  background-image: url('assets/img/hero-home.webp');
-  background-color: #06182b;
-  background-size: cover; background-position: center center;
-}
-.hero-home::after {            /* readability scrim */
+.hero-home::after {            /* readability scrim over the mesh */
   content: '';
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(100deg,
-    rgba(6,24,43,.80) 0%, rgba(6,24,43,.52) 45%, rgba(6,24,43,.12) 100%);
+  background: linear-gradient(180deg, rgba(6,24,43,.55), rgba(6,24,43,.80));
   pointer-events: none;
 }
 .hero-home .hero-grid {
   position: relative; z-index: 2;
   width: 100%;
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
+  grid-template-columns: 1.04fr .96fr;
   gap: 3.5rem;
   align-items: center;
-  padding: 132px 0 84px;
+  padding: 124px 0 0;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -1676,6 +1669,23 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 .glass-stat .gs-label {
   display: block; margin-top: .55rem;
   font-size: .82rem; line-height: 1.4; color: rgba(255,255,255,.78);
+}
+
+/* Hero banner shown whole (no crop) in its own framed panel */
+.hero-visual {
+  position: relative; z-index: 2; margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 30px 70px rgba(0,0,0,.45);
+}
+.hero-visual img { display: block; width: 100%; height: auto; }
+
+/* Stat cards as a full-width row beneath the hero */
+.hero-stats {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  margin-top: 3rem; padding-bottom: 92px;
 }
 
 /* ── BENTO services grid ───────────────────────────────────── */
@@ -1753,8 +1763,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .bento-cell--feature { grid-column: span 2; grid-row: span 1; min-height: 240px; }
   .bento-cell--wide    { grid-column: span 2; }
-  .hero-home .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; padding: 116px 0 64px; }
-  .hero-cards { order: 2; }
+  .hero-home .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding: 108px 0 0; }
+  .hero-stats { grid-template-columns: 1fr 1fr; margin-top: 2rem; padding-bottom: 64px; }
 }
 @media (max-width: 560px) {
   .bento { grid-template-columns: 1fr; }
