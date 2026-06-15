@@ -250,7 +250,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav-logo img {
-  height: 60px;
+  height: 80px;
   width: auto;
   object-fit: contain;
 }
@@ -1212,7 +1212,7 @@ body.nav-open .nav-drawer-panel {
 }
 
 .footer-logo img {
-  height: 52px;
+  height: 80px;
   width: auto;
   margin-bottom: 1rem;
 }
@@ -1411,7 +1411,10 @@ body.nav-open .nav-drawer-panel {
   }
 
   .nav-inner {
-    height: 68px;
+    height: 72px;
+  }
+  .nav-logo img {
+    height: 72px;
   }
 
   /* Hero */
