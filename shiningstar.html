@@ -3,65 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Careers — TTS FM (UK)</title>
-<meta name="description" content="Join the TTS FM team. We provide integrated security and facilities management services, and we're always looking for passionate people to join us.">
+<title>Shining Star — TTS FM (UK)</title>
+<meta name="description" content="TTS FM Shining Star — celebrating the outstanding individuals who go above and beyond to deliver exceptional service for our clients.">
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TTS FM (UK)">
-<meta property="og:title" content="Careers — TTS FM (UK)">
-<meta property="og:description" content="Join the TTS FM team. We provide integrated security and facilities management services, and we're always looking for passionate people to join us.">
+<meta property="og:title" content="Shining Star — TTS FM (UK)">
+<meta property="og:description" content="TTS FM Shining Star — celebrating the outstanding individuals who go above and beyond to deliver exceptional service for our clients.">
 <meta property="og:image" content="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Careers — TTS FM (UK)">
-<meta name="twitter:description" content="Join the TTS FM team. We provide integrated security and facilities management services, and we're always looking for passionate people to join us.">
+<meta name="twitter:title" content="Shining Star — TTS FM (UK)">
+<meta name="twitter:description" content="TTS FM Shining Star — celebrating the outstanding individuals who go above and beyond to deliver exceptional service for our clients.">
 <meta name="twitter:image" content="https://ttsfm.co.uk/wp-content/uploads/2020/06/logo.png">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 <style>
-  .careers-intro { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
-  @media(max-width:768px){ .careers-intro{ grid-template-columns:1fr; } }
-  .careers-intro-img { border-radius:12px; overflow:hidden; }
-  .careers-intro-img img { width:100%; height:auto; display:block; }
+  .star-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.75rem;
+    margin-top:2rem;
+  }
+  @media(max-width:900px){ .star-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:580px){ .star-grid{ grid-template-columns:1fr; } }
 
-  .policy-links { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin-top:1.5rem; }
-  .policy-link-card {
-    display:flex; align-items:center; gap:1rem;
-    padding:1rem 1.25rem;
+  .star-card {
     background:#fff;
     border:1px solid var(--color-border);
-    border-radius:8px;
-    text-decoration:none;
+    border-radius:12px;
+    padding:1.75rem 1.5rem;
+    display:flex; flex-direction:column;
+    position:relative;
+    transition:box-shadow .2s, transform .2s;
+  }
+  .star-card:hover { box-shadow:0 8px 32px var(--color-shadow); transform:translateY(-3px); }
+
+  .star-icon {
+    font-size:1.8rem;
+    margin-bottom:.75rem;
+    display:block;
+  }
+
+  .star-card h3 {
+    font-size:1.05rem;
     color:var(--color-heading);
-    font-weight:600;
-    font-size:.95rem;
-    transition:box-shadow .2s, border-color .2s;
+    margin:0 0 .75rem;
+    line-height:1.4;
   }
-  .policy-link-card:hover { border-color:var(--color-lime); box-shadow:0 4px 16px var(--color-shadow); }
-  .policy-link-card .icon { font-size:1.4rem; color:var(--color-lime-dark); flex-shrink:0; }
 
-  .cv-form-wrap {
-    max-width:680px; margin:0 auto;
-    background:#fff; border:1px solid var(--color-border);
-    border-radius:12px; padding:2.5rem;
-    box-shadow:0 4px 24px var(--color-shadow);
-  }
-  .form-row { margin-bottom:1.25rem; }
-  .form-row label { display:block; font-weight:600; font-size:.9rem; color:var(--color-heading); margin-bottom:.4rem; }
-  .form-row input[type="text"],
-  .form-row input[type="email"],
-  .form-row input[type="file"] {
-    width:100%; padding:.7rem 1rem;
-    border:1px solid var(--color-border);
-    border-radius:6px;
-    font-family:var(--font-body); font-size:.95rem;
+  .star-card p {
+    font-size:.9rem;
     color:var(--color-text);
-    background:#fff;
-    box-sizing:border-box;
-    transition:border-color .2s;
+    line-height:1.6;
+    flex:1;
+    margin:0 0 1.25rem;
   }
-  .form-row input:focus { outline:none; border-color:var(--color-blue); }
-  .form-row .file-note { font-size:.8rem; color:var(--color-text); margin-top:.35rem; }
-  .form-note { font-size:.82rem; color:#888; margin-top:1.25rem; }
+
+  .star-read-more {
+    display:inline-flex; align-items:center; gap:.35rem;
+    font-weight:700; font-size:.88rem; color:var(--color-blue);
+    text-decoration:none;
+    margin-top:auto;
+    transition:color .2s;
+  }
+  .star-read-more:hover { color:var(--color-blue-hover); }
+  .star-read-more::after { content:'→'; }
+
+  .star-badge {
+    position:absolute; top:1rem; right:1rem;
+    background:var(--color-lime); color:var(--color-heading);
+    font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    padding:.2rem .55rem; border-radius:20px;
+  }
 </style>
 </head>
 <body>
@@ -113,8 +126,8 @@
 
         <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
         <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
-        <li class="nav-item"><a class="nav-link active" href="careers.html">Careers</a></li>
-        <li class="nav-item"><a class="nav-link" href="shining-star.html">Shining Star</a></li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link active" href="shining-star.html">Shining Star</a></li>
         <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
 
         <li class="nav-item nav-cta">
@@ -178,13 +191,13 @@
 <!-- ═══════════════════════════════════════════════════════════
      PAGE HERO
 ════════════════════════════════════════════════════════════ -->
-<section class="page-hero" aria-label="Careers hero" data-hero-img="assets/img/hero-careers-page.webp">
+<section class="page-hero" aria-label="Shining Star hero" data-hero-img="assets/img/hero-shining-star.webp">
   <div class="container">
-    <h1>Careers</h1>
+    <h1>Shining Star</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">Home</a>
       <span aria-hidden="true">›</span>
-      <span aria-current="page">Careers</span>
+      <span aria-current="page">Shining Star</span>
     </nav>
   </div>
 </section>
@@ -192,190 +205,164 @@
 <!-- ═══════════════════════════════════════════════════════════
      INTRO
 ════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Careers introduction">
+<section class="section section-light" aria-label="Shining Star introduction">
   <div class="container">
-    <div class="careers-intro">
-
-      <div class="reveal">
-        <span class="eyebrow">Join Our Team</span>
-        <h2>Your Next Career Could Be With TTS FM</h2>
-        <hr class="lime-rule">
-        <p>Here at TTS FM we are a local, regional and national contributor of Integrated Risk Based Security Solutions and Facilities Management Services. We allow ourselves to undertake opportunities like becoming three specialist divisions under one expertly organised group by employing the right people for the job.</p>
-        <p>People who will work constantly with our clients to offer the best available service. Your next career could be with TTS FM, providing security services, delivering facility management services from concierge roles to landscaping. You will be able to turn your hand to anything!</p>
-        <a class="btn btn-primary mt-3" href="#upload-cv">Upload Your CV</a>
-      </div>
-
-      <div class="careers-intro-img reveal reveal-delay-2">
-        <img src="assets/img/hero-careers.webp" width="1600" height="800" alt="TTS FM careers — join our team" loading="lazy">
-      </div>
-
+    <div class="text-center reveal" style="max-width:760px;margin:0 auto;">
+      <span class="eyebrow">Employee Recognition</span>
+      <h2 class="section-title">Celebrating Our Stars</h2>
+      <hr class="lime-rule" style="margin:1rem auto;">
+      <p class="section-intro">The TTS FM Shining Star programme recognises individuals who go above and beyond in delivering exceptional service for our clients and colleagues. Each entry celebrates someone who truly embodies our values of passion, commitment and dedication.</p>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     LIFE AT TTS FM
+     SHINING STAR GRID
 ════════════════════════════════════════════════════════════ -->
-<section class="section" aria-label="Why work with us">
+<section class="section" aria-labelledby="starGridHeading">
   <div class="container">
+    <h2 id="starGridHeading" class="sr-only">Shining Star entries</h2>
 
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Life at TTS FM</span>
-      <h2 class="section-title">Why Work With Us</h2>
-      <p class="section-intro">We are only as good as the people who wear our uniform — so we invest in them. From day-one training to long-term progression, TTS FM is a place where committed people build a genuine career.</p>
+    <div class="star-grid">
+
+      <article class="star-card reveal">
+        <span class="star-badge">2026</span>
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Feb 2026 – Daniel Salako</h3>
+        <p>Congratulations to Daniel Salako, our February 2026 Shining Star — recognised for outstanding dedication and exceptional service delivery.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/feb-2026-daniel-salako" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-1">
+        <span class="star-badge">2025</span>
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>December 2025 – Emma Lye</h3>
+        <p>Congratulations to Emma Lye, our December 2025 Shining Star — recognised for her consistent excellence and commitment to our clients.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/december-2025-emma-lye" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-2">
+        <span class="star-badge">2025</span>
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>October 2025 – Michael Bailey</h3>
+        <p>Congratulations to Michael Bailey, our October 2025 Shining Star — a fantastic example of the professionalism and dedication that defines TTS FM.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/october-2025-michael-bailey" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal">
+        <span class="star-badge">2025</span>
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>September 2025 – Wendy King</h3>
+        <p>Congratulations to Wendy King, our September 2025 Shining Star — celebrated for her outstanding contribution and incredible work ethic.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/september-2025-shining-star-wendy-king" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-1">
+        <span class="star-badge">2025</span>
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>June 2025 – Phil Giles</h3>
+        <p>Congratulations to Phil Giles, our June 2025 Shining Star — a well-deserved recognition for consistently going the extra mile for clients and colleagues alike.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/june-2025" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-2">
+        <span class="star-badge">2025</span>
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>March 2025 – Double Bubble</h3>
+        <p>A double celebration for March 2025 — two TTS FM team members recognised for their remarkable dedication and exceptional contributions.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/march-2025-double-bubble" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Double Excellence</h3>
+        <p>Another outstanding double recognition — celebrating two TTS FM individuals who have demonstrated exceptional excellence in their roles.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/double-excellence" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-1">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Excellent Service Delivery</h3>
+        <p>A special recognition for outstanding service delivery — celebrating a team member who has exceeded expectations and made a real difference to our clients.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/excellent-service-delivery" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-2">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Outstanding Representation</h3>
+        <p>Recognising a TTS FM team member who has gone above and beyond to represent the company with the highest levels of professionalism and dedication.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/outstanding-representation" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Showing Excellent Customer Service</h3>
+        <p>This Shining Star recognises a team member who has truly exemplified excellent customer service — going beyond what is expected to support our clients.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/showing-excellent-customer-service" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-1">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Good News Story to Share</h3>
+        <p>A heartwarming story from within the TTS FM family — celebrating a team member who brought something truly special to our organisation.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/good-news-story-to-share" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-2">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Keeping A Great Standard</h3>
+        <p>Recognising a TTS FM team member who has consistently maintained an outstanding standard of work — an inspiration to colleagues throughout the organisation.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/keeping-a-great-standard" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>South Tyneside College</h3>
+        <p>A special Shining Star recognition for exceptional service delivered at South Tyneside College — showcasing TTS FM's dedication to our educational clients.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/south-tyneside-college" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-1">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>A Well Deserved Accolade</h3>
+        <p>This well-deserved recognition celebrates a TTS FM individual whose hard work and commitment have made a real and lasting impact.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/a-well-deserved-accolade" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-2">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>South Tyneside Council</h3>
+        <p>Recognising outstanding work delivered in partnership with South Tyneside Council — a proud example of TTS FM's commitment to public sector service.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/south-tyneside-council-2" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>A Great Start</h3>
+        <p>Celebrating a TTS FM team member who has made a brilliant first impression — setting a superb standard right from the very beginning of their career with us.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/a-great-start" target="_blank" rel="noopener">Read More</a>
+      </article>
+
+      <article class="star-card reveal reveal-delay-1">
+        <span class="star-icon" aria-hidden="true">&#x1F31F;</span>
+        <h3>Great Story in Bromborough</h3>
+        <p>A fantastic story from our Bromborough team — recognising a TTS FM individual who has truly made a positive difference at their site.</p>
+        <a class="star-read-more" href="https://ttsfm.co.uk/great-story-in-bromborough" target="_blank" rel="noopener">Read More</a>
+      </article>
+
     </div>
-
-    <div class="industry-grid reveal">
-      <div class="industry-card">
-        <h4>Training &amp; Development</h4>
-        <p>We are 'train the trainer' qualified and deliver a full programme of SIA, health &amp; safety and role-specific training. From your first shift onward, you will have the qualifications and support to do the job properly and grow your skills.</p>
-      </div>
-      <div class="industry-card">
-        <h4>Career Progression</h4>
-        <p>We promote from within wherever we can. Many of our supervisors, account managers and trainers started on the front line — if you bring the commitment, we will help you build a long-term career with clear routes to advance.</p>
-      </div>
-      <div class="industry-card">
-        <h4>Supportive Team Culture</h4>
-        <p>Passion, commitment and dedication are more than words to us. Our 360 communications policy connects officers and operatives directly to senior leadership, and our 24-hour control room means you are never working alone.</p>
-      </div>
-      <div class="industry-card">
-        <h4>Competitive Pay &amp; Benefits</h4>
-        <p>We are proud to recognise the value our people bring with fair, competitive rates of pay and a benefits package that reflects the professionalism we expect. Good people deserve to be looked after, and we make sure they are.</p>
-      </div>
-      <div class="industry-card">
-        <h4>Variety of Roles</h4>
-        <p>Across three specialist divisions you could turn your hand to security, concierge, cleaning, grounds maintenance, control-room operations and more. No two days look the same, and there is always a new skill to master.</p>
-      </div>
-      <div class="industry-card">
-        <h4>Nationwide Opportunities</h4>
-        <p>With our head office in South Shields and regional hubs in Scotland, the North West, the Midlands and the South, we offer roles across the UK — so wherever you are based, there is likely an opportunity close to home.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     TRAINING & POLICIES
-════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="Training and policies">
-  <div class="container">
-
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Our Commitment</span>
-      <h2 class="section-title">Training &amp; Development</h2>
-      <p class="section-intro">We invest in our people. The following policies outline our commitment to equal opportunities, staff development and responsible recruitment.</p>
-    </div>
-
-    <div class="policy-links reveal">
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Equal_Opportunities_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Equal Opportunities Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Staff_Development_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Staff Development Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Training_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Training Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Disclosure_Policy.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Disclosure Policy
-      </a>
-      <a class="policy-link-card" href="https://ttsfm.co.uk/wp-content/uploads/2020/07/TTSFM_Recruitment_FAQ.pdf" target="_blank" rel="noopener">
-        <span class="icon"><i class="fa fa-file-pdf" aria-hidden="true"></i></span>
-        Recruitment FAQ
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CV UPLOAD
-════════════════════════════════════════════════════════════ -->
-<section class="section" id="upload-cv" aria-label="Upload your CV">
-  <div class="container">
-
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">Apply Now</span>
-      <h2 class="section-title">Upload Your Resume</h2>
-      <p class="section-intro">Interested in joining TTS FM? Send us your CV and we'll be in touch when a suitable opportunity arises.</p>
-    </div>
-
-    <div class="cv-form-wrap reveal">
-      <!-- NOTE: Static form — submission requires backend integration (e.g. Formspree, Netlify Forms, or custom handler). -->
-      <form id="cvForm" novalidate>
-        <div class="form-row">
-          <label for="cvName">Full Name <span aria-hidden="true">*</span></label>
-          <input type="text" id="cvName" name="name" placeholder="Your full name" required>
-        </div>
-        <div class="form-row">
-          <label for="cvEmail">Email Address <span aria-hidden="true">*</span></label>
-          <input type="email" id="cvEmail" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-row">
-          <label for="cvFile">CV / Resume <span aria-hidden="true">*</span></label>
-          <input type="file" id="cvFile" name="cv" accept=".doc,.docx,.pdf,.jpeg,.jpg,.png" required>
-          <p class="file-note">Accepted formats: .doc, .docx, .pdf, .jpeg, .jpg, .png (max 5 MB)</p>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit Application</button>
-        <p class="form-note">* This form requires backend configuration to process submissions. Please <a href="contact.html">contact us</a> directly if you experience any issues.</p>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     HOW TO JOIN US
-════════════════════════════════════════════════════════════ -->
-<section class="section section-light" aria-label="How to join us">
-  <div class="container">
-
-    <div class="text-center mb-3 reveal">
-      <span class="eyebrow">The Process</span>
-      <h2 class="section-title">How to Join Us</h2>
-      <p class="section-intro">Joining TTS FM is straightforward. Here is what to expect from the moment you send us your CV to the day you start your career with us.</p>
-    </div>
-
-    <div class="process-grid reveal">
-      <div>
-        <details class="acc-item" open>
-          <summary>1 — Browse &amp; Apply</summary>
-          <div class="acc-body">Send us your CV using the form on this page, or get in touch about a specific role. Tell us a little about your experience and the kind of work you are looking for, and we will match you against current and upcoming opportunities.</div>
-        </details>
-        <details class="acc-item">
-          <summary>2 — Interview &amp; Vetting</summary>
-          <div class="acc-body">If your background fits, we will invite you for an interview to get to know you. As an SIA Approved Contractor we screen and vet to British Standard 7858, so we will guide you through the checks needed to work in security and facilities management.</div>
-        </details>
-      </div>
-      <div>
-        <details class="acc-item">
-          <summary>3 — Onboarding &amp; Training</summary>
-          <div class="acc-body">Once you are offered a role, we get you set up with the right qualifications, uniform and site information. Our 'train the trainer' team delivers the SIA, health &amp; safety and role-specific training you need to start confidently and safely.</div>
-        </details>
-        <details class="acc-item">
-          <summary>4 — Start Your Career</summary>
-          <div class="acc-body">You join the team with the backing of our 24-hour control room, supportive supervisors and a clear route to progress. From your first shift, you are part of a company that invests in its people for the long term.</div>
-        </details>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CTA
+     CTA BAND
 ════════════════════════════════════════════════════════════ -->
 <section class="cta-mesh" aria-label="Get started">
   <div class="container">
-    <h2>Build Your Career With TTS FM</h2>
-    <p>Join a team that invests in its people. Explore current opportunities or send us your CV and we'll be in touch about roles that fit.</p>
-    <a class="btn btn-lime btn-magnetic" href="#upload-cv">Upload Your CV</a>
-    <p class="cta-trust">Nationwide opportunities · Security &amp; facilities management roles · We invest in training</p>
+    <h2>People Make the Difference</h2>
+    <p>Our Shining Star award celebrates the dedication of our teams. It's the same passion and commitment we bring to every client contract.</p>
+    <a class="btn btn-lime btn-magnetic" href="contact.html">Get your free site assessment</a>
+    <p class="cta-trust">Trusted by 200+ UK sites · Nationwide coverage · 24/7 control room</p>
   </div>
 </section>
 

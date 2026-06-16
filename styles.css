@@ -673,17 +673,20 @@ body.nav-open .nav-drawer-panel {
   overflow: hidden;
 }
 
+/* Dark gradient overlay sits above the injected photo layer for legibility */
 .page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('https://ttsfm.co.uk/wp-content/uploads/2020/07/South-Sields-Block.jpg') center/cover;
-  opacity: .15;
+  z-index: 1;
+  background: linear-gradient(100deg, rgba(6,24,43,.92) 0%, rgba(6,24,43,.72) 52%, rgba(6,24,43,.45) 100%);
 }
+
+.page-hero .hero-photo-layer { z-index: 0; }
 
 .page-hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .page-hero h1 {
