@@ -28,7 +28,7 @@
   @media(max-width:580px){ .news-grid{ grid-template-columns:1fr; } }
 
   .news-card {
-    background:#fff;
+    background:var(--color-white);
     border:1px solid var(--color-border);
     border-radius:12px;
     padding:1.5rem;
@@ -38,7 +38,7 @@
   .news-card:hover { box-shadow:0 8px 32px var(--color-shadow); transform:translateY(-3px); }
 
   .news-meta { display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem; flex-wrap:wrap; }
-  .news-date { font-size:.8rem; color:#888; }
+  .news-date { font-size:.8rem; color:var(--color-text); }
   .news-cat {
     font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
     background:var(--color-lime); color:var(--color-heading);
@@ -427,7 +427,7 @@
 
     </div>
 
-    <p class="text-center" style="margin-top:2.5rem;color:#888;font-size:.9rem;">
+    <p class="text-center" style="margin-top:2.5rem;color:var(--color-text);font-size:.9rem;">
       Showing 20 most recent articles. <a href="https://ttsfm.co.uk/news" target="_blank" rel="noopener" style="color:var(--color-blue);">View full archive on ttsfm.co.uk &#x2192;</a>
     </p>
 

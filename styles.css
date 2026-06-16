@@ -67,6 +67,7 @@ button {
   --ink-800: #0A2540;   /* primary navy */
   --ink-700: #143759;   /* mid navy — gradient stops, dark borders */
   --lime-bright: #C7E04A;  /* high-energy accent for CTAs/highlights on dark */
+  --accent-text:  #5c6e1e;  /* AA-compliant olive-lime for eyebrows/highlights on light backgrounds */
   --surface-sunken: #E7EEF6;
 
   /* Glass + signature gradient mesh (new) */
@@ -155,11 +156,11 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.8rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--color-lime);
+  color: var(--accent-text);
   margin-bottom: .5rem;
 }
 
-.lime { color: var(--color-lime); }
+.lime { color: var(--accent-text); }
 
 .section-title {
   margin-bottom: 1rem;
@@ -988,7 +989,7 @@ body.nav-open .nav-drawer-panel {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: .95rem;
-  color: #a0aec0;
+  color: var(--color-text);
   transition: color var(--transition), box-shadow var(--transition);
   min-width: 110px;
   text-align: center;
@@ -1830,11 +1831,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 680; }
 }
 .trust-strip .trust-label {
   font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: #94a3b8;
+  color: var(--color-text);
 }
 .trust-strip .trust-item {
   font-family: var(--font-heading); font-weight: 700; font-size: .9rem;
-  color: #64748b;
+  color: var(--color-heading);
 }
 
 /* ============================================================
@@ -2027,6 +2028,7 @@ html[data-theme="dark"] {
   --surface-sunken: #081626;
   --color-heading:  #EAF1F8;
   --color-text:     #AAB8C8;
+  --accent-text:    var(--lime-bright);
   --color-border:   #22405F;
   --color-shadow:   rgba(0,0,0,.55);
 }
@@ -2041,6 +2043,7 @@ html[data-theme="dark"] body { background-color: #081626; }           /* page = 
     --surface-sunken: #081626;
     --color-heading:  #EAF1F8;
     --color-text:     #AAB8C8;
+  --accent-text:    var(--lime-bright);
     --color-border:   #22405F;
     --color-shadow:   rgba(0,0,0,.55);
   }
