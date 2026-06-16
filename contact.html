@@ -95,6 +95,21 @@
   .form-success h3 { color:var(--color-heading); margin:0 0 .5rem; }
   .form-success p { margin:0; }
 </style>
+<style>
+  /* Hero fits the image aspect ratio (no cropping); text moved to the right, clear of the image's left-side content */
+  .prop-hero{ aspect-ratio:1774 / 887; min-height:480px; }
+  .prop-hero::after{ background:linear-gradient(260deg, rgba(6,24,43,.93) 0%, rgba(6,24,43,.72) 50%, rgba(6,24,43,.42) 100%); }
+  .prop-hero > .container{ text-align:right; }
+  .prop-hero p.hero-sub{ margin-left:auto; margin-right:0; }
+  .prop-hero .hero-btn-row{ justify-content:flex-end; }
+  @media (max-width:768px){
+    .prop-hero{ aspect-ratio:auto; }
+    .prop-hero > .container{ text-align:left; }
+    .prop-hero p.hero-sub{ margin-left:0; }
+    .prop-hero .hero-btn-row{ justify-content:flex-start; }
+    .prop-hero::after{ background:linear-gradient(100deg, rgba(6,24,43,.93) 0%, rgba(6,24,43,.72) 50%, rgba(6,24,43,.4) 100%); }
+  }
+</style>
 </head>
 <body>
 

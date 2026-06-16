@@ -189,6 +189,18 @@
   .test-card { min-width: 100%; margin-right: 0; }
 }
 </style>
+<style>
+  /* Hero fits the image aspect ratio (no cropping); photo set directly so it shows without JS */
+  .page-hero{
+    aspect-ratio:1774 / 887;
+    display:flex; align-items:center;
+    background-image:url('assets/02-testimonials-hero.png');
+    background-size:cover; background-position:center;
+  }
+  .page-hero::before{ background:linear-gradient(100deg, rgba(6,24,43,.86) 0%, rgba(6,24,43,.6) 55%, rgba(6,24,43,.33) 100%); opacity:1; z-index:1; }
+  .page-hero .hero-photo-layer{ z-index:0; }
+  .page-hero > .container{ position:relative; z-index:2; width:100%; }
+</style>
 </head>
 <body>
 
