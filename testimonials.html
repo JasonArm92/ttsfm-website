@@ -777,5 +777,39 @@
 })();
 </script>
 
+<!-- Theme toggle + persisted dark/light mode (this page doesn't load main.js, so mirror its theme logic) -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var stored = null;
+  try { stored = localStorage.getItem('tts-theme'); } catch (e) {}
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+
+  var navInner = document.querySelector('.nav-inner');
+  if (!navInner) return;
+  var btn = document.createElement('button');
+  btn.className = 'theme-toggle';
+  btn.type = 'button';
+  function sync() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = '<i class="fa-solid fa-' + (dark ? 'sun' : 'moon') + '" aria-hidden="true"></i>';
+    btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  sync();
+  var ham = document.getElementById('navHamburger');
+  if (ham) navInner.insertBefore(btn, ham); else navInner.appendChild(btn);
+  btn.addEventListener('click', function () {
+    root.classList.add('theme-anim');
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tts-theme', next); } catch (e) {}
+    sync();
+    window.setTimeout(function () { root.classList.remove('theme-anim'); }, 450);
+  });
+})();
+</script>
+
 </body>
 </html>

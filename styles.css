@@ -175,7 +175,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .text-center { text-align: center; }
-.text-white  { color: var(--color-white) !important; }
+.text-white  { color: #fff !important; }
 
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn {
@@ -195,7 +195,7 @@ p:last-child { margin-bottom: 0; }
 
 .btn-primary {
   background: var(--color-blue);
-  color: var(--color-white);
+  color: #fff;
   border: 2px solid var(--color-blue);
 }
 
@@ -220,7 +220,7 @@ p:last-child { margin-bottom: 0; }
 
 .btn-outline-white {
   background: transparent;
-  color: var(--color-white);
+  color: #fff;
   border: 2px solid var(--color-white);
 }
 
@@ -556,12 +556,12 @@ body.nav-open .nav-drawer-panel {
   position: relative;
   z-index: 2;
   max-width: 660px;
-  color: var(--color-white);
+  color: #fff;
   padding: 90px 0;
 }
 
 .hero-content h1 {
-  color: var(--color-white);
+  color: #fff;
   margin-bottom: 1.25rem;
 }
 
@@ -669,7 +669,7 @@ body.nav-open .nav-drawer-panel {
 .page-hero {
   background: var(--color-bg-dark);
   padding: 70px 0;
-  color: var(--color-white);
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -691,7 +691,7 @@ body.nav-open .nav-drawer-panel {
 }
 
 .page-hero h1 {
-  color: var(--color-white);
+  color: #fff;
   margin-bottom: .75rem;
 }
 
@@ -729,7 +729,7 @@ body.nav-open .nav-drawer-panel {
 .section-dark h2,
 .section-dark h3,
 .section-dark h4 {
-  color: var(--color-white);
+  color: #fff;
 }
 
 .section-dark p {
@@ -1023,7 +1023,7 @@ body.nav-open .nav-drawer-panel {
 }
 
 .testimonials-section h2 {
-  color: var(--color-white);
+  color: #fff;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -1205,7 +1205,7 @@ body.nav-open .nav-drawer-panel {
 }
 
 .footer-col h4 {
-  color: var(--color-white);
+  color: #fff;
   font-size: .9rem;
   text-transform: uppercase;
   letter-spacing: .08em;
